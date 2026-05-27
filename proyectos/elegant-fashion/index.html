@@ -1,0 +1,2465 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AURÈLE — Moda de autor con alma contemporánea. Colecciones exclusivas que fusionan artesanía europea con diseño vanguardista.">
+    <meta name="keywords" content="moda, lujo, diseñador, colección, ropa exclusiva, alta costura, fashion, AURÈLE">
+    <meta name="author" content="AURÈLE">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1714">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AURÈLE — Moda de Autor Contemporánea">
+    <meta property="og:description" content="Colecciones exclusivas que fusionan artesanía europea con diseño vanguardista.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&h=630&fit=crop&q=80">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aurele.com">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AURÈLE — Moda de Autor Contemporánea">
+    <meta name="twitter:description" content="Colecciones exclusivas que fusionan artesanía europea con diseño vanguardista.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&h=630&fit=crop&q=80">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://aurele.com">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ClothingStore",
+        "name": "AURÈLE",
+        "description": "Moda de autor con alma contemporánea",
+        "url": "https://aurele.com",
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&h=630&fit=crop&q=80",
+        "priceRange": "$$$",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Madrid",
+            "addressCountry": "ES"
+        }
+    }
+    </script>
+
+    <title>AURÈLE — Moda de Autor Contemporánea</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== CSS Custom Properties ===== */
+        :root {
+            --color-bg: #faf8f5;
+            --color-bg-alt: #f3efe9;
+            --color-bg-dark: #1a1714;
+            --color-bg-dark-alt: #241f1a;
+            --color-text: #1a1714;
+            --color-text-light: #6b635a;
+            --color-text-lighter: #736b62;
+            --color-text-on-dark: #faf8f5;
+            --color-text-on-dark-muted: #b8b0a6;
+            --color-accent: #a0845e;
+            --color-accent-light: #c4a97a;
+            --color-accent-dark: #7d673f;
+            --color-border: #e5ddd3;
+            --color-border-dark: #3a332b;
+            --font-heading: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', system-ui, sans-serif;
+            --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            font-weight: 400;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s var(--transition-smooth);
+        }
+
+        button {
+            font-family: var(--font-body);
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        ul { list-style: none; }
+
+        ::selection {
+            background-color: var(--color-accent);
+            color: var(--color-text-on-dark);
+        }
+
+        /* ===== Utilities ===== */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .container--narrow {
+            max-width: 900px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* ===== Typography ===== */
+        .heading-display {
+            font-family: var(--font-heading);
+            font-weight: 300;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .heading-section {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .label-sm {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .body-lg {
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 1rem 2.5rem;
+            border: 1px solid transparent;
+            transition: all 0.4s var(--transition-smooth);
+            white-space: nowrap;
+        }
+
+        .btn--primary {
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-on-dark);
+            border-color: var(--color-bg-dark);
+        }
+
+        .btn--primary:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .btn--outline {
+            background-color: transparent;
+            color: var(--color-text);
+            border-color: var(--color-border);
+        }
+
+        .btn--outline:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        .btn--outline-light {
+            background-color: transparent;
+            color: var(--color-text-on-dark);
+            border-color: rgba(250, 248, 245, 0.3);
+        }
+
+        .btn--outline-light:hover {
+            border-color: var(--color-accent-light);
+            color: var(--color-accent-light);
+        }
+
+        .btn--accent {
+            background-color: var(--color-accent);
+            color: white;
+        }
+
+        .btn--accent:hover {
+            background-color: var(--color-accent-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ===== Divider ===== */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background-color: var(--color-accent);
+            margin: 1.5rem 0;
+        }
+
+        .divider--center { margin-left: auto; margin-right: auto; }
+
+        /* ===== Animations ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-on-scroll.delay-1 { transition-delay: 0.1s; }
+        .animate-on-scroll.delay-2 { transition-delay: 0.2s; }
+        .animate-on-scroll.delay-3 { transition-delay: 0.3s; }
+        .animate-on-scroll.delay-4 { transition-delay: 0.4s; }
+
+        /* ===== Header / Navigation ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            transition: all 0.4s var(--transition-smooth);
+        }
+
+        .header--scrolled {
+            background-color: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 0.75rem 0;
+            box-shadow: 0 1px 0 var(--color-border);
+        }
+
+        .header__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header__logo {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-text);
+        }
+
+        .header__nav {
+            display: none;
+        }
+
+        .header__nav-list {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .header__nav-link {
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            position: relative;
+            padding: 0.25rem 0;
+        }
+
+        .header__nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-accent);
+            transition: width 0.4s var(--transition-smooth);
+        }
+
+        .header__nav-link:hover {
+            color: var(--color-text);
+        }
+
+        .header__nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header__actions {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .header__icon-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text);
+            transition: color 0.3s;
+        }
+
+        .header__icon-btn:hover {
+            color: var(--color-accent);
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 24px;
+            padding: 0;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 1.5px;
+            background-color: var(--color-text);
+            transition: all 0.3s var(--transition-smooth);
+            transform-origin: center;
+        }
+
+        .menu-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        /* Mobile menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--color-bg);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s var(--transition-smooth);
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu__link {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            transition: color 0.3s;
+        }
+
+        .mobile-menu__link:hover {
+            color: var(--color-accent);
+        }
+
+        @media (min-width: 768px) {
+            .header__nav { display: block; }
+            .menu-toggle { display: none; }
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: var(--color-bg-dark);
+        }
+
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .hero__bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+        }
+
+        .hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(26, 23, 20, 0.85) 0%,
+                rgba(26, 23, 20, 0.5) 50%,
+                rgba(26, 23, 20, 0.7) 100%
+            );
+            z-index: 2;
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 3;
+            max-width: 700px;
+            padding: 6rem 0;
+            animation: fadeInUp 1s var(--transition-smooth) forwards;
+        }
+
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            border: 1px solid rgba(160, 132, 94, 0.4);
+            margin-bottom: 2rem;
+            color: var(--color-accent-light);
+        }
+
+        .hero__badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--color-accent-light);
+        }
+
+        .hero__title {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            color: var(--color-text-on-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero__title em {
+            font-style: italic;
+            color: var(--color-accent-light);
+        }
+
+        .hero__desc {
+            font-size: 1.1rem;
+            color: var(--color-text-on-dark-muted);
+            max-width: 520px;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero__cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .hero__scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-text-on-dark-muted);
+            animation: fadeIn 1.5s 1s var(--transition-smooth) forwards;
+            opacity: 0;
+        }
+
+        .hero__scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--color-accent-light), transparent);
+            animation: scrollPulse 2s infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== Marquee / Ticker ===== */
+        .marquee {
+            background-color: var(--color-bg-dark);
+            border-bottom: 1px solid var(--color-border-dark);
+            padding: 1.25rem 0;
+            overflow: hidden;
+        }
+
+        .marquee__track {
+            display: flex;
+            gap: 3rem;
+            animation: marquee 30s linear infinite;
+            width: max-content;
+        }
+
+        .marquee__item {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-text-on-dark-muted);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .marquee__item::after {
+            content: '✦';
+            color: var(--color-accent);
+            font-size: 0.65rem;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ===== About / Brand Story ===== */
+        .about {
+            padding: 7rem 0;
+        }
+
+        .about__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about__image-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about__image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.8s var(--transition-smooth);
+        }
+
+        .about__image-wrapper:hover .about__image {
+            transform: scale(1.03);
+        }
+
+        .about__image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(26,23,20,0.8), transparent);
+            color: var(--color-text-on-dark);
+        }
+
+        .about__text p {
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .about__stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .about__stat {
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .about__stat-number {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--color-accent);
+            white-space: nowrap;
+        }
+
+        .about__stat-label {
+            font-size: 0.8rem;
+            color: var(--color-text-lighter);
+            letter-spacing: 0.05em;
+        }
+
+        @media (min-width: 768px) {
+            .about__grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 5rem;
+            }
+
+            .about__image {
+                height: 550px;
+            }
+        }
+
+        /* ===== Collections ===== */
+        .collections {
+            padding: 5rem 0 7rem;
+            background-color: var(--color-bg-alt);
+        }
+
+        .collections__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .collections__header p {
+            max-width: 500px;
+            margin: 0 auto;
+            color: var(--color-text-light);
+        }
+
+        .collections__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .collection-card {
+            position: relative;
+            overflow: hidden;
+            background: white;
+            cursor: pointer;
+            transition: transform 0.5s var(--transition-smooth), box-shadow 0.5s var(--transition-smooth);
+        }
+
+        .collection-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(26, 23, 20, 0.1);
+        }
+
+        .collection-card__img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 280px;
+        }
+
+        .collection-card__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s var(--transition-smooth);
+        }
+
+        .collection-card:hover .collection-card__img {
+            transform: scale(1.05);
+        }
+
+        .collection-card__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,23,20,0.6), rgba(26,23,20,0) 60%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .collection-card:hover .collection-card__overlay {
+            opacity: 1;
+        }
+
+        .collection-card__tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.35rem 0.75rem;
+            background-color: rgba(250, 248, 245, 0.9);
+            backdrop-filter: blur(4px);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .collection-card__body {
+            padding: 1.5rem;
+        }
+
+        .collection-card__title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .collection-card__desc {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+        }
+
+        .collection-card__link {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: gap 0.3s;
+        }
+
+        .collection-card:hover .collection-card__link {
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 640px) {
+            .collections__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .collections__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .collection-card__img-wrapper {
+                height: 360px;
+            }
+        }
+
+        /* ===== Editorial / Full-width visual break ===== */
+        .editorial {
+            position: relative;
+            height: 70vh;
+            min-height: 400px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .editorial__bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .editorial__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .editorial__overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 23, 20, 0.55);
+        }
+
+        .editorial__content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 650px;
+        }
+
+        .editorial__quote {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--color-text-on-dark);
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .editorial__author {
+            color: var(--color-accent-light);
+        }
+
+        /* ===== Benefits ===== */
+        .benefits {
+            padding: 7rem 0;
+        }
+
+        .benefits__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .benefits__header p {
+            max-width: 500px;
+            margin: 0 auto;
+            color: var(--color-text-light);
+        }
+
+        .benefits__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            padding: 2.5rem;
+            border: 1px solid var(--color-border);
+            transition: all 0.4s var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background-color: var(--color-accent);
+            transition: height 0.4s var(--transition-smooth);
+        }
+
+        .benefit-card:hover::before {
+            height: 100%;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 10px 40px rgba(160, 132, 94, 0.08);
+        }
+
+        .benefit-card__icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--color-accent);
+        }
+
+        .benefit-card__title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-card__desc {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        @media (min-width: 640px) {
+            .benefits__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .benefits__grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* ===== Testimonials ===== */
+        .testimonials {
+            padding: 7rem 0;
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-on-dark);
+        }
+
+        .testimonials__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .testimonials__header p {
+            max-width: 450px;
+            margin: 0 auto;
+            color: var(--color-text-on-dark-muted);
+        }
+
+        .testimonials__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--color-bg-dark-alt);
+            border: 1px solid var(--color-border-dark);
+            padding: 2.5rem;
+            transition: border-color 0.4s;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--color-accent);
+        }
+
+        .testimonial-card__stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1.25rem;
+            color: var(--color-accent-light);
+        }
+
+        .testimonial-card__text {
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--color-text-on-dark-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-card__author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-card__avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--color-border-dark);
+        }
+
+        .testimonial-card__name {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-card__role {
+            font-size: 0.8rem;
+            color: var(--color-text-on-dark-muted);
+        }
+
+        @media (min-width: 768px) {
+            .testimonials__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            padding: 7rem 0;
+        }
+
+        .faq__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .faq__header p {
+            max-width: 450px;
+            margin: 0 auto;
+            color: var(--color-text-light);
+        }
+
+        .faq__list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .faq-item__question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 500;
+            text-align: left;
+            color: var(--color-text);
+            transition: color 0.3s;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .faq-item__question:hover {
+            color: var(--color-accent);
+        }
+
+        .faq-item__icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            color: var(--color-accent);
+            transition: transform 0.3s var(--transition-smooth);
+        }
+
+        .faq-item.active .faq-item__icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-item__answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s var(--transition-smooth), padding 0.4s;
+        }
+
+        .faq-item.active .faq-item__answer {
+            max-height: 300px;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item__answer p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        /* ===== Contact / Newsletter ===== */
+        .contact {
+            padding: 7rem 0;
+            background-color: var(--color-bg-alt);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact__bg-pattern {
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            border: 1px solid var(--color-border);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .contact__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact__info h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact__info p {
+            color: var(--color-text-light);
+            margin-bottom: 2rem;
+            max-width: 420px;
+        }
+
+        .contact__detail {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        .contact__detail-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--color-accent);
+            flex-shrink: 0;
+        }
+
+        .contact__form-wrapper {
+            background: white;
+            padding: 2.5rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .form__group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form__label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .form__input,
+        .form__textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--color-border);
+            background-color: var(--color-bg);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--color-text);
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .form__input:focus,
+        .form__textarea:focus {
+            border-color: var(--color-accent);
+        }
+
+        .form__input::placeholder,
+        .form__textarea::placeholder {
+            color: var(--color-text-lighter);
+        }
+
+        .form__textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form__checkbox-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form__checkbox {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            accent-color: var(--color-accent);
+        }
+
+        .form__checkbox-label {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+        }
+
+        .form__checkbox-label a {
+            color: var(--color-accent);
+            text-decoration: underline;
+        }
+
+        .form__submit {
+            width: 100%;
+        }
+
+        .form__success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .form__success.active {
+            display: block;
+        }
+
+        .form__success-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            color: var(--color-accent);
+        }
+
+        @media (min-width: 768px) {
+            .contact__grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 5rem;
+            }
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-on-dark);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer__top {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--color-border-dark);
+        }
+
+        .footer__brand-logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .footer__brand-desc {
+            font-size: 0.9rem;
+            color: var(--color-text-on-dark-muted);
+            max-width: 300px;
+            line-height: 1.7;
+        }
+
+        .footer__col-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            color: var(--color-accent-light);
+        }
+
+        .footer__link {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--color-text-on-dark-muted);
+            margin-bottom: 0.75rem;
+            transition: color 0.3s;
+        }
+
+        .footer__link:hover {
+            color: var(--color-text-on-dark);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer__social-link {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--color-border-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-on-dark-muted);
+            transition: all 0.3s;
+        }
+
+        .footer__social-link:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent-light);
+        }
+
+        .footer__bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--color-text-on-dark-muted);
+        }
+
+        .footer__bottom-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer__bottom-link {
+            color: var(--color-text-on-dark-muted);
+            transition: color 0.3s;
+        }
+
+        .footer__bottom-link:hover {
+            color: var(--color-text-on-dark);
+        }
+
+        @media (min-width: 768px) {
+            .footer__top {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+            }
+
+            .footer__bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        /* ===== Cookie Banner ===== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-on-dark);
+            padding: 1.25rem;
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.4s var(--transition-smooth);
+            border-top: 1px solid var(--color-border-dark);
+        }
+
+        .cookie-banner.active {
+            transform: translateY(0);
+        }
+
+        .cookie-banner__inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .cookie-banner__text {
+            font-size: 0.85rem;
+            color: var(--color-text-on-dark-muted);
+            text-align: center;
+        }
+
+        .cookie-banner__text a {
+            color: var(--color-accent-light);
+            text-decoration: underline;
+        }
+
+        .cookie-banner__actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .cookie-banner__btn {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 500;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cookie-banner__btn--accept {
+            background-color: var(--color-accent);
+            color: white;
+        }
+
+        .cookie-banner__btn--accept:hover {
+            background-color: var(--color-accent-dark);
+        }
+
+        .cookie-banner__btn--decline {
+            background-color: transparent;
+            color: var(--color-text-on-dark-muted);
+            border-color: var(--color-border-dark);
+        }
+
+        .cookie-banner__btn--decline:hover {
+            border-color: var(--color-text-on-dark-muted);
+            color: var(--color-text-on-dark);
+        }
+
+        @media (min-width: 640px) {
+            .cookie-banner__inner {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .cookie-banner__text {
+                text-align: left;
+            }
+        }
+
+        /* ===== Back to top ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 44px;
+            height: 44px;
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-on-dark);
+            border: 1px solid var(--color-border-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s var(--transition-smooth);
+            pointer-events: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+        /* ===== Loading screen ===== */
+        .loader {
+            position: fixed;
+            inset: 0;
+            background-color: var(--color-bg);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s, visibility 0.6s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader__text {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            animation: fadeIn 0.6s var(--transition-smooth);
+        }
+
+        /* Focus styles for accessibility */
+        *:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* ===== Skip Navigation Link ===== */
+        .skip-link {
+            position: absolute;
+            top: -999px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99999;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-accent);
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: top 0.2s;
+        }
+
+        .skip-link:focus {
+            top: 1rem;
+            outline: 3px solid white;
+            outline-offset: 2px;
+        }
+
+        /* ===== Form error message ===== */
+        .form__errors {
+            display: none;
+            color: #8b2316;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            padding: 0.75rem 1rem;
+            background: #fdf0ef;
+            border: 1px solid #f5c6c2;
+            border-left: 3px solid #c0392b;
+        }
+
+        .form__errors.active {
+            display: block;
+        }
+
+        /* ===== Reduced motion ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .marquee__track {
+                animation: none;
+            }
+            .hero__scroll-line {
+                animation: none;
+                opacity: 0.6;
+            }
+            .animate-on-scroll {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+    </style>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader" role="status" aria-label="Cargando">
+        <span class="loader__text">AURÈLE</span>
+    </div>
+
+    <!-- Skip to content (accessibility) -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Header -->
+    <header class="header" id="header" role="banner">
+        <div class="container">
+            <div class="header__inner">
+                <a href="#" class="header__logo" aria-label="AURÈLE - Inicio">AURÈLE</a>
+
+                <nav class="header__nav" role="navigation" aria-label="Navegación principal">
+                    <ul class="header__nav-list">
+                        <li><a href="#colecciones" class="header__nav-link">Colecciones</a></li>
+                        <li><a href="#historia" class="header__nav-link">Historia</a></li>
+                        <li><a href="#beneficios" class="header__nav-link">Filosofía</a></li>
+                        <li><a href="#testimonios" class="header__nav-link">Testimonios</a></li>
+                        <li><a href="#contacto" class="header__nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__actions">
+                    <!-- Search icon -->
+                    <button class="header__icon-btn" aria-label="Buscar">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    </button>
+                    <!-- Cart icon -->
+                    <button class="header__icon-btn" aria-label="Carrito de compras">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    </button>
+                    <!-- Mobile menu toggle -->
+                    <button class="menu-toggle" id="menuToggle" aria-label="Menú" aria-expanded="false" aria-controls="mobileMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+        <a href="#colecciones" class="mobile-menu__link">Colecciones</a>
+        <a href="#historia" class="mobile-menu__link">Historia</a>
+        <a href="#beneficios" class="mobile-menu__link">Filosofía</a>
+        <a href="#testimonios" class="mobile-menu__link">Testimonios</a>
+        <a href="#contacto" class="mobile-menu__link">Contacto</a>
+    </div>
+
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="hero" aria-label="Presentación principal">
+            <div class="hero__bg">
+                <img
+                    src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1800&h=1200&fit=crop&q=80"
+                    alt="Modelo con vestido elegante en estudio de moda"
+                    class="hero__bg-img"
+                    width="1800"
+                    height="1200"
+                    loading="eager"
+                    fetchpriority="high"
+                >
+                <div class="hero__overlay"></div>
+            </div>
+
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__badge label-sm">
+                        <span class="hero__badge-dot"></span>
+                        Colección Otoño — Invierno 2026
+                    </div>
+
+                    <h1 class="hero__title heading-display">
+                        Donde el arte<br>se viste de <em>elegancia</em>
+                    </h1>
+
+                    <p class="hero__desc">
+                        Piezas de autor que trascienden temporadas. Confeccionadas en talleres europeos con textiles nobles y una obsesión por el detalle que se siente al tacto.
+                    </p>
+
+                    <div class="hero__cta-group">
+                        <a href="#colecciones" class="btn btn--accent">Explorar Colección</a>
+                        <a href="#historia" class="btn btn--outline-light">Nuestra Historia</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__scroll-indicator" aria-hidden="true">
+                <span class="label-sm" style="font-size: 0.65rem;">Descubrir</span>
+                <div class="hero__scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Marquee -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+                <span class="marquee__item">Alta Costura</span>
+                <span class="marquee__item">Tejidos Nobles</span>
+                <span class="marquee__item">Diseño de Autor</span>
+                <span class="marquee__item">Hecho en Europa</span>
+                <span class="marquee__item">Edición Limitada</span>
+                <span class="marquee__item">Sostenibilidad</span>
+                <span class="marquee__item">Artesanía</span>
+                <span class="marquee__item">Elegancia Atemporal</span>
+                <span class="marquee__item">Alta Costura</span>
+                <span class="marquee__item">Tejidos Nobles</span>
+                <span class="marquee__item">Diseño de Autor</span>
+                <span class="marquee__item">Hecho en Europa</span>
+                <span class="marquee__item">Edición Limitada</span>
+                <span class="marquee__item">Sostenibilidad</span>
+                <span class="marquee__item">Artesanía</span>
+                <span class="marquee__item">Elegancia Atemporal</span>
+            </div>
+        </div>
+
+        <!-- About / Brand Story -->
+        <section class="about" id="historia" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about__grid">
+                    <div class="about__image-wrapper animate-on-scroll">
+                        <img
+                            src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&h=1000&fit=crop&q=80"
+                            alt="Taller de costura artesanal con textiles finos"
+                            class="about__image"
+                            width="800"
+                            height="1000"
+                            loading="lazy"
+                        >
+                        <div class="about__image-caption">
+                            <span class="label-sm">Taller Artesanal — Madrid</span>
+                        </div>
+                    </div>
+
+                    <div class="about__text animate-on-scroll delay-2">
+                        <span class="label-sm" style="color: var(--color-accent);">Nuestra Historia</span>
+                        <div class="divider"></div>
+                        <h2 id="about-title" class="heading-section" style="margin-bottom: 1.5rem;">
+                            Nacimos de la obsesión por lo bello
+                        </h2>
+                        <p class="body-lg">
+                            AURÈLE fue fundada en 2014 con una visión clara: devolver el alma al vestir. En un mundo de producción masiva, elegimos el camino lento — cada pieza toma entre 40 y 120 horas de trabajo artesanal.
+                        </p>
+                        <p>
+                            Nuestros textiles llegan de las mejores tejedurías de Italia y Francia. Cada temporada presentamos colecciones limitadas que dialogan entre la tradición y la vanguardia, entre el rigor técnico y la libertad creativa.
+                        </p>
+
+                        <div class="about__stats">
+                            <div class="about__stat">
+                                <div class="about__stat-number">12</div>
+                                <div class="about__stat-label">Años de trayectoria</div>
+                            </div>
+                            <div class="about__stat">
+                                <div class="about__stat-number">48K+</div>
+                                <div class="about__stat-label">Piezas entregadas</div>
+                            </div>
+                            <div class="about__stat">
+                                <div class="about__stat-number">23</div>
+                                <div class="about__stat-label">Colecciones</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collections -->
+        <section class="collections" id="colecciones" aria-labelledby="collections-title">
+            <div class="container">
+                <div class="collections__header animate-on-scroll">
+                    <span class="label-sm" style="color: var(--color-accent);">Colecciones</span>
+                    <div class="divider divider--center"></div>
+                    <h2 id="collections-title" class="heading-section" style="margin-bottom: 1rem;">Piezas que cuentan historias</h2>
+                    <p>Cada colección es un universo propio, inspirado en viajes, arte y las texturas de lo cotidiano.</p>
+                </div>
+
+                <div class="collections__grid">
+                    <!-- Card 1 -->
+                    <article class="collection-card animate-on-scroll delay-1">
+                        <div class="collection-card__img-wrapper">
+                            <img
+                                src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700&h=900&fit=crop&q=80"
+                                alt="Modelo con abrigo de cachemira beige caminando en la ciudad"
+                                class="collection-card__img"
+                                width="700"
+                                height="900"
+                                loading="lazy"
+                            >
+                            <div class="collection-card__overlay"></div>
+                            <span class="collection-card__tag">Nuevo</span>
+                        </div>
+                        <div class="collection-card__body">
+                            <h3 class="collection-card__title">Sienna</h3>
+                            <p class="collection-card__desc">Tonos terrosos, siluetas arquitectónicas. La colección que define el otoño.</p>
+                            <span class="collection-card__link">Ver colección <span aria-hidden="true">→</span></span>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="collection-card animate-on-scroll delay-2">
+                        <div class="collection-card__img-wrapper">
+                            <img
+                                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=700&h=900&fit=crop&q=80"
+                                alt="Vestido blanco con detalles minimalistas en set editorial"
+                                class="collection-card__img"
+                                width="700"
+                                height="900"
+                                loading="lazy"
+                            >
+                            <div class="collection-card__overlay"></div>
+                            <span class="collection-card__tag">Clásicos</span>
+                        </div>
+                        <div class="collection-card__body">
+                            <h3 class="collection-card__title">Lumière</h3>
+                            <p class="collection-card__desc">La esencia de la elegancia en su forma más pura. Blanco, lino y seda natural.</p>
+                            <span class="collection-card__link">Ver colección <span aria-hidden="true">→</span></span>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="collection-card animate-on-scroll delay-3">
+                        <div class="collection-card__img-wrapper">
+                            <img
+                                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700&h=900&fit=crop&q=80"
+                                alt="Modelo con traje sastre oscuro en editorial de moda"
+                                class="collection-card__img"
+                                width="700"
+                                height="900"
+                                loading="lazy"
+                            >
+                            <div class="collection-card__overlay"></div>
+                            <span class="collection-card__tag">Edición Limitada</span>
+                        </div>
+                        <div class="collection-card__body">
+                            <h3 class="collection-card__title">Noctis</h3>
+                            <p class="collection-card__desc">El poder del negro absoluto. Sastrería de vanguardia con corte impecable.</p>
+                            <span class="collection-card__link">Ver colección <span aria-hidden="true">→</span></span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Editorial Visual Break -->
+        <section class="editorial" aria-label="Cita inspiracional">
+            <div class="editorial__bg">
+                <img
+                    src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1800&h=900&fit=crop&q=80"
+                    alt=""
+                    width="1800"
+                    height="900"
+                    loading="lazy"
+                    aria-hidden="true"
+                >
+                <div class="editorial__overlay"></div>
+            </div>
+            <div class="editorial__content animate-on-scroll">
+                <p class="editorial__quote">
+                    "La moda pasa, el estilo permanece. Nosotros diseñamos para la permanencia."
+                </p>
+                <span class="label-sm editorial__author">— Isabelle Morel, Directora Creativa</span>
+            </div>
+        </section>
+
+        <!-- Benefits / Philosophy -->
+        <section class="benefits" id="beneficios" aria-labelledby="benefits-title">
+            <div class="container">
+                <div class="benefits__header animate-on-scroll">
+                    <span class="label-sm" style="color: var(--color-accent);">Nuestra Filosofía</span>
+                    <div class="divider divider--center"></div>
+                    <h2 id="benefits-title" class="heading-section" style="margin-bottom: 1rem;">Por qué elegir AURÈLE</h2>
+                    <p>Cada decisión que tomamos parte de un compromiso con la excelencia y la autenticidad.</p>
+                </div>
+
+                <div class="benefits__grid">
+                    <div class="benefit-card animate-on-scroll delay-1">
+                        <div class="benefit-card__icon">
+                            <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><path d="M12 2 L2 7 L12 12 L22 7 Z"/><path d="M2 17 L12 22 L22 17"/><path d="M2 12 L12 17 L22 12"/></svg>
+                        </div>
+                        <h3 class="benefit-card__title">Artesanía Real</h3>
+                        <p class="benefit-card__desc">Cada pieza es cortada y confeccionada a mano en talleres familiares europeos con más de 50 años de tradición.</p>
+                    </div>
+
+                    <div class="benefit-card animate-on-scroll delay-2">
+                        <div class="benefit-card__icon">
+                            <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <h3 class="benefit-card__title">Diseño Atemporal</h3>
+                        <p class="benefit-card__desc">No seguimos tendencias efímeras. Diseñamos piezas que se verán igual de relevantes en diez años.</p>
+                    </div>
+
+                    <div class="benefit-card animate-on-scroll delay-3">
+                        <div class="benefit-card__icon">
+                            <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                        </div>
+                        <h3 class="benefit-card__title">Sostenibilidad</h3>
+                        <p class="benefit-card__desc">Producción en lotes pequeños, textiles certificados y empaque reciclable. Moda que respeta el planeta.</p>
+                    </div>
+
+                    <div class="benefit-card animate-on-scroll delay-4">
+                        <div class="benefit-card__icon">
+                            <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <h3 class="benefit-card__title">Experiencia Personal</h3>
+                        <p class="benefit-card__desc">Servicio de estilismo personalizado, ajustes a medida y atención dedicada para cada cliente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials" id="testimonios" aria-labelledby="testimonials-title">
+            <div class="container">
+                <div class="testimonials__header animate-on-scroll">
+                    <span class="label-sm" style="color: var(--color-accent-light);">Testimonios</span>
+                    <div class="divider divider--center"></div>
+                    <h2 id="testimonials-title" class="heading-section" style="margin-bottom: 1rem;">Lo que dicen nuestras clientas</h2>
+                    <p>La mejor recomendación es la de quien ya vive la experiencia AURÈLE.</p>
+                </div>
+
+                <div class="testimonials__grid">
+                    <article class="testimonial-card animate-on-scroll delay-1">
+                        <div class="testimonial-card__stars" aria-label="5 de 5 estrellas">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="testimonial-card__text">"La primera vez que toqué una pieza AURÈLE entendí la diferencia entre ropa y una experiencia. Cada detalle habla de un cuidado extraordinario."</p>
+                        <div class="testimonial-card__author">
+                            <img
+                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&q=80"
+                                alt="Foto de Elena Vázquez"
+                                class="testimonial-card__avatar"
+                                width="96"
+                                height="96"
+                                loading="lazy"
+                            >
+                            <div>
+                                <div class="testimonial-card__name">Elena Vázquez</div>
+                                <div class="testimonial-card__role">Arquitecta, Madrid</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card animate-on-scroll delay-2">
+                        <div class="testimonial-card__stars" aria-label="5 de 5 estrellas">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="testimonial-card__text">"Compré el abrigo de la colección Sienna y tres años después sigue siendo mi pieza favorita. La calidad es atemporal, literalmente."</p>
+                        <div class="testimonial-card__author">
+                            <img
+                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&h=96&fit=crop&q=80"
+                                alt="Foto de Camila Duarte"
+                                class="testimonial-card__avatar"
+                                width="96"
+                                height="96"
+                                loading="lazy"
+                            >
+                            <div>
+                                <div class="testimonial-card__name">Camila Duarte</div>
+                                <div class="testimonial-card__role">Directora de Arte, Barcelona</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card animate-on-scroll delay-3">
+                        <div class="testimonial-card__stars" aria-label="5 de 5 estrellas">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="testimonial-card__text">"El servicio de estilismo personalizado es un lujo que no encontré en ninguna otra marca. Te entienden, te escuchan y crean algo tuyo."</p>
+                        <div class="testimonial-card__author">
+                            <img
+                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&q=80"
+                                alt="Foto de Marcos Pellegrini"
+                                class="testimonial-card__avatar"
+                                width="96"
+                                height="96"
+                                loading="lazy"
+                            >
+                            <div>
+                                <div class="testimonial-card__name">Marcos Pellegrini</div>
+                                <div class="testimonial-card__role">Empresario, Buenos Aires</div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq" id="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="faq__header animate-on-scroll">
+                    <span class="label-sm" style="color: var(--color-accent);">Preguntas Frecuentes</span>
+                    <div class="divider divider--center"></div>
+                    <h2 id="faq-title" class="heading-section" style="margin-bottom: 1rem;">Resolvemos tus dudas</h2>
+                    <p>Todo lo que necesitas saber antes de vivir la experiencia AURÈLE.</p>
+                </div>
+
+                <div class="faq__list">
+                    <div class="faq-item">
+                        <button class="faq-item__question" id="faq-btn-1" aria-expanded="false" aria-controls="faq-ans-1">
+                            <span>¿Cuánto tarda una pieza en estar lista?</span>
+                            <svg class="faq-item__icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-item__answer" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
+                            <p>Dependiendo de la complejidad, entre 3 y 8 semanas. Cada pieza es confeccionada bajo pedido, lo que garantiza un ajuste perfecto y reduce el desperdicio textil.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-item__question" id="faq-btn-2" aria-expanded="false" aria-controls="faq-ans-2">
+                            <span>¿Hacen envíos internacionales?</span>
+                            <svg class="faq-item__icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-item__answer" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
+                            <p>Sí. Enviamos a más de 40 países con empaque premium protector y seguro incluido. Los envíos dentro de Europa llegan entre 3-5 días hábiles; fuera de Europa, entre 7-14 días.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-item__question" id="faq-btn-3" aria-expanded="false" aria-controls="faq-ans-3">
+                            <span>¿Puedo solicitar ajustes a medida?</span>
+                            <svg class="faq-item__icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-item__answer" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
+                            <p>Absolutamente. Ofrecemos servicio de personalización donde puedes ajustar medidas, seleccionar textiles alternativos y agregar detalles únicos a cualquier pieza de nuestras colecciones.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-item__question" id="faq-btn-4" aria-expanded="false" aria-controls="faq-ans-4">
+                            <span>¿Cuál es la política de devoluciones?</span>
+                            <svg class="faq-item__icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-item__answer" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
+                            <p>Ofrecemos 30 días para devoluciones en piezas de colección estándar. Las piezas personalizadas incluyen una garantía de ajuste: si no calza perfecto, lo corregimos sin costo adicional.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-item__question" id="faq-btn-5" aria-expanded="false" aria-controls="faq-ans-5">
+                            <span>¿Cómo puedo agendar una cita de estilismo?</span>
+                            <svg class="faq-item__icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-item__answer" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
+                            <p>Puedes reservar tu sesión a través de nuestro formulario de contacto o escribiéndonos directamente. Las sesiones están disponibles presencialmente en Madrid y Barcelona, o de forma virtual para el resto del mundo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Newsletter -->
+        <section class="contact" id="contacto" aria-labelledby="contact-title">
+            <div class="contact__bg-pattern" aria-hidden="true"></div>
+            <div class="container">
+                <div class="contact__grid">
+                    <div class="contact__info animate-on-scroll">
+                        <span class="label-sm" style="color: var(--color-accent);">Contacto</span>
+                        <div class="divider"></div>
+                        <h2 id="contact-title" class="heading-section" style="margin-bottom: 1.5rem;">Hablemos de tu próxima pieza</h2>
+                        <p>Ya sea para una consulta de estilismo, un pedido personalizado o simplemente conocernos — estamos aquí para ti.</p>
+
+                        <div class="contact__detail">
+                            <svg class="contact__detail-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span>hola@aurele.com</span>
+                        </div>
+                        <div class="contact__detail">
+                            <svg class="contact__detail-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span>+34 910 123 456</span>
+                        </div>
+                        <div class="contact__detail">
+                            <svg class="contact__detail-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Calle Serrano 42, Madrid, España</span>
+                        </div>
+                    </div>
+
+                    <div class="contact__form-wrapper animate-on-scroll delay-2">
+                        <form id="contactForm" method="post" novalidate aria-label="Formulario de contacto">
+                            <div id="formErrors" class="form__errors" role="alert" aria-live="assertive"></div>
+                            <div class="form__group">
+                                <label for="name" class="form__label">Nombre completo</label>
+                                <input type="text" id="name" name="name" class="form__input" placeholder="Tu nombre" required autocomplete="name" aria-required="true">
+                            </div>
+                            <div class="form__group">
+                                <label for="email" class="form__label">Correo electrónico</label>
+                                <input type="email" id="email" name="email" class="form__input" placeholder="tu@email.com" required autocomplete="email" aria-required="true">
+                            </div>
+                            <div class="form__group">
+                                <label for="interest" class="form__label">¿Qué te interesa?</label>
+                                <select id="interest" name="interest" class="form__input" required aria-required="true">
+                                    <option value="" disabled selected>Selecciona una opción</option>
+                                    <option value="coleccion">Comprar de colección</option>
+                                    <option value="medida">Pieza a medida</option>
+                                    <option value="estilismo">Consulta de estilismo</option>
+                                    <option value="prensa">Prensa y colaboraciones</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form__group">
+                                <label for="message" class="form__label">Mensaje</label>
+                                <textarea id="message" name="message" class="form__textarea" placeholder="Cuéntanos más..." rows="4" required aria-required="true"></textarea>
+                            </div>
+                            <div class="form__checkbox-wrapper">
+                                <input type="checkbox" id="privacy" name="privacy" class="form__checkbox" required aria-required="true">
+                                <label for="privacy" class="form__checkbox-label">Acepto la <a href="#" aria-label="Política de privacidad">política de privacidad</a> y el tratamiento de mis datos personales conforme al RGPD.</label>
+                            </div>
+                            <button type="submit" class="btn btn--primary form__submit">Enviar Mensaje</button>
+                        </form>
+
+                        <div class="form__success" id="formSuccess">
+                            <div class="form__success-icon">
+                                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="48" height="48"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <h3 class="heading-section" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Mensaje enviado</h3>
+                            <p style="color: var(--color-text-light);">Gracias por contactarnos. Te responderemos en 24-48 horas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div>
+                    <div class="footer__brand-logo">AURÈLE</div>
+                    <p class="footer__brand-desc">Moda de autor con alma contemporánea. Confeccionada en Europa con textiles nobles y un compromiso con la excelencia.</p>
+                </div>
+
+                <div>
+                    <h4 class="footer__col-title">Explorar</h4>
+                    <a href="#colecciones" class="footer__link">Colecciones</a>
+                    <a href="#historia" class="footer__link">Nuestra historia</a>
+                    <a href="#beneficios" class="footer__link">Filosofía</a>
+                    <a href="#" class="footer__link">Lookbook</a>
+                </div>
+
+                <div>
+                    <h4 class="footer__col-title">Ayuda</h4>
+                    <a href="#faq" class="footer__link">Preguntas frecuentes</a>
+                    <a href="#contacto" class="footer__link">Contacto</a>
+                    <a href="#" class="footer__link">Guía de tallas</a>
+                    <a href="#" class="footer__link">Envíos y devoluciones</a>
+                </div>
+
+                <div>
+                    <h4 class="footer__col-title">Síguenos</h4>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Pinterest">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0a12 12 0 0 0-4.37 23.17c-.1-.94-.2-2.4.04-3.44l1.41-5.97s-.36-.72-.36-1.78c0-1.67.97-2.91 2.18-2.91 1.03 0 1.53.77 1.53 1.7 0 1.03-.66 2.58-1 4.01-.28 1.2.6 2.17 1.78 2.17 2.13 0 3.77-2.25 3.77-5.49 0-2.87-2.06-4.87-5-4.87-3.41 0-5.41 2.56-5.41 5.2 0 1.03.4 2.13.89 2.73.1.12.11.22.08.34l-.33 1.36c-.05.22-.18.27-.4.16-1.5-.7-2.43-2.88-2.43-4.64 0-3.78 2.75-7.26 7.92-7.26 4.16 0 7.4 2.97 7.4 6.93 0 4.14-2.6 7.46-6.22 7.46-1.21 0-2.36-.63-2.75-1.38l-.75 2.85c-.27 1.04-1 2.35-1.49 3.15A12 12 0 1 0 12 0z"/></svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.57V9h3.55v11.45zM22.23 0H1.77A1.75 1.75 0 0 0 0 1.73v20.54C0 23.22.79 24 1.77 24h20.46c.98 0 1.77-.78 1.77-1.73V1.73C24 .78 23.21 0 22.23 0z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <span>&copy; 2026 AURÈLE. Todos los derechos reservados.</span>
+                <div class="footer__bottom-links">
+                    <a href="#" class="footer__bottom-link">Aviso legal</a>
+                    <a href="#" class="footer__bottom-link">Política de privacidad</a>
+                    <a href="#" class="footer__bottom-link">Política de cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- Cookie Banner (GDPR) -->
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Consentimiento de cookies">
+        <div class="cookie-banner__inner">
+            <p class="cookie-banner__text">
+                Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra
+                <a href="#">política de cookies</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button class="cookie-banner__btn cookie-banner__btn--decline" id="cookieDecline">Rechazar</button>
+                <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAccept">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        (function() {
+            'use strict';
+
+            // ===== Loading Screen =====
+            var loader = document.getElementById('loader');
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    loader.classList.add('hidden');
+                }, 600);
+            });
+
+            // ===== Unified scroll handler with rAF throttle =====
+            var header = document.getElementById('header');
+            var backToTop = document.getElementById('backToTop');
+            var heroBg = document.querySelector('.hero__bg-img');
+            var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var scrollTicking = false;
+
+            function handleAllScroll() {
+                var scrolled = window.pageYOffset;
+
+                // Header state
+                if (scrolled > 50) {
+                    header.classList.add('header--scrolled');
+                } else {
+                    header.classList.remove('header--scrolled');
+                }
+
+                // Back to top visibility
+                if (scrolled > 600) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+
+                // Parallax (disabled when reduced motion is preferred)
+                if (heroBg && !prefersReducedMotion && window.innerWidth > 768 && scrolled < window.innerHeight) {
+                    heroBg.style.transform = 'translateY(' + (scrolled * 0.3) + 'px) scale(1.05)';
+                }
+
+                scrollTicking = false;
+            }
+
+            window.addEventListener('scroll', function() {
+                if (!scrollTicking) {
+                    requestAnimationFrame(handleAllScroll);
+                    scrollTicking = true;
+                }
+            }, { passive: true });
+
+            // ===== Mobile Menu =====
+            var menuToggle = document.getElementById('menuToggle');
+            var mobileMenu = document.getElementById('mobileMenu');
+            var mobileLinks = mobileMenu.querySelectorAll('.mobile-menu__link');
+
+            function closeMobileMenu() {
+                mobileMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+
+            menuToggle.addEventListener('click', function() {
+                var isActive = mobileMenu.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', String(isActive));
+                document.body.style.overflow = isActive ? 'hidden' : '';
+            });
+
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // Close mobile menu on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                    menuToggle.focus();
+                }
+            });
+
+            // ===== Smooth scroll for anchor links =====
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    var targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    var target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        var headerHeight = header.offsetHeight;
+                        var targetPos = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                        window.scrollTo({ top: targetPos, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // ===== Scroll animations (IntersectionObserver) =====
+            var scrollObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        scrollObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+                scrollObserver.observe(el);
+            });
+
+            // ===== FAQ Accordion =====
+            var faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(function(item) {
+                var question = item.querySelector('.faq-item__question');
+                question.addEventListener('click', function() {
+                    var isActive = item.classList.contains('active');
+
+                    faqItems.forEach(function(i) {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
+                    });
+
+                    if (!isActive) {
+                        item.classList.add('active');
+                        question.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // ===== Form Handling =====
+            var contactForm = document.getElementById('contactForm');
+            var formSuccess = document.getElementById('formSuccess');
+            var formErrors = document.getElementById('formErrors');
+
+            function isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            function showFormErrors(errors) {
+                formErrors.textContent = errors.join(' ');
+                formErrors.classList.add('active');
+                formErrors.focus();
+            }
+
+            function clearFormErrors() {
+                formErrors.textContent = '';
+                formErrors.classList.remove('active');
+            }
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                clearFormErrors();
+
+                var name = document.getElementById('name').value.trim();
+                var email = document.getElementById('email').value.trim();
+                var interest = document.getElementById('interest').value;
+                var message = document.getElementById('message').value.trim();
+                var privacy = document.getElementById('privacy').checked;
+
+                var errors = [];
+                if (!name || name.length < 2) errors.push('Ingresa tu nombre completo.');
+                if (!email || !isValidEmail(email)) errors.push('Ingresa un correo electrónico válido.');
+                if (!interest) errors.push('Selecciona una opción de interés.');
+                if (!message || message.length < 10) errors.push('El mensaje debe tener al menos 10 caracteres.');
+                if (!privacy) errors.push('Debes aceptar la política de privacidad.');
+
+                if (errors.length > 0) {
+                    showFormErrors(errors);
+                    return;
+                }
+
+                contactForm.style.display = 'none';
+                formSuccess.classList.add('active');
+            });
+
+            // ===== Back to Top =====
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // ===== Cookie Banner =====
+            var cookieBanner = document.getElementById('cookieBanner');
+            var cookieAccept = document.getElementById('cookieAccept');
+            var cookieDecline = document.getElementById('cookieDecline');
+
+            function setCookie(name, value, days) {
+                var expires = '';
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = '; expires=' + date.toUTCString();
+                }
+                var secure = location.protocol === 'https:' ? '; Secure' : '';
+                document.cookie = name + '=' + encodeURIComponent(value || '') + expires + '; path=/; SameSite=Lax' + secure;
+            }
+
+            function getCookie(name) {
+                var nameEQ = name + '=';
+                var ca = document.cookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i].trim();
+                    if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length));
+                }
+                return null;
+            }
+
+            if (!getCookie('aurele_cookies')) {
+                setTimeout(function() {
+                    cookieBanner.classList.add('active');
+                }, 2000);
+            }
+
+            cookieAccept.addEventListener('click', function() {
+                setCookie('aurele_cookies', 'accepted', 365);
+                cookieBanner.classList.remove('active');
+            });
+
+            cookieDecline.addEventListener('click', function() {
+                setCookie('aurele_cookies', 'declined', 30);
+                cookieBanner.classList.remove('active');
+            });
+
+            // ===== Counter animation for stats =====
+            function animateCounters() {
+                var stats = document.querySelectorAll('.about__stat-number');
+                stats.forEach(function(stat) {
+                    if (stat.dataset.animated) return;
+                    var text = stat.textContent;
+                    var match = text.match(/^(\d+)/);
+                    if (!match) return;
+
+                    var target = parseInt(match[1], 10);
+                    var suffix = text.replace(match[1], '');
+                    var duration = prefersReducedMotion ? 0 : 1500;
+                    var startTime = null;
+
+                    if (duration === 0) {
+                        stat.textContent = target + suffix;
+                        stat.dataset.animated = 'true';
+                        return;
+                    }
+
+                    function step(timestamp) {
+                        if (!startTime) startTime = timestamp;
+                        var progress = Math.min((timestamp - startTime) / duration, 1);
+                        var eased = 1 - Math.pow(1 - progress, 3);
+                        stat.textContent = Math.floor(eased * target) + suffix;
+                        if (progress < 1) {
+                            requestAnimationFrame(step);
+                        } else {
+                            stat.textContent = target + suffix;
+                            stat.dataset.animated = 'true';
+                        }
+                    }
+
+                    requestAnimationFrame(step);
+                });
+            }
+
+            var statsSection = document.querySelector('.about__stats');
+            if (statsSection) {
+                var statsObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            animateCounters();
+                            statsObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                statsObserver.observe(statsSection);
+            }
+
+        })();
+    </script>
+
+</body>
+</html>

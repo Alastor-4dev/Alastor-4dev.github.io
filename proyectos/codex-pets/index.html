@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'; form-action 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      name="description"
+      content="Patitas Felices: estética canina con estilo pixel art, servicios de baño, cuidado, veterinaria y citas para mascotas."
+    />
+    <meta name="theme-color" content="#ff5f91" />
+    <title>Patitas Felices | Estética Canina Pixel</title>
+    <link rel="icon" type="image/png" href="assets/brand.png" />
+    <link rel="apple-touch-icon" href="assets/brand.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="pixel-grid" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand-link" href="#inicio" aria-label="Ir al inicio">
+        <img src="assets/brand.png" alt="Patitas Felices" />
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#cuidados">Cuidados</a>
+        <a href="#citas">Citas</a>
+      </nav>
+      <a class="pixel-button small" href="#citas">Reservar</a>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero section-band">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">pet care mini game</p>
+          <h1>Patitas Felices</h1>
+          <p class="hero-text">
+            Una experiencia de estética canina con alma de Tamagotchi: cuida,
+            consiente y sube el nivel de felicidad de tu peludito.
+          </p>
+          <div class="hero-actions">
+            <a class="pixel-button" href="#servicios">Explorar servicios</a>
+            <a class="pixel-button ghost" href="#citas">Agendar visita</a>
+          </div>
+        </div>
+
+        <div class="tamagotchi reveal" aria-label="Mascota virtual Patitas Felices">
+          <div class="device-speaker" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="screen">
+            <div class="screen-status">
+              <span>HP 100</span>
+              <span>LVL 08</span>
+              <span>HAPPY</span>
+            </div>
+            <img src="assets/principal.png" alt="Logo pixel art de Patitas Felices con mascotas" />
+            <div class="screen-glow" aria-hidden="true"></div>
+          </div>
+          <div class="device-controls" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicios" class="services section-band">
+        <div class="section-heading reveal">
+          <p class="eyebrow">elige una misión</p>
+          <h2>Servicios para subir felicidad</h2>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <img src="assets/estetica.png" alt="Servicio de estética canina pixel art" />
+            <div class="card-content">
+              <span class="badge">beauty</span>
+              <h3>Estética Pixel</h3>
+              <p>Corte, baño, cepillado y un acabado tierno de videojuego retro.</p>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <img src="assets/bano.png" alt="Baño para mascotas estilo pixel art" />
+            <div class="card-content">
+              <span class="badge">clean</span>
+              <h3>Baño Burbujeante</h3>
+              <p>Rutina suave para dejar cada patita fresca, limpia y lista para posar.</p>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <img src="assets/veterinaria.png" alt="Veterinaria para mascotas estilo pixel art" />
+            <div class="card-content">
+              <span class="badge">health</span>
+              <h3>Chequeo Vet</h3>
+              <p>Revisión de bienestar para mantener a tu mascota fuerte y tranquila.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="cuidados" class="care section-band">
+        <div class="care-panel reveal">
+          <div>
+            <p class="eyebrow">inventario</p>
+            <h2>Cuidados diarios</h2>
+            <p>
+              Snacks, recomendaciones y pequeños hábitos que convierten una visita
+              en una barra de felicidad completa.
+            </p>
+          </div>
+          <div class="stat-list" aria-label="Indicadores de cuidado">
+            <div class="stat">
+              <span>Hambre</span>
+              <b style="--value: 92%"></b>
+            </div>
+            <div class="stat">
+              <span>Limpieza</span>
+              <b style="--value: 88%"></b>
+            </div>
+            <div class="stat">
+              <span>Cariño</span>
+              <b style="--value: 100%"></b>
+            </div>
+          </div>
+        </div>
+
+        <div class="wide-grid">
+          <article class="wide-card reveal">
+            <img src="assets/alimento.png" alt="Alimento y snacks para mascotas estilo pixel art" />
+            <div>
+              <span class="badge">snacks</span>
+              <h3>Bocadillos felices</h3>
+              <p>Opciones pensadas para consentir sin perder equilibrio.</p>
+            </div>
+          </article>
+          <article class="wide-card reveal">
+            <img src="assets/recomendaciones.png" alt="Recomendaciones para mascotas estilo pixel art" />
+            <div>
+              <span class="badge">tips</span>
+              <h3>Recomendaciones</h3>
+              <p>Guías simples para mantener su rutina bonita entre visitas.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="citas" class="booking section-band">
+        <div class="booking-card reveal">
+          <div class="mini-screen">
+            <img src="assets/citas.png" alt="Agenda de citas para mascotas estilo pixel art" />
+          </div>
+          <div class="booking-copy">
+            <p class="eyebrow">save point</p>
+            <h2>Agenda la próxima aventura</h2>
+            <p>
+              Reserva una sesión de cuidado y deja que tu mascota salga con
+              brillo, energía y carita de logro desbloqueado.
+            </p>
+            <a class="pixel-button" href="mailto:hola@patitasfelices.local?subject=Quiero%20agendar%20una%20cita">Agendar por correo</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="assets/marca.png" alt="Marca Patitas Felices" />
+      <p>Patitas Felices · Estética canina pixelada · 100% amor</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

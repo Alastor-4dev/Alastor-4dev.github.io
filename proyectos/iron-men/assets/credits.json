@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "src": "assets/img/hero.jpg",
+    "title": "workout",
+    "creator": "speedoglyn",
+    "creator_url": "https://www.flickr.com/photos/71889877@N02",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/71889877@N02/6526657949",
+    "source": "flickr"
+  },
+  "service-1": {
+    "src": "assets/img/service-1.jpg",
+    "title": "IMG_0107",
+    "creator": "elliottcable",
+    "creator_url": "https://www.flickr.com/photos/32927329@N00",
+    "license": "by-sa",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/32927329@N00/6049858429",
+    "source": "flickr"
+  },
+  "service-2": {
+    "src": "assets/img/service-2.jpg",
+    "title": "1x5x275",
+    "creator": "Graf Spee",
+    "creator_url": "https://www.flickr.com/photos/30901506@N06",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/30901506@N06/8575341709",
+    "source": "flickr"
+  },
+  "service-3": {
+    "src": "assets/img/service-3.jpg",
+    "title": "Yet another kettlebell - welcome babe #kettlebell #workout #homegym #weights #muscle #mass #stability #strength #squat #swing #feelthepain #",
+    "creator": "Christos Pontikis",
+    "creator_url": "https://www.flickr.com/photos/92854661@N07",
+    "license": "pdm",
+    "license_version": "1.0",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/92854661@N07/24263074682",
+    "source": "flickr"
+  }
+}

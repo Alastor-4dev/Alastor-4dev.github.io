@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawPrint Vintage Vet — Cuidado Animal con Alma Retro</title>
+    <meta name="description" content="Clínica veterinaria con el cariño de siempre y la medicina de hoy. Consultas, vacunación, cirugía, peluquería y más para tu mejor amigo.">
+    <meta name="keywords" content="veterinaria, clínica animal, mascotas, perros, gatos, vacunación, cirugía veterinaria">
+    <meta name="author" content="PawPrint Vintage Vet">
+    <meta name="robots" content="index, follow">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="PawPrint Vintage Vet — Cuidado Animal con Alma Retro">
+    <meta property="og:description" content="Clínica veterinaria con el cariño de siempre y la medicina de hoy.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1200&h=630&fit=crop&q=80">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PawPrint Vintage Vet">
+    <meta name="twitter:description" content="Cuidado animal con alma retro.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FFF8F0',
+                        'cream-dark': '#F5EBD9',
+                        chocolate: '#3E2723',
+                        'chocolate-light': '#5D4037',
+                        burnt: '#D84315',
+                        'burnt-light': '#FF5722',
+                        olive: '#558B2F',
+                        'olive-light': '#7CB342',
+                        terracotta: '#BF5B3A',
+                        'warm-gray': '#8D7B68',
+                        mustard: '#E6A817',
+                        'paper': '#FAF3E8',
+                    },
+                    fontFamily: {
+                        'display': ['"Playfair Display"', 'serif'],
+                        'body': ['"DM Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; }
+
+        /* Retro paper texture overlay */
+        .retro-texture {
+            position: relative;
+        }
+        .retro-texture::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Halftone pattern */
+        .halftone {
+            background-image: radial-gradient(circle, #3E2723 1px, transparent 1px);
+            background-size: 8px 8px;
+            opacity: 0.03;
+        }
+
+        /* Vintage badge */
+        .vintage-badge {
+            border: 2px solid currentColor;
+            position: relative;
+        }
+        .vintage-badge::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border: 1px solid currentColor;
+            border-radius: inherit;
+            opacity: 0.5;
+        }
+
+        /* Retro divider */
+        .retro-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .retro-divider::before,
+        .retro-divider::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: currentColor;
+            opacity: 0.2;
+        }
+
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FAQ */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-answer.open {
+            max-height: 500px;
+        }
+
+        /* Retro stamp effect */
+        .stamp {
+            display: inline-block;
+            transform: rotate(-3deg);
+            border: 3px solid;
+            padding: 0.25rem 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            position: relative;
+        }
+        .stamp::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            border: 1.5px dashed;
+            opacity: 0.4;
+        }
+
+        /* Hover image zoom */
+        .img-zoom img {
+            transition: transform 0.7s ease;
+        }
+        .img-zoom:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Mobile nav */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.35s ease;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Cookie banner */
+        .cookie-banner {
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        /* Vintage card border */
+        .vintage-card {
+            border: 2px solid rgba(62,39,35,0.15);
+            position: relative;
+        }
+        .vintage-card::before {
+            content: '';
+            position: absolute;
+            top: 6px; left: 6px; right: 6px; bottom: 6px;
+            border: 1px dashed rgba(62,39,35,0.1);
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+        /* Decorative paw prints */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+        }
+        .float-anim {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Smooth scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #FFF8F0; }
+        ::-webkit-scrollbar-thumb { background: #8D7B68; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #5D4037; }
+    </style>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; frame-ancestors 'none';">
+</head>
+<body class="bg-cream text-chocolate overflow-x-hidden">
+
+    <!-- Skip to content -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-burnt focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
+        Saltar al contenido
+    </a>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-sm border-b-2 border-chocolate/10" role="navigation" aria-label="Navegación principal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group" aria-label="PawPrint Vintage Vet - Inicio">
+                    <span class="text-3xl sm:text-4xl" aria-hidden="true">🐾</span>
+                    <div>
+                        <span class="font-display font-bold text-lg sm:text-xl text-chocolate leading-none">PawPrint</span>
+                        <span class="block text-[10px] sm:text-xs tracking-[0.2em] uppercase text-warm-gray font-semibold">Vintage Vet</span>
+                    </div>
+                </a>
+
+                <!-- Desktop nav -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#servicios" class="text-sm font-semibold text-chocolate/70 hover:text-burnt transition-colors">Servicios</a>
+                    <a href="#nosotros" class="text-sm font-semibold text-chocolate/70 hover:text-burnt transition-colors">Nosotros</a>
+                    <a href="#testimonios" class="text-sm font-semibold text-chocolate/70 hover:text-burnt transition-colors">Testimonios</a>
+                    <a href="#faq" class="text-sm font-semibold text-chocolate/70 hover:text-burnt transition-colors">FAQ</a>
+                    <a href="#contacto" class="inline-flex items-center gap-2 bg-burnt text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-burnt-light transition-colors shadow-lg shadow-burnt/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        Reservar Cita
+                    </a>
+                </div>
+
+                <!-- Mobile hamburger -->
+                <button id="menuBtn" class="md:hidden p-2 text-chocolate" aria-label="Abrir menú" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 bottom-0 w-72 bg-cream shadow-2xl z-50 flex flex-col p-8 md:hidden" role="dialog" aria-label="Menú móvil">
+            <button id="closeMenu" class="self-end p-2 text-chocolate mb-6" aria-label="Cerrar menú">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="flex flex-col gap-6">
+                <a href="#servicios" class="text-lg font-display font-bold text-chocolate hover:text-burnt transition-colors mobile-link">Servicios</a>
+                <a href="#nosotros" class="text-lg font-display font-bold text-chocolate hover:text-burnt transition-colors mobile-link">Nosotros</a>
+                <a href="#testimonios" class="text-lg font-display font-bold text-chocolate hover:text-burnt transition-colors mobile-link">Testimonios</a>
+                <a href="#faq" class="text-lg font-display font-bold text-chocolate hover:text-burnt transition-colors mobile-link">FAQ</a>
+                <a href="#contacto" class="mt-4 bg-burnt text-white text-center px-5 py-3 rounded-full font-bold hover:bg-burnt-light transition-colors mobile-link">Reservar Cita</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <!-- ========== HERO ========== -->
+    <section class="relative min-h-screen flex items-center retro-texture bg-gradient-to-br from-cream via-paper to-cream-dark overflow-hidden">
+        <!-- Decorative halftone -->
+        <div class="absolute inset-0 halftone" aria-hidden="true"></div>
+
+        <!-- Decorative paw prints -->
+        <div class="absolute top-20 right-10 text-5xl opacity-10 float-anim" aria-hidden="true">🐾</div>
+        <div class="absolute bottom-32 left-8 text-4xl opacity-10 float-anim" style="animation-delay: 1.5s" aria-hidden="true">🐾</div>
+        <div class="absolute top-1/2 right-1/4 text-3xl opacity-5 float-anim" style="animation-delay: 3s" aria-hidden="true">🐾</div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left content -->
+                <div class="text-center lg:text-left">
+                    <!-- Vintage badge -->
+                    <div class="inline-flex items-center gap-2 vintage-badge rounded-full px-4 py-1.5 text-burnt text-xs font-bold uppercase tracking-wider mb-6">
+                        <span>★</span>
+                        <span>Desde 1978 cuidando a los tuyos</span>
+                        <span>★</span>
+                    </div>
+
+                    <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-chocolate leading-[1.1] mb-6">
+                        Cuidado animal<br>
+                        <span class="text-burnt relative inline-block">
+                            con alma retro
+                            <svg class="absolute -bottom-2 left-0 w-full h-3 text-mustard/40" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true">
+                                <path d="M0 6 Q50 0 100 6 T200 6" fill="none" stroke="currentColor" stroke-width="3"/>
+                            </svg>
+                        </span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-warm-gray max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
+                        La clínica donde el cariño de siempre se combina con la medicina veterinaria más moderna. Porque tu mejor amigo merece lo mejor de ambos mundos.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+                        <a href="#contacto" class="inline-flex items-center justify-center gap-2 bg-burnt text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-burnt-light transition-all shadow-xl shadow-burnt/25 hover:shadow-burnt/40 hover:-translate-y-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            Agendar Consulta
+                        </a>
+                        <a href="#servicios" class="inline-flex items-center justify-center gap-2 border-2 border-chocolate/20 text-chocolate px-8 py-4 rounded-full font-bold text-lg hover:border-burnt hover:text-burnt transition-all">
+                            Ver Servicios
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-10">
+                        <div class="text-center">
+                            <span class="block font-display font-black text-xl sm:text-2xl lg:text-3xl text-chocolate whitespace-nowrap">45<span class="text-burnt">+</span></span>
+                            <span class="text-xs sm:text-sm text-warm-gray font-semibold">Años de experiencia</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="block font-display font-black text-xl sm:text-2xl lg:text-3xl text-chocolate whitespace-nowrap">12<span class="text-burnt">K+</span></span>
+                            <span class="text-xs sm:text-sm text-warm-gray font-semibold">Mascotas atendidas</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="block font-display font-black text-xl sm:text-2xl lg:text-3xl text-chocolate whitespace-nowrap">98<span class="text-burnt">%</span></span>
+                            <span class="text-xs sm:text-sm text-warm-gray font-semibold">Clientes felices</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Hero image -->
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-chocolate/20 border-4 border-cream-dark">
+                        <img
+                            src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1600&h=1000&fit=crop&q=80"
+                            alt="Perro golden retriever sonriente en un entorno cálido y acogedor"
+                            width="1600" height="1000"
+                            class="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
+                            loading="eager"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-chocolate/30 via-transparent to-transparent"></div>
+                    </div>
+                    <!-- Vintage stamp -->
+                    <div class="absolute -bottom-4 -left-4 sm:bottom-6 sm:left-6 stamp bg-cream text-burnt rounded-lg text-xs sm:text-sm shadow-lg z-10">
+                        ★ Confianza ★
+                    </div>
+                    <!-- Floating card -->
+                    <div class="absolute -top-3 -right-3 sm:top-4 sm:right-4 bg-white rounded-xl p-3 shadow-xl border border-chocolate/10 z-10">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">⭐</span>
+                            <div>
+                                <span class="block font-display font-bold text-sm text-chocolate">4.9 / 5.0</span>
+                                <span class="text-[10px] text-warm-gray font-medium">+800 reseñas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Retro wave bottom divider -->
+        <div class="absolute bottom-0 left-0 right-0" aria-hidden="true">
+            <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-12 sm:h-16">
+                <path d="M0,40 Q360,80 720,40 T1440,40 L1440,80 L0,80 Z" fill="#3E2723"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ========== SERVICIOS ========== -->
+    <section id="servicios" class="bg-chocolate py-20 sm:py-28 relative retro-texture" aria-labelledby="servicios-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header -->
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block stamp bg-transparent text-mustard rounded text-xs mb-4">Nuestros Servicios</span>
+                <h2 id="servicios-title" class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-cream mb-4">
+                    Todo lo que tu mascota necesita
+                </h2>
+                <p class="text-warm-gray text-lg max-w-2xl mx-auto">
+                    Desde consultas de rutina hasta cirugías avanzadas, ofrecemos atención integral con el calor de una familia y la precisión de la ciencia.
+                </p>
+            </div>
+
+            <!-- Service cards grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Card 1 -->
+                <div class="vintage-card rounded-2xl overflow-hidden bg-chocolate-light/50 group img-zoom reveal">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=800&h=400&fit=crop&q=80"
+                             alt="Veterinario examinando a un perro durante una consulta"
+                             width="800" height="400" loading="lazy"
+                             class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-chocolate via-chocolate/60 to-transparent"></div>
+                        <h3 class="absolute bottom-3 left-4 font-display font-bold text-xl text-cream">Consulta General</h3>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-warm-gray text-sm leading-relaxed">Revisiones completas, diagnóstico clínico, control de peso y seguimiento personalizado para cada etapa de vida de tu mascota.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="vintage-card rounded-2xl overflow-hidden bg-chocolate-light/50 group img-zoom reveal">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1629740067905-bd3f515aa739?w=800&h=400&fit=crop&q=80"
+                             alt="Veterinario aplicando vacuna a un cachorro"
+                             width="800" height="400" loading="lazy"
+                             class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-chocolate via-chocolate/60 to-transparent"></div>
+                        <h3 class="absolute bottom-3 left-4 font-display font-bold text-xl text-cream">Vacunación</h3>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-warm-gray text-sm leading-relaxed">Plan de vacunación completo para cachorros, adultos y geriátricos. Protegemos a tu compañero contra las enfermedades más comunes.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="vintage-card rounded-2xl overflow-hidden bg-chocolate-light/50 group img-zoom reveal">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&h=400&fit=crop&q=80"
+                             alt="Equipo quirúrgico veterinario durante una operación"
+                             width="800" height="400" loading="lazy"
+                             class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-chocolate via-chocolate/60 to-transparent"></div>
+                        <h3 class="absolute bottom-3 left-4 font-display font-bold text-xl text-cream">Cirugía</h3>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-warm-gray text-sm leading-relaxed">Quirófano equipado con tecnología de punta. Cirugías de tejidos blandos, traumatología y esterilizaciones con máxima seguridad.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="vintage-card rounded-2xl overflow-hidden bg-chocolate-light/50 group img-zoom reveal">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800&h=400&fit=crop&q=80"
+                             alt="Perro siendo bañado y arreglado en peluquería canina"
+                             width="800" height="400" loading="lazy"
+                             class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-chocolate via-chocolate/60 to-transparent"></div>
+                        <h3 class="absolute bottom-3 left-4 font-display font-bold text-xl text-cream">Peluquería</h3>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-warm-gray text-sm leading-relaxed">Baño, corte, deslanado y tratamientos especiales. Tu mascota sale como nueva con nuestro equipo de grooming profesional.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="vintage-card rounded-2xl overflow-hidden bg-chocolate-light/50 group img-zoom reveal">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&h=400&fit=crop&q=80"
+                             alt="Análisis de laboratorio veterinario con microscopio"
+                             width="800" height="400" loading="lazy"
+                             class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-chocolate via-chocolate/60 to-transparent"></div>
+                        <h3 class="absolute bottom-3 left-4 font-display font-bold text-xl text-cream">Laboratorio</h3>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-warm-gray text-sm leading-relaxed">Hemogramas, bioquímicas, urianálisis y más. Resultados en el día para un diagnóstico rápido y preciso.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="vintage-card rounded-2xl overflow-hidden bg-chocolate-light/50 group img-zoom reveal">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&h=400&fit=crop&q=80"
+                             alt="Radiografía veterinaria para diagnóstico por imagen"
+                             width="800" height="400" loading="lazy"
+                             class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-chocolate via-chocolate/60 to-transparent"></div>
+                        <h3 class="absolute bottom-3 left-4 font-display font-bold text-xl text-cream">Diagnóstico por Imagen</h3>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-warm-gray text-sm leading-relaxed">Radiografía digital, ecografía y ecocardiografía. Vemos más allá para cuidar mejor a tu compañero.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FULL-WIDTH VISUAL BREAK ========== -->
+    <section class="relative h-[350px] sm:h-[450px] lg:h-[550px] overflow-hidden" aria-label="Imagen decorativa de mascotas">
+        <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=1800&h=700&fit=crop&q=80"
+             alt="Perro y gato juntos descansando cómodamente"
+             width="1800" height="700" loading="lazy"
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-chocolate/70 via-chocolate/40 to-transparent flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="max-w-xl reveal">
+                    <span class="stamp bg-transparent text-mustard rounded text-xs mb-4 inline-block">Filosofía PawPrint</span>
+                    <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-cream mb-4 leading-tight">
+                        Cada huella cuenta una historia
+                    </h2>
+                    <p class="text-cream/80 text-lg leading-relaxed">
+                        Creemos en la medicina veterinaria que escucha, observa y actúa con empatía. Tu mascota no es un número — es familia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NOSOTROS / BENEFICIOS ========== -->
+    <section id="nosotros" class="bg-paper py-20 sm:py-28 retro-texture" aria-labelledby="nosotros-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block stamp bg-transparent text-burnt rounded text-xs mb-4">Por Qué Elegirnos</span>
+                <h2 id="nosotros-title" class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-chocolate mb-4">
+                    El toque vintage, la ciencia de hoy
+                </h2>
+                <p class="text-warm-gray text-lg max-w-2xl mx-auto">
+                    Combinamos décadas de experiencia con las técnicas más avanzadas en medicina veterinaria.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Benefit 1 -->
+                <div class="vintage-card bg-cream rounded-2xl p-6 text-center hover:shadow-xl transition-shadow duration-300 reveal">
+                    <div class="w-16 h-16 bg-burnt/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-burnt" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-chocolate mb-2">Trato Familiar</h3>
+                    <p class="text-warm-gray text-sm leading-relaxed">Conocemos a cada paciente por su nombre. Creamos vínculos reales con las familias que nos eligen.</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="vintage-card bg-cream rounded-2xl p-6 text-center hover:shadow-xl transition-shadow duration-300 reveal">
+                    <div class="w-16 h-16 bg-olive/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-olive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-chocolate mb-2">Tecnología Avanzada</h3>
+                    <p class="text-warm-gray text-sm leading-relaxed">Equipamiento de última generación para diagnósticos precisos y tratamientos efectivos.</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="vintage-card bg-cream rounded-2xl p-6 text-center hover:shadow-xl transition-shadow duration-300 reveal">
+                    <div class="w-16 h-16 bg-mustard/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-mustard" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-chocolate mb-2">Urgencias 24/7</h3>
+                    <p class="text-warm-gray text-sm leading-relaxed">Disponibles cuando más nos necesitas. Atención de emergencia las 24 horas, los 365 días del año.</p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="vintage-card bg-cream rounded-2xl p-6 text-center hover:shadow-xl transition-shadow duration-300 reveal">
+                    <div class="w-16 h-16 bg-terracotta/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-terracotta" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-chocolate mb-2">Medicina Integrativa</h3>
+                    <p class="text-warm-gray text-sm leading-relaxed">Combinamos medicina convencional con terapias complementarias para un cuidado holístico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EQUIPO / VISUAL ========== -->
+    <section class="bg-cream py-20 sm:py-28" aria-labelledby="equipo-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="relative reveal">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-cream-dark img-zoom">
+                        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=1200&h=800&fit=crop&q=80"
+                             alt="Veterinaria sonriente sosteniendo un cachorro en la clínica"
+                             width="1200" height="800" loading="lazy"
+                             class="w-full h-[300px] sm:h-[400px] lg:h-[450px] object-cover">
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 stamp bg-cream text-olive rounded-lg text-xs shadow-lg">
+                        ♥ Con amor ♥
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <span class="stamp bg-transparent text-burnt rounded text-xs mb-4 inline-block">Nuestro Equipo</span>
+                    <h2 id="equipo-title" class="font-display font-black text-3xl sm:text-4xl text-chocolate mb-6 leading-tight">
+                        Profesionales que aman lo que hacen
+                    </h2>
+                    <p class="text-warm-gray text-lg leading-relaxed mb-6">
+                        Nuestro equipo de 8 veterinarios especializados, 4 técnicos y 3 auxiliares trabaja cada día con la misma pasión que el primer día. Nos formamos continuamente para ofrecerte lo mejor.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="mt-1 w-6 h-6 bg-olive/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-olive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            </span>
+                            <span class="text-chocolate font-medium">Especialistas en cardiología, traumatología y dermatología</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="mt-1 w-6 h-6 bg-olive/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-olive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            </span>
+                            <span class="text-chocolate font-medium">Formación continua en las mejores universidades europeas</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="mt-1 w-6 h-6 bg-olive/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-olive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            </span>
+                            <span class="text-chocolate font-medium">Ambiente fear-free certificado para reducir el estrés animal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIOS ========== -->
+    <section id="testimonios" class="bg-cream-dark py-20 sm:py-28 retro-texture relative" aria-labelledby="testimonios-title">
+        <div class="absolute inset-0 halftone" aria-hidden="true"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block stamp bg-transparent text-burnt rounded text-xs mb-4">Testimonios</span>
+                <h2 id="testimonios-title" class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-chocolate mb-4">
+                    Lo que dicen nuestras familias
+                </h2>
+                <p class="text-warm-gray text-lg max-w-2xl mx-auto">Historias reales de quienes confían en PawPrint para el cuidado de sus compañeros.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Testimonial 1 -->
+                <div class="vintage-card bg-cream rounded-2xl p-6 sm:p-8 reveal">
+                    <div class="flex items-center gap-1 mb-4" aria-label="Valoración: 5 de 5 estrellas">
+                        <span class="text-mustard text-lg">★★★★★</span>
+                    </div>
+                    <p class="text-chocolate/80 leading-relaxed mb-6 italic">
+                        "Llevé a Luna de urgencia un domingo a las 3am. La atendieron con una calma y profesionalismo increíbles. Hoy está perfecta gracias a ellos."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&q=80"
+                             alt="Retrato de María González" width="100" height="100" loading="lazy"
+                             class="w-12 h-12 rounded-full object-cover border-2 border-cream-dark">
+                        <div>
+                            <span class="block font-display font-bold text-sm text-chocolate">María González</span>
+                            <span class="text-xs text-warm-gray">Mamá de Luna 🐕</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="vintage-card bg-cream rounded-2xl p-6 sm:p-8 reveal">
+                    <div class="flex items-center gap-1 mb-4" aria-label="Valoración: 5 de 5 estrellas">
+                        <span class="text-mustard text-lg">★★★★★</span>
+                    </div>
+                    <p class="text-chocolate/80 leading-relaxed mb-6 italic">
+                        "El Dr. Ramírez operó a mi gato Michi de una fractura complicada. La recuperación fue perfecta. Jamás olvidaré su dedicación."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80"
+                             alt="Retrato de Carlos Herrera" width="100" height="100" loading="lazy"
+                             class="w-12 h-12 rounded-full object-cover border-2 border-cream-dark">
+                        <div>
+                            <span class="block font-display font-bold text-sm text-chocolate">Carlos Herrera</span>
+                            <span class="text-xs text-warm-gray">Papá de Michi 🐈</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="vintage-card bg-cream rounded-2xl p-6 sm:p-8 reveal">
+                    <div class="flex items-center gap-1 mb-4" aria-label="Valoración: 5 de 5 estrellas">
+                        <span class="text-mustard text-lg">★★★★★</span>
+                    </div>
+                    <p class="text-chocolate/80 leading-relaxed mb-6 italic">
+                        "Desde la peluquería hasta las vacunas, todo en un solo lugar. El equipo es increíble y el ambiente retro de la clínica es encantador."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&q=80"
+                             alt="Retrato de Ana Beltrán" width="100" height="100" loading="lazy"
+                             class="w-12 h-12 rounded-full object-cover border-2 border-cream-dark">
+                        <div>
+                            <span class="block font-display font-bold text-sm text-chocolate">Ana Beltrán</span>
+                            <span class="text-xs text-warm-gray">Mamá de Rocky y Coco 🐾</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FULL-WIDTH VISUAL BREAK 2 ========== -->
+    <section class="relative h-[300px] sm:h-[400px] overflow-hidden" aria-label="Imagen decorativa de la clínica">
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1800&h=600&fit=crop&q=80"
+             alt="Dos perros corriendo juntos al aire libre en un atardecer cálido"
+             width="1800" height="600" loading="lazy"
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-chocolate/50 flex items-center justify-center">
+            <div class="text-center reveal">
+                <p class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-cream mb-4">Porque la felicidad<br>tiene cuatro patas</p>
+                <a href="#contacto" class="inline-flex items-center gap-2 bg-burnt text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-burnt-light transition-all shadow-xl">
+                    Reservar Ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="bg-cream py-20 sm:py-28" aria-labelledby="faq-title">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block stamp bg-transparent text-burnt rounded text-xs mb-4">Preguntas Frecuentes</span>
+                <h2 id="faq-title" class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-chocolate mb-4">
+                    Resolvemos tus dudas
+                </h2>
+            </div>
+
+            <div class="space-y-4 reveal" role="list">
+                <!-- FAQ 1 -->
+                <div class="vintage-card bg-paper rounded-xl faq-item" role="listitem">
+                    <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between gap-4" aria-expanded="false">
+                        <span class="font-display font-bold text-chocolate">¿Atienden urgencias fuera de horario?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-burnt flex-shrink-0 faq-icon transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-warm-gray pb-5 leading-relaxed">Sí, contamos con servicio de urgencias 24/7 los 365 días del año. Siempre hay un veterinario de guardia disponible para tu mascota. Llámanos al teléfono de emergencias y te atenderemos de inmediato.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="vintage-card bg-paper rounded-xl faq-item" role="listitem">
+                    <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between gap-4" aria-expanded="false">
+                        <span class="font-display font-bold text-chocolate">¿Necesito cita previa para la consulta?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-burnt flex-shrink-0 faq-icon transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-warm-gray pb-5 leading-relaxed">Recomendamos agendar cita para evitar esperas, pero también atendemos sin cita previa según disponibilidad. Puedes reservar por teléfono, WhatsApp o a través de nuestro formulario online.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="vintage-card bg-paper rounded-xl faq-item" role="listitem">
+                    <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between gap-4" aria-expanded="false">
+                        <span class="font-display font-bold text-chocolate">¿Qué especies atienden?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-burnt flex-shrink-0 faq-icon transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-warm-gray pb-5 leading-relaxed">Atendemos perros, gatos, conejos, hurones, aves y reptiles pequeños. Para especies exóticas adicionales, consulta disponibilidad con nuestro equipo especializado.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="vintage-card bg-paper rounded-xl faq-item" role="listitem">
+                    <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between gap-4" aria-expanded="false">
+                        <span class="font-display font-bold text-chocolate">¿Ofrecen planes de pago?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-burnt flex-shrink-0 faq-icon transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-warm-gray pb-5 leading-relaxed">Sí, tenemos planes de bienestar mensuales que incluyen consultas, vacunas y descuentos especiales. También ofrecemos financiamiento para cirugías y tratamientos prolongados.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="vintage-card bg-paper rounded-xl faq-item" role="listitem">
+                    <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between gap-4" aria-expanded="false">
+                        <span class="font-display font-bold text-chocolate">¿Tienen estacionamiento?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-burnt flex-shrink-0 faq-icon transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer px-6">
+                        <p class="text-warm-gray pb-5 leading-relaxed">Sí, contamos con estacionamiento gratuito para clientes con capacidad para 15 vehículos. También tenemos zona de espera exterior techada para que tu mascota esté cómoda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACTO ========== -->
+    <section id="contacto" class="bg-chocolate py-20 sm:py-28 retro-texture relative" aria-labelledby="contacto-title">
+        <div class="absolute inset-0 halftone" aria-hidden="true"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                <!-- Left: Info -->
+                <div class="reveal">
+                    <span class="stamp bg-transparent text-mustard rounded text-xs mb-4 inline-block">Contáctanos</span>
+                    <h2 id="contacto-title" class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-cream mb-6">
+                        Reserva tu cita hoy
+                    </h2>
+                    <p class="text-warm-gray text-lg leading-relaxed mb-8">
+                        Estamos listos para darle a tu mascota el cuidado que merece. Agenda tu visita y únete a la familia PawPrint.
+                    </p>
+
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-burnt/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-burnt" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <span class="block font-display font-bold text-cream text-sm">Dirección</span>
+                                <span class="text-warm-gray text-sm">Av. Retro 1978, Col. Vintage, Ciudad de México</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-olive/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-olive-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <span class="block font-display font-bold text-cream text-sm">Teléfono</span>
+                                <span class="text-warm-gray text-sm">+52 55 1978 4567</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-mustard/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-mustard" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div>
+                                <span class="block font-display font-bold text-cream text-sm">Horario</span>
+                                <span class="text-warm-gray text-sm">Lun - Sáb: 8:00 - 20:00 | Dom: 9:00 - 14:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="mt-8 rounded-2xl overflow-hidden border-2 border-cream/10 img-zoom">
+                        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=800&h=400&fit=crop&q=80"
+                             alt="Interior acogedor de la clínica veterinaria PawPrint"
+                             width="800" height="400" loading="lazy"
+                             class="w-full h-48 sm:h-56 object-cover">
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="reveal">
+                    <form id="contactForm" class="vintage-card bg-paper rounded-2xl p-6 sm:p-8" novalidate aria-label="Formulario de contacto">
+                        <h3 class="font-display font-bold text-2xl text-chocolate mb-6">Solicita tu cita</h3>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label for="nombre" class="block text-sm font-semibold text-chocolate mb-1.5">Nombre completo <span class="text-burnt" aria-hidden="true">*</span></label>
+                                <input type="text" id="nombre" name="nombre" required autocomplete="name"
+                                       class="w-full px-4 py-3 rounded-xl bg-cream border-2 border-chocolate/10 text-chocolate placeholder:text-warm-gray/50 focus:border-burnt focus:ring-2 focus:ring-burnt/20 outline-none transition-all"
+                                       placeholder="Tu nombre">
+                                <span class="text-xs text-burnt hidden mt-1" id="nombre-error" role="alert">Por favor ingresa tu nombre</span>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-chocolate mb-1.5">Correo electrónico <span class="text-burnt" aria-hidden="true">*</span></label>
+                                <input type="email" id="email" name="email" required autocomplete="email"
+                                       class="w-full px-4 py-3 rounded-xl bg-cream border-2 border-chocolate/10 text-chocolate placeholder:text-warm-gray/50 focus:border-burnt focus:ring-2 focus:ring-burnt/20 outline-none transition-all"
+                                       placeholder="tu@email.com">
+                                <span class="text-xs text-burnt hidden mt-1" id="email-error" role="alert">Ingresa un email válido</span>
+                            </div>
+
+                            <div>
+                                <label for="telefono" class="block text-sm font-semibold text-chocolate mb-1.5">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" autocomplete="tel"
+                                       class="w-full px-4 py-3 rounded-xl bg-cream border-2 border-chocolate/10 text-chocolate placeholder:text-warm-gray/50 focus:border-burnt focus:ring-2 focus:ring-burnt/20 outline-none transition-all"
+                                       placeholder="+52 55 1234 5678">
+                            </div>
+
+                            <div>
+                                <label for="mascota" class="block text-sm font-semibold text-chocolate mb-1.5">Nombre de tu mascota <span class="text-burnt" aria-hidden="true">*</span></label>
+                                <input type="text" id="mascota" name="mascota" required
+                                       class="w-full px-4 py-3 rounded-xl bg-cream border-2 border-chocolate/10 text-chocolate placeholder:text-warm-gray/50 focus:border-burnt focus:ring-2 focus:ring-burnt/20 outline-none transition-all"
+                                       placeholder="¿Cómo se llama?">
+                                <span class="text-xs text-burnt hidden mt-1" id="mascota-error" role="alert">Ingresa el nombre de tu mascota</span>
+                            </div>
+
+                            <div>
+                                <label for="servicio" class="block text-sm font-semibold text-chocolate mb-1.5">Servicio</label>
+                                <select id="servicio" name="servicio"
+                                        class="w-full px-4 py-3 rounded-xl bg-cream border-2 border-chocolate/10 text-chocolate focus:border-burnt focus:ring-2 focus:ring-burnt/20 outline-none transition-all">
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="consulta">Consulta General</option>
+                                    <option value="vacunacion">Vacunación</option>
+                                    <option value="cirugia">Cirugía</option>
+                                    <option value="peluqueria">Peluquería</option>
+                                    <option value="laboratorio">Laboratorio</option>
+                                    <option value="imagen">Diagnóstico por Imagen</option>
+                                    <option value="urgencia">Urgencia</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="mensaje" class="block text-sm font-semibold text-chocolate mb-1.5">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="3"
+                                          class="w-full px-4 py-3 rounded-xl bg-cream border-2 border-chocolate/10 text-chocolate placeholder:text-warm-gray/50 focus:border-burnt focus:ring-2 focus:ring-burnt/20 outline-none transition-all resize-none"
+                                          placeholder="Cuéntanos más sobre tu mascota..."></textarea>
+                            </div>
+
+                            <!-- Privacy consent -->
+                            <div class="flex items-start gap-2">
+                                <input type="checkbox" id="privacidad" name="privacidad" required
+                                       class="mt-1 w-4 h-4 rounded border-chocolate/20 text-burnt focus:ring-burnt">
+                                <label for="privacidad" class="text-xs text-warm-gray leading-relaxed">
+                                    Acepto la <a href="#" class="text-burnt underline hover:text-burnt-light">política de privacidad</a> y el tratamiento de mis datos personales. <span class="text-burnt" aria-hidden="true">*</span>
+                                </label>
+                            </div>
+                            <span class="text-xs text-burnt hidden" id="privacidad-error" role="alert">Debes aceptar la política de privacidad</span>
+
+                            <button type="submit" id="submitBtn"
+                                    class="w-full bg-burnt text-white py-4 rounded-xl font-bold text-lg hover:bg-burnt-light transition-all shadow-lg shadow-burnt/25 hover:shadow-burnt/40 flex items-center justify-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                Solicitar Cita
+                            </button>
+                        </div>
+
+                        <!-- Success message -->
+                        <div id="formSuccess" class="hidden mt-4 bg-olive/10 border border-olive/20 rounded-xl p-4 text-center">
+                            <span class="text-2xl block mb-2">🎉</span>
+                            <p class="font-display font-bold text-olive text-lg">¡Cita solicitada!</p>
+                            <p class="text-warm-gray text-sm mt-1">Te contactaremos pronto para confirmar.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-chocolate border-t border-cream/5 py-12" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-3xl" aria-hidden="true">🐾</span>
+                        <div>
+                            <span class="font-display font-bold text-lg text-cream">PawPrint</span>
+                            <span class="block text-[10px] tracking-[0.2em] uppercase text-warm-gray">Vintage Vet</span>
+                        </div>
+                    </div>
+                    <p class="text-warm-gray text-sm leading-relaxed">Cuidado animal con el cariño de siempre y la medicina de hoy. Desde 1978.</p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="font-display font-bold text-cream text-sm mb-4">Servicios</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#servicios" class="text-warm-gray text-sm hover:text-burnt transition-colors">Consulta General</a></li>
+                        <li><a href="#servicios" class="text-warm-gray text-sm hover:text-burnt transition-colors">Vacunación</a></li>
+                        <li><a href="#servicios" class="text-warm-gray text-sm hover:text-burnt transition-colors">Cirugía</a></li>
+                        <li><a href="#servicios" class="text-warm-gray text-sm hover:text-burnt transition-colors">Peluquería</a></li>
+                    </ul>
+                </div>
+
+                <!-- More links -->
+                <div>
+                    <h4 class="font-display font-bold text-cream text-sm mb-4">Clínica</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#nosotros" class="text-warm-gray text-sm hover:text-burnt transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#testimonios" class="text-warm-gray text-sm hover:text-burnt transition-colors">Testimonios</a></li>
+                        <li><a href="#faq" class="text-warm-gray text-sm hover:text-burnt transition-colors">Preguntas Frecuentes</a></li>
+                        <li><a href="#contacto" class="text-warm-gray text-sm hover:text-burnt transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <h4 class="font-display font-bold text-cream text-sm mb-4">Síguenos</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-cream/5 rounded-xl flex items-center justify-center text-warm-gray hover:bg-burnt hover:text-white transition-all" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-cream/5 rounded-xl flex items-center justify-center text-warm-gray hover:bg-burnt hover:text-white transition-all" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-cream/5 rounded-xl flex items-center justify-center text-warm-gray hover:bg-burnt hover:text-white transition-all" aria-label="WhatsApp">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                    </div>
+                    <p class="text-warm-gray text-xs mt-4">Urgencias: +52 55 1978 9999</p>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="border-t border-cream/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-warm-gray text-xs">&copy; 2026 PawPrint Vintage Vet. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-warm-gray text-xs hover:text-burnt transition-colors">Aviso de Privacidad</a>
+                    <a href="#" class="text-warm-gray text-xs hover:text-burnt transition-colors">Términos</a>
+                    <a href="#" class="text-warm-gray text-xs hover:text-burnt transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== COOKIE BANNER ========== -->
+    <div id="cookieBanner" class="cookie-banner fixed bottom-0 left-0 right-0 z-50 bg-chocolate border-t-2 border-burnt/30 p-4 sm:p-6" role="dialog" aria-label="Consentimiento de cookies">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-cream/80 text-sm text-center sm:text-left">
+                Usamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra <a href="#" class="text-burnt underline hover:text-burnt-light">política de cookies</a>.
+            </p>
+            <div class="flex gap-3 flex-shrink-0">
+                <button id="rejectCookies" class="px-4 py-2 rounded-lg border border-cream/20 text-cream text-sm font-semibold hover:bg-cream/10 transition-colors">
+                    Rechazar
+                </button>
+                <button id="acceptCookies" class="px-4 py-2 rounded-lg bg-burnt text-white text-sm font-semibold hover:bg-burnt-light transition-colors">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // ---- Mobile Menu ----
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openMenu() {
+            mobileMenu.classList.add('open');
+            menuBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+        // ---- Scroll Reveal ----
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ---- FAQ Accordion ----
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                const icon = btn.querySelector('.faq-icon');
+                const isOpen = answer.classList.contains('open');
+
+                // Close all
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+                document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = '');
+                document.querySelectorAll('.faq-toggle').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+                // Open clicked if it was closed
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    icon.style.transform = 'rotate(180deg)';
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ---- Form Validation & Sanitization ----
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        function sanitize(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function showError(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+        function hideError(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let valid = true;
+
+            const nombre = sanitize(document.getElementById('nombre').value.trim());
+            const email = sanitize(document.getElementById('email').value.trim());
+            const mascota = sanitize(document.getElementById('mascota').value.trim());
+            const privacidad = document.getElementById('privacidad').checked;
+
+            // Reset errors
+            ['nombre-error', 'email-error', 'mascota-error', 'privacidad-error'].forEach(hideError);
+
+            if (!nombre) { showError('nombre-error'); valid = false; }
+            if (!validateEmail(email)) { showError('email-error'); valid = false; }
+            if (!mascota) { showError('mascota-error'); valid = false; }
+            if (!privacidad) { showError('privacidad-error'); valid = false; }
+
+            if (valid) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = '<svg class="animate-spin w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Enviando...';
+
+                setTimeout(() => {
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg> Solicitar Cita';
+                    document.getElementById('formSuccess').classList.remove('hidden');
+                    setTimeout(() => {
+                        document.getElementById('formSuccess').classList.add('hidden');
+                    }, 5000);
+                }, 1500);
+            }
+        });
+
+        // ---- Navbar scroll effect ----
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // ---- Cookie Banner ----
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptBtn = document.getElementById('acceptCookies');
+        const rejectBtn = document.getElementById('rejectCookies');
+
+        // Show after 1.5s
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 1500);
+
+        function hideCookies() {
+            cookieBanner.classList.remove('show');
+        }
+        acceptBtn.addEventListener('click', hideCookies);
+        rejectBtn.addEventListener('click', hideCookies);
+
+        // ---- Smooth scroll for anchor links ----
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VeterinaryCare",
+        "name": "PawPrint Vintage Vet",
+        "description": "Clínica veterinaria con el cariño de siempre y la medicina de hoy.",
+        "url": "https://pawprintvintagevet.com",
+        "telephone": "+525519784567",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Retro 1978, Col. Vintage",
+            "addressLocality": "Ciudad de México",
+            "addressCountry": "MX"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+                "opens": "08:00",
+                "closes": "20:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Sunday",
+                "opens": "09:00",
+                "closes": "14:00"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "800"
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <defs>
+    <linearGradient id="logoPaw" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF8FB8"/>
+      <stop offset="100%" stop-color="#E91E63"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="14" cy="22" rx="5" ry="7" fill="url(#logoPaw)" transform="rotate(-25 14 22)"/>
+  <ellipse cx="23" cy="12" rx="5" ry="7.5" fill="url(#logoPaw)" transform="rotate(-10 23 12)"/>
+  <ellipse cx="37" cy="12" rx="5" ry="7.5" fill="url(#logoPaw)" transform="rotate(10 37 12)"/>
+  <ellipse cx="46" cy="22" rx="5" ry="7" fill="url(#logoPaw)" transform="rotate(25 46 22)"/>
+  <path d="M 30 52 C 18 52, 12 43, 15 34 C 18 28, 24 28, 30 30 C 36 28, 42 28, 45 34 C 48 43, 42 52, 30 52 Z" fill="url(#logoPaw)"/>
+</svg>

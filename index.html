@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frontend portfolio — Alex. Crafted interfaces, visual concepts, and frontend experiments.">
+  <meta property="og:title" content="Alex — Frontend Portfolio">
+  <meta property="og:description" content="Crafted interfaces, visual concepts, and frontend experiments.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Alex — Frontend Portfolio</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>▲</text></svg>">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="header-info">
+        <h1>Alex</h1>
+        <p class="tagline">Frontend — Interfaces — Design Engineering</p>
+        <div class="header-links">
+          <a href="https://github.com/Alastor-4dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:alex94nieva@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar" id="filters"></div>
+
+  <!-- Section: Featured -->
+  <p class="section-title">Featured</p>
+  <div class="projects-grid" id="featured-grid"></div>
+
+  <!-- Section: All Projects -->
+  <p class="section-title">All Projects</p>
+  <div class="projects-grid" id="projects-grid"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2026 Alex &middot; Built with intent
+  </footer>
+
+</div>
+
+<script>
+(async () => {
+  const res = await fetch('/data/projects.json');
+  const projects = await res.json();
+
+  const filtersEl = document.getElementById('filters');
+  const featuredGrid = document.getElementById('featured-grid');
+  const allGrid = document.getElementById('projects-grid');
+
+  const categories = [...new Set(projects.map(p => p.category))];
+  let activeFilter = null;
+
+  // Render filters
+  const allBtn = document.createElement('button');
+  allBtn.className = 'filter-btn active';
+  allBtn.textContent = 'All';
+  allBtn.onclick = () => setFilter(null);
+  filtersEl.appendChild(allBtn);
+
+  categories.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.textContent = cat.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    btn.dataset.cat = cat;
+    btn.onclick = () => setFilter(cat);
+    filtersEl.appendChild(btn);
+  });
+
+  function setFilter(cat) {
+    activeFilter = cat;
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.toggle('active', cat === null ? b.textContent === 'All' : b.dataset.cat === cat);
+    });
+    render();
+  }
+
+  function renderCard(p) {
+    const card = document.createElement('a');
+    card.className = 'project-card';
+    card.href = p.url;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
+
+    card.innerHTML = `
+      <div class="body">
+        <div class="title">${p.title}</div>
+        <div class="desc">${p.description}</div>
+        <div class="techs">${p.techs.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+        <div class="meta">
+          <span>${p.date}</span>
+          ${p.featured ? '<span class="featured-badge">★ Featured</span>' : ''}
+        </div>
+      </div>
+    `;
+    return card;
+  }
+
+  function render() {
+    const filtered = activeFilter
+      ? projects.filter(p => p.category === activeFilter)
+      : projects;
+
+    const featured = filtered.filter(p => p.featured);
+    const rest = filtered.filter(p => !p.featured);
+
+    featuredGrid.innerHTML = '';
+    allGrid.innerHTML = '';
+
+    featured.forEach(p => featuredGrid.appendChild(renderCard(p)));
+    rest.forEach(p => allGrid.appendChild(renderCard(p)));
+
+    // Hide featured section if none
+    featuredGrid.previousElementSibling.style.display = featured.length ? '' : 'none';
+    featuredGrid.style.display = featured.length ? '' : 'none';
+  }
+
+  render();
+})();
+</script>
+
+</body>
+</html>

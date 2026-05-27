@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; frame-ancestors 'none';">
+  <title>INKA NEEDLE — Estudio de Tatuaje Artístico</title>
+  <meta name="description" content="INKA NEEDLE es un estudio de tatuaje artístico premium. Diseños únicos, artistas premiados, higiene certificada. Reserva tu sesión.">
+  <meta name="keywords" content="tatuaje, tattoo, estudio de tatuaje, tatuaje artístico, tatuaje premium, diseño personalizado">
+  <meta name="author" content="INKA NEEDLE Studio">
+  <meta name="robots" content="index, follow">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="INKA NEEDLE — Estudio de Tatuaje Artístico">
+  <meta property="og:description" content="Diseños únicos grabados en piel. Artistas premiados, higiene certificada, experiencia premium.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://inka-needle.com">
+  <meta property="og:image" content="https://inka-needle.com/og-image.jpg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://inka-needle.com">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="INKA NEEDLE — Estudio de Tatuaje Artístico">
+  <meta name="twitter:description" content="Diseños únicos grabados en piel. Artistas premiados.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖋️</text></svg>">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TattooParlor",
+    "name": "INKA NEEDLE",
+    "description": "Estudio de tatuaje artístico premium",
+    "url": "https://inka-needle.com",
+    "telephone": "+34-600-123-456",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle del Arte 42",
+      "addressLocality": "Madrid",
+      "postalCode": "28001",
+      "addressCountry": "ES"
+    },
+    "openingHours": "Tu-Sa 10:00-20:00",
+    "priceRange": "€€€"
+  }
+  </script>
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brutal: {
+              black: '#0a0a0a',
+              white: '#f5f0e8',
+              red: '#e63946',
+              yellow: '#ffd60a',
+              gray: '#2d2d2d',
+              cream: '#faf3e0',
+            }
+          },
+          fontFamily: {
+            mono: ['"Space Mono"', 'monospace'],
+            display: ['"Anton"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; }
+    body { background: #0a0a0a; color: #f5f0e8; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+    /* Brutalista: bordes gruesos, sombras duras */
+    .brutal-border { border: 4px solid #f5f0e8; }
+    .brutal-border-red { border: 4px solid #e63946; }
+    .brutal-shadow { box-shadow: 8px 8px 0px #e63946; }
+    .brutal-shadow-yellow { box-shadow: 8px 8px 0px #ffd60a; }
+    .brutal-shadow-white { box-shadow: 8px 8px 0px #f5f0e8; }
+
+    /* Texto brutalista */
+    .text-brutal { 
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Marquee */
+    .marquee-track {
+      display: flex;
+      animation: marquee 20s linear infinite;
+      width: max-content;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Glitch effect */
+    .glitch {
+      position: relative;
+    }
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    .glitch::before {
+      color: #e63946;
+      animation: glitch-1 2s infinite linear alternate-reverse;
+      clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    }
+    .glitch::after {
+      color: #ffd60a;
+      animation: glitch-2 3s infinite linear alternate-reverse;
+      clip-path: polygon(0 66%, 100% 66%, 100% 100%, 0 100%);
+    }
+    @keyframes glitch-1 {
+      0%, 90% { transform: translate(0); }
+      91% { transform: translate(-3px, 1px); }
+      93% { transform: translate(3px, -1px); }
+      95% { transform: translate(-2px, 2px); }
+      100% { transform: translate(0); }
+    }
+    @keyframes glitch-2 {
+      0%, 88% { transform: translate(0); }
+      89% { transform: translate(3px, -2px); }
+      92% { transform: translate(-3px, 1px); }
+      96% { transform: translate(2px, -1px); }
+      100% { transform: translate(0); }
+    }
+
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* CTA pulse */
+    .cta-pulse {
+      animation: pulse-brutal 2s infinite;
+    }
+    @keyframes pulse-brutal {
+      0%, 100% { box-shadow: 8px 8px 0px #ffd60a; }
+      50% { box-shadow: 12px 12px 0px #ffd60a, 0 0 30px rgba(255,214,10,0.15); }
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #e63946; border: 2px solid #0a0a0a; }
+
+    /* Noise texture overlay */
+    .noise::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.5;
+    }
+
+    /* Diagonal stripe pattern */
+    .stripe-bg {
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 10px,
+        rgba(230,57,70,0.08) 10px,
+        rgba(230,57,70,0.08) 20px
+      );
+    }
+
+    /* Mobile nav */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    /* Gallery grid hover */
+    .gallery-item {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gallery-item:hover {
+      transform: rotate(-2deg) scale(1.03);
+      z-index: 10;
+    }
+
+    /* Focus styles for accessibility */
+    *:focus-visible {
+      outline: 3px solid #ffd60a;
+      outline-offset: 3px;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10000;
+      transition: top 0.3s;
+    }
+    .skip-link:focus {
+      top: 10px;
+    }
+
+    /* Cookie banner */
+    .cookie-banner {
+      transform: translateY(100%);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cookie-banner.show {
+      transform: translateY(0);
+    }
+
+    /* Respeta preferencia de movimiento reducido */
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none; }
+      .glitch::before, .glitch::after { animation: none; }
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .cta-pulse {
+        animation: none;
+        box-shadow: 8px 8px 0px #ffd60a;
+      }
+      .animate-bounce { animation: none; }
+      .gallery-item { transition: none; }
+      .mobile-menu { transition: none; }
+      .cookie-banner { transition: none; }
+      * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body class="noise">
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link bg-brutal-yellow text-brutal-black font-bold px-6 py-3 brutal-border text-sm font-mono z-50">
+    Saltar al contenido principal
+  </a>
+
+  <!-- ═══════════ NAVBAR ═══════════ -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-brutal-black/95 backdrop-blur-sm border-b-4 border-brutal-red" role="navigation" aria-label="Navegación principal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group" aria-label="INKA NEEDLE - Inicio">
+          <div class="w-12 h-12 brutal-border-red flex items-center justify-center bg-brutal-red text-brutal-black font-display text-2xl transition-all group-hover:bg-brutal-yellow group-hover:border-brutal-yellow">
+            IN
+          </div>
+          <span class="text-brutal font-display text-xl hidden sm:block tracking-wider">INKA<span class="text-brutal-red">NEEDLE</span></span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-1">
+          <a href="#artistas" class="px-4 py-2 font-mono text-sm uppercase tracking-wider hover:bg-brutal-red hover:text-brutal-black transition-colors">Artistas</a>
+          <a href="#galeria" class="px-4 py-2 font-mono text-sm uppercase tracking-wider hover:bg-brutal-red hover:text-brutal-black transition-colors">Galería</a>
+          <a href="#proceso" class="px-4 py-2 font-mono text-sm uppercase tracking-wider hover:bg-brutal-red hover:text-brutal-black transition-colors">Proceso</a>
+          <a href="#precios" class="px-4 py-2 font-mono text-sm uppercase tracking-wider hover:bg-brutal-red hover:text-brutal-black transition-colors">Precios</a>
+          <a href="#faq" class="px-4 py-2 font-mono text-sm uppercase tracking-wider hover:bg-brutal-red hover:text-brutal-black transition-colors">FAQ</a>
+          <a href="#reservar" class="ml-4 px-6 py-3 bg-brutal-red text-brutal-black font-bold font-mono text-sm uppercase brutal-shadow-yellow hover:bg-brutal-yellow transition-colors">
+            Reservar →
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button id="menu-toggle" class="md:hidden w-12 h-12 brutal-border flex flex-col items-center justify-center gap-1.5 hover:border-brutal-red transition-colors" aria-label="Abrir menú" aria-expanded="false">
+          <span class="w-6 h-0.5 bg-brutal-white transition-all" id="bar1"></span>
+          <span class="w-6 h-0.5 bg-brutal-white transition-all" id="bar2"></span>
+          <span class="w-6 h-0.5 bg-brutal-white transition-all" id="bar3"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 right-0 w-full h-screen bg-brutal-black z-40 flex flex-col items-center justify-center gap-8 md:hidden" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú móvil">
+      <a href="#artistas" class="text-brutal font-display text-4xl hover:text-brutal-red transition-colors mobile-link">Artistas</a>
+      <a href="#galeria" class="text-brutal font-display text-4xl hover:text-brutal-red transition-colors mobile-link">Galería</a>
+      <a href="#proceso" class="text-brutal font-display text-4xl hover:text-brutal-red transition-colors mobile-link">Proceso</a>
+      <a href="#precios" class="text-brutal font-display text-4xl hover:text-brutal-red transition-colors mobile-link">Precios</a>
+      <a href="#faq" class="text-brutal font-display text-4xl hover:text-brutal-red transition-colors mobile-link">FAQ</a>
+      <a href="#reservar" class="mt-4 px-10 py-4 bg-brutal-red text-brutal-black font-bold font-mono text-xl uppercase brutal-shadow-yellow mobile-link">Reservar</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="min-h-screen flex flex-col justify-center relative pt-20 stripe-bg" aria-label="Hero">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left -->
+          <div class="space-y-8">
+            <div class="inline-block px-4 py-2 brutal-border-red font-mono text-xs uppercase tracking-[0.3em] text-brutal-red">
+              Est. 2019 — Madrid
+            </div>
+            <h1 class="text-brutal font-display text-6xl sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.85] glitch" data-text="TU PIEL MERECE ARTE">
+              TU PIEL<br>MERECE<br><span class="text-brutal-red">ARTE</span>
+            </h1>
+            <p class="font-mono text-lg sm:text-xl text-brutal-white/70 max-w-md leading-relaxed">
+              No hacemos tatuajes. Creamos piezas de arte que viven contigo. Cada trazo es una declaración.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#reservar" class="cta-pulse px-10 py-5 bg-brutal-yellow text-brutal-black font-bold font-mono text-lg uppercase brutal-border hover:bg-brutal-red hover:text-brutal-white transition-colors text-center">
+                Reserva tu sesión
+              </a>
+              <a href="#galeria" class="px-10 py-5 brutal-border font-mono text-lg uppercase hover:bg-brutal-white hover:text-brutal-black transition-colors text-center">
+                Ver trabajos
+              </a>
+            </div>
+            <div class="flex gap-8 pt-4 font-mono text-sm text-brutal-white/50">
+              <div><span class="text-brutal-yellow text-2xl font-bold block">2.4K+</span>Tatuajes</div>
+              <div><span class="text-brutal-yellow text-2xl font-bold block">98%</span>Satisfacción</div>
+              <div><span class="text-brutal-yellow text-2xl font-bold block">7</span>Artistas</div>
+            </div>
+          </div>
+
+          <!-- Right: Hero Image -->
+          <div class="relative hidden lg:block" aria-hidden="true">
+            <div class="brutal-border brutal-shadow-yellow p-2 bg-brutal-gray rotate-2 hover:rotate-0 transition-transform duration-500">
+              <img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=600&h=720&fit=crop&auto=format"
+                   alt=""
+                   width="600" height="720"
+                   class="w-full aspect-[5/6] object-cover"
+                   loading="eager">
+            </div>
+            <!-- Floating accent -->
+            <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-brutal-red brutal-border flex items-center justify-center font-display text-3xl text-brutal-black -rotate-12">
+              24/7
+            </div>
+            <!-- Second floating image -->
+            <div class="absolute -top-4 -right-4 w-32 h-32 brutal-border-red rotate-6 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1610942933193-8fafd0973f6d?w=200&h=200&fit=crop&auto=format"
+                   alt="Detalle de tatuaje floral en blanco y negro"
+                   width="200" height="200" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce" aria-hidden="true">
+        <span class="font-mono text-xs uppercase tracking-widest text-brutal-white/40">Scroll</span>
+        <div class="w-px h-12 bg-gradient-to-b from-brutal-red to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ MARQUEE ═══════════ -->
+    <div class="border-y-4 border-brutal-yellow bg-brutal-yellow overflow-hidden py-4" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="text-brutal font-display text-2xl text-brutal-black whitespace-nowrap px-8">BLACKWORK ✦ REALISMO ✦ NEOTRADICIONAL ✦ DOTWORK ✦ FINE LINE ✦ JAPONÉS ✦ GEOMÉTRICO ✦ ACUARELA ✦ TRIBAL ✦ LETTERING ✦ </span>
+        <span class="text-brutal font-display text-2xl text-brutal-black whitespace-nowrap px-8">BLACKWORK ✦ REALISMO ✦ NEOTRADICIONAL ✦ DOTWORK ✦ FINE LINE ✦ JAPONÉS ✦ GEOMÉTRICO ✦ ACUARELA ✦ TRIBAL ✦ LETTERING ✦ </span>
+      </div>
+    </div>
+
+    <!-- ═══════════ ARTISTAS ═══════════ -->
+    <section id="artistas" class="py-24 lg:py-32" aria-labelledby="artistas-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-16 reveal">
+          <div>
+            <span class="font-mono text-brutal-red text-sm uppercase tracking-[0.3em]">// El equipo</span>
+            <h2 id="artistas-title" class="text-brutal font-display text-5xl sm:text-6xl lg:text-7xl mt-2">NUESTROS<br><span class="text-brutal-red">ARTISTAS</span></h2>
+          </div>
+          <p class="font-mono text-brutal-white/60 max-w-sm text-sm leading-relaxed">Cada artista domina un estilo. Tú eliges quién plasma tu visión.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Artist 1 -->
+          <article class="brutal-border brutal-shadow group hover:brutal-shadow-yellow transition-all reveal bg-brutal-gray">
+            <div class="aspect-[3/4] bg-brutal-black relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1605647533135-51b5906087d0?w=400&h=530&fit=crop&auto=format"
+                   alt="Valentina Roa — artista especializada en realismo"
+                   width="400" height="530"
+                   class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+              <div class="absolute inset-0 bg-brutal-red/0 group-hover:bg-brutal-red/10 transition-colors"></div>
+            </div>
+            <div class="p-6 space-y-2">
+              <h3 class="text-brutal font-display text-2xl">VALENTINA ROA</h3>
+              <p class="font-mono text-brutal-yellow text-sm uppercase tracking-wider">Realismo & Retratos</p>
+              <p class="font-mono text-brutal-white/50 text-xs">8 años de experiencia — +600 piezas</p>
+            </div>
+          </article>
+
+          <!-- Artist 2 -->
+          <article class="brutal-border brutal-shadow group hover:brutal-shadow-yellow transition-all reveal bg-brutal-gray">
+            <div class="aspect-[3/4] bg-brutal-black relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1595747644932-abb68f85f419?w=400&h=530&fit=crop&auto=format"
+                   alt="Marcos Ishi — artista especializado en geométrico y dotwork"
+                   width="400" height="530"
+                   class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+              <div class="absolute inset-0 bg-brutal-yellow/0 group-hover:bg-brutal-yellow/10 transition-colors"></div>
+            </div>
+            <div class="p-6 space-y-2">
+              <h3 class="text-brutal font-display text-2xl">MARCOS ISHI</h3>
+              <p class="font-mono text-brutal-yellow text-sm uppercase tracking-wider">Geométrico & Dotwork</p>
+              <p class="font-mono text-brutal-white/50 text-xs">6 años de experiencia — +400 piezas</p>
+            </div>
+          </article>
+
+          <!-- Artist 3 -->
+          <article class="brutal-border brutal-shadow group hover:brutal-shadow-yellow transition-all reveal bg-brutal-gray">
+            <div class="aspect-[3/4] bg-brutal-black relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1637164851251-b0fd3e5623aa?w=400&h=530&fit=crop&auto=format"
+                   alt="Lena Krüger — artista especializada en neotradicional"
+                   width="400" height="530"
+                   class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+              <div class="absolute inset-0 bg-brutal-white/0 group-hover:bg-brutal-white/5 transition-colors"></div>
+            </div>
+            <div class="p-6 space-y-2">
+              <h3 class="text-brutal font-display text-2xl">LENA KRÜGER</h3>
+              <p class="font-mono text-brutal-white text-sm uppercase tracking-wider">Neotradicional & Color</p>
+              <p class="font-mono text-brutal-white/50 text-xs">10 años de experiencia — +900 piezas</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ GALERÍA ═══════════ -->
+    <section id="galeria" class="py-24 lg:py-32 bg-brutal-gray stripe-bg" aria-labelledby="galeria-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+          <span class="font-mono text-brutal-yellow text-sm uppercase tracking-[0.3em]">// Portfolio</span>
+          <h2 id="galeria-title" class="text-brutal font-display text-5xl sm:text-6xl lg:text-7xl mt-2">TRABAJOS<br><span class="text-brutal-yellow">RECIENTES</span></h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div class="gallery-item brutal-border aspect-square bg-brutal-black overflow-hidden reveal">
+            <img src="https://images.unsplash.com/photo-1610942933193-8fafd0973f6d?w=400&h=400&fit=crop&auto=format" alt="Tatuaje floral blanco y negro" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="gallery-item brutal-border bg-brutal-black overflow-hidden row-span-2 reveal">
+            <img src="https://images.unsplash.com/photo-1759247943688-5d47a84dd615?w=400&h=800&fit=crop&auto=format" alt="Brazos completamente tatuados sobre fondo negro" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="gallery-item brutal-border aspect-square bg-brutal-black overflow-hidden reveal">
+            <img src="https://images.unsplash.com/photo-1621347310250-97faad3a67e5?w=400&h=400&fit=crop&auto=format" alt="Tatuaje en brazo derecho estilo color" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="gallery-item brutal-border aspect-square bg-brutal-black overflow-hidden reveal">
+            <img src="https://images.unsplash.com/photo-1612991977455-7bf9e67d899c?w=400&h=400&fit=crop&auto=format" alt="Hombre con tatuajes corporales" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="gallery-item brutal-border aspect-square bg-brutal-black overflow-hidden reveal">
+            <img src="https://images.unsplash.com/photo-1555474443-8cdb93fb49f9?w=400&h=400&fit=crop&auto=format" alt="Manga tatuada completa" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="gallery-item brutal-border aspect-square bg-brutal-black overflow-hidden reveal">
+            <img src="https://images.unsplash.com/photo-1560748289-60a6376db46b?w=400&h=400&fit=crop&auto=format" alt="Estilo de tatuaje sleeve completo" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="gallery-item brutal-border aspect-[2/1] bg-brutal-black overflow-hidden col-span-2 reveal relative">
+            <img src="https://images.unsplash.com/photo-1761276297561-2d1ebcc94a39?w=800&h=400&fit=crop&auto=format" alt="Artista preparando equipo de tatuaje" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-brutal-black/80 to-transparent flex items-end p-6">
+              <span class="text-brutal font-display text-3xl text-brutal-yellow">ARTE EN PIEL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ PROCESO ═══════════ -->
+    <section id="proceso" class="py-24 lg:py-32" aria-labelledby="proceso-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20 reveal">
+          <span class="font-mono text-brutal-red text-sm uppercase tracking-[0.3em]">// Cómo funciona</span>
+          <h2 id="proceso-title" class="text-brutal font-display text-5xl sm:text-6xl lg:text-7xl mt-2">EL <span class="text-brutal-red">PROCESO</span></h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="brutal-border p-8 bg-brutal-gray hover:bg-brutal-red hover:text-brutal-black transition-all group reveal">
+            <div class="text-brutal font-display text-6xl text-brutal-red group-hover:text-brutal-black mb-4">01</div>
+            <h3 class="text-brutal font-display text-xl mb-3">CONSULTA</h3>
+            <p class="font-mono text-sm text-brutal-white/60 group-hover:text-brutal-black/70 leading-relaxed">Cuéntanos tu idea. Hablamos de diseño, ubicación, tamaño y estilo. Sin compromiso.</p>
+          </div>
+          <div class="brutal-border p-8 bg-brutal-gray hover:bg-brutal-yellow hover:text-brutal-black transition-all group reveal">
+            <div class="text-brutal font-display text-6xl text-brutal-yellow group-hover:text-brutal-black mb-4">02</div>
+            <h3 class="text-brutal font-display text-xl mb-3">DISEÑO</h3>
+            <p class="font-mono text-sm text-brutal-white/60 group-hover:text-brutal-black/70 leading-relaxed">Tu artista crea un boceto exclusivo. Iteramos hasta que sea perfecto para ti.</p>
+          </div>
+          <div class="brutal-border p-8 bg-brutal-gray hover:bg-brutal-red hover:text-brutal-black transition-all group reveal">
+            <div class="text-brutal font-display text-6xl text-brutal-red group-hover:text-brutal-black mb-4">03</div>
+            <h3 class="text-brutal font-display text-xl mb-3">SESIÓN</h3>
+            <p class="font-mono text-sm text-brutal-white/60 group-hover:text-brutal-black/70 leading-relaxed">Ambiente premium, higiene certificada, equipo de última generación. Tu comodidad primero.</p>
+          </div>
+          <div class="brutal-border p-8 bg-brutal-gray hover:bg-brutal-yellow hover:text-brutal-black transition-all group reveal">
+            <div class="text-brutal font-display text-6xl text-brutal-yellow group-hover:text-brutal-black mb-4">04</div>
+            <h3 class="text-brutal font-display text-xl mb-3">CUIDADO</h3>
+            <p class="font-mono text-sm text-brutal-white/60 group-hover:text-brutal-black/70 leading-relaxed">Te damos guía completa de aftercare. Seguimiento gratuito. Tu pieza siempre perfecta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ BENEFICIOS ═══════════ -->
+    <section class="py-24 lg:py-32 bg-brutal-red" aria-labelledby="beneficios-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="beneficios-title" class="text-brutal font-display text-5xl sm:text-6xl lg:text-7xl text-brutal-black text-center mb-16 reveal">¿POR QUÉ INKA?</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-brutal-black p-8 brutal-border brutal-shadow-yellow reveal">
+            <div class="w-12 h-12 mb-5 brutal-border border-brutal-yellow flex items-center justify-center" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2.5" stroke-linecap="square"><path d="M12 2L12 22M8 6L16 6M9 10L15 10M10 14L14 14M11 18L13 18"/></svg>
+            </div>
+            <h3 class="text-brutal font-display text-xl text-brutal-yellow mb-3">HIGIENE CERTIFICADA</h3>
+            <p class="font-mono text-sm text-brutal-white/60 leading-relaxed">Autoclave clase B, material 100% desechable, protocolos hospitalarios. Tu seguridad no se negocia.</p>
+          </div>
+          <div class="bg-brutal-black p-8 brutal-border brutal-shadow-yellow reveal">
+            <div class="w-12 h-12 mb-5 brutal-border border-brutal-yellow flex items-center justify-center" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2.5" stroke-linecap="square"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <h3 class="text-brutal font-display text-xl text-brutal-yellow mb-3">DISEÑO EXCLUSIVO</h3>
+            <p class="font-mono text-sm text-brutal-white/60 leading-relaxed">Cada pieza es única. No repetimos diseños. Tu tatuaje no existe en otra piel.</p>
+          </div>
+          <div class="bg-brutal-black p-8 brutal-border brutal-shadow-yellow reveal">
+            <div class="w-12 h-12 mb-5 brutal-border border-brutal-yellow flex items-center justify-center" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2.5" stroke-linecap="square"><polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9"/></svg>
+            </div>
+            <h3 class="text-brutal font-display text-xl text-brutal-yellow mb-3">ARTISTAS PREMIADOS</h3>
+            <p class="font-mono text-sm text-brutal-white/60 leading-relaxed">Ganadores en convenciones internacionales. Tu piel en manos de los mejores del país.</p>
+          </div>
+          <div class="bg-brutal-black p-8 brutal-border brutal-shadow-yellow reveal">
+            <div class="w-12 h-12 mb-5 brutal-border border-brutal-yellow flex items-center justify-center" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2.5" stroke-linecap="square"><path d="M12 2C8 2 5 5 5 9c0 3 2 5 4 7l3 4 3-4c2-2 4-4 4-7 0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <h3 class="text-brutal font-display text-xl text-brutal-yellow mb-3">TINTAS PREMIUM</h3>
+            <p class="font-mono text-sm text-brutal-white/60 leading-relaxed">Solo usamos tintas veganas certificadas por la UE. Colores vibrantes que duran décadas.</p>
+          </div>
+          <div class="bg-brutal-black p-8 brutal-border brutal-shadow-yellow reveal">
+            <div class="w-12 h-12 mb-5 brutal-border border-brutal-yellow flex items-center justify-center" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2.5" stroke-linecap="square"><path d="M12 3L4 9v11h16V9L12 3z"/><path d="M9 21v-6h6v6"/></svg>
+            </div>
+            <h3 class="text-brutal font-display text-xl text-brutal-yellow mb-3">GARANTÍA DE POR VIDA</h3>
+            <p class="font-mono text-sm text-brutal-white/60 leading-relaxed">Retoque gratuito de por vida en cualquier pieza realizada en nuestro estudio.</p>
+          </div>
+          <div class="bg-brutal-black p-8 brutal-border brutal-shadow-yellow reveal">
+            <div class="w-12 h-12 mb-5 brutal-border border-brutal-yellow flex items-center justify-center" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2.5" stroke-linecap="square"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/><circle cx="12" cy="12" r="4"/></svg>
+            </div>
+            <h3 class="text-brutal font-display text-xl text-brutal-yellow mb-3">UBICACIÓN PREMIUM</h3>
+            <p class="font-mono text-sm text-brutal-white/60 leading-relaxed">Barrio de las Letras, Madrid. Estudio de diseño de autor en un espacio de 200m².</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ TESTIMONIOS ═══════════ -->
+    <section class="py-24 lg:py-32 stripe-bg" aria-labelledby="testimonios-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+          <span class="font-mono text-brutal-red text-sm uppercase tracking-[0.3em]">// Opiniones reales</span>
+          <h2 id="testimonios-title" class="text-brutal font-display text-5xl sm:text-6xl lg:text-7xl mt-2">LO QUE <span class="text-brutal-yellow">DICEN</span></h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <blockquote class="brutal-border brutal-shadow p-8 bg-brutal-gray reveal">
+            <div class="flex gap-1 mb-4 text-brutal-yellow text-xl" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="font-mono text-sm text-brutal-white/80 leading-relaxed mb-6">"Valentina convirtió mi idea vaga en una pieza de museo. La atención al detalle es irreal. No voy a otro estudio nunca más."</p>
+            <footer class="font-mono text-xs text-brutal-yellow uppercase tracking-wider">— Carlos M. · Manga completa</footer>
+          </blockquote>
+          <blockquote class="brutal-border brutal-shadow p-8 bg-brutal-gray reveal">
+            <div class="flex gap-1 mb-4 text-brutal-yellow text-xl" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="font-mono text-sm text-brutal-white/80 leading-relaxed mb-6">"Es mi quinto tatuaje aquí. El nivel de higiene y profesionalismo es de otro mundo. Me siento segura siempre."</p>
+            <footer class="font-mono text-xs text-brutal-yellow uppercase tracking-wider">— Lucía T. · Cliente recurrente</footer>
+          </blockquote>
+          <blockquote class="brutal-border brutal-shadow p-8 bg-brutal-gray reveal">
+            <div class="flex gap-1 mb-4 text-brutal-yellow text-xl" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="font-mono text-sm text-brutal-white/80 leading-relaxed mb-6">"Marcos hizo un diseño geométrico que me para gente por la calle a preguntar dónde me lo hice. Artista puro."</p>
+            <footer class="font-mono text-xs text-brutal-yellow uppercase tracking-wider">— Daniel R. · Pecho completo</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ PRECIOS ═══════════ -->
+    <section id="precios" class="py-24 lg:py-32 bg-brutal-gray" aria-labelledby="precios-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+          <span class="font-mono text-brutal-yellow text-sm uppercase tracking-[0.3em]">// Inversión</span>
+          <h2 id="precios-title" class="text-brutal font-display text-5xl sm:text-6xl lg:text-7xl mt-2">TARIFAS <span class="text-brutal-red">2026</span></h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="brutal-border p-8 bg-brutal-black hover:brutal-shadow-yellow transition-all reveal">
+            <h3 class="text-brutal font-display text-2xl text-brutal-yellow mb-2">MINI</h3>
+            <p class="font-mono text-brutal-white/50 text-sm mb-6">Piezas hasta 8cm</p>
+            <div class="text-brutal font-display text-5xl text-brutal-white mb-6">€120<span class="text-lg text-brutal-white/40">+</span></div>
+            <ul class="space-y-3 font-mono text-sm text-brutal-white/70">
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Sesión de 1-2h</li>
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Diseño incluido</li>
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> 1 retoque gratuito</li>
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Kit aftercare</li>
+            </ul>
+            <a href="#reservar" class="mt-8 block text-center px-6 py-4 brutal-border font-mono text-sm uppercase hover:bg-brutal-yellow hover:text-brutal-black hover:border-brutal-yellow transition-colors">Reservar</a>
+          </div>
+          <div class="brutal-border-red p-8 bg-brutal-black brutal-shadow relative reveal">
+            <div class="absolute -top-4 left-6 px-4 py-1 bg-brutal-red text-brutal-black font-mono text-xs uppercase font-bold tracking-wider">Popular</div>
+            <h3 class="text-brutal font-display text-2xl text-brutal-red mb-2">MEDIUM</h3>
+            <p class="font-mono text-brutal-white/50 text-sm mb-6">Piezas de 8-20cm</p>
+            <div class="text-brutal font-display text-5xl text-brutal-white mb-6">€250<span class="text-lg text-brutal-white/40">+</span></div>
+            <ul class="space-y-3 font-mono text-sm text-brutal-white/70">
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Sesión de 3-5h</li>
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> 2 bocetos incluidos</li>
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Retoques ilimitados</li>
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Kit aftercare premium</li>
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Foto profesional</li>
+            </ul>
+            <a href="#reservar" class="mt-8 block text-center px-6 py-4 bg-brutal-red text-brutal-black font-bold font-mono text-sm uppercase hover:bg-brutal-yellow transition-colors">Reservar →</a>
+          </div>
+          <div class="brutal-border p-8 bg-brutal-black hover:brutal-shadow-yellow transition-all reveal">
+            <h3 class="text-brutal font-display text-2xl text-brutal-yellow mb-2">LARGE</h3>
+            <p class="font-mono text-brutal-white/50 text-sm mb-6">Mangas, espaldas, pecho</p>
+            <div class="text-brutal font-display text-5xl text-brutal-white mb-6">€500<span class="text-lg text-brutal-white/40">+</span></div>
+            <ul class="space-y-3 font-mono text-sm text-brutal-white/70">
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Sesiones múltiples</li>
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Diseño 100% custom</li>
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Retoques de por vida</li>
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Kit aftercare premium</li>
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Sesión fotográfica</li>
+              <li class="flex gap-2"><span class="text-brutal-red">→</span> Financiación disponible</li>
+            </ul>
+            <a href="#reservar" class="mt-8 block text-center px-6 py-4 brutal-border font-mono text-sm uppercase hover:bg-brutal-yellow hover:text-brutal-black hover:border-brutal-yellow transition-colors">Reservar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FAQ ═══════════ -->
+    <section id="faq" class="py-24 lg:py-32" aria-labelledby="faq-title">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+          <span class="font-mono text-brutal-red text-sm uppercase tracking-[0.3em]">// Resuelve tus dudas</span>
+          <h2 id="faq-title" class="text-brutal font-display text-5xl sm:text-6xl lg:text-7xl mt-2">FAQ</h2>
+        </div>
+
+        <div class="space-y-4" role="list">
+          <details class="brutal-border bg-brutal-gray group reveal" role="listitem">
+            <summary class="p-6 cursor-pointer font-mono text-sm uppercase tracking-wider flex justify-between items-center hover:bg-brutal-red hover:text-brutal-black transition-colors list-none">
+              <span>¿Duele mucho tatuarse?</span>
+              <span class="text-brutal-red group-hover:text-brutal-black text-2xl transition-colors group-open:rotate-45">+</span>
+            </summary>
+            <div class="px-6 pb-6 font-mono text-sm text-brutal-white/70 leading-relaxed border-t-2 border-brutal-white/10 pt-4">
+              El dolor varía según la zona del cuerpo y tu tolerancia personal. Zonas como el antebrazo o muslo son bastante llevaderas. Usamos cremas anestésicas tópicas si lo necesitas, y nuestros artistas trabajan con técnica suave para minimizar las molestias.
+            </div>
+          </details>
+          <details class="brutal-border bg-brutal-gray group reveal" role="listitem">
+            <summary class="p-6 cursor-pointer font-mono text-sm uppercase tracking-wider flex justify-between items-center hover:bg-brutal-red hover:text-brutal-black transition-colors list-none">
+              <span>¿Cómo cuido mi tatuaje después?</span>
+              <span class="text-brutal-red group-hover:text-brutal-black text-2xl transition-colors group-open:rotate-45">+</span>
+            </summary>
+            <div class="px-6 pb-6 font-mono text-sm text-brutal-white/70 leading-relaxed border-t-2 border-brutal-white/10 pt-4">
+              Te damos un kit aftercare completo con instrucciones detalladas. Básicamente: lavar con jabón neutro, hidratar con crema específica, evitar el sol directo y no rascar. Te hacemos seguimiento por WhatsApp durante todo el proceso de curación.
+            </div>
+          </details>
+          <details class="brutal-border bg-brutal-gray group reveal" role="listitem">
+            <summary class="p-6 cursor-pointer font-mono text-sm uppercase tracking-wider flex justify-between items-center hover:bg-brutal-red hover:text-brutal-black transition-colors list-none">
+              <span>¿Puedo traer mi propio diseño?</span>
+              <span class="text-brutal-red group-hover:text-brutal-black text-2xl transition-colors group-open:rotate-45">+</span>
+            </summary>
+            <div class="px-6 pb-6 font-mono text-sm text-brutal-white/70 leading-relaxed border-t-2 border-brutal-white/10 pt-4">
+              Puedes traer referencias, ideas, bocetos o imágenes de inspiración. Nuestros artistas adaptan tu visión a un diseño que funcione perfectamente como tatuaje, respetando proporciones, flujo y anatomía.
+            </div>
+          </details>
+          <details class="brutal-border bg-brutal-gray group reveal" role="listitem">
+            <summary class="p-6 cursor-pointer font-mono text-sm uppercase tracking-wider flex justify-between items-center hover:bg-brutal-red hover:text-brutal-black transition-colors list-none">
+              <span>¿Aceptáis menores de edad?</span>
+              <span class="text-brutal-red group-hover:text-brutal-black text-2xl transition-colors group-open:rotate-45">+</span>
+            </summary>
+            <div class="px-6 pb-6 font-mono text-sm text-brutal-white/70 leading-relaxed border-t-2 border-brutal-white/10 pt-4">
+              No. Solo tatuamos a mayores de 18 años con DNI o pasaporte válido. Sin excepciones, incluso con autorización paterna. Es nuestra política y la legislación vigente.
+            </div>
+          </details>
+          <details class="brutal-border bg-brutal-gray group reveal" role="listitem">
+            <summary class="p-6 cursor-pointer font-mono text-sm uppercase tracking-wider flex justify-between items-center hover:bg-brutal-red hover:text-brutal-black transition-colors list-none">
+              <span>¿Cómo reservo una cita?</span>
+              <span class="text-brutal-red group-hover:text-brutal-black text-2xl transition-colors group-open:rotate-45">+</span>
+            </summary>
+            <div class="px-6 pb-6 font-mono text-sm text-brutal-white/70 leading-relaxed border-t-2 border-brutal-white/10 pt-4">
+              Rellena el formulario de esta web o escríbenos por Instagram/WhatsApp. Te respondemos en menos de 24h con disponibilidad. Pedimos un depósito del 20% para confirmar la cita.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ RESERVAR (FORMULARIO) ═══════════ -->
+    <section id="reservar" class="py-24 lg:py-32 bg-brutal-gray stripe-bg" aria-labelledby="reservar-title">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <div class="reveal">
+            <span class="font-mono text-brutal-yellow text-sm uppercase tracking-[0.3em]">// Empieza aquí</span>
+            <h2 id="reservar-title" class="text-brutal font-display text-5xl sm:text-6xl lg:text-7xl mt-2 mb-6">RESERVA TU <span class="text-brutal-yellow">SESIÓN</span></h2>
+            <p class="font-mono text-brutal-white/60 leading-relaxed mb-8">Cuéntanos tu idea y te contactamos en menos de 24 horas. Sin compromiso, sin presión.</p>
+            <div class="space-y-4 font-mono text-sm">
+              <div class="flex items-center gap-3 text-brutal-white/70">
+                <span class="text-brutal-red text-lg">→</span> Respuesta en menos de 24h
+              </div>
+              <div class="flex items-center gap-3 text-brutal-white/70">
+                <span class="text-brutal-red text-lg">→</span> Consulta inicial gratuita
+              </div>
+              <div class="flex items-center gap-3 text-brutal-white/70">
+                <span class="text-brutal-red text-lg">→</span> Presupuesto sin compromiso
+              </div>
+              <div class="flex items-center gap-3 text-brutal-white/70">
+                <span class="text-brutal-red text-lg">→</span> Depósito solo al confirmar
+              </div>
+            </div>
+          </div>
+
+          <form id="contact-form" class="brutal-border brutal-shadow-yellow bg-brutal-black p-8 space-y-6 reveal" novalidate aria-label="Formulario de reserva">
+            <div>
+              <label for="nombre" class="block font-mono text-xs uppercase tracking-wider text-brutal-yellow mb-2">Nombre *</label>
+              <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="100"
+                class="w-full bg-brutal-gray brutal-border px-4 py-3 font-mono text-sm text-brutal-white placeholder-brutal-white/30 focus:border-brutal-red focus:outline-none transition-colors"
+                placeholder="Tu nombre completo"
+                autocomplete="name">
+            </div>
+            <div>
+              <label for="email" class="block font-mono text-xs uppercase tracking-wider text-brutal-yellow mb-2">Email *</label>
+              <input type="email" id="email" name="email" required maxlength="254"
+                class="w-full bg-brutal-gray brutal-border px-4 py-3 font-mono text-sm text-brutal-white placeholder-brutal-white/30 focus:border-brutal-red focus:outline-none transition-colors"
+                placeholder="tu@email.com"
+                autocomplete="email">
+            </div>
+            <div>
+              <label for="telefono" class="block font-mono text-xs uppercase tracking-wider text-brutal-yellow mb-2">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" maxlength="20"
+                class="w-full bg-brutal-gray brutal-border px-4 py-3 font-mono text-sm text-brutal-white placeholder-brutal-white/30 focus:border-brutal-red focus:outline-none transition-colors"
+                placeholder="+34 600 123 456"
+                autocomplete="tel">
+            </div>
+            <div>
+              <label for="estilo" class="block font-mono text-xs uppercase tracking-wider text-brutal-yellow mb-2">Estilo preferido</label>
+              <select id="estilo" name="estilo"
+                class="w-full bg-brutal-gray brutal-border px-4 py-3 font-mono text-sm text-brutal-white focus:border-brutal-red focus:outline-none transition-colors appearance-none cursor-pointer">
+                <option value="">Selecciona un estilo</option>
+                <option value="realismo">Realismo</option>
+                <option value="geometrico">Geométrico</option>
+                <option value="neotradicional">Neotradicional</option>
+                <option value="blackwork">Blackwork</option>
+                <option value="fineline">Fine Line</option>
+                <option value="dotwork">Dotwork</option>
+                <option value="acuarela">Acuarela</option>
+                <option value="japones">Japonés</option>
+                <option value="lettering">Lettering</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+            <div>
+              <label for="mensaje" class="block font-mono text-xs uppercase tracking-wider text-brutal-yellow mb-2">Describe tu idea *</label>
+              <textarea id="mensaje" name="mensaje" required rows="4" minlength="10" maxlength="2000"
+                class="w-full bg-brutal-gray brutal-border px-4 py-3 font-mono text-sm text-brutal-white placeholder-brutal-white/30 focus:border-brutal-red focus:outline-none transition-colors resize-none"
+                placeholder="Cuéntanos qué quieres: diseño, tamaño, ubicación en el cuerpo..."></textarea>
+            </div>
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="privacy" name="privacy" required
+                class="mt-1 w-4 h-4 accent-brutal-red cursor-pointer">
+              <label for="privacy" class="font-mono text-xs text-brutal-white/50 leading-relaxed cursor-pointer">
+                Acepto la <a href="#" class="text-brutal-red underline hover:text-brutal-yellow">política de privacidad</a> y el tratamiento de mis datos personales. *
+              </label>
+            </div>
+            <button type="submit" id="submit-btn"
+              class="w-full px-8 py-5 bg-brutal-red text-brutal-black font-bold font-mono text-lg uppercase brutal-border hover:bg-brutal-yellow transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+              Enviar solicitud →
+            </button>
+            <div id="form-feedback" class="hidden font-mono text-sm text-center p-4 brutal-border" role="alert"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ MAPA / UBICACIÓN ═══════════ -->
+    <section class="py-24 lg:py-32" aria-labelledby="ubicacion-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="reveal">
+            <span class="font-mono text-brutal-red text-sm uppercase tracking-[0.3em]">// Encuéntranos</span>
+            <h2 id="ubicacion-title" class="text-brutal font-display text-5xl sm:text-6xl mt-2 mb-8">VISITA EL <span class="text-brutal-red">ESTUDIO</span></h2>
+            <div class="space-y-6 font-mono text-sm">
+              <div>
+                <span class="text-brutal-yellow uppercase tracking-wider block mb-1">Dirección</span>
+                <span class="text-brutal-white/70">Calle del Arte 42, Barrio de las Letras<br>28001 Madrid, España</span>
+              </div>
+              <div>
+                <span class="text-brutal-yellow uppercase tracking-wider block mb-1">Horario</span>
+                <span class="text-brutal-white/70">Martes a Sábado: 10:00 - 20:00<br>Domingo y Lunes: Cerrado</span>
+              </div>
+              <div>
+                <span class="text-brutal-yellow uppercase tracking-wider block mb-1">Contacto</span>
+                <a href="tel:+34600123456" class="text-brutal-red hover:text-brutal-yellow transition-colors block">+34 600 123 456</a>
+                <a href="mailto:hola@inka-needle.com" class="text-brutal-red hover:text-brutal-yellow transition-colors block">hola@inka-needle.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="brutal-border brutal-shadow bg-brutal-gray aspect-video overflow-hidden reveal relative">
+            <img src="https://images.unsplash.com/photo-1671750145942-da9fed292290?w=800&h=450&fit=crop&auto=format"
+                 alt="Interior del estudio INKA NEEDLE"
+                 class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-brutal-black/90 via-brutal-black/30 to-transparent flex flex-col items-center justify-end p-8">
+              <span class="font-mono text-xs text-brutal-white/60 uppercase tracking-widest mb-1">Calle del Arte 42</span>
+              <span class="text-brutal font-display text-2xl text-brutal-yellow tracking-wider">INKA NEEDLE</span>
+              <span class="font-mono text-xs text-brutal-white/40 mt-1">Barrio de las Letras — Madrid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="border-t-4 border-brutal-red bg-brutal-black py-16" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 brutal-border-red flex items-center justify-center bg-brutal-red text-brutal-black font-display text-lg">IN</div>
+            <span class="text-brutal font-display text-lg tracking-wider">INKA<span class="text-brutal-red">NEEDLE</span></span>
+          </div>
+          <p class="font-mono text-xs text-brutal-white/40 leading-relaxed">Arte permanente para pieles que no se conforman. Madrid, desde 2019.</p>
+        </div>
+        <div>
+          <h4 class="text-brutal font-display text-sm text-brutal-yellow mb-4 tracking-wider">NAVEGACIÓN</h4>
+          <nav aria-label="Footer navigation" class="space-y-2">
+            <a href="#artistas" class="block font-mono text-xs text-brutal-white/50 hover:text-brutal-red transition-colors uppercase tracking-wider">Artistas</a>
+            <a href="#galeria" class="block font-mono text-xs text-brutal-white/50 hover:text-brutal-red transition-colors uppercase tracking-wider">Galería</a>
+            <a href="#proceso" class="block font-mono text-xs text-brutal-white/50 hover:text-brutal-red transition-colors uppercase tracking-wider">Proceso</a>
+            <a href="#precios" class="block font-mono text-xs text-brutal-white/50 hover:text-brutal-red transition-colors uppercase tracking-wider">Precios</a>
+            <a href="#reservar" class="block font-mono text-xs text-brutal-white/50 hover:text-brutal-red transition-colors uppercase tracking-wider">Reservar</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="text-brutal font-display text-sm text-brutal-yellow mb-4 tracking-wider">LEGAL</h4>
+          <nav aria-label="Legal links" class="space-y-2">
+            <a href="#" class="block font-mono text-xs text-brutal-white/50 hover:text-brutal-red transition-colors uppercase tracking-wider">Aviso Legal</a>
+            <a href="#" class="block font-mono text-xs text-brutal-white/50 hover:text-brutal-red transition-colors uppercase tracking-wider">Privacidad</a>
+            <a href="#" class="block font-mono text-xs text-brutal-white/50 hover:text-brutal-red transition-colors uppercase tracking-wider">Cookies</a>
+            <a href="#" class="block font-mono text-xs text-brutal-white/50 hover:text-brutal-red transition-colors uppercase tracking-wider">Condiciones</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="text-brutal font-display text-sm text-brutal-yellow mb-4 tracking-wider">SÍGUENOS</h4>
+          <div class="flex gap-3">
+            <a href="#" class="w-10 h-10 brutal-border flex items-center justify-center font-mono text-xs hover:bg-brutal-red hover:text-brutal-black hover:border-brutal-red transition-colors" aria-label="Instagram">IG</a>
+            <a href="#" class="w-10 h-10 brutal-border flex items-center justify-center font-mono text-xs hover:bg-brutal-red hover:text-brutal-black hover:border-brutal-red transition-colors" aria-label="TikTok">TK</a>
+            <a href="#" class="w-10 h-10 brutal-border flex items-center justify-center font-mono text-xs hover:bg-brutal-red hover:text-brutal-black hover:border-brutal-red transition-colors" aria-label="Pinterest">PI</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t-2 border-brutal-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="font-mono text-xs text-brutal-white/30">© 2026 INKA NEEDLE Studio. Todos los derechos reservados.</p>
+        <p class="font-mono text-xs text-brutal-white/20">Hecho con tinta y código</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════ COOKIE BANNER ═══════════ -->
+  <div id="cookie-banner" class="cookie-banner fixed bottom-0 left-0 w-full z-50 bg-brutal-black border-t-4 border-brutal-yellow p-6" role="dialog" aria-label="Aviso de cookies">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-mono text-xs text-brutal-white/70 max-w-2xl">
+        Usamos cookies esenciales para el funcionamiento del sitio. Las cookies analíticas son opcionales y nos ayudan a mejorar tu experiencia. 
+        <a href="#" class="text-brutal-yellow underline hover:text-brutal-red">Más info</a>
+      </p>
+      <div class="flex gap-3 shrink-0">
+        <button id="cookie-reject" class="px-5 py-2 brutal-border font-mono text-xs uppercase hover:bg-brutal-white hover:text-brutal-black transition-colors">Solo esenciales</button>
+        <button id="cookie-accept" class="px-5 py-2 bg-brutal-yellow text-brutal-black font-bold font-mono text-xs uppercase brutal-border border-brutal-yellow hover:bg-brutal-red hover:border-brutal-red hover:text-brutal-white transition-colors">Aceptar todo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ JAVASCRIPT ═══════════ -->
+  <script>
+    'use strict';
+
+    // ── Mobile Menu ──
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    const bars = [document.getElementById('bar1'), document.getElementById('bar2'), document.getElementById('bar3')];
+    let menuOpen = false;
+
+    function trapFocus(element) {
+      const focusable = element.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      function handler(e) {
+        if (e.key === 'Tab') {
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault(); last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault(); first.focus();
+          }
+        }
+        if (e.key === 'Escape') toggleMenu();
+      }
+      element.addEventListener('keydown', handler);
+      return handler;
+    }
+
+    let focusHandler = null;
+
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      menuToggle.setAttribute('aria-expanded', menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+      // Animate hamburger
+      if (menuOpen) {
+        bars[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+        bars[1].style.opacity = '0';
+        bars[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+        // Focus trap: mover foco al primer enlace y atrapar
+        setTimeout(() => {
+          const firstLink = mobileMenu.querySelector('a');
+          if (firstLink) firstLink.focus();
+          if (focusHandler) mobileMenu.removeEventListener('keydown', focusHandler);
+          focusHandler = trapFocus(mobileMenu);
+        }, 100);
+      } else {
+        bars[0].style.transform = '';
+        bars[1].style.opacity = '';
+        bars[2].style.transform = '';
+        // Restaurar foco al botón hamburguesa
+        if (focusHandler) mobileMenu.removeEventListener('keydown', focusHandler);
+        menuToggle.focus();
+      }
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', () => { if (menuOpen) toggleMenu(); }));
+
+    // ── Reveal on Scroll ──
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ── Form Validation & Submission ──
+    const form = document.getElementById('contact-form');
+    const feedback = document.getElementById('form-feedback');
+    const submitBtn = document.getElementById('submit-btn');
+
+    // Sanitize input
+    function sanitize(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    // Validate email format
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // Validate phone (optional, basic)
+    function isValidPhone(phone) {
+      if (!phone) return true;
+      return /^[\d\s\+\-\(\)]{6,20}$/.test(phone);
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const nombre = sanitize(form.nombre.value.trim());
+      const email = sanitize(form.email.value.trim());
+      const telefono = sanitize(form.telefono.value.trim());
+      const mensaje = sanitize(form.mensaje.value.trim());
+      const privacy = form.privacy.checked;
+
+      // Validations
+      if (!nombre || nombre.length < 2) {
+        showFeedback('Por favor, introduce tu nombre.', 'error');
+        form.nombre.focus();
+        return;
+      }
+      if (!email || !isValidEmail(email)) {
+        showFeedback('Por favor, introduce un email válido.', 'error');
+        form.email.focus();
+        return;
+      }
+      if (!isValidPhone(telefono)) {
+        showFeedback('El teléfono no tiene un formato válido.', 'error');
+        form.telefono.focus();
+        return;
+      }
+      if (!mensaje || mensaje.length < 10) {
+        showFeedback('Describe tu idea (mínimo 10 caracteres).', 'error');
+        form.mensaje.focus();
+        return;
+      }
+      if (!privacy) {
+        showFeedback('Debes aceptar la política de privacidad.', 'error');
+        return;
+      }
+
+      // Simulate send
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+      
+      setTimeout(() => {
+        showFeedback('¡Solicitud enviada! Te contactamos en menos de 24h.', 'success');
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar solicitud →';
+      }, 1500);
+    });
+
+    function showFeedback(msg, type) {
+      feedback.textContent = msg;
+      feedback.className = 'font-mono text-sm text-center p-4 brutal-border';
+      if (type === 'error') {
+        feedback.classList.add('bg-brutal-red/20', 'text-brutal-red', 'border-brutal-red');
+      } else {
+        feedback.classList.add('bg-green-900/30', 'text-green-400', 'border-green-500');
+      }
+      feedback.classList.remove('hidden');
+      setTimeout(() => feedback.classList.add('hidden'), 5000);
+    }
+
+    // ── Cookie Banner ──
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieAccept = document.getElementById('cookie-accept');
+    const cookieReject = document.getElementById('cookie-reject');
+
+    // Show after 1.5s
+    if (!localStorage.getItem('cookieChoice')) {
+      setTimeout(() => cookieBanner.classList.add('show'), 1500);
+    }
+
+    function handleCookie(choice) {
+      localStorage.setItem('cookieChoice', choice);
+      cookieBanner.classList.remove('show');
+    }
+
+    cookieAccept.addEventListener('click', () => handleCookie('accepted'));
+    cookieReject.addEventListener('click', () => handleCookie('essential'));
+
+    // ── Smooth scroll for anchor links ──
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 80; // navbar height
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ── Navbar background on scroll ──
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.style.borderBottomColor = '#ffd60a';
+      } else {
+        nav.style.borderBottomColor = '#e63946';
+      }
+    }, { passive: true });
+
+    // ── CSRF token generation (simulated) ──
+    // NOTA: CSRF token generado en cliente. Esto es solo parcial.
+    // Para protección real, el token debe generarse y validarse en el servidor.
+    const arr = new Uint8Array(16);
+    crypto.getRandomValues(arr);
+    const csrfToken = Array.from(arr, b => b.toString(16).padStart(2,'0')).join('');
+    const csrfInput = document.createElement('input');
+    csrfInput.type = 'hidden';
+    csrfInput.name = '_csrf';
+    csrfInput.value = csrfToken;
+    form.appendChild(csrfInput);
+  </script>
+
+</body>
+</html>

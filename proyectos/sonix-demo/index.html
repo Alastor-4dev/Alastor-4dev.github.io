@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SONIX — Silencio. Absoluto.</title>
+  <meta name="description" content="Auriculares premium con cancelacion activa de 48 dB, 60 horas de autonomia y audio espacial adaptativo.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="styles.css?v=20260519">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; frame-ancestors 'none';">
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Saltar al contenido</a>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" aria-label="Principal">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="SONIX inicio">SONIX</a>
+      <div class="nav-links" role="list">
+        <a href="#features" class="nav-link" role="listitem">Tecnologia</a>
+        <a href="#specs" class="nav-link" role="listitem">Especificaciones</a>
+        <a href="#testimonials" class="nav-link" role="listitem">Opiniones</a>
+      </div>
+      <a href="#cta" class="btn btn-nav">Reservar</a>
+      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-mobile" aria-hidden="true">
+    <a href="#hero">Inicio</a>
+    <a href="#features">Tecnologia</a>
+    <a href="#specs">Especificaciones</a>
+    <a href="#testimonials">Opiniones</a>
+    <a href="#cta" class="btn btn-primary">Reservar</a>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero-glow" data-mouse-glow aria-hidden="true"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="kicker">Edicion limitada · 2026</p>
+      <h1 class="hero-title" data-typewriter>El sonido que <em>no escuchas</em>.</h1>
+      <p class="hero-sub">Cancelacion activa de 48 dB. 60 horas de autonomia. Audio espacial adaptativo.</p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn btn-primary btn-iridescent">Reservar ahora</a>
+        <a href="#features" class="btn btn-ghost">Descubrir</a>
+      </div>
+    </div>
+    <div class="hero-product-wrap">
+      <div class="hero-product-3d" data-product-rotate>
+        <img src="assets/img/hero-product.svg" alt="Auriculares SONIX vista frontal" class="hero-product-img" fetchpriority="high" loading="eager">
+      </div>
+      <div class="hero-product-shadow" aria-hidden="true"></div>
+    </div>
+    <div class="hero-price" aria-label="Precio: 349 euros">
+      <span class="hero-price-currency">€</span>
+      <span class="hero-price-amount" data-count-to="349">349</span>
+    </div>
+  </section>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main">
+
+    <!-- ===================== FEATURES ===================== -->
+    <section class="features" id="features">
+      <div class="container">
+        <p class="section-kicker">Tecnologia</p>
+        <h2 class="section-title">Tres razones.<br><em>Una decision.</em></h2>
+        <div class="features-grid" data-features>
+          <article class="feature-card" data-reveal>
+            <img src="assets/img/feature-noise.svg" alt="" class="feature-icon" aria-hidden="true" loading="lazy" decoding="async">
+            <div class="feature-stat"><span data-count-to="48">48</span><small>dB</small></div>
+            <h3>Cancelacion 48 dB</h3>
+            <p>Seis microfonos con procesamiento neural eliminan hasta el ultimo murmullo. Tu mundo, en pausa.</p>
+          </article>
+          <article class="feature-card" data-reveal>
+            <img src="assets/img/feature-battery.svg" alt="" class="feature-icon" aria-hidden="true" loading="lazy" decoding="async">
+            <div class="feature-stat"><span data-count-to="60">60</span><small>h</small></div>
+            <h3>60 horas</h3>
+            <p>Carga una vez por semana. Carga rapida: 10 minutos para 5 horas de reproduccion.</p>
+          </article>
+          <article class="feature-card" data-reveal>
+            <img src="assets/img/feature-spatial.svg" alt="" class="feature-icon" aria-hidden="true" loading="lazy" decoding="async">
+            <div class="feature-stat"><span data-count-to="360">360</span><small>°</small></div>
+            <h3>Audio espacial</h3>
+            <p>Seguimiento cefalico en tiempo real. El sonido se queda donde esta, tu mueves la cabeza.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SPECS ===================== -->
+    <section class="specs" id="specs">
+      <div class="container">
+        <p class="section-kicker">Especificaciones</p>
+        <h2 class="section-title">Lo que importa,<br><em>en detalle.</em></h2>
+        <div class="specs-table" data-reveal>
+          <div class="spec-row"><span class="spec-label">Drivers</span><span class="spec-value">40 mm titanio</span></div>
+          <div class="spec-row"><span class="spec-label">Respuesta</span><span class="spec-value">4 Hz – 40 kHz</span></div>
+          <div class="spec-row"><span class="spec-label">Impedancia</span><span class="spec-value">32 Ω</span></div>
+          <div class="spec-row"><span class="spec-label">Bluetooth</span><span class="spec-value">5.4 LE Audio</span></div>
+          <div class="spec-row"><span class="spec-label">Codec</span><span class="spec-value">LDAC / aptX Adaptive</span></div>
+          <div class="spec-row"><span class="spec-label">Peso</span><span class="spec-value">248 g</span></div>
+          <div class="spec-row"><span class="spec-label">Carga</span><span class="spec-value">USB-C / Qi2</span></div>
+          <div class="spec-row"><span class="spec-label">Materiales</span><span class="spec-value">Aluminio anodizado + piel vegana</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <p class="section-kicker">Opiniones</p>
+        <h2 class="section-title">Quienes los usan,<br><em>no los sueltan.</em></h2>
+        <div class="testimonials-grid">
+          <blockquote class="testimonial-card" data-reveal>
+            <p>"No habia escuchado tanto silencio desde que vivi en Islandia."</p>
+            <footer>
+              <strong>Marta Vidal</strong>
+              <span>Ingeniera de sonido</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial-card" data-reveal>
+            <p>"Los uso 14 horas al dia. Mi cuello agradece que pesen menos que mis antiguos."</p>
+            <footer>
+              <strong>Daniel Rojas</strong>
+              <span>Productor musical</span>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="cta-section" id="cta">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <div class="container">
+        <h2 class="cta-title">Reserva los tuyos.</h2>
+        <p class="cta-sub">Envio en septiembre 2026. Garantia de 3 anos incluida.</p>
+        <form class="cta-form" data-contact-form novalidate>
+          <!-- Honeypot -->
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden;">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <input type="text" id="fname" name="name" required placeholder=" ">
+              <label for="fname">Nombre</label>
+            </div>
+            <div class="field">
+              <input type="email" id="femail" name="email" required placeholder=" ">
+              <label for="femail">Email</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-iridescent btn-submit">
+            <span class="cta-form-label">Reservar — 349 €</span>
+            <span class="cta-form-spinner" aria-hidden="true"></span>
+            <svg class="cta-form-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6" pathLength="1"/></svg>
+          </button>
+        </form>
+        <div class="cta-success" data-contact-success aria-hidden="true">
+          <h3>Reserva confirmada.</h3>
+          <p data-contact-success-msg>Te avisaremos cuando esten listos.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">SONIX</span>
+      <p class="footer-copy">&copy; 2026 SONIX Audio. Todos los derechos reservados.</p>
+      <p class="footer-legal">Demo generada automaticamente. Producto ficticio.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts — classic defer, IIFE pattern -->
+  <script defer src="lib/gsap.min.js?v=20260519"></script>
+  <script defer src="lib/ScrollTrigger.min.js?v=20260519"></script>
+  <script defer src="lib/manifest.js?v=20260519"></script>
+  <script defer src="main.js?v=20260519"></script>
+</body>
+</html>

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowstate — AI-Powered Focus & Productivity Platform</title>
+    <meta name="description" content="Flowstate helps teams achieve deep focus with AI-powered task management, smart scheduling, and distraction blocking. 10x your team's productive hours.">
+    <meta name="keywords" content="productivity, focus, AI, task management, deep work, team collaboration, SaaS">
+    <meta name="author" content="Flowstate">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Flowstate — AI-Powered Focus & Productivity Platform">
+    <meta property="og:description" content="Achieve deep focus with AI-powered task management. 10x your team's productive hours.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flowstate.app">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=630&fit=crop&q=80">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Flowstate — AI-Powered Focus & Productivity">
+    <meta name="twitter:description" content="Achieve deep focus with AI-powered task management.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%236366F1'/><path d='M10 16 L16 10 L22 16 L16 22Z' fill='white'/></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        surface: { 50: '#FAFAFA', 100: '#F4F4F5', 200: '#E4E4E7', 300: '#D4D4D8', 800: '#27272A', 900: '#18181B', 950: '#09090B' },
+                        accent: { 50: '#EEF2FF', 100: '#E0E7FF', 200: '#C7D2FE', 300: '#A5B4FC', 400: '#818CF8', 500: '#6366F1', 600: '#4F46E5', 700: '#4338CA', 800: '#3730A3' },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Flowstate",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Web",
+        "description": "AI-Powered Focus & Productivity Platform",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "2840"
+        }
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* Smooth reveal animations */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* Subtle gradient mesh background */
+        .gradient-mesh {
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 10%, rgba(99,102,241,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(139,92,246,0.04) 0%, transparent 60%),
+                #FAFAFA;
+        }
+
+        /* Nav blur */
+        .nav-blur { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
+
+        /* Card hover lift */
+        .card-lift { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 60px -12px rgba(0,0,0,0.08); }
+
+        /* Image zoom on hover */
+        .img-zoom img { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .img-zoom:hover img { transform: scale(1.05); }
+
+        /* Subtle pulse for CTA */
+        @keyframes subtle-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,0.3); }
+            50% { box-shadow: 0 0 0 8px rgba(99,102,241,0); }
+        }
+        .cta-pulse { animation: subtle-pulse 3s ease-in-out infinite; }
+
+        /* Counter animation */
+        .counter { font-variant-numeric: tabular-nums; }
+
+        /* FAQ accordion */
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .faq-answer.open { max-height: 300px; }
+
+        /* Scrollbar minimal */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #D4D4D8; border-radius: 3px; }
+
+        /* Cookie banner */
+        .cookie-banner { transform: translateY(100%); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .cookie-banner.show { transform: translateY(0); }
+
+        /* Mobile menu */
+        .mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .mobile-menu.open { transform: translateX(0); }
+
+        /* Floating label inputs */
+        .input-field:focus + .input-label,
+        .input-field:not(:placeholder-shown) + .input-label {
+            transform: translateY(-28px) scale(0.85);
+            color: #6366F1;
+        }
+        .input-label {
+            transition: transform 0.2s ease, color 0.2s ease;
+            transform-origin: left;
+        }
+    </style>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; frame-ancestors 'none';">
+</head>
+<body class="font-sans text-surface-900 antialiased gradient-mesh">
+
+    <!-- Skip to content -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-white/70 border-b border-surface-200/60" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-18">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2.5 group" aria-label="Flowstate Home">
+                    <div class="w-8 h-8 bg-accent-500 rounded-lg flex items-center justify-center group-hover:bg-accent-600 transition-colors">
+                        <svg class="w-4 h-4 text-white" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 8L8 4L12 8L8 12Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="text-lg font-semibold tracking-tight">Flowstate</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#features" class="text-sm text-surface-800/70 hover:text-surface-900 transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-sm text-surface-800/70 hover:text-surface-900 transition-colors">How it works</a>
+                    <a href="#pricing" class="text-sm text-surface-800/70 hover:text-surface-900 transition-colors">Pricing</a>
+                    <a href="#testimonials" class="text-sm text-surface-800/70 hover:text-surface-900 transition-colors">Testimonials</a>
+                    <a href="#faq" class="text-sm text-surface-800/70 hover:text-surface-900 transition-colors">FAQ</a>
+                </div>
+
+                <!-- CTA + Mobile Toggle -->
+                <div class="flex items-center gap-3">
+                    <a href="#cta" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-surface-950 text-white text-sm font-medium rounded-full hover:bg-surface-800 transition-colors">
+                        Start free trial
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 14 14" stroke="currentColor" stroke-width="2"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+                    </a>
+                    <button id="menuToggle" class="md:hidden p-2 rounded-lg hover:bg-surface-100 transition-colors" aria-label="Open menu" aria-expanded="false">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-white" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+        <div class="flex items-center justify-between p-4 border-b border-surface-200">
+            <span class="text-lg font-semibold">Flowstate</span>
+            <button id="menuClose" class="p-2 rounded-lg hover:bg-surface-100" aria-label="Close menu">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="flex flex-col p-6 gap-4">
+            <a href="#features" class="text-lg py-2 border-b border-surface-100 mobile-link">Features</a>
+            <a href="#how-it-works" class="text-lg py-2 border-b border-surface-100 mobile-link">How it works</a>
+            <a href="#pricing" class="text-lg py-2 border-b border-surface-100 mobile-link">Pricing</a>
+            <a href="#testimonials" class="text-lg py-2 border-b border-surface-100 mobile-link">Testimonials</a>
+            <a href="#faq" class="text-lg py-2 border-b border-surface-100 mobile-link">FAQ</a>
+            <a href="#cta" class="mt-4 inline-flex items-center justify-center gap-2 px-6 py-3 bg-surface-950 text-white font-medium rounded-full mobile-link">Start free trial</a>
+        </div>
+    </div>
+
+    <main id="main">
+        <!-- ==================== HERO ==================== -->
+        <section class="relative pt-28 sm:pt-36 lg:pt-44 pb-16 sm:pb-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <!-- Badge -->
+                    <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 bg-accent-50 border border-accent-200 rounded-full mb-8">
+                        <span class="w-1.5 h-1.5 bg-accent-500 rounded-full animate-pulse"></span>
+                        <span class="text-xs font-medium text-accent-700 tracking-wide uppercase">Now with AI Focus Coach</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-surface-950">
+                        Your team's most
+                        <span class="relative inline-block">
+                            <span class="relative z-10">productive</span>
+                            <span class="absolute bottom-1 left-0 right-0 h-3 sm:h-4 bg-accent-200/50 -rotate-1 rounded-sm"></span>
+                        </span>
+                        hours start here.
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="reveal reveal-delay-2 mt-6 sm:mt-8 text-lg sm:text-xl text-surface-800/60 max-w-2xl mx-auto leading-relaxed">
+                        Flowstate combines AI-powered scheduling, smart distraction blocking, and deep work analytics to help your team achieve 10x more focused hours every week.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="reveal reveal-delay-3 mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#cta" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent-500 text-white font-semibold rounded-full hover:bg-accent-600 transition-all cta-pulse text-base">
+                            Start free — no card needed
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+                        </a>
+                        <a href="#how-it-works" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white border border-surface-200 text-surface-800 font-medium rounded-full hover:border-surface-300 hover:bg-surface-50 transition-all text-base">
+                            <svg class="w-4 h-4 text-accent-500" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm-1 11.5v-7l5.5 3.5L7 11.5z"/></svg>
+                            Watch demo
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="reveal reveal-delay-4 mt-12 sm:mt-16 flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+                        <div class="flex items-center gap-2 whitespace-nowrap">
+                            <span class="text-xl sm:text-2xl font-bold text-surface-950 counter" data-target="2840">0</span><span class="text-xl sm:text-2xl font-bold text-surface-950">+</span>
+                            <span class="text-sm text-surface-800/50">Teams</span>
+                        </div>
+                        <div class="w-px h-6 bg-surface-200 hidden sm:block"></div>
+                        <div class="flex items-center gap-2 whitespace-nowrap">
+                            <span class="text-xl sm:text-2xl font-bold text-surface-950 counter" data-target="47">0</span><span class="text-xl sm:text-2xl font-bold text-surface-950">%</span>
+                            <span class="text-sm text-surface-800/50">More focus time</span>
+                        </div>
+                        <div class="w-px h-6 bg-surface-200 hidden sm:block"></div>
+                        <div class="flex items-center gap-2 whitespace-nowrap">
+                            <span class="text-xl sm:text-2xl font-bold text-surface-950">4.9</span>
+                            <div class="flex text-amber-400" aria-label="4.9 out of 5 stars">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <span class="text-sm text-surface-800/50">on G2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="reveal mt-16 sm:mt-20 max-w-7xl mx-auto">
+                    <div class="relative rounded-2xl overflow-hidden border border-surface-200 shadow-2xl shadow-surface-900/5 h-[300px] sm:h-[400px] lg:h-[500px]">
+                        <img
+                            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&h=900&fit=crop&q=80"
+                            alt="Modern workspace with code editor and productivity dashboard showing Flowstate in action"
+                            class="w-full h-full object-cover"
+                            width="1600" height="900"
+                            loading="eager"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-950/40 via-surface-950/10 to-transparent"></div>
+                        <!-- Floating UI mockup element -->
+                        <div class="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-auto bg-white/90 backdrop-blur-sm rounded-xl p-4 sm:p-5 shadow-lg max-w-sm">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-surface-900">Deep Focus Active</p>
+                                    <p class="text-xs text-surface-500">2h 14m uninterrupted</p>
+                                </div>
+                            </div>
+                            <div class="w-full bg-surface-100 rounded-full h-1.5">
+                                <div class="bg-green-500 h-1.5 rounded-full" style="width: 78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logos -->
+                <div class="reveal mt-16 sm:mt-20 text-center">
+                    <p class="text-xs font-medium uppercase tracking-widest text-surface-800/40 mb-8">Trusted by forward-thinking teams at</p>
+                    <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-40 grayscale">
+                        <svg class="h-6 sm:h-7" viewBox="0 0 120 30" fill="currentColor"><text x="0" y="22" font-family="Inter,sans-serif" font-weight="600" font-size="20">Stripe</text></svg>
+                        <svg class="h-6 sm:h-7" viewBox="0 0 120 30" fill="currentColor"><text x="0" y="22" font-family="Inter,sans-serif" font-weight="600" font-size="20">Notion</text></svg>
+                        <svg class="h-6 sm:h-7" viewBox="0 0 120 30" fill="currentColor"><text x="0" y="22" font-family="Inter,sans-serif" font-weight="600" font-size="20">Linear</text></svg>
+                        <svg class="h-6 sm:h-7" viewBox="0 0 120 30" fill="currentColor"><text x="0" y="22" font-family="Inter,sans-serif" font-weight="600" font-size="20">Vercel</text></svg>
+                        <svg class="h-6 sm:h-7 hidden sm:block" viewBox="0 0 120 30" fill="currentColor"><text x="0" y="22" font-family="Inter,sans-serif" font-weight="600" font-size="20">Figma</text></svg>
+                        <svg class="h-6 sm:h-7 hidden md:block" viewBox="0 0 130 30" fill="currentColor"><text x="0" y="22" font-family="Inter,sans-serif" font-weight="600" font-size="20">Webflow</text></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== FEATURES ==================== -->
+        <section id="features" class="py-20 sm:py-32" aria-labelledby="features-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mx-auto text-center mb-16 sm:mb-20">
+                    <span class="reveal text-xs font-semibold uppercase tracking-widest text-accent-500">Features</span>
+                    <h2 id="features-heading" class="reveal reveal-delay-1 mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Everything your team needs to stay in flow.</h2>
+                    <p class="reveal reveal-delay-2 mt-5 text-lg text-surface-800/55 leading-relaxed">Six powerful capabilities designed to eliminate distractions and amplify deep work across your entire organization.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <!-- Feature 1 -->
+                    <div class="reveal card-lift img-zoom rounded-2xl overflow-hidden border border-surface-200 bg-white">
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&q=80" alt="AI analytics dashboard showing focus metrics and productivity patterns" class="w-full h-full object-cover opacity-60" width="600" height="400" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-950 via-surface-950/60 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-5 text-white font-semibold text-lg">AI Focus Coach</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-sm text-surface-800/60 leading-relaxed">Machine learning analyzes your work patterns and suggests optimal focus windows, meeting placements, and break schedules personalized to your rhythm.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="reveal reveal-delay-1 card-lift img-zoom rounded-2xl overflow-hidden border border-surface-200 bg-white">
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop&q=80" alt="Team members collaborating remotely on a video call with screen sharing" class="w-full h-full object-cover opacity-60" width="600" height="400" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-950 via-surface-950/60 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-5 text-white font-semibold text-lg">Smart Scheduling</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-sm text-surface-800/60 leading-relaxed">Automatically clusters meetings into batches, protects deep work blocks, and syncs with your calendar to ensure you always have focus time.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="reveal reveal-delay-2 card-lift img-zoom rounded-2xl overflow-hidden border border-surface-200 bg-white">
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop&q=80" alt="Clean minimal workspace with laptop showing distraction-free mode" class="w-full h-full object-cover opacity-60" width="600" height="400" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-950 via-surface-950/60 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-5 text-white font-semibold text-lg">Distraction Shield</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-sm text-surface-800/60 leading-relaxed">Intelligent notification batching, website blocking, and Slack/Teams do-not-disturb sync that activates during your focus sessions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="reveal card-lift img-zoom rounded-2xl overflow-hidden border border-surface-200 bg-white">
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&q=80" alt="Data visualization showing team productivity analytics and reports" class="w-full h-full object-cover opacity-60" width="600" height="400" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-950 via-surface-950/60 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-5 text-white font-semibold text-lg">Deep Work Analytics</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-sm text-surface-800/60 leading-relaxed">Track focused hours, context switches, and flow states across your team. Identify patterns and optimize for maximum productive output.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="reveal reveal-delay-1 card-lift img-zoom rounded-2xl overflow-hidden border border-surface-200 bg-white">
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop&q=80" alt="Diverse team working together in a modern office environment" class="w-full h-full object-cover opacity-60" width="600" height="400" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-950 via-surface-950/60 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-5 text-white font-semibold text-lg">Team Sync Rituals</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-sm text-surface-800/60 leading-relaxed">Structured async standups, weekly reflection prompts, and shared focus sessions that keep your team aligned without endless meetings.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="reveal reveal-delay-2 card-lift img-zoom rounded-2xl overflow-hidden border border-surface-200 bg-white">
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop&q=80" alt="Server infrastructure and integrations dashboard" class="w-full h-full object-cover opacity-60" width="600" height="400" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface-950 via-surface-950/60 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-5 text-white font-semibold text-lg">200+ Integrations</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-sm text-surface-800/60 leading-relaxed">Connect with Slack, Notion, Linear, Jira, Google Calendar, Outlook, and 200+ other tools your team already uses daily.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== VISUAL BREAK — FULL-WIDTH IMAGE ==================== -->
+        <section class="relative h-[300px] sm:h-[400px] lg:h-[480px] overflow-hidden" role="presentation">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=800&fit=crop&q=80"
+                 alt="" role="presentation"
+                 class="w-full h-full object-cover"
+                 width="1600" height="800" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-r from-surface-950/70 via-surface-950/40 to-transparent"></div>
+            <div class="absolute inset-0 flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-lg">
+                        <blockquote class="text-white">
+                            <p class="text-xl sm:text-2xl lg:text-3xl font-light leading-snug italic">"Flowstate gave our engineering team back 12 hours per week. That's not a metric — it's a transformation."</p>
+                            <footer class="mt-6 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-semibold text-sm">SR</div>
+                                <div>
+                                    <p class="text-sm font-medium text-white">Sarah Rodriguez</p>
+                                    <p class="text-xs text-white/60">VP Engineering, ScaleAI</p>
+                                </div>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== HOW IT WORKS ==================== -->
+        <section id="how-it-works" class="py-20 sm:py-32" aria-labelledby="hiw-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mx-auto text-center mb-16 sm:mb-20">
+                    <span class="reveal text-xs font-semibold uppercase tracking-widest text-accent-500">How it works</span>
+                    <h2 id="hiw-heading" class="reveal reveal-delay-1 mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">From setup to deep focus in under 3 minutes.</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+                    <!-- Step 1 -->
+                    <div class="reveal text-center lg:text-left">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-accent-50 border border-accent-100 mb-5">
+                            <span class="text-accent-600 font-bold font-mono text-sm">01</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Connect your tools</h3>
+                        <p class="text-sm text-surface-800/55 leading-relaxed">Plug in your calendar, project manager, and communication tools. Flowstate reads your existing workflow — never disrupts it.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="reveal reveal-delay-1 text-center lg:text-left">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-accent-50 border border-accent-100 mb-5">
+                            <span class="text-accent-600 font-bold font-mono text-sm">02</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">AI learns your rhythm</h3>
+                        <p class="text-sm text-surface-800/55 leading-relaxed">Within 48 hours, our AI maps your peak focus windows, meeting patterns, and energy cycles to build your personalized focus blueprint.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="reveal reveal-delay-2 text-center lg:text-left">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-accent-50 border border-accent-100 mb-5">
+                            <span class="text-accent-600 font-bold font-mono text-sm">03</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Enter deep focus</h3>
+                        <p class="text-sm text-surface-800/55 leading-relaxed">Hit the focus button. Flowstate silences distractions, batches notifications, and guards your time so you can do your best work.</p>
+                    </div>
+                </div>
+
+                <!-- Product screenshot -->
+                <div class="reveal mt-16 sm:mt-20">
+                    <div class="relative rounded-2xl overflow-hidden border border-surface-200 shadow-xl h-[280px] sm:h-[380px] lg:h-[460px]">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1600&h=900&fit=crop&q=80"
+                             alt="Flowstate dashboard showing weekly focus analytics, scheduled deep work blocks, and team sync overview"
+                             class="w-full h-full object-cover"
+                             width="1600" height="900" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-950/30 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PRICING ==================== -->
+        <section id="pricing" class="py-20 sm:py-32 bg-surface-50" aria-labelledby="pricing-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mx-auto text-center mb-16">
+                    <span class="reveal text-xs font-semibold uppercase tracking-widest text-accent-500">Pricing</span>
+                    <h2 id="pricing-heading" class="reveal reveal-delay-1 mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Simple pricing. No surprises.</h2>
+                    <p class="reveal reveal-delay-2 mt-5 text-lg text-surface-800/55">Start free, scale when you're ready. Cancel anytime.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <!-- Free -->
+                    <div class="reveal card-lift bg-white rounded-2xl border border-surface-200 p-7">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-surface-800/50">Starter</h3>
+                        <div class="mt-4 flex items-baseline gap-1 whitespace-nowrap">
+                            <span class="text-xl sm:text-2xl lg:text-3xl font-bold">$</span><span class="text-3xl sm:text-4xl lg:text-5xl font-bold counter">0</span>
+                        </div>
+                        <p class="mt-1 text-sm text-surface-800/45">Free forever</p>
+                        <ul class="mt-6 space-y-3 text-sm text-surface-800/70" role="list">
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Up to 3 team members</li>
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>AI Focus Coach (basic)</li>
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Calendar sync</li>
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Weekly focus report</li>
+                        </ul>
+                        <a href="#cta" class="mt-8 block text-center py-3 px-6 border border-surface-200 rounded-full text-sm font-medium hover:bg-surface-50 transition-colors">Get started</a>
+                    </div>
+
+                    <!-- Pro — Featured -->
+                    <div class="reveal reveal-delay-1 card-lift bg-surface-950 text-white rounded-2xl p-7 relative">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-500 rounded-full text-xs font-semibold whitespace-nowrap">Most popular</div>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-white/50">Pro</h3>
+                        <div class="mt-4 flex items-baseline gap-1 whitespace-nowrap">
+                            <span class="text-xl sm:text-2xl lg:text-3xl font-bold">$</span><span class="text-3xl sm:text-4xl lg:text-5xl font-bold">12</span>
+                        </div>
+                        <p class="mt-1 text-sm text-white/40">per user / month</p>
+                        <ul class="mt-6 space-y-3 text-sm text-white/70" role="list">
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Unlimited team members</li>
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>AI Focus Coach (advanced)</li>
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Distraction Shield</li>
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>200+ integrations</li>
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Team analytics</li>
+                        </ul>
+                        <a href="#cta" class="mt-8 block text-center py-3 px-6 bg-accent-500 rounded-full text-sm font-semibold hover:bg-accent-600 transition-colors">Start free trial</a>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div class="reveal reveal-delay-2 card-lift bg-white rounded-2xl border border-surface-200 p-7">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-surface-800/50">Enterprise</h3>
+                        <div class="mt-4 flex items-baseline gap-1 whitespace-nowrap">
+                            <span class="text-3xl sm:text-4xl lg:text-5xl font-bold">Custom</span>
+                        </div>
+                        <p class="mt-1 text-sm text-surface-800/45">Tailored to your org</p>
+                        <ul class="mt-6 space-y-3 text-sm text-surface-800/70" role="list">
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Everything in Pro</li>
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>SSO & SAML</li>
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Custom AI training</li>
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>Dedicated success manager</li>
+                            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-accent-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>99.99% SLA</li>
+                        </ul>
+                        <a href="#cta" class="mt-8 block text-center py-3 px-6 border border-surface-200 rounded-full text-sm font-medium hover:bg-surface-50 transition-colors">Contact sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TESTIMONIALS ==================== -->
+        <section id="testimonials" class="py-20 sm:py-32 relative" aria-labelledby="testimonials-heading">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mx-auto text-center mb-16">
+                    <span class="reveal text-xs font-semibold uppercase tracking-widest text-accent-500">Testimonials</span>
+                    <h2 id="testimonials-heading" class="reveal reveal-delay-1 mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Loved by teams who ship.</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="reveal card-lift bg-white rounded-2xl border border-surface-200 p-7">
+                        <div class="flex text-amber-400 mb-4" aria-label="5 stars">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-sm text-surface-800/65 leading-relaxed">"We went from 14 hours of meetings per week to 6. The AI scheduling alone paid for the entire subscription in the first month."</p>
+                        <div class="mt-6 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-accent-100 flex items-center justify-center text-accent-700 font-semibold text-xs">MK</div>
+                            <div>
+                                <p class="text-sm font-medium">Marcus Kim</p>
+                                <p class="text-xs text-surface-800/40">CTO, Runway Labs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-1 card-lift bg-white rounded-2xl border border-surface-200 p-7">
+                        <div class="flex text-amber-400 mb-4" aria-label="5 stars">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-sm text-surface-800/65 leading-relaxed">"The Distraction Shield is a game changer. Our designers now get 3+ hours of uninterrupted creative time daily. The work quality has noticeably improved."</p>
+                        <div class="mt-6 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-semibold text-xs">AL</div>
+                            <div>
+                                <p class="text-sm font-medium">Anika Larsen</p>
+                                <p class="text-xs text-surface-800/40">Design Lead, Pitch</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-2 card-lift bg-white rounded-2xl border border-surface-200 p-7">
+                        <div class="flex text-amber-400 mb-4" aria-label="5 stars">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-sm text-surface-800/65 leading-relaxed">"I was skeptical about another productivity tool. But Flowstate actually works because it doesn't add tasks — it removes friction. Our sprint velocity is up 34%."</p>
+                        <div class="mt-6 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 font-semibold text-xs">JP</div>
+                            <div>
+                                <p class="text-sm font-medium">James Park</p>
+                                <p class="text-xs text-surface-800/40">PM, Loom</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== FAQ ==================== -->
+        <section id="faq" class="py-20 sm:py-32 bg-surface-50" aria-labelledby="faq-heading">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="reveal text-xs font-semibold uppercase tracking-widest text-accent-500">FAQ</span>
+                    <h2 id="faq-heading" class="reveal reveal-delay-1 mt-4 text-3xl sm:text-4xl font-bold tracking-tight">Frequently asked questions</h2>
+                </div>
+
+                <div class="space-y-3" role="list">
+                    <div class="reveal bg-white rounded-xl border border-surface-200">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                            <span class="text-sm font-medium pr-4">How does the AI Focus Coach work?</span>
+                            <svg class="w-4 h-4 shrink-0 text-surface-400 faq-icon transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="px-5 pb-5 text-sm text-surface-800/60 leading-relaxed">Our AI analyzes your calendar, task completion patterns, and communication habits over 48 hours. It then builds a personalized focus blueprint that suggests optimal times for deep work, meeting batches, and breaks — continuously improving as it learns your rhythm.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-1 bg-white rounded-xl border border-surface-200">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                            <span class="text-sm font-medium pr-4">Is my data private and secure?</span>
+                            <svg class="w-4 h-4 shrink-0 text-surface-400 faq-icon transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="px-5 pb-5 text-sm text-surface-800/60 leading-relaxed">Absolutely. We're SOC 2 Type II certified and GDPR compliant. Your data is encrypted at rest and in transit. We never sell data, and our AI processes patterns locally — we don't read your messages or documents.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-2 bg-white rounded-xl border border-surface-200">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                            <span class="text-sm font-medium pr-4">Can I use Flowstate with my existing tools?</span>
+                            <svg class="w-4 h-4 shrink-0 text-surface-400 faq-icon transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="px-5 pb-5 text-sm text-surface-800/60 leading-relaxed">Yes. Flowstate integrates with 200+ tools including Slack, Notion, Linear, Jira, Google Calendar, Outlook, Asana, ClickUp, and more. Setup takes under 2 minutes per integration.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-3 bg-white rounded-xl border border-surface-200">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                            <span class="text-sm font-medium pr-4">What happens when my free trial ends?</span>
+                            <svg class="w-4 h-4 shrink-0 text-surface-400 faq-icon transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="px-5 pb-5 text-sm text-surface-800/60 leading-relaxed">Your 14-day Pro trial automatically converts to the free Starter plan — no card required, no surprise charges. You keep all your data and can upgrade anytime.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-4 bg-white rounded-xl border border-surface-200">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                            <span class="text-sm font-medium pr-4">How is Flowstate different from other productivity tools?</span>
+                            <svg class="w-4 h-4 shrink-0 text-surface-400 faq-icon transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p class="px-5 pb-5 text-sm text-surface-800/60 leading-relaxed">Most tools add things to your plate — more tasks, more dashboards, more notifications. Flowstate subtracts. We actively remove distractions, optimize your schedule, and protect your focus time. We don't manage tasks — we manage attention.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CTA + FORM ==================== -->
+        <section id="cta" class="py-20 sm:py-32 relative overflow-hidden" aria-labelledby="cta-heading">
+            <!-- Background image -->
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&h=900&fit=crop&q=80"
+                     alt="" role="presentation"
+                     class="w-full h-full object-cover opacity-[0.04]"
+                     width="1600" height="900" loading="lazy">
+            </div>
+
+            <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 id="cta-heading" class="reveal text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">Ready to reclaim your focus?</h2>
+                <p class="reveal reveal-delay-1 mt-5 text-lg text-surface-800/55">Join 2,840+ teams already shipping faster with Flowstate. Free for up to 3 team members — forever.</p>
+
+                <!-- Form -->
+                <form id="signupForm" class="reveal reveal-delay-2 mt-10 max-w-md mx-auto" novalidate>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <div class="flex-1 relative">
+                            <label for="emailInput" class="sr-only">Work email address</label>
+                            <input
+                                type="email"
+                                id="emailInput"
+                                name="email"
+                                placeholder="you@company.com"
+                                required
+                                autocomplete="email"
+                                class="w-full px-5 py-3.5 bg-white border border-surface-200 rounded-full text-sm placeholder:text-surface-400 focus:outline-none focus:ring-2 focus:ring-accent-500/30 focus:border-accent-400 transition-all"
+                                aria-describedby="emailError"
+                            >
+                            <p id="emailError" class="hidden mt-2 text-xs text-red-500 pl-5" role="alert"></p>
+                        </div>
+                        <button type="submit" class="px-7 py-3.5 bg-accent-500 text-white font-semibold text-sm rounded-full hover:bg-accent-600 transition-all whitespace-nowrap cta-pulse">
+                            Start free trial
+                        </button>
+                    </div>
+                    <p class="mt-4 text-xs text-surface-800/40">No credit card required. 14-day Pro trial included.</p>
+                    <div id="formSuccess" class="hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-xl">
+                        <p class="text-sm text-green-700 font-medium">Welcome aboard! Check your inbox for next steps.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-surface-950 text-white py-16" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+                <div class="col-span-2 md:col-span-1">
+                    <div class="flex items-center gap-2.5 mb-4">
+                        <div class="w-7 h-7 bg-accent-500 rounded-lg flex items-center justify-center">
+                            <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 16 16" fill="none"><path d="M4 8L8 4L12 8L8 12Z" fill="currentColor"/></svg>
+                        </div>
+                        <span class="text-base font-semibold">Flowstate</span>
+                    </div>
+                    <p class="text-sm text-white/40 leading-relaxed">AI-powered focus and productivity for teams that ship.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-4">Product</h4>
+                    <ul class="space-y-2.5 text-sm text-white/50">
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Integrations</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-4">Company</h4>
+                    <ul class="space-y-2.5 text-sm text-white/50">
+                        <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-4">Legal</h4>
+                    <ul class="space-y-2.5 text-sm text-white/50">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-white/30">&copy; 2026 Flowstate, Inc. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="text-white/30 hover:text-white transition-colors" aria-label="Twitter / X">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" class="text-white/30 hover:text-white transition-colors" aria-label="LinkedIn">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="#" class="text-white/30 hover:text-white transition-colors" aria-label="GitHub">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== COOKIE BANNER ==================== -->
+    <div id="cookieBanner" class="cookie-banner fixed bottom-0 left-0 right-0 z-50 p-4" role="dialog" aria-label="Cookie consent">
+        <div class="max-w-3xl mx-auto bg-surface-950 text-white rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 shadow-2xl border border-white/5">
+            <p class="text-sm text-white/70 flex-1">We use essential cookies to make Flowstate work. We'd also like to set analytics cookies to understand how you use the site. <a href="#" class="underline text-white/90 hover:text-white">Learn more</a></p>
+            <div class="flex items-center gap-2 shrink-0">
+                <button id="cookieReject" class="px-4 py-2 text-xs font-medium text-white/60 hover:text-white border border-white/10 rounded-full transition-colors">Decline</button>
+                <button id="cookieAccept" class="px-4 py-2 text-xs font-medium bg-accent-500 rounded-full hover:bg-accent-600 transition-colors">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+    (function() {
+        'use strict';
+
+        // ---- Intersection Observer for reveal animations ----
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ---- Counter animation ----
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    if (!target) return;
+                    const duration = 2000;
+                    const start = performance.now();
+                    const easeOut = t => 1 - Math.pow(1 - t, 3);
+
+                    function update(now) {
+                        const progress = Math.min((now - start) / duration, 1);
+                        const value = Math.round(easeOut(progress) * target);
+                        el.textContent = value.toLocaleString();
+                        if (progress < 1) requestAnimationFrame(update);
+                    }
+                    requestAnimationFrame(update);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter[data-target]').forEach(el => counterObserver.observe(el));
+
+        // ---- Mobile menu ----
+        const menuToggle = document.getElementById('menuToggle');
+        const menuClose = document.getElementById('menuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function openMenu() {
+            mobileMenu.classList.add('open');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        menuToggle.addEventListener('click', openMenu);
+        menuClose.addEventListener('click', closeMenu);
+        document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMenu));
+
+        // ---- FAQ accordion ----
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                const icon = btn.querySelector('.faq-icon');
+                const isOpen = answer.classList.contains('open');
+
+                // Close all
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+                document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = '');
+                document.querySelectorAll('.faq-toggle').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    icon.style.transform = 'rotate(180deg)';
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ---- Form validation (XSS-safe) ----
+        const form = document.getElementById('signupForm');
+        const emailInput = document.getElementById('emailInput');
+        const emailError = document.getElementById('emailError');
+        const formSuccess = document.getElementById('formSuccess');
+
+        function sanitize(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = sanitize(emailInput.value.trim());
+
+            if (!email || !isValidEmail(email)) {
+                emailError.textContent = 'Please enter a valid work email address.';
+                emailError.classList.remove('hidden');
+                emailInput.setAttribute('aria-invalid', 'true');
+                return;
+            }
+
+            emailError.classList.add('hidden');
+            emailInput.setAttribute('aria-invalid', 'false');
+
+            // Simulate submission
+            form.querySelector('button[type="submit"]').disabled = true;
+            form.querySelector('button[type="submit"]').textContent = 'Sending...';
+
+            setTimeout(() => {
+                form.querySelector('.flex').classList.add('hidden');
+                form.querySelector('p').classList.add('hidden');
+                formSuccess.classList.remove('hidden');
+            }, 1200);
+        });
+
+        emailInput.addEventListener('input', () => {
+            emailError.classList.add('hidden');
+            emailInput.setAttribute('aria-invalid', 'false');
+        });
+
+        // ---- Cookie banner ----
+        const cookieBanner = document.getElementById('cookieBanner');
+        const stored = localStorage.getItem('flowstate-cookies');
+
+        if (!stored) {
+            setTimeout(() => cookieBanner.classList.add('show'), 2000);
+        }
+
+        document.getElementById('cookieAccept').addEventListener('click', () => {
+            try { localStorage.setItem('flowstate-cookies', 'accepted'); } catch(e) {}
+            cookieBanner.classList.remove('show');
+        });
+        document.getElementById('cookieReject').addEventListener('click', () => {
+            try { localStorage.setItem('flowstate-cookies', 'rejected'); } catch(e) {}
+            cookieBanner.classList.remove('show');
+        });
+
+        // ---- Smooth nav highlight on scroll ----
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 120;
+                if (window.scrollY >= top) current = section.id;
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle('text-surface-900', link.getAttribute('href') === '#' + current);
+                link.classList.toggle('text-surface-800/70', link.getAttribute('href') !== '#' + current);
+            });
+        }, { passive: true });
+
+        // ---- Escape closes mobile menu ----
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+        });
+
+    })();
+    </script>
+</body>
+</html>

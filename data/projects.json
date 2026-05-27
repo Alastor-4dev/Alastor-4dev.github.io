@@ -1,0 +1,495 @@
+[
+  {
+    "slug": "animal-welfare",
+    "title": "Animal Welfare",
+    "description": "Patitas Felices: El mejor spa y estética para tus mejores amigos. Baño, corte, vacunas y más en un ambiente alegre y seguro.",
+    "category": "landing-page",
+    "tags": [
+      "animals",
+      "ngo",
+      "social"
+    ],
+    "techs": [
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-23",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/animal-welfare/"
+  },
+  {
+    "slug": "cafe-glassmorphism",
+    "title": "Cafe Glassmorphism",
+    "description": "Mythos: cafetería de autor con café de origen único y repostería artesanal. 6 locales exclusivos en España. Reserva tu experiencia.",
+    "category": "landing-page",
+    "tags": [
+      "glassmorphism",
+      "cafe",
+      "warm"
+    ],
+    "techs": [
+      "Google Fonts",
+      "Particles.js"
+    ],
+    "featured": false,
+    "date": "2026-05-05",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/cafe-glassmorphism/"
+  },
+  {
+    "slug": "codex-pets",
+    "title": "Codex Pets",
+    "description": "Patitas Felices: estética canina con estilo pixel art, servicios de baño, cuidado, veterinaria y citas para mascotas.",
+    "category": "prototype",
+    "tags": [
+      "prototype",
+      "ai",
+      "demo"
+    ],
+    "techs": [
+      "HTML/CSS",
+      "Vanilla JS"
+    ],
+    "featured": false,
+    "date": "2026-05-23",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/codex-pets/"
+  },
+  {
+    "slug": "comic-education",
+    "title": "Comic Education",
+    "description": "KABOOM! Academy — La plataforma de educación online que explota tu potencial. Cursos interactivos, mentores expertos y una comunidad que te impulsa. ¡Aprende con estilo!",
+    "category": "landing-page",
+    "tags": [
+      "comic",
+      "playful",
+      "educational"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-18",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/comic-education/"
+  },
+  {
+    "slug": "creative-agency-neon",
+    "title": "Creative Agency",
+    "description": "NOVA Creative Studio — Transformamos ideas en experiencias digitales extraordinarias. Branding, diseño web, marketing digital y producción audiovisual.",
+    "category": "landing-page",
+    "tags": [
+      "neon",
+      "agency",
+      "modern"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts",
+      "Particles.js"
+    ],
+    "featured": false,
+    "date": "2026-05-15",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/creative-agency-neon/"
+  },
+  {
+    "slug": "cyberpunk-gym",
+    "title": "Cyberpunk Gym",
+    "description": "NEXUS GYM: El gimnasio del futuro. Tecnología de punta, entrenamiento personalizado con IA y equipos de última generación. Únete a la revolución fitness.",
+    "category": "landing-page",
+    "tags": [
+      "cyberpunk",
+      "neon",
+      "fitness"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts",
+      "Particles.js"
+    ],
+    "featured": true,
+    "date": "2026-05-15",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/cyberpunk-gym/"
+  },
+  {
+    "slug": "dark-modern-real-estate",
+    "title": "Dark Real Estate",
+    "description": "Aurum Realty — Propiedades de lujo que redefinen tu estilo de vida. Encuentra residencias exclusivas en las ubicaciones más prestigiosas.",
+    "category": "landing-page",
+    "tags": [
+      "real-estate",
+      "dark",
+      "modern"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-17",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/dark-modern-real-estate/"
+  },
+  {
+    "slug": "digital-nomads-synthwave",
+    "title": "Digital Nomads",
+    "description": "NomadWave es la comunidad premium para nómadas digitales. Conecta, aprende y crece mientras trabajas desde cualquier lugar del mundo.",
+    "category": "landing-page",
+    "tags": [
+      "synthwave",
+      "retro",
+      "travel"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-12",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/digital-nomads-synthwave/"
+  },
+  {
+    "slug": "elegant-fashion",
+    "title": "Elegant Fashion",
+    "description": "AURÈLE — Moda de autor con alma contemporánea. Colecciones exclusivas que fusionan artesanía europea con diseño vanguardista.",
+    "category": "landing-page",
+    "tags": [
+      "fashion",
+      "elegant",
+      "minimal"
+    ],
+    "techs": [
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-21",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/elegant-fashion/"
+  },
+  {
+    "slug": "financial-landing",
+    "title": "Financial Landing",
+    "description": "Plataforma de análisis fundamental de acciones, portafolio de inversión y métricas de mercado.",
+    "category": "landing-page",
+    "tags": [
+      "finance",
+      "modern",
+      "clean"
+    ],
+    "techs": [
+      "Charts"
+    ],
+    "featured": true,
+    "date": "2026-05-23",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/financial-landing/"
+  },
+  {
+    "slug": "fintech-luxury-black",
+    "title": "Fintech Dashboard",
+    "description": "Aurum Capital: plataforma de inversiones inteligentes con IA. Haz crecer tu patrimonio con estrategias automatizadas y rendimientos superiores al mercado.",
+    "category": "dashboard",
+    "tags": [
+      "fintech",
+      "luxury",
+      "dark"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts",
+      "Charts"
+    ],
+    "featured": true,
+    "date": "2026-05-12",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/fintech-luxury-black/"
+  },
+  {
+    "slug": "futuristic-nutrition",
+    "title": "Futuristic Nutrition",
+    "description": "NutriCore usa inteligencia artificial para crear planes de nutrición personalizados. Transforma tu alimentación con ciencia de vanguardia y resultados medibles.",
+    "category": "landing-page",
+    "tags": [
+      "futuristic",
+      "health",
+      "ui"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-19",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/futuristic-nutrition/"
+  },
+  {
+    "slug": "gothic-candles",
+    "title": "Gothic Candles",
+    "description": "Velas artesanales elaboradas con cera de soja, fragancias exclusivas y diseño gótico. Ilumina tus espacios con arte oscuro y elegante.",
+    "category": "landing-page",
+    "tags": [
+      "gothic",
+      "mystical",
+      "luxury"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts",
+      "Particles.js"
+    ],
+    "featured": false,
+    "date": "2026-05-14",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/gothic-candles/"
+  },
+  {
+    "slug": "happy-paws",
+    "title": "Happy Paws",
+    "description": "Patitas Felices: El mejor cuidado para tus mascotas con estilo retro.",
+    "category": "landing-page",
+    "tags": [
+      "pets",
+      "playful",
+      "brand"
+    ],
+    "techs": [
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-23",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/happy-paws/"
+  },
+  {
+    "slug": "iron-men",
+    "title": "Iron Men",
+    "description": "Gimnasio rudo y premium. Fuerza, hipertrofia y powerlifting.",
+    "category": "landing-page",
+    "tags": [
+      "marvel",
+      "dark",
+      "hero"
+    ],
+    "techs": [
+      "Google Fonts",
+      "GSAP"
+    ],
+    "featured": false,
+    "date": "2026-05-23",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/iron-men/"
+  },
+  {
+    "slug": "minimal-saas",
+    "title": "Minimal SaaS",
+    "description": "Flowstate helps teams achieve deep focus with AI-powered task management, smart scheduling, and distraction blocking. 10x your team",
+    "category": "landing-page",
+    "tags": [
+      "saas",
+      "minimal",
+      "clean"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts"
+    ],
+    "featured": true,
+    "date": "2026-05-22",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/minimal-saas/"
+  },
+  {
+    "slug": "pet-adoption",
+    "title": "Pet Adoption",
+    "description": "Frontend concept — Pet Adoption",
+    "category": "landing-page",
+    "tags": [
+      "pets",
+      "playful",
+      "ui"
+    ],
+    "techs": [
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-23",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/pet-adoption/"
+  },
+  {
+    "slug": "psychology-japanese",
+    "title": "Psychology — Japanese",
+    "description": "Kokoro: Centro de psicología inspirado en la filosofía zen. Terapia individual, mindfulness y bienestar emocional. Encuentra tu equilibrio interior.",
+    "category": "landing-page",
+    "tags": [
+      "japanese",
+      "elegant",
+      "minimal"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-14",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/psychology-japanese/"
+  },
+  {
+    "slug": "retro-veterinary",
+    "title": "Retro Veterinary",
+    "description": "Clínica veterinaria con el cariño de siempre y la medicina de hoy. Consultas, vacunación, cirugía, peluquería y más para tu mejor amigo.",
+    "category": "landing-page",
+    "tags": [
+      "retro",
+      "vintage",
+      "health"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-23",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/retro-veterinary/"
+  },
+  {
+    "slug": "rust-bar",
+    "title": "Rust Bar",
+    "description": "Bar Óxido — San Telmo, Buenos Aires. Whiskey, bourbon y cervezas artesanales en un ambiente de madera y metal. Est. 2019. Av. San Juan 1842.",
+    "category": "landing-page",
+    "tags": [
+      "industrial",
+      "rust",
+      "dark"
+    ],
+    "techs": [
+      "HTML/CSS",
+      "Vanilla JS"
+    ],
+    "featured": false,
+    "date": "2026-05-20",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/rust-bar/"
+  },
+  {
+    "slug": "sales-pages",
+    "title": "Sales Pages",
+    "description": "NUBE AMBAR: perfume solido recargable en estuche metalico, hecho para scent layering, rituales de piel y gifting premium.",
+    "category": "concept",
+    "tags": [
+      "sales",
+      "conversion",
+      "ui"
+    ],
+    "techs": [
+      "HTML/CSS",
+      "Vanilla JS"
+    ],
+    "featured": false,
+    "date": "2026-05-24",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/sales-pages/"
+  },
+  {
+    "slug": "scandinavian-cafe",
+    "title": "Scandinavian Cafe",
+    "description": "Fika es un café de especialidad inspirado en la filosofía escandinava del descanso consciente. Granos de origen único, repostería artesanal y un espacio diseñado para pausar.",
+    "category": "landing-page",
+    "tags": [
+      "scandinavian",
+      "minimal",
+      "warm"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts"
+    ],
+    "featured": true,
+    "date": "2026-05-16",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/scandinavian-cafe/"
+  },
+  {
+    "slug": "sonix-demo",
+    "title": "Sonix Demo",
+    "description": "Auriculares premium con cancelacion activa de 48 dB, 60 horas de autonomia y audio espacial adaptativo.",
+    "category": "tool",
+    "tags": [
+      "audio",
+      "demo",
+      "tool"
+    ],
+    "techs": [
+      "Google Fonts",
+      "GSAP"
+    ],
+    "featured": false,
+    "date": "2026-05-19",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/sonix-demo/"
+  },
+  {
+    "slug": "tattoo-studio-brutalist",
+    "title": "Tattoo Studio",
+    "description": "INKA NEEDLE es un estudio de tatuaje artístico premium. Diseños únicos, artistas premiados, higiene certificada. Reserva tu sesión.",
+    "category": "landing-page",
+    "tags": [
+      "brutalism",
+      "dark",
+      "ink"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts"
+    ],
+    "featured": true,
+    "date": "2026-05-11",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/tattoo-studio-brutalist/"
+  },
+  {
+    "slug": "vaporwave-bakery",
+    "title": "Vaporwave Bakery",
+    "description": "Dulce Nébula: pastelería artesanal con sabores únicos y diseño de vanguardia. Pasteles, cupcakes y creaciones personalizadas para eventos especiales.",
+    "category": "landing-page",
+    "tags": [
+      "vaporwave",
+      "retro",
+      "pastel"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-17",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/vaporwave-bakery/"
+  },
+  {
+    "slug": "y2k-streaming",
+    "title": "Y2K Streaming",
+    "description": "StarWave es la plataforma de streaming definitiva. Miles de películas, series y anime en calidad 4K. Prueba gratis 30 días. Sin compromisos.",
+    "category": "landing-page",
+    "tags": [
+      "y2k",
+      "retro",
+      "entertainment"
+    ],
+    "techs": [
+      "Tailwind CSS",
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-20",
+    "thumbnail": "",
+    "url": "https://alex.github.io/proyectos/y2k-streaming/"
+  }
+]

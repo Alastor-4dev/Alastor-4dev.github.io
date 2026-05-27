@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS GYM — Entrena en el Futuro</title>
+  <meta name="description" content="NEXUS GYM: El gimnasio del futuro. Tecnología de punta, entrenamiento personalizado con IA y equipos de última generación. Únete a la revolución fitness.">
+  <meta name="keywords" content="gimnasio, fitness, cyberpunk, entrenamiento, IA, tecnología, gym, NEXUS">
+  <meta name="author" content="NEXUS GYM">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NEXUS GYM — Entrena en el Futuro">
+  <meta property="og:description" content="El gimnasio del futuro. Tecnología de punta y entrenamiento personalizado con IA.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nexusgym.com">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=630&fit=crop&q=80">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NEXUS GYM — Entrena en el Futuro">
+  <meta name="twitter:description" content="El gimnasio del futuro con tecnología de punta.">
+
+  <link rel="canonical" href="https://nexusgym.com">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              bg: '#0A0A0F',
+              surface: '#12121A',
+              card: '#1A1A2E',
+              border: '#2A2A3E',
+              cyan: '#00F0FF',
+              magenta: '#FF00E5',
+              green: '#00FF41',
+              yellow: '#FFE500',
+              purple: '#B000FF',
+            }
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            rajdhani: ['Rajdhani', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background-color: #0A0A0F;
+      color: #E0E0E8;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0A0A0F; }
+    ::-webkit-scrollbar-thumb { background: #00F0FF; border-radius: 3px; }
+
+    /* Neon Glow Utilities */
+    .glow-cyan { text-shadow: 0 0 10px #00F0FF, 0 0 30px #00F0FF40, 0 0 60px #00F0FF20; }
+    .glow-magenta { text-shadow: 0 0 10px #FF00E5, 0 0 30px #FF00E540, 0 0 60px #FF00E520; }
+    .glow-green { text-shadow: 0 0 10px #00FF41, 0 0 30px #00FF4140; }
+
+    .box-glow-cyan { box-shadow: 0 0 15px #00F0FF30, 0 0 40px #00F0FF15, inset 0 0 15px #00F0FF08; }
+    .box-glow-magenta { box-shadow: 0 0 15px #FF00E530, 0 0 40px #FF00E515, inset 0 0 15px #FF00E508; }
+
+    /* Animated border */
+    .cyber-border {
+      position: relative;
+      border: 1px solid #2A2A3E;
+    }
+    .cyber-border::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px; right: -1px; bottom: -1px;
+      background: linear-gradient(90deg, #00F0FF, #FF00E5, #00FF41, #00F0FF);
+      background-size: 400% 100%;
+      z-index: -1;
+      border-radius: inherit;
+      animation: borderGlow 6s linear infinite;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .cyber-border:hover::before { opacity: 1; }
+
+    @keyframes borderGlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 400% 50%; }
+    }
+
+    /* Scan line overlay */
+    .scanlines::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 240, 255, 0.015) 2px,
+        rgba(0, 240, 255, 0.015) 4px
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Glitch effect on hover */
+    .glitch-hover:hover {
+      animation: glitch 0.3s ease;
+    }
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(2px, -2px); }
+      60% { transform: translate(-1px, -1px); }
+      80% { transform: translate(1px, 1px); }
+      100% { transform: translate(0); }
+    }
+
+    /* Floating animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float { animation: float 4s ease-in-out infinite; }
+
+    /* Pulse neon */
+    @keyframes neonPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    .neon-pulse { animation: neonPulse 2s ease-in-out infinite; }
+
+    /* Grid background */
+    .cyber-grid {
+      background-image:
+        linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* CTA Button */
+    .btn-cyber {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #0A0A0F;
+      background: linear-gradient(135deg, #00F0FF, #00C8D4);
+      border: none;
+      clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+      transition: all 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-cyber:hover {
+      background: linear-gradient(135deg, #00F0FF, #FF00E5);
+      box-shadow: 0 0 25px #00F0FF60, 0 0 50px #FF00E530;
+      transform: translateY(-2px);
+    }
+
+    .btn-cyber-outline {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #00F0FF;
+      background: transparent;
+      border: 2px solid #00F0FF;
+      clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+      transition: all 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-cyber-outline:hover {
+      background: #00F0FF15;
+      box-shadow: 0 0 20px #00F0FF40;
+      transform: translateY(-2px);
+    }
+
+    /* Section divider */
+    .cyber-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #00F0FF, #FF00E5, transparent);
+    }
+
+    /* Card hover lift */
+    .card-lift {
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .card-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 240, 255, 0.15);
+    }
+
+    /* Counter animation */
+    .counter { font-variant-numeric: tabular-nums; }
+
+    /* Nav active */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #00F0FF;
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link:hover { color: #00F0FF; }
+
+    /* FAQ */
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+    .faq-item.active .faq-answer { max-height: 300px; padding-top: 1rem; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.3s; }
+
+    /* Cookie banner */
+    .cookie-banner { backdrop-filter: blur(12px); }
+
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s, transform 0.8s;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero particles */
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #00F0FF;
+      opacity: 0.4;
+      animation: particleFloat 8s infinite;
+    }
+    @keyframes particleFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+      25% { transform: translate(30px, -40px) scale(1.3); opacity: 0.7; }
+      50% { transform: translate(-20px, -80px) scale(0.8); opacity: 0.3; }
+      75% { transform: translate(40px, -50px) scale(1.1); opacity: 0.6; }
+    }
+
+    /* Marquee */
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track { animation: marquee 30s linear infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'none'; form-action 'self'; base-uri 'self'; frame-ancestors 'none';">
+</head>
+<body class="cyber-grid">
+
+  <a href="#inicio" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-cyber-cyan focus:text-cyber-bg focus:font-orbitron focus:font-bold focus:text-sm focus:rounded">Ir al contenido principal</a>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" role="navigation" aria-label="Navegación principal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 group" aria-label="NEXUS GYM - Inicio">
+          <div class="w-10 h-10 flex items-center justify-center border-2 border-cyber-cyan bg-cyber-cyan/10 rotate-45 group-hover:bg-cyber-cyan/20 transition-all">
+            <span class="font-orbitron font-black text-cyber-cyan text-lg -rotate-45">N</span>
+          </div>
+          <span class="font-orbitron font-bold text-white text-lg tracking-wider hidden sm:block">NEXUS<span class="text-cyber-cyan">GYM</span></span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="#inicio" class="nav-link font-rajdhani font-semibold text-sm uppercase tracking-widest text-gray-300">Inicio</a>
+          <a href="#beneficios" class="nav-link font-rajdhani font-semibold text-sm uppercase tracking-widest text-gray-300">Beneficios</a>
+          <a href="#programas" class="nav-link font-rajdhani font-semibold text-sm uppercase tracking-widest text-gray-300">Programas</a>
+          <a href="#testimonios" class="nav-link font-rajdhani font-semibold text-sm uppercase tracking-widest text-gray-300">Testimonios</a>
+          <a href="#precios" class="nav-link font-rajdhani font-semibold text-sm uppercase tracking-widest text-gray-300">Precios</a>
+          <a href="#faq" class="nav-link font-rajdhani font-semibold text-sm uppercase tracking-widest text-gray-300">FAQ</a>
+          <a href="#contacto" class="btn-cyber text-xs">Únete Ahora</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="lg:hidden text-white p-2" aria-label="Abrir menú" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden hidden bg-cyber-bg/95 backdrop-blur-lg border-t border-cyber-border">
+      <div class="px-4 py-6 space-y-4">
+        <a href="#inicio" class="block font-rajdhani font-semibold text-sm uppercase tracking-widest text-gray-300 hover:text-cyber-cyan transition-colors mobile-link">Inicio</a>
+        <a href="#beneficios" class="block font-rajdhani font-semibold text-sm uppercase tracking-widest text-gray-300 hover:text-cyber-cyan transition-colors mobile-link">Beneficios</a>
+        <a href="#programas" class="block font-rajdhani font-semibold text-sm uppercase tracking-widest text-gray-300 hover:text-cyber-cyan transition-colors mobile-link">Programas</a>
+        <a href="#testimonios" class="block font-rajdhani font-semibold text-sm uppercase tracking-widest text-gray-300 hover:text-cyber-cyan transition-colors mobile-link">Testimonios</a>
+        <a href="#precios" class="block font-rajdhani font-semibold text-sm uppercase tracking-widest text-gray-300 hover:text-cyber-cyan transition-colors mobile-link">Precios</a>
+        <a href="#faq" class="block font-rajdhani font-semibold text-sm uppercase tracking-widest text-gray-300 hover:text-cyber-cyan transition-colors mobile-link">FAQ</a>
+        <a href="#contacto" class="btn-cyber text-xs w-full text-center mt-4">Únete Ahora</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="inicio" class="relative min-h-screen flex items-center justify-center scanlines overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&h=900&fit=crop&q=80"
+           alt="Interior de gimnasio moderno con equipamiento de última generación"
+           width="1600" height="900"
+           loading="eager"
+           class="w-full h-full object-cover opacity-30">
+      <div class="absolute inset-0 bg-gradient-to-b from-cyber-bg via-cyber-bg/70 to-cyber-bg"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-cyber-cyan/5 via-transparent to-cyber-magenta/5"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true" id="particles"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyber-cyan/30 bg-cyber-cyan/5 mb-8 neon-pulse">
+        <span class="w-2 h-2 rounded-full bg-cyber-cyan animate-pulse"></span>
+        <span class="font-rajdhani font-semibold text-cyber-cyan text-sm uppercase tracking-widest">Sistema Activo — 24/7</span>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="font-orbitron font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white leading-tight mb-6">
+        ENTRENA EN EL<br>
+        <span class="glow-cyan text-cyber-cyan">FUTURO</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="font-rajdhani text-lg sm:text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Equipamiento inteligente. Entrenamiento adaptativo con IA. Resultados que desafían los límites de lo posible.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a href="#contacto" class="btn-cyber">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Activa Tu Prueba Gratis
+        </a>
+        <a href="#programas" class="btn-cyber-outline">
+          Explorar Programas
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="flex flex-wrap justify-center gap-6 sm:gap-10 lg:gap-16">
+        <div class="text-center">
+          <div class="font-orbitron font-bold text-xl sm:text-2xl lg:text-3xl text-white whitespace-nowrap">
+            <span class="counter" data-target="2400">0</span><span class="text-cyber-cyan">+</span>
+          </div>
+          <div class="font-rajdhani text-sm text-gray-500 uppercase tracking-wider mt-1">Miembros Activos</div>
+        </div>
+        <div class="text-center">
+          <div class="font-orbitron font-bold text-xl sm:text-2xl lg:text-3xl text-white whitespace-nowrap">
+            <span class="counter" data-target="98">0</span><span class="text-cyber-magenta">%</span>
+          </div>
+          <div class="font-rajdhani text-sm text-gray-500 uppercase tracking-wider mt-1">Satisfacción</div>
+        </div>
+        <div class="text-center">
+          <div class="font-orbitron font-bold text-xl sm:text-2xl lg:text-3xl text-white whitespace-nowrap">
+            <span class="counter" data-target="50">0</span><span class="text-cyber-green">+</span>
+          </div>
+          <div class="font-rajdhani text-sm text-gray-500 uppercase tracking-wider mt-1">Clases Semanales</div>
+        </div>
+        <div class="text-center">
+          <div class="font-orbitron font-bold text-xl sm:text-2xl lg:text-3xl text-white whitespace-nowrap">
+            <span class="counter" data-target="15">0</span><span class="text-cyber-yellow">K</span><span class="text-cyber-yellow">+</span>
+          </div>
+          <div class="font-rajdhani text-sm text-gray-500 uppercase tracking-wider mt-1">Transformaciones</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10" aria-hidden="true">
+      <svg class="w-6 h-6 text-cyber-cyan/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="cyber-divider"></div>
+
+  <!-- ========== MARQUEE ========== -->
+  <section class="py-5 bg-cyber-surface/50 overflow-hidden border-y border-cyber-border/30" aria-hidden="true">
+    <div class="flex whitespace-nowrap">
+      <div class="marquee-track flex items-center gap-8 text-gray-600 font-orbitron text-xs uppercase tracking-[0.3em]">
+        <span>⚡ Entrenamiento IA</span><span class="text-cyber-cyan">///</span>
+        <span>🔥 Clases en Vivo</span><span class="text-cyber-magenta">///</span>
+        <span>💪 Fuerza Funcional</span><span class="text-cyber-cyan">///</span>
+        <span>🧬 Biometría Avanzada</span><span class="text-cyber-magenta">///</span>
+        <span>🥊 Combate</span><span class="text-cyber-cyan">///</span>
+        <span>🏃 HIIT</span><span class="text-cyber-magenta">///</span>
+        <span>🧘 Recovery Zone</span><span class="text-cyber-cyan">///</span>
+        <span>🎯 Coaching 1:1</span><span class="text-cyber-magenta">///</span>
+        <span>⚡ Entrenamiento IA</span><span class="text-cyber-cyan">///</span>
+        <span>🔥 Clases en Vivo</span><span class="text-cyber-magenta">///</span>
+        <span>💪 Fuerza Funcional</span><span class="text-cyber-cyan">///</span>
+        <span>🧬 Biometría Avanzada</span><span class="text-cyber-magenta">///</span>
+        <span>🥊 Combate</span><span class="text-cyber-cyan">///</span>
+        <span>🏃 HIIT</span><span class="text-cyber-magenta">///</span>
+        <span>🧘 Recovery Zone</span><span class="text-cyber-cyan">///</span>
+        <span>🎯 Coaching 1:1</span><span class="text-cyber-magenta">///</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BENEFICIOS ========== -->
+  <section id="beneficios" class="py-20 sm:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <span class="font-orbitron text-cyber-cyan text-xs uppercase tracking-[0.3em] block mb-4">// ¿Por qué Nexus?</span>
+        <h2 class="font-orbitron font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+          TECNOLOGÍA QUE <span class="text-cyber-magenta glow-magenta">TRANSFORMA</span>
+        </h2>
+        <p class="font-rajdhani text-lg text-gray-400 max-w-xl mx-auto">No es solo un gimnasio. Es un ecosistema de rendimiento diseñado para llevarte más allá.</p>
+      </div>
+
+      <!-- Benefits Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Benefit 1 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl overflow-hidden card-lift group">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=800&h=400&fit=crop&q=80"
+                 alt="Equipamiento inteligente de gimnasio con pantallas digitales"
+                 width="800" height="400" loading="lazy"
+                 class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cyber-card via-cyber-card/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <h3 class="font-orbitron font-bold text-lg text-white">Equipos Inteligentes</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="font-inter text-gray-400 text-sm leading-relaxed">Máquinas con sensores integrados que miden tu fuerza, velocidad y rango de movimiento en tiempo real. Cada repetición cuenta.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl overflow-hidden card-lift group" style="transition-delay: 0.1s;">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&h=400&fit=crop&q=80"
+                 alt="Entrenador personal trabajando con cliente en gimnasio moderno"
+                 width="800" height="400" loading="lazy"
+                 class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cyber-card via-cyber-card/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <h3 class="font-orbitron font-bold text-lg text-white">Coach IA Personal</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="font-inter text-gray-400 text-sm leading-relaxed">Algoritmos que aprenden de tu progreso y adaptan tu rutina. Sin mesetas, sin estancamientos. Solo evolución constante.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl overflow-hidden card-lift group" style="transition-delay: 0.2s;">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=400&fit=crop&q=80"
+                 alt="Persona entrenando con wearables y monitoreo biométrico"
+                 width="800" height="400" loading="lazy"
+                 class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cyber-card via-cyber-card/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <h3 class="font-orbitron font-bold text-lg text-white">Biometría Avanzada</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="font-inter text-gray-400 text-sm leading-relaxed">Monitoreo de frecuencia cardíaca, saturación de oxígeno y fatiga muscular. Tu cuerpo habla; nosotros escuchamos.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl overflow-hidden card-lift group">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&h=400&fit=crop&q=80"
+                 alt="Sala de gimnasio amplia con iluminación ambiental futurista"
+                 width="800" height="400" loading="lazy"
+                 class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cyber-card via-cyber-card/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <h3 class="font-orbitron font-bold text-lg text-white">Abierto 24/7</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="font-inter text-gray-400 text-sm leading-relaxed">Acceso con huella biométrica las 24 horas. Entrena cuando quieras, como quieras, sin horarios que te limiten.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 5 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl overflow-hidden card-lift group" style="transition-delay: 0.1s;">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=400&fit=crop&q=80"
+                 alt="Clase grupal de fitness con energía dinámica"
+                 width="800" height="400" loading="lazy"
+                 class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cyber-card via-cyber-card/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <h3 class="font-orbitron font-bold text-lg text-white">Comunidad Elite</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="font-inter text-gray-400 text-sm leading-relaxed">Rodeáte de personas que comparten tu disciplina. Retos mensuales, tablas de líderes y eventos exclusivos para miembros.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 6 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl overflow-hidden card-lift group" style="transition-delay: 0.2s;">
+          <div class="relative h-44 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1605296867424-35fc25c9212a?w=800&h=400&fit=crop&q=80"
+                 alt="Zona de recuperación con crioterapia y tecnología de wellness"
+                 width="800" height="400" loading="lazy"
+                 class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-cyber-card via-cyber-card/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <h3 class="font-orbitron font-bold text-lg text-white">Recovery Lab</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="font-inter text-gray-400 text-sm leading-relaxed">Crioterapia, compresión neumática y saunas infrarrojas. La recuperación es la otra mitad del rendimiento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VISUAL BREAK — Full-Width Image ========== -->
+  <section class="relative h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=1600&h=600&fit=crop&q=80"
+         alt="Persona entrenando con determinación en un gimnasio futurista"
+         width="1600" height="600" loading="lazy"
+         class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-cyber-bg via-cyber-bg/50 to-cyber-bg"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center px-4">
+        <p class="font-orbitron font-black text-3xl sm:text-4xl lg:text-6xl text-white glow-cyan leading-tight">
+          NO ES DOLOR.<br><span class="text-cyber-magenta glow-magenta">ES EVOLUCIÓN.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROGRAMAS / SERVICIOS ========== -->
+  <section id="programas" class="py-20 sm:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="font-orbitron text-cyber-magenta text-xs uppercase tracking-[0.3em] block mb-4">// Programas</span>
+        <h2 class="font-orbitron font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+          ELIGE TU <span class="text-cyber-cyan glow-cyan">PROTOCOLO</span>
+        </h2>
+        <p class="font-rajdhani text-lg text-gray-400 max-w-xl mx-auto">Programas diseñados por expertos y optimizados por inteligencia artificial.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Program 1 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl p-6 card-lift text-center group">
+          <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 group-hover:bg-cyber-cyan/20 transition-colors">
+            <svg class="w-8 h-8 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-orbitron font-bold text-white mb-2">HIIT QUANTUM</h3>
+          <p class="font-inter text-gray-400 text-sm leading-relaxed mb-4">Intervalos de alta intensidad calibrados con IA. 30 minutos, resultados máximos.</p>
+          <span class="font-rajdhani text-cyber-cyan font-semibold text-sm uppercase tracking-wider">45 min · Alta Intensidad</span>
+        </div>
+
+        <!-- Program 2 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl p-6 card-lift text-center group" style="transition-delay: 0.1s;">
+          <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center rounded-xl bg-cyber-magenta/10 border border-cyber-magenta/30 group-hover:bg-cyber-magenta/20 transition-colors">
+            <svg class="w-8 h-8 text-cyber-magenta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+          </div>
+          <h3 class="font-orbitron font-bold text-white mb-2">FUERZA NEXUS</h3>
+          <p class="font-inter text-gray-400 text-sm leading-relaxed mb-4">Hipertrofia y fuerza con máquinas inteligentes que ajustan la resistencia en tiempo real.</p>
+          <span class="font-rajdhani text-cyber-magenta font-semibold text-sm uppercase tracking-wider">60 min · Fuerza</span>
+        </div>
+
+        <!-- Program 3 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl p-6 card-lift text-center group" style="transition-delay: 0.2s;">
+          <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center rounded-xl bg-cyber-green/10 border border-cyber-green/30 group-hover:bg-cyber-green/20 transition-colors">
+            <svg class="w-8 h-8 text-cyber-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="font-orbitron font-bold text-white mb-2">COMBAT ZONE</h3>
+          <p class="font-inter text-gray-400 text-sm leading-relaxed mb-4">Boxing, kickboxing y MMA. Desata tu energía con técnica profesional y monitoreo biométrico.</p>
+          <span class="font-rajdhani text-cyber-green font-semibold text-sm uppercase tracking-wider">50 min · Combate</span>
+        </div>
+
+        <!-- Program 4 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl p-6 card-lift text-center group" style="transition-delay: 0.3s;">
+          <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center rounded-xl bg-cyber-purple/10 border border-cyber-purple/30 group-hover:bg-cyber-purple/20 transition-colors">
+            <svg class="w-8 h-8 text-cyber-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="font-orbitron font-bold text-white mb-2">RECOVERY LAB</h3>
+          <p class="font-inter text-gray-400 text-sm leading-relaxed mb-4">Crioterapia, compresión neumática, sauna infrarroja y meditación guiada por IA.</p>
+          <span class="font-rajdhani text-cyber-purple font-semibold text-sm uppercase tracking-wider">40 min · Recuperación</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="cyber-divider"></div>
+
+  <!-- ========== TESTIMONIOS ========== -->
+  <section id="testimonios" class="py-20 sm:py-28 relative bg-cyber-surface/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="font-orbitron text-cyber-green text-xs uppercase tracking-[0.3em] block mb-4">// Testimonios</span>
+        <h2 class="font-orbitron font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+          RESULTADOS <span class="text-cyber-cyan glow-cyan">REALES</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Testimonial 1 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl p-8 card-lift relative">
+          <div class="absolute top-6 right-6 font-orbitron text-5xl text-cyber-cyan/10">"</div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyber-cyan to-cyber-magenta flex items-center justify-center font-orbitron font-bold text-white text-sm">MR</div>
+            <div>
+              <h4 class="font-orbitron font-bold text-white text-sm">MARCO REYES</h4>
+              <p class="font-rajdhani text-gray-500 text-sm">Miembro desde 2025</p>
+            </div>
+          </div>
+          <p class="font-inter text-gray-300 text-sm leading-relaxed mb-4">"Perdí 18 kilos en 6 meses. El coach IA detectó que mi rutina no era óptima y la ajustó. Los resultados fueron inmediatos."</p>
+          <div class="flex gap-1">
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl p-8 card-lift relative" style="transition-delay: 0.1s;">
+          <div class="absolute top-6 right-6 font-orbitron text-5xl text-cyber-magenta/10">"</div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyber-magenta to-cyber-purple flex items-center justify-center font-orbitron font-bold text-white text-sm">LV</div>
+            <div>
+              <h4 class="font-orbitron font-bold text-white text-sm">LAURA VEGA</h4>
+              <p class="font-rajdhani text-gray-500 text-sm">Miembro desde 2024</p>
+            </div>
+          </div>
+          <p class="font-inter text-gray-300 text-sm leading-relaxed mb-4">"Nunca pensé que podría hacer muscle-ups. El programa de fuerza adaptativo me llevó paso a paso. El Recovery Lab es otro nivel."</p>
+          <div class="flex gap-1">
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl p-8 card-lift relative" style="transition-delay: 0.2s;">
+          <div class="absolute top-6 right-6 font-orbitron text-5xl text-cyber-green/10">"</div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyber-green to-cyber-cyan flex items-center justify-center font-orbitron font-bold text-white text-sm">DT</div>
+            <div>
+              <h4 class="font-orbitron font-bold text-white text-sm">DANIEL TORRES</h4>
+              <p class="font-rajdhani text-gray-500 text-sm">Miembro desde 2024</p>
+            </div>
+          </div>
+          <p class="font-inter text-gray-300 text-sm leading-relaxed mb-4">"Como atleta competitivo, necesitaba algo más. Los datos biométricos y el análisis de rendimiento de Nexus son incomparables."</p>
+          <div class="flex gap-1">
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-cyber-yellow" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRECIOS ========== -->
+  <section id="precios" class="py-20 sm:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="font-orbitron text-cyber-yellow text-xs uppercase tracking-[0.3em] block mb-4">// Planes</span>
+        <h2 class="font-orbitron font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+          SELECCIONA TU <span class="text-cyber-cyan glow-cyan">NIVEL</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Plan Basic -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl p-8 card-lift">
+          <div class="font-orbitron text-xs text-gray-500 uppercase tracking-[0.2em] mb-2">Nivel 01</div>
+          <h3 class="font-orbitron font-bold text-2xl text-white mb-1">INITIATE</h3>
+          <p class="font-rajdhani text-gray-400 text-sm mb-6">Perfecto para empezar tu transformación.</p>
+          <div class="flex items-baseline gap-1 mb-8">
+            <span class="font-orbitron font-black text-4xl text-white">$49</span>
+            <span class="font-rajdhani text-gray-500">/mes</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Acceso zona de máquinas
+            </li>
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              App de seguimiento básico
+            </li>
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              2 clases grupales/semana
+            </li>
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Horario: 6AM – 10PM
+            </li>
+          </ul>
+          <a href="#contacto" class="btn-cyber-outline w-full text-center text-xs">Comenzar</a>
+        </div>
+
+        <!-- Plan Pro (Featured) -->
+        <div class="reveal bg-cyber-card border-2 border-cyber-cyan rounded-xl p-8 card-lift box-glow-cyan relative" style="transition-delay: 0.1s;">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyber-cyan text-cyber-bg font-orbitron font-bold text-[10px] px-4 py-1 uppercase tracking-widest">
+            Más Popular
+          </div>
+          <div class="font-orbitron text-xs text-cyber-cyan uppercase tracking-[0.2em] mb-2">Nivel 02</div>
+          <h3 class="font-orbitron font-bold text-2xl text-white mb-1">OPERATOR</h3>
+          <p class="font-rajdhani text-gray-400 text-sm mb-6">Para quienes entrenan en serio.</p>
+          <div class="flex items-baseline gap-1 mb-8">
+            <span class="font-orbitron font-black text-4xl text-cyber-cyan">$89</span>
+            <span class="font-rajdhani text-gray-500">/mes</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Acceso 24/7 completo
+            </li>
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Coach IA personalizado
+            </li>
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Clases ilimitadas
+            </li>
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Biometría avanzada
+            </li>
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              1 sesión Recovery/semana
+            </li>
+          </ul>
+          <a href="#contacto" class="btn-cyber w-full text-center text-xs">Activar Plan</a>
+        </div>
+
+        <!-- Plan Elite -->
+        <div class="reveal bg-cyber-card border border-cyber-border rounded-xl p-8 card-lift" style="transition-delay: 0.2s;">
+          <div class="font-orbitron text-xs text-gray-500 uppercase tracking-[0.2em] mb-2">Nivel 03</div>
+          <h3 class="font-orbitron font-bold text-2xl text-white mb-1">NEXUS ELITE</h3>
+          <p class="font-rajdhani text-gray-400 text-sm mb-6">La experiencia definitiva sin límites.</p>
+          <div class="flex items-baseline gap-1 mb-8">
+            <span class="font-orbitron font-black text-4xl text-white">$149</span>
+            <span class="font-rajdhani text-gray-500">/mes</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-magenta shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Todo de Operator
+            </li>
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-magenta shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Recovery Lab ilimitado
+            </li>
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-magenta shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Coaching 1:1 mensual
+            </li>
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-magenta shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Plan nutricional IA
+            </li>
+            <li class="flex items-center gap-3 font-inter text-sm text-gray-300">
+              <svg class="w-5 h-5 text-cyber-magenta shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Acceso eventos VIP
+            </li>
+          </ul>
+          <a href="#contacto" class="btn-cyber-outline w-full text-center text-xs" style="color: #FF00E5; border-color: #FF00E5;">Ir Elite</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section id="faq" class="py-20 sm:py-28 bg-cyber-surface/30 relative">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="font-orbitron text-cyber-cyan text-xs uppercase tracking-[0.3em] block mb-4">// FAQ</span>
+        <h2 class="font-orbitron font-bold text-3xl sm:text-4xl text-white mb-4">
+          PREGUNTAS <span class="text-cyber-magenta glow-magenta">FRECUENTES</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal">
+        <div class="faq-item bg-cyber-card border border-cyber-border rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+            <span class="font-orbitron font-semibold text-sm text-white pr-4">¿Puedo probar antes de inscribirme?</span>
+            <span class="faq-icon text-cyber-cyan text-xl font-bold shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-6">
+            <p class="font-inter text-gray-400 text-sm leading-relaxed">Sí. Ofrecemos una prueba gratuita de 7 días con acceso completo a las instalaciones, clases grupales y una sesión de evaluación con nuestro Coach IA. Sin compromiso, sin tarjeta de crédito.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-cyber-card border border-cyber-border rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+            <span class="font-orbitron font-semibold text-sm text-white pr-4">¿Qué incluye el Coach IA?</span>
+            <span class="faq-icon text-cyber-cyan text-xl font-bold shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-6">
+            <p class="font-inter text-gray-400 text-sm leading-relaxed">Nuestro sistema de inteligencia artificial analiza tus datos biométricos, historial de entrenamiento y objetivos para crear y adaptar tu rutina en tiempo real. Incluye ajuste automático de cargas, sugerencias de ejercicios y alertas de fatiga.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-cyber-card border border-cyber-border rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+            <span class="font-orbitron font-semibold text-sm text-white pr-4">¿Necesito experiencia previa?</span>
+            <span class="faq-icon text-cyber-cyan text-xl font-bold shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-6">
+            <p class="font-inter text-gray-400 text-sm leading-relaxed">Para nada. Nuestros programas se adaptan a todos los niveles, desde principiantes hasta atletas avanzados. El Coach IA calibra automáticamente la dificultad según tu condición actual.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-cyber-card border border-cyber-border rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+            <span class="font-orbitron font-semibold text-sm text-white pr-4">¿Puedo cancelar en cualquier momento?</span>
+            <span class="faq-icon text-cyber-cyan text-xl font-bold shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-6">
+            <p class="font-inter text-gray-400 text-sm leading-relaxed">Sí, todos nuestros planes son mensuales y sin permanencia. Puedes cancelar, pausar o cambiar de plan desde la app en cualquier momento. Sin letras pequeñas.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-cyber-card border border-cyber-border rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+            <span class="font-orbitron font-semibold text-sm text-white pr-4">¿Qué es el Recovery Lab?</span>
+            <span class="faq-icon text-cyber-cyan text-xl font-bold shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-6">
+            <p class="font-inter text-gray-400 text-sm leading-relaxed">Es nuestra zona de recuperación premium con crioterapia de cuerpo completo, botas de compresión neumática, sauna infrarroja y cápsulas de meditación guiada. Diseñado para maximizar tu recuperación y prevenir lesiones.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACTO / FORMULARIO ========== -->
+  <section id="contacto" class="py-20 sm:py-28 relative">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?w=1600&h=900&fit=crop&q=80"
+           alt="" role="presentation"
+           width="1600" height="900" loading="lazy"
+           class="w-full h-full object-cover opacity-10">
+    </div>
+
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="font-orbitron text-cyber-magenta text-xs uppercase tracking-[0.3em] block mb-4">// Contacto</span>
+        <h2 class="font-orbitron font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+          ACTIVA TU <span class="text-cyber-cyan glow-cyan">PROTOCOLO</span>
+        </h2>
+        <p class="font-rajdhani text-lg text-gray-400 max-w-xl mx-auto">Completa el formulario y recibe acceso inmediato a tu prueba gratuita de 7 días.</p>
+      </div>
+
+      <div class="reveal bg-cyber-card border border-cyber-border rounded-2xl p-8 sm:p-10 box-glow-cyan max-w-2xl mx-auto">
+        <form id="contactForm" class="space-y-6" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="nombre" class="block font-rajdhani font-semibold text-sm text-gray-300 uppercase tracking-wider mb-2">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="100"
+                     class="w-full px-4 py-3 bg-cyber-bg border border-cyber-border rounded-lg font-inter text-white text-sm placeholder-gray-600 focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan/30 transition-colors"
+                     placeholder="Tu nombre" autocomplete="given-name">
+              <span class="text-red-400 text-xs mt-1 hidden error-msg" aria-live="polite"></span>
+            </div>
+            <div>
+              <label for="email" class="block font-rajdhani font-semibold text-sm text-gray-300 uppercase tracking-wider mb-2">Email</label>
+              <input type="email" id="email" name="email" required maxlength="254"
+                     class="w-full px-4 py-3 bg-cyber-bg border border-cyber-border rounded-lg font-inter text-white text-sm placeholder-gray-600 focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan/30 transition-colors"
+                     placeholder="tu@email.com" autocomplete="email">
+              <span class="text-red-400 text-xs mt-1 hidden error-msg" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div>
+            <label for="telefono" class="block font-rajdhani font-semibold text-sm text-gray-300 uppercase tracking-wider mb-2">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" maxlength="20"
+                   class="w-full px-4 py-3 bg-cyber-bg border border-cyber-border rounded-lg font-inter text-white text-sm placeholder-gray-600 focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan/30 transition-colors"
+                   placeholder="+1 (555) 123-4567" autocomplete="tel">
+          </div>
+
+          <div>
+            <label for="plan" class="block font-rajdhani font-semibold text-sm text-gray-300 uppercase tracking-wider mb-2">Plan de interés</label>
+            <select id="plan" name="plan"
+                    class="w-full px-4 py-3 bg-cyber-bg border border-cyber-border rounded-lg font-inter text-white text-sm focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan/30 transition-colors appearance-none"
+                    style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%2712%27 fill=%27%2300F0FF%27 viewBox=%270 0 16 16%27%3E%3Cpath d=%27M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z%27/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 1rem center;">
+              <option value="" class="bg-cyber-bg">Selecciona un plan</option>
+              <option value="initiate" class="bg-cyber-bg">Initiate — $49/mes</option>
+              <option value="operator" class="bg-cyber-bg">Operator — $89/mes</option>
+              <option value="elite" class="bg-cyber-bg">Nexus Elite — $149/mes</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="mensaje" class="block font-rajdhani font-semibold text-sm text-gray-300 uppercase tracking-wider mb-2">Mensaje <span class="text-gray-600">(opcional)</span></label>
+            <textarea id="mensaje" name="mensaje" rows="3" maxlength="1000"
+                      class="w-full px-4 py-3 bg-cyber-bg border border-cyber-border rounded-lg font-inter text-white text-sm placeholder-gray-600 focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan/30 transition-colors resize-none"
+                      placeholder="¿Algún objetivo o pregunta?"></textarea>
+          </div>
+
+          <!-- Consent -->
+          <div class="flex items-start gap-3">
+            <input type="checkbox" id="consent" name="consent" required
+                   class="mt-1 w-4 h-4 rounded border-cyber-border bg-cyber-bg text-cyber-cyan focus:ring-cyber-cyan/30">
+            <label for="consent" class="font-inter text-xs text-gray-400 leading-relaxed">
+              Acepto la <a href="#" class="text-cyber-cyan hover:underline">Política de Privacidad</a> y el tratamiento de mis datos personales conforme al GDPR. Puedo retirar mi consentimiento en cualquier momento.
+            </label>
+          </div>
+
+          <button type="submit" class="btn-cyber w-full text-center text-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Activar Prueba Gratis
+          </button>
+
+          <!-- Success message -->
+          <div id="formSuccess" class="hidden text-center py-4">
+            <div class="inline-flex items-center gap-2 text-cyber-green font-rajdhani font-semibold">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              ¡Registro enviado! Te contactaremos en menos de 24 horas.
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="border-t border-cyber-border bg-cyber-surface/50 py-12 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <!-- Brand -->
+        <div>
+          <a href="#" class="flex items-center gap-2 mb-4" aria-label="NEXUS GYM">
+            <div class="w-8 h-8 flex items-center justify-center border-2 border-cyber-cyan bg-cyber-cyan/10 rotate-45">
+              <span class="font-orbitron font-black text-cyber-cyan text-sm -rotate-45">N</span>
+            </div>
+            <span class="font-orbitron font-bold text-white tracking-wider">NEXUS<span class="text-cyber-cyan">GYM</span></span>
+          </a>
+          <p class="font-inter text-gray-500 text-sm leading-relaxed">El gimnasio del futuro. Tecnología, rendimiento y comunidad en un solo lugar.</p>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="font-orbitron font-bold text-white text-xs uppercase tracking-wider mb-4">Programas</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="font-inter text-sm text-gray-400 hover:text-cyber-cyan transition-colors">HIIT Quantum</a></li>
+            <li><a href="#" class="font-inter text-sm text-gray-400 hover:text-cyber-cyan transition-colors">Fuerza Nexus</a></li>
+            <li><a href="#" class="font-inter text-sm text-gray-400 hover:text-cyber-cyan transition-colors">Combat Zone</a></li>
+            <li><a href="#" class="font-inter text-sm text-gray-400 hover:text-cyber-cyan transition-colors">Recovery Lab</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h4 class="font-orbitron font-bold text-white text-xs uppercase tracking-wider mb-4">Legal</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="font-inter text-sm text-gray-400 hover:text-cyber-cyan transition-colors">Aviso de Privacidad</a></li>
+            <li><a href="#" class="font-inter text-sm text-gray-400 hover:text-cyber-cyan transition-colors">Términos de Uso</a></li>
+            <li><a href="#" class="font-inter text-sm text-gray-400 hover:text-cyber-cyan transition-colors">Política de Cookies</a></li>
+            <li><a href="#" class="font-inter text-sm text-gray-400 hover:text-cyber-cyan transition-colors">GDPR</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-orbitron font-bold text-white text-xs uppercase tracking-wider mb-4">Contacto</h4>
+          <ul class="space-y-2">
+            <li class="font-inter text-sm text-gray-400">Av. Futuro 2077, Distrito Tech</li>
+            <li><a href="tel:+15551234567" class="font-inter text-sm text-gray-400 hover:text-cyber-cyan transition-colors">+1 (555) 123-4567</a></li>
+            <li><a href="mailto:info@nexusgym.com" class="font-inter text-sm text-gray-400 hover:text-cyber-cyan transition-colors">info@nexusgym.com</a></li>
+          </ul>
+          <div class="flex gap-4 mt-4">
+            <a href="#" class="text-gray-500 hover:text-cyber-cyan transition-colors" aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-cyber-cyan transition-colors" aria-label="TikTok">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.11v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46v-7.03a8.16 8.16 0 004.77 1.52V10.7a4.83 4.83 0 01-.19-4.01z"/></svg>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-cyber-cyan transition-colors" aria-label="YouTube">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-cyber-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="font-inter text-xs text-gray-600">&copy; 2026 NEXUS GYM. Todos los derechos reservados.</p>
+        <p class="font-inter text-xs text-gray-600">Diseñado con <span class="text-cyber-magenta">♥</span> y tecnología</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== COOKIE CONSENT ========== -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-50 p-4 cookie-banner bg-cyber-card/95 border-t border-cyber-border" role="dialog" aria-label="Consentimiento de cookies">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-inter text-sm text-gray-400 text-center sm:text-left">Usamos cookies esenciales para el funcionamiento del sitio. No recopilamos datos personales sin tu consentimiento. <a href="#" class="text-cyber-cyan hover:underline">Más información</a></p>
+      <div class="flex gap-3 shrink-0">
+        <button id="cookieReject" class="font-rajdhani font-semibold text-sm text-gray-400 hover:text-white border border-cyber-border px-4 py-2 rounded-lg transition-colors">Rechazar</button>
+        <button id="cookieAccept" class="font-rajdhani font-semibold text-sm text-cyber-bg bg-cyber-cyan hover:bg-cyber-cyan/80 px-4 py-2 rounded-lg transition-colors">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // ---- Navbar scroll effect ----
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-cyber-bg/95', 'backdrop-blur-lg', 'border-b', 'border-cyber-border/30');
+      } else {
+        navbar.classList.remove('bg-cyber-bg/95', 'backdrop-blur-lg', 'border-b', 'border-cyber-border/30');
+      }
+    }, { passive: true });
+
+    // ---- Mobile Menu ----
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', !isOpen);
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ---- Counter Animation ----
+    const counters = document.querySelectorAll('.counter');
+    const animateCounter = (el) => {
+      const target = parseInt(el.dataset.target);
+      const duration = 2000;
+      const start = performance.now();
+      const step = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target).toLocaleString();
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
+
+    // ---- Reveal on scroll ----
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(r => revealObserver.observe(r));
+
+    // ---- FAQ Accordion ----
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+        btn.setAttribute('aria-expanded', !isActive);
+      });
+    });
+
+    // ---- Form Validation & Submission ----
+    const contactForm = document.getElementById('contactForm');
+    const sanitize = (str) => {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    };
+    const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      // Reset errors
+      contactForm.querySelectorAll('.error-msg').forEach(el => {
+        el.classList.add('hidden');
+        el.textContent = '';
+      });
+
+      const nombre = contactForm.querySelector('#nombre');
+      const email = contactForm.querySelector('#email');
+      const consent = contactForm.querySelector('#consent');
+
+      if (!nombre.value.trim() || nombre.value.trim().length < 2) {
+        const err = nombre.nextElementSibling;
+        err.textContent = 'Por favor ingresa tu nombre.';
+        err.classList.remove('hidden');
+        valid = false;
+      }
+
+      if (!validateEmail(email.value.trim())) {
+        const err = email.nextElementSibling;
+        err.textContent = 'Por favor ingresa un email válido.';
+        err.classList.remove('hidden');
+        valid = false;
+      }
+
+      if (!consent.checked) {
+        valid = false;
+        consent.focus();
+      }
+
+      if (valid) {
+        // Sanitize data
+        const data = {
+          nombre: sanitize(nombre.value.trim()),
+          email: sanitize(email.value.trim()),
+          telefono: sanitize(contactForm.querySelector('#telefono').value.trim()),
+          plan: contactForm.querySelector('#plan').value,
+          mensaje: sanitize(contactForm.querySelector('#mensaje').value.trim()),
+        };
+        // Log eliminado en producción
+
+        contactForm.style.display = 'none';
+        document.getElementById('formSuccess').classList.remove('hidden');
+      }
+    });
+
+    // ---- Cookie Banner ----
+    const cookieBanner = document.getElementById('cookieBanner');
+    document.getElementById('cookieAccept').addEventListener('click', () => {
+      cookieBanner.style.display = 'none';
+    });
+    document.getElementById('cookieReject').addEventListener('click', () => {
+      cookieBanner.style.display = 'none';
+    });
+
+    // ---- Particles Generator ----
+    const particleContainer = document.getElementById('particles');
+    for (let i = 0; i < 30; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.top = Math.random() * 100 + '%';
+      p.style.animationDelay = Math.random() * 8 + 's';
+      p.style.animationDuration = (6 + Math.random() * 6) + 's';
+      if (Math.random() > 0.5) p.style.background = '#FF00E5';
+      if (Math.random() > 0.8) p.style.background = '#00FF41';
+      particleContainer.appendChild(p);
+    }
+
+    // ---- Smooth scroll for anchor links ----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GymOrHealthClub",
+    "name": "NEXUS GYM",
+    "description": "El gimnasio del futuro con tecnología de punta y entrenamiento personalizado con IA.",
+    "url": "https://nexusgym.com",
+    "telephone": "+15551234567",
+    "email": "info@nexusgym.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Futuro 2077",
+      "addressLocality": "Distrito Tech"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "priceRange": "$49 - $149/mes"
+  }
+  </script>
+</body>
+</html>

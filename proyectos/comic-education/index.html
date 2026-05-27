@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KABOOM! Academy — La plataforma de educación online que explota tu potencial. Cursos interactivos, mentores expertos y una comunidad que te impulsa. ¡Aprende con estilo!">
+    <meta name="keywords" content="educación online, cursos, aprendizaje, e-learning, academia, KABOOM Academy">
+    <meta name="author" content="KABOOM! Academy">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FFDE00">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="KABOOM! Academy — Aprende. Explota. Domina.">
+    <meta property="og:description" content="Cursos online que explotan tu potencial. Mentores expertos, proyectos reales y una comunidad épica.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kaboomacademy.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=630&fit=crop&q=80">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KABOOM! Academy — Aprende. Explota. Domina.">
+    <meta name="twitter:description" content="Cursos online que explotan tu potencial.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=630&fit=crop&q=80">
+
+    <link rel="canonical" href="https://kaboomacademy.com">
+
+    <title>KABOOM! Academy — Aprende. Explota. Domina.</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💥</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'comic-yellow': '#FFDE00',
+                        'comic-red': '#EF4444',
+                        'comic-blue': '#2563EB',
+                        'comic-pink': '#EC4899',
+                        'comic-green': '#10B981',
+                        'comic-orange': '#F97316',
+                        'comic-black': '#1A1A2E',
+                        'comic-dark': '#0F0F1A',
+                    },
+                    fontFamily: {
+                        'bangers': ['Bangers', 'cursive'],
+                        'comic': ['Comic Neue', 'cursive'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'shake': 'shake 0.5s ease-in-out',
+                        'pop': 'pop 0.3s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'burst': 'burst 0.8s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        shake: {
+                            '0%, 100%': { transform: 'rotate(0)' },
+                            '25%': { transform: 'rotate(-3deg)' },
+                            '75%': { transform: 'rotate(3deg)' },
+                        },
+                        pop: {
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        burst: {
+                            '0%': { transform: 'scale(0) rotate(-10deg)', opacity: '0' },
+                            '60%': { transform: 'scale(1.1) rotate(2deg)', opacity: '1' },
+                            '100%': { transform: 'scale(1) rotate(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        /* Halftone pattern */
+        .halftone {
+            background-image: radial-gradient(circle, #1A1A2E 1px, transparent 1px);
+            background-size: 8px 8px;
+        }
+        .halftone-light {
+            background-image: radial-gradient(circle, rgba(255,222,0,0.15) 1px, transparent 1px);
+            background-size: 6px 6px;
+        }
+        .halftone-dense {
+            background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1.5px, transparent 1.5px);
+            background-size: 5px 5px;
+        }
+
+        /* Comic border */
+        .comic-border {
+            border: 4px solid #1A1A2E;
+            box-shadow: 6px 6px 0 #1A1A2E;
+        }
+        .comic-border-sm {
+            border: 3px solid #1A1A2E;
+            box-shadow: 4px 4px 0 #1A1A2E;
+        }
+        .comic-border-yellow {
+            border: 4px solid #1A1A2E;
+            box-shadow: 6px 6px 0 #FFDE00;
+        }
+
+        /* Speech bubble */
+        .speech-bubble {
+            position: relative;
+            background: white;
+            border: 3px solid #1A1A2E;
+            border-radius: 20px;
+            padding: 1.5rem;
+        }
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 30px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 0px solid transparent;
+            border-top: 20px solid #1A1A2E;
+        }
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 33px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 0px solid transparent;
+            border-top: 15px solid white;
+            z-index: 1;
+        }
+
+        /* Thought bubble */
+        .thought-bubble {
+            position: relative;
+            background: white;
+            border: 3px solid #1A1A2E;
+            border-radius: 30px;
+            padding: 1.5rem;
+        }
+        .thought-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -25px;
+            left: 40px;
+            width: 15px;
+            height: 15px;
+            background: white;
+            border: 3px solid #1A1A2E;
+            border-radius: 50%;
+        }
+        .thought-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 50px;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border: 3px solid #1A1A2E;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Action lines */
+        .action-lines {
+            background: repeating-conic-gradient(
+                rgba(255,222,0,0.1) 0deg 10deg,
+                transparent 10deg 20deg
+            );
+        }
+
+        /* Speed lines */
+        .speed-lines::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent 0px,
+                transparent 40px,
+                rgba(255,222,0,0.05) 40px,
+                rgba(255,222,0,0.05) 42px
+            );
+            pointer-events: none;
+        }
+
+        /* Starburst */
+        .starburst {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        /* Comic panel */
+        .comic-panel {
+            border: 4px solid #1A1A2E;
+            position: relative;
+            overflow: hidden;
+        }
+        .comic-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Rotating text */
+        .rotate-text {
+            display: inline-block;
+            animation: rotateIn 0.8s ease-out;
+        }
+        @keyframes rotateIn {
+            from { transform: rotate(-5deg) scale(0.9); opacity: 0; }
+            to { transform: rotate(0) scale(1); opacity: 1; }
+        }
+
+        /* Zigzag divider */
+        .zigzag-top {
+            background: linear-gradient(135deg, #FFDE00 25%, transparent 25%) -14px 0,
+                        linear-gradient(225deg, #FFDE00 25%, transparent 25%) -14px 0,
+                        linear-gradient(315deg, #FFDE00 25%, transparent 25%),
+                        linear-gradient(45deg, #FFDE00 25%, transparent 25%);
+            background-size: 28px 20px;
+            background-position: top;
+            background-repeat: repeat-x;
+            height: 20px;
+        }
+
+        /* Wobble hover */
+        .wobble:hover {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        /* Counter animation */
+        .counter {
+            display: inline-block;
+        }
+
+        /* Nav active */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #FFDE00;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Cookie banner */
+        .cookie-banner {
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1A1A2E; }
+        ::-webkit-scrollbar-thumb { background: #FFDE00; border-radius: 5px; }
+
+        /* Smooth body */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        /* FAQ accordion */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-answer.open {
+            max-height: 300px;
+            padding-top: 1rem;
+        }
+
+        /* Image card hover */
+        .img-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "KABOOM! Academy",
+        "description": "Plataforma de educación online con cursos interactivos y mentores expertos.",
+        "url": "https://kaboomacademy.com",
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hola@kaboomacademy.com",
+            "contactType": "customer support"
+        },
+        "offers": {
+            "@type": "Offer",
+            "category": "Online Education",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none';">
+</head>
+
+<body class="bg-comic-dark text-white">
+
+    <!-- Skip navigation -->
+    <a href="#hero" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-comic-yellow focus:text-comic-black focus:font-bangers focus:rounded-lg focus:text-base">
+        Saltar al contenido principal
+    </a>
+
+    <!-- ======================== NAVIGATION ======================== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-comic-dark/95 backdrop-blur-md border-b-4 border-comic-yellow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center gap-2 group" aria-label="KABOOM! Academy inicio">
+                    <span class="text-3xl sm:text-4xl font-bangers text-comic-yellow tracking-wider group-hover:animate-shake">
+                        KABOOM!
+                    </span>
+                    <span class="hidden sm:block text-xs font-comic font-bold text-white/70 uppercase tracking-widest">Academy</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#cursos" class="nav-link font-comic font-bold text-sm uppercase tracking-wide text-white/80 hover:text-comic-yellow transition-colors">Cursos</a>
+                    <a href="#beneficios" class="nav-link font-comic font-bold text-sm uppercase tracking-wide text-white/80 hover:text-comic-yellow transition-colors">Beneficios</a>
+                    <a href="#testimonios" class="nav-link font-comic font-bold text-sm uppercase tracking-wide text-white/80 hover:text-comic-yellow transition-colors">Testimonios</a>
+                    <a href="#faq" class="nav-link font-comic font-bold text-sm uppercase tracking-wide text-white/80 hover:text-comic-yellow transition-colors">FAQ</a>
+                    <a href="#inscribirse" class="inline-flex items-center gap-2 px-6 py-3 bg-comic-yellow text-comic-black font-bangers text-lg tracking-wide rounded-lg comic-border-sm hover:bg-comic-orange hover:scale-105 transition-all duration-200 whitespace-nowrap">
+                        ¡INSCRÍBETE YA!
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-comic-yellow" aria-label="Abrir menú" aria-expanded="false">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-comic-black border-t-4 border-comic-yellow">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#cursos" class="block font-comic font-bold text-lg text-white/80 hover:text-comic-yellow transition-colors">Cursos</a>
+                <a href="#beneficios" class="block font-comic font-bold text-lg text-white/80 hover:text-comic-yellow transition-colors">Beneficios</a>
+                <a href="#testimonios" class="block font-comic font-bold text-lg text-white/80 hover:text-comic-yellow transition-colors">Testimonios</a>
+                <a href="#faq" class="block font-comic font-bold text-lg text-white/80 hover:text-comic-yellow transition-colors">FAQ</a>
+                <a href="#inscribirse" class="block w-full text-center px-6 py-3 bg-comic-yellow text-comic-black font-bangers text-xl tracking-wide rounded-lg comic-border-sm">¡INSCRÍBETE YA!</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================== HERO SECTION ======================== -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute inset-0 action-lines opacity-30"></div>
+        <div class="absolute inset-0 halftone-light opacity-40"></div>
+
+        <!-- Floating comic elements -->
+        <div class="absolute top-32 right-10 sm:right-20 w-20 h-20 sm:w-28 sm:h-28 bg-comic-red starburst flex items-center justify-center animate-float opacity-80" role="presentation">
+            <span class="font-bangers text-white text-sm sm:text-lg rotate-[-10deg]">POW!</span>
+        </div>
+        <div class="absolute bottom-20 left-5 sm:left-16 w-16 h-16 sm:w-24 sm:h-24 bg-comic-pink starburst flex items-center justify-center animate-float opacity-70" style="animation-delay: 1s;" role="presentation">
+            <span class="font-bangers text-white text-xs sm:text-base rotate-[5deg]">ZAP!</span>
+        </div>
+        <div class="absolute top-48 left-10 w-12 h-12 sm:w-16 sm:h-16 bg-comic-blue rounded-full flex items-center justify-center animate-float opacity-60" style="animation-delay: 0.5s;" role="presentation">
+            <span class="font-bangers text-white text-xs">BOOM</span>
+        </div>
+
+        <!-- Main content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- Left: Copy -->
+                <div class="text-center lg:text-left">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-comic-yellow/10 border-2 border-comic-yellow rounded-full mb-6">
+                        <span class="w-2 h-2 bg-comic-green rounded-full animate-pulse"></span>
+                        <span class="font-comic font-bold text-comic-yellow text-sm uppercase tracking-wide">+2K nuevos alumnos este mes</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="font-bangers text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-wide mb-6">
+                        <span class="text-white">APRENDE.</span><br>
+                        <span class="text-comic-yellow inline-block transform -rotate-2">EXPLOTA.</span><br>
+                        <span class="text-comic-red inline-block transform rotate-1">DOMINA.</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="font-comic text-lg sm:text-xl text-white/70 max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
+                        Cursos online que no te duermen. Mentores que saben de lo que hablan. Proyectos reales que te ponen en el mapa. <strong class="text-comic-yellow">¡Tu futuro empieza con un KABOOM!</strong>
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+                        <a href="#inscribirse" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-comic-yellow text-comic-black font-bangers text-xl sm:text-2xl tracking-wide rounded-xl comic-border hover:bg-comic-orange hover:scale-105 transition-all duration-200">
+                            <span>¡EMPIEZA GRATIS!</span>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                        </a>
+                        <a href="#cursos" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-3 border-white/30 text-white font-comic font-bold text-lg rounded-xl hover:border-comic-yellow hover:text-comic-yellow transition-all duration-200" style="border-width: 3px;">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <span>Ver demo</span>
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8">
+                        <div class="text-center whitespace-nowrap">
+                            <div class="font-bangers text-xl sm:text-2xl lg:text-3xl text-comic-yellow">
+                                <span class="counter" data-target="42000">0</span>K<span class="text-comic-yellow/60">+</span>
+                            </div>
+                            <div class="font-comic text-xs sm:text-sm text-white/50 uppercase tracking-wide">Alumnos</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/20 hidden sm:block" role="presentation"></div>
+                        <div class="text-center whitespace-nowrap">
+                            <div class="font-bangers text-xl sm:text-2xl lg:text-3xl text-comic-red">
+                                <span class="counter" data-target="180">0</span><span class="text-comic-red/60">+</span>
+                            </div>
+                            <div class="font-comic text-xs sm:text-sm text-white/50 uppercase tracking-wide">Cursos</div>
+                        </div>
+                        <div class="w-px h-10 bg-white/20 hidden sm:block" role="presentation"></div>
+                        <div class="text-center whitespace-nowrap">
+                            <div class="font-bangers text-xl sm:text-2xl lg:text-3xl text-comic-green">
+                                <span class="counter" data-target="97">0</span><span class="text-comic-green/60">%</span>
+                            </div>
+                            <div class="font-comic text-xs sm:text-sm text-white/50 uppercase tracking-wide">Satisfacción</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Hero Image -->
+                <div class="relative flex justify-center lg:justify-end">
+                    <div class="relative w-full max-w-xl">
+                        <!-- Comic panel frame -->
+                        <div class="comic-panel rounded-2xl overflow-hidden">
+                            <img
+                                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&h=1000&fit=crop&q=80"
+                                alt="Grupo de estudiantes colaborando en un proyecto digital con laptops y pizarrón"
+                                width="1600" height="1000"
+                                loading="eager"
+                                class="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
+                            >
+                            <!-- Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-comic-dark via-comic-dark/30 to-transparent"></div>
+
+                            <!-- Floating speech bubble -->
+                            <div class="absolute bottom-6 left-6 right-6 bg-white/95 rounded-2xl p-4 border-3 border-comic-black" style="border-width:3px;">
+                                <p class="font-comic font-bold text-comic-black text-sm sm:text-base">
+                                    "En 3 meses pasé de cero a mi primer empleo tech"
+                                    <span class="text-comic-yellow text-lg">⭐⭐⭐⭐⭐</span>
+                                </p>
+                                <p class="font-comic text-comic-black/60 text-xs mt-1">— María G., Fullstack Developer</p>
+                            </div>
+                        </div>
+
+                        <!-- Decorative comic elements -->
+                        <div class="absolute -top-4 -right-4 bg-comic-orange text-white font-bangers text-sm sm:text-base px-4 py-2 rounded-full comic-border-sm transform rotate-6 z-10 whitespace-nowrap">
+                            🔥 TRENDING
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== BRANDS / TRUST BAR ======================== -->
+    <section class="relative py-8 bg-comic-black border-y-4 border-comic-yellow/30 overflow-hidden">
+        <div class="halftone-dense absolute inset-0 opacity-30"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <p class="font-comic font-bold text-center text-white/40 text-sm uppercase tracking-widest mb-6">Nuestros alumnos trabajan en</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 sm:gap-12 opacity-50">
+                <span class="font-bangers text-2xl sm:text-3xl text-white/60">Google</span>
+                <span class="font-bangers text-2xl sm:text-3xl text-white/60">Meta</span>
+                <span class="font-bangers text-2xl sm:text-3xl text-white/60">Apple</span>
+                <span class="font-bangers text-2xl sm:text-3xl text-white/60">Netflix</span>
+                <span class="font-bangers text-2xl sm:text-3xl text-white/60">Spotify</span>
+                <span class="font-bangers text-2xl sm:text-3xl text-white/60">Amazon</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CURSOS / SERVICIOS ======================== -->
+    <section id="cursos" class="relative py-20 sm:py-28 overflow-hidden">
+        <div class="halftone-light absolute inset-0 opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section header -->
+            <div class="text-center mb-16 reveal">
+                <div class="inline-block bg-comic-blue px-6 py-2 rounded-full comic-border-sm transform -rotate-2 mb-4">
+                    <span class="font-bangers text-white text-lg tracking-wide">NUESTROS CURSOS</span>
+                </div>
+                <h2 class="font-bangers text-4xl sm:text-5xl lg:text-6xl text-white tracking-wide mt-4">
+                    ELIGE TU <span class="text-comic-yellow">SUPERPODER</span>
+                </h2>
+                <p class="font-comic text-white/60 text-lg mt-4 max-w-2xl mx-auto">
+                    Cada curso es una aventura épica. Proyectos reales, mentores legendarios y una comunidad que no te deja bajar los brazos.
+                </p>
+            </div>
+
+            <!-- Course cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Card 1 -->
+                <article class="img-card comic-panel rounded-2xl bg-comic-black overflow-hidden group reveal" style="transition-delay: 0.1s;">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop&q=80"
+                             alt="Persona programando código en pantalla con interfaz moderna"
+                             width="800" height="500" loading="lazy"
+                             class="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-comic-black via-comic-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-comic-blue text-white font-bangers text-sm px-3 py-1 rounded-full">DESARROLLO WEB</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bangers text-xl text-white tracking-wide mb-2">Fullstack JavaScript</h3>
+                        <p class="font-comic text-white/60 text-sm mb-4">De HTML a React + Node.js. Construye apps reales desde la primera semana.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bangers text-comic-yellow text-lg whitespace-nowrap">$49</span>
+                                <span class="font-comic text-white/40 text-xs">/mes</span>
+                            </div>
+                            <span class="font-comic text-white/40 text-xs whitespace-nowrap">12 semanas</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="img-card comic-panel rounded-2xl bg-comic-black overflow-hidden group reveal" style="transition-delay: 0.2s;">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop&q=80"
+                             alt="Dashboard de datos y gráficas analíticas en pantalla"
+                             width="800" height="500" loading="lazy"
+                             class="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-comic-black via-comic-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-comic-red text-white font-bangers text-sm px-3 py-1 rounded-full">DATA SCIENCE</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bangers text-xl text-white tracking-wide mb-2">Data Science & Python</h3>
+                        <p class="font-comic text-white/60 text-sm mb-4">Pandas, ML, visualización. Conviértete en el detective de los datos.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bangers text-comic-yellow text-lg whitespace-nowrap">$59</span>
+                                <span class="font-comic text-white/40 text-xs">/mes</span>
+                            </div>
+                            <span class="font-comic text-white/40 text-xs whitespace-nowrap">16 semanas</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="img-card comic-panel rounded-2xl bg-comic-black overflow-hidden group reveal" style="transition-delay: 0.3s;">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop&q=80"
+                             alt="Diseñador UX trabajando en wireframes y prototipos"
+                             width="800" height="500" loading="lazy"
+                             class="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-comic-black via-comic-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-comic-pink text-white font-bangers text-sm px-3 py-1 rounded-full">DISEÑO UX/UI</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bangers text-xl text-white tracking-wide mb-2">UX/UI Design Pro</h3>
+                        <p class="font-comic text-white/60 text-sm mb-4">Figma, research, prototipos. Diseña experiencias que enamoran.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bangers text-comic-yellow text-lg whitespace-nowrap">$45</span>
+                                <span class="font-comic text-white/40 text-xs">/mes</span>
+                            </div>
+                            <span class="font-comic text-white/40 text-xs whitespace-nowrap">10 semanas</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="img-card comic-panel rounded-2xl bg-comic-black overflow-hidden group reveal" style="transition-delay: 0.4s;">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=500&fit=crop&q=80"
+                             alt="Código de inteligencia artificial y redes neuronales"
+                             width="800" height="500" loading="lazy"
+                             class="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-comic-black via-comic-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-comic-green text-white font-bangers text-sm px-3 py-1 rounded-full">INTELIGENCIA ARTIFICIAL</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bangers text-xl text-white tracking-wide mb-2">IA & Machine Learning</h3>
+                        <p class="font-comic text-white/60 text-sm mb-4">TensorFlow, LLMs, prompting avanzado. El futuro es tuyo.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bangers text-comic-yellow text-lg whitespace-nowrap">$69</span>
+                                <span class="font-comic text-white/40 text-xs">/mes</span>
+                            </div>
+                            <span class="font-comic text-white/40 text-xs whitespace-nowrap">14 semanas</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="img-card comic-panel rounded-2xl bg-comic-black overflow-hidden group reveal" style="transition-delay: 0.5s;">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop&q=80"
+                             alt="Estrategia de marketing digital con gráficos y métricas"
+                             width="800" height="500" loading="lazy"
+                             class="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-comic-black via-comic-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-comic-orange text-white font-bangers text-sm px-3 py-1 rounded-full">MARKETING DIGITAL</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bangers text-xl text-white tracking-wide mb-2">Growth & Marketing</h3>
+                        <p class="font-comic text-white/60 text-sm mb-4">SEO, ads, funnels, analytics. Haz crecer cualquier negocio.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bangers text-comic-yellow text-lg whitespace-nowrap">$39</span>
+                                <span class="font-comic text-white/40 text-xs">/mes</span>
+                            </div>
+                            <span class="font-comic text-white/40 text-xs whitespace-nowrap">8 semanas</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="img-card comic-panel rounded-2xl bg-comic-black overflow-hidden group reveal" style="transition-delay: 0.6s;">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=500&fit=crop&q=80"
+                             alt="Pantalla con código de ciberseguridad y encriptación"
+                             width="800" height="500" loading="lazy"
+                             class="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-comic-black via-comic-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block bg-comic-yellow text-comic-black font-bangers text-sm px-3 py-1 rounded-full">CIBERSEGURIDAD</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bangers text-xl text-white tracking-wide mb-2">Cybersecurity Ops</h3>
+                        <p class="font-comic text-white/60 text-sm mb-4">Ethical hacking, pentesting, defensa. Conviértete en guardián digital.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bangers text-comic-yellow text-lg whitespace-nowrap">$55</span>
+                                <span class="font-comic text-white/40 text-xs">/mes</span>
+                            </div>
+                            <span class="font-comic text-white/40 text-xs whitespace-nowrap">12 semanas</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-12 reveal">
+                <a href="#inscribirse" class="inline-flex items-center gap-3 px-8 py-4 bg-comic-yellow text-comic-black font-bangers text-xl tracking-wide rounded-xl comic-border-sm hover:bg-comic-orange hover:scale-105 transition-all">
+                    VER TODOS LOS CURSOS
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== VISUAL BREAK — FULL WIDTH ======================== -->
+    <section class="relative h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden" role="presentation">
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&h=800&fit=crop&q=80"
+             alt="Aula moderna con estudiantes participando activamente en clase"
+             width="1600" height="800" loading="lazy"
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-comic-dark via-comic-dark/70 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-comic-dark via-transparent to-comic-dark/50"></div>
+        <div class="absolute inset-0 flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="max-w-lg">
+                    <div class="bg-comic-yellow inline-block px-4 py-1 rounded-full comic-border-sm transform -rotate-3 mb-4">
+                        <span class="font-bangers text-comic-black text-base">💡 DATO ÉPICO</span>
+                    </div>
+                    <h2 class="font-bangers text-3xl sm:text-4xl lg:text-5xl text-white tracking-wide leading-tight">
+                        EL <span class="text-comic-yellow">93%</span> DE NUESTROS ALUMNOS CONSIGUE EMPLEO EN <span class="text-comic-red">MENOS DE 6 MESES</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== BENEFICIOS ======================== -->
+    <section id="beneficios" class="relative py-20 sm:py-28 bg-comic-yellow overflow-hidden">
+        <div class="halftone-dense absolute inset-0 opacity-40"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section header -->
+            <div class="text-center mb-16 reveal">
+                <div class="inline-block bg-comic-black px-6 py-2 rounded-full transform rotate-1 mb-4">
+                    <span class="font-bangers text-comic-yellow text-lg tracking-wide">¿POR QUÉ KABOOM!?</span>
+                </div>
+                <h2 class="font-bangers text-4xl sm:text-5xl lg:text-6xl text-comic-black tracking-wide mt-4">
+                    NO SOMOS UNA ACADEMIA <span class="text-comic-red inline-block transform -rotate-2">ABURRIDA</span>
+                </h2>
+            </div>
+
+            <!-- Benefits grid — comic panels layout -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Benefit 1 -->
+                <div class="bg-white comic-panel rounded-2xl p-6 group hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-comic-blue rounded-2xl flex items-center justify-center mb-4 comic-border-sm group-hover:animate-shake">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3 class="font-bangers text-comic-black text-xl tracking-wide mb-2">Aprende Haciendo</h3>
+                    <p class="font-comic text-comic-black/60 text-sm">Nada de videos eternos. Desde el día 1 construyes proyectos reales que puedes mostrar.</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="bg-white comic-panel rounded-2xl p-6 group hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-comic-red rounded-2xl flex items-center justify-center mb-4 comic-border-sm group-hover:animate-shake">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="font-bangers text-comic-black text-xl tracking-wide mb-2">Mentores Pro</h3>
+                    <p class="font-comic text-comic-black/60 text-sm">Profesionales activos de la industria que te guían, corrigen y empujan al siguiente nivel.</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="bg-white comic-panel rounded-2xl p-6 group hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 0.3s;">
+                    <div class="w-16 h-16 bg-comic-green rounded-2xl flex items-center justify-center mb-4 comic-border-sm group-hover:animate-shake">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="font-bangers text-comic-black text-xl tracking-wide mb-2">A Tu Ritmo</h3>
+                    <p class="font-comic text-comic-black/60 text-sm">Acceso 24/7, sesiones grabadas y soporte continuo. Tú marcas el ritmo de tu evolución.</p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="bg-white comic-panel rounded-2xl p-6 group hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 0.4s;">
+                    <div class="w-16 h-16 bg-comic-orange rounded-2xl flex items-center justify-center mb-4 comic-border-sm group-hover:animate-shake">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    </div>
+                    <h3 class="font-bangers text-comic-black text-xl tracking-wide mb-2">Certificado Pro</h3>
+                    <p class="font-comic text-comic-black/60 text-sm">Certificación reconocida por la industria + portfolio con proyectos reales. Tu ticket al empleo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== HOW IT WORKS — COMIC STRIP ======================== -->
+    <section class="relative py-20 sm:py-28 overflow-hidden">
+        <div class="halftone-light absolute inset-0 opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-block bg-comic-red px-6 py-2 rounded-full comic-border-sm transform rotate-2 mb-4">
+                    <span class="font-bangers text-white text-lg tracking-wide">CÓMO FUNCIONA</span>
+                </div>
+                <h2 class="font-bangers text-4xl sm:text-5xl lg:text-6xl text-white tracking-wide mt-4">
+                    TU AVENTURA EN <span class="text-comic-yellow">4 PASOS</span>
+                </h2>
+            </div>
+
+            <!-- Comic strip panels -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                <!-- Panel 1 -->
+                <div class="comic-panel rounded-xl bg-comic-yellow p-1 reveal" style="transition-delay: 0.1s;">
+                    <div class="relative bg-white rounded-lg p-6 h-full">
+                        <div class="absolute -top-3 -left-3 w-10 h-10 bg-comic-red rounded-full flex items-center justify-center comic-border-sm z-10">
+                            <span class="font-bangers text-white text-lg">1</span>
+                        </div>
+                        <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop&q=80"
+                                 alt="Estudiante eligiendo un curso en su computadora"
+                                 width="600" height="400" loading="lazy"
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                        </div>
+                        <h3 class="font-bangers text-comic-black text-xl tracking-wide mb-2">Elige Tu Curso</h3>
+                        <p class="font-comic text-comic-black/60 text-sm">Explora el catálogo y encuentra el superpoder que quieres desbloquear.</p>
+                    </div>
+                </div>
+
+                <!-- Panel 2 -->
+                <div class="comic-panel rounded-xl bg-comic-blue p-1 reveal" style="transition-delay: 0.2s;">
+                    <div class="relative bg-white rounded-lg p-6 h-full">
+                        <div class="absolute -top-3 -left-3 w-10 h-10 bg-comic-blue rounded-full flex items-center justify-center comic-border-sm z-10">
+                            <span class="font-bangers text-white text-lg">2</span>
+                        </div>
+                        <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?w=600&h=400&fit=crop&q=80"
+                                 alt="Persona aprendiendo frente a laptop con notas"
+                                 width="600" height="400" loading="lazy"
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                        </div>
+                        <h3 class="font-bangers text-comic-black text-xl tracking-wide mb-2">Aprende Haciendo</h3>
+                        <p class="font-comic text-comic-black/60 text-sm">Lecciones interactivas + proyectos reales. Nada de teoría eterna.</p>
+                    </div>
+                </div>
+
+                <!-- Panel 3 -->
+                <div class="comic-panel rounded-xl bg-comic-pink p-1 reveal" style="transition-delay: 0.3s;">
+                    <div class="relative bg-white rounded-lg p-6 h-full">
+                        <div class="absolute -top-3 -left-3 w-10 h-10 bg-comic-pink rounded-full flex items-center justify-center comic-border-sm z-10">
+                            <span class="font-bangers text-white text-lg">3</span>
+                        </div>
+                        <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop&q=80"
+                                 alt="Grupo colaborando en equipo en un proyecto"
+                                 width="600" height="400" loading="lazy"
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                        </div>
+                        <h3 class="font-bangers text-comic-black text-xl tracking-wide mb-2">Comunidad Épica</h3>
+                        <p class="font-comic text-comic-black/60 text-sm">Conecta con mentores y alumnos. Feedback real, networking real.</p>
+                    </div>
+                </div>
+
+                <!-- Panel 4 -->
+                <div class="comic-panel rounded-xl bg-comic-green p-1 reveal" style="transition-delay: 0.4s;">
+                    <div class="relative bg-white rounded-lg p-6 h-full">
+                        <div class="absolute -top-3 -left-3 w-10 h-10 bg-comic-green rounded-full flex items-center justify-center comic-border-sm z-10">
+                            <span class="font-bangers text-white text-lg">4</span>
+                        </div>
+                        <div class="relative h-32 mb-4 overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop&q=80"
+                                 alt="Profesional exitoso con laptop celebrando logros"
+                                 width="600" height="400" loading="lazy"
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                        </div>
+                        <h3 class="font-bangers text-comic-black text-xl tracking-wide mb-2">¡KABOOM! Empleo</h3>
+                        <p class="font-comic text-comic-black/60 text-sm">Portfolio listo, certificación en mano. El mundo tech te espera.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== TESTIMONIOS ======================== -->
+    <section id="testimonios" class="relative py-20 sm:py-28 bg-comic-black overflow-hidden">
+        <div class="halftone-light absolute inset-0 opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-block bg-comic-yellow px-6 py-2 rounded-full comic-border-sm transform -rotate-1 mb-4">
+                    <span class="font-bangers text-comic-black text-lg tracking-wide">TESTIMONIOS</span>
+                </div>
+                <h2 class="font-bangers text-4xl sm:text-5xl lg:text-6xl text-white tracking-wide mt-4">
+                    ELLOS YA HICIERON <span class="text-comic-yellow">KABOOM!</span>
+                </h2>
+            </div>
+
+            <!-- Testimonials grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="reveal" style="transition-delay: 0.1s;">
+                    <div class="speech-bubble">
+                        <div class="flex items-center gap-1 mb-3">
+                            <span class="text-comic-yellow text-lg">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="font-comic text-comic-black text-sm leading-relaxed">
+                            "Probé 3 plataformas antes. KABOOM! es la primera donde realmente aprendí haciendo. En 4 meses tenía mi portfolio y 2 ofertas de trabajo."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 mt-8 ml-4">
+                        <div class="w-12 h-12 rounded-full comic-border-sm overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&q=80"
+                                 alt="Foto de María García" width="100" height="100" loading="lazy" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-bangers text-comic-yellow tracking-wide">María García</p>
+                            <p class="font-comic text-white/50 text-xs">Frontend Developer @ Spotify</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="reveal" style="transition-delay: 0.2s;">
+                    <div class="speech-bubble">
+                        <div class="flex items-center gap-1 mb-3">
+                            <span class="text-comic-yellow text-lg">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="font-comic text-comic-black text-sm leading-relaxed">
+                            "Los mentores son increíbles. No te dejan con dudas, te empujan a resolver los problemas tú mismo. Es la diferencia entre aprender y memorizar."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 mt-8 ml-4">
+                        <div class="w-12 h-12 rounded-full comic-border-sm overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80"
+                                 alt="Foto de Carlos Rodríguez" width="100" height="100" loading="lazy" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-bangers text-comic-yellow tracking-wide">Carlos Rodríguez</p>
+                            <p class="font-comic text-white/50 text-xs">Data Analyst @ Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="reveal" style="transition-delay: 0.3s;">
+                    <div class="speech-bubble">
+                        <div class="flex items-center gap-1 mb-3">
+                            <span class="text-comic-yellow text-lg">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <p class="font-comic text-comic-black text-sm leading-relaxed">
+                            "Venía de artes y pensé que tech no era para mí. KABOOM! me demostró lo contrario. Hoy diseño interfaces para una startup que acaba de levantar $5M."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 mt-8 ml-4">
+                        <div class="w-12 h-12 rounded-full comic-border-sm overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&q=80"
+                                 alt="Foto de Laura Méndez" width="100" height="100" loading="lazy" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-bangers text-comic-yellow tracking-wide">Laura Méndez</p>
+                            <p class="font-comic text-white/50 text-xs">UX Designer @ Rappi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== VISUAL BREAK 2 ======================== -->
+    <section class="relative h-[250px] sm:h-[350px] overflow-hidden" role="presentation">
+        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1600&h=700&fit=crop&q=80"
+             alt="Biblioteca moderna con estudiantes investigando en laptops"
+             width="1600" height="700" loading="lazy"
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-comic-dark/70"></div>
+        <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+            <div>
+                <h2 class="font-bangers text-3xl sm:text-5xl lg:text-6xl text-white tracking-wide">
+                    "EL CONOCIMIENTO ES TU <span class="text-comic-yellow">SUPERPODER</span>"
+                </h2>
+                <p class="font-comic text-white/50 text-base mt-3">— El manifiesto KABOOM!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FAQ ======================== -->
+    <section id="faq" class="relative py-20 sm:py-28 overflow-hidden">
+        <div class="halftone-light absolute inset-0 opacity-15"></div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-block bg-comic-pink px-6 py-2 rounded-full comic-border-sm transform rotate-1 mb-4">
+                    <span class="font-bangers text-white text-lg tracking-wide">FAQ</span>
+                </div>
+                <h2 class="font-bangers text-4xl sm:text-5xl lg:text-6xl text-white tracking-wide mt-4">
+                    PREGUNTAS <span class="text-comic-yellow">FRECUENTES</span>
+                </h2>
+            </div>
+
+            <!-- FAQ items -->
+            <div class="space-y-4">
+                <div class="comic-panel rounded-xl bg-comic-black/80 overflow-hidden reveal" style="transition-delay: 0.1s;">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                        <span class="font-bangers text-white text-lg tracking-wide pr-4">¿Necesito experiencia previa?</span>
+                        <span class="faq-icon font-bangers text-comic-yellow text-2xl flex-shrink-0 transition-transform duration-300">+</span>
+                    </button>
+                    <div class="faq-answer px-5 pb-5">
+                        <p class="font-comic text-white/60 text-sm leading-relaxed">¡Para nada! Nuestros cursos están diseñados para todos los niveles. Empezamos desde cero y te llevamos hasta nivel profesional. Lo único que necesitas son ganas y una computadora.</p>
+                    </div>
+                </div>
+
+                <div class="comic-panel rounded-xl bg-comic-black/80 overflow-hidden reveal" style="transition-delay: 0.15s;">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                        <span class="font-bangers text-white text-lg tracking-wide pr-4">¿Cuánto tiempo dura cada curso?</span>
+                        <span class="faq-icon font-bangers text-comic-yellow text-2xl flex-shrink-0 transition-transform duration-300">+</span>
+                    </button>
+                    <div class="faq-answer px-5 pb-5">
+                        <p class="font-comic text-white/60 text-sm leading-relaxed">Depende del curso: entre 8 y 16 semanas. Pero tienes acceso de por vida al material, así que puedes ir a tu ritmo. La mayoría de alumnos dedica entre 8-12 horas semanales.</p>
+                    </div>
+                </div>
+
+                <div class="comic-panel rounded-xl bg-comic-black/80 overflow-hidden reveal" style="transition-delay: 0.2s;">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                        <span class="font-bangers text-white text-lg tracking-wide pr-4">¿Hay garantía de devolución?</span>
+                        <span class="faq-icon font-bangers text-comic-yellow text-2xl flex-shrink-0 transition-transform duration-300">+</span>
+                    </button>
+                    <div class="faq-answer px-5 pb-5">
+                        <p class="font-comic text-white/60 text-sm leading-relaxed">Sí, ofrecemos 30 días de garantía sin preguntas. Si en el primer mes sientes que no es para ti, te devolvemos el 100% de tu inversión. Sin letra pequeña, sin dramas.</p>
+                    </div>
+                </div>
+
+                <div class="comic-panel rounded-xl bg-comic-black/80 overflow-hidden reveal" style="transition-delay: 0.25s;">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                        <span class="font-bangers text-white text-lg tracking-wide pr-4">¿Me ayudan a conseguir empleo?</span>
+                        <span class="faq-icon font-bangers text-comic-yellow text-2xl flex-shrink-0 transition-transform duration-300">+</span>
+                    </button>
+                    <div class="faq-answer px-5 pb-5">
+                        <p class="font-comic text-white/60 text-sm leading-relaxed">¡Claro que sí! Tenemos un programa de Career Services que incluye: revisión de CV, preparación de entrevistas, simulacros técnicos y acceso a nuestra red de empresas aliadas. El 93% de nuestros graduados consigue empleo en menos de 6 meses.</p>
+                    </div>
+                </div>
+
+                <div class="comic-panel rounded-xl bg-comic-black/80 overflow-hidden reveal" style="transition-delay: 0.3s;">
+                    <button class="faq-btn w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                        <span class="font-bangers text-white text-lg tracking-wide pr-4">¿Puedo pagar en cuotas?</span>
+                        <span class="faq-icon font-bangers text-comic-yellow text-2xl flex-shrink-0 transition-transform duration-300">+</span>
+                    </button>
+                    <div class="faq-answer px-5 pb-5">
+                        <p class="font-comic text-white/60 text-sm leading-relaxed">Sí, aceptamos pagos mensuales, trimestrales o anuales. También ofrecemos becas parciales para quienes lo necesiten. Creemos que el dinero no debería ser una barrera para aprender.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== INSCRIPCIÓN / CTA FINAL ======================== -->
+    <section id="inscribirse" class="relative py-20 sm:py-28 bg-comic-yellow overflow-hidden">
+        <div class="halftone-dense absolute inset-0 opacity-30"></div>
+        <div class="action-lines absolute inset-0 opacity-20"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 reveal">
+                <div class="inline-block mb-6">
+                    <div class="w-20 h-20 bg-comic-red starburst flex items-center justify-center mx-auto animate-float">
+                        <span class="font-bangers text-white text-xl">GO!</span>
+                    </div>
+                </div>
+                <h2 class="font-bangers text-4xl sm:text-5xl lg:text-6xl text-comic-black tracking-wide">
+                    ¿LISTO PARA TU <span class="text-comic-red inline-block transform -rotate-2">KABOOM!</span>?
+                </h2>
+                <p class="font-comic text-comic-black/60 text-lg mt-4 max-w-xl mx-auto">
+                    Empieza gratis hoy. Sin tarjeta de crédito. Sin compromisos. Solo tú y el primer paso hacia tu nueva carrera.
+                </p>
+            </div>
+
+            <!-- Form -->
+            <div class="max-w-lg mx-auto reveal">
+                <form id="signup-form" class="bg-white comic-border rounded-2xl p-6 sm:p-8" method="post" novalidate>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="nombre" class="block font-bangers text-comic-black text-sm tracking-wide mb-1">TU NOMBRE</label>
+                            <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="100"
+                                   class="w-full px-4 py-3 border-3 border-comic-black rounded-xl font-comic text-comic-black focus:border-comic-blue focus:ring-2 focus:ring-comic-blue/30 outline-none transition-all" style="border-width: 3px;"
+                                   placeholder="Ej: Tony Stark"
+                                   autocomplete="name"
+                                   aria-required="true">
+                            <p class="error-msg hidden font-comic text-comic-red text-xs mt-1" role="alert"></p>
+                        </div>
+                        <div>
+                            <label for="email" class="block font-bangers text-comic-black text-sm tracking-wide mb-1">TU EMAIL</label>
+                            <input type="email" id="email" name="email" required maxlength="254"
+                                   class="w-full px-4 py-3 border-3 border-comic-black rounded-xl font-comic text-comic-black focus:border-comic-blue focus:ring-2 focus:ring-comic-blue/30 outline-none transition-all" style="border-width: 3px;"
+                                   placeholder="tony@starkindustries.com"
+                                   autocomplete="email"
+                                   aria-required="true">
+                            <p class="error-msg hidden font-comic text-comic-red text-xs mt-1" role="alert"></p>
+                        </div>
+                        <div>
+                            <label for="curso" class="block font-bangers text-comic-black text-sm tracking-wide mb-1">¿QUÉ TE INTERESA?</label>
+                            <select id="curso" name="curso" required
+                                    class="w-full px-4 py-3 border-3 border-comic-black rounded-xl font-comic text-comic-black focus:border-comic-blue focus:ring-2 focus:ring-comic-blue/30 outline-none transition-all appearance-none bg-white" style="border-width: 3px;"
+                                    aria-required="true">
+                                <option value="">Elige tu superpoder...</option>
+                                <option value="fullstack">Fullstack JavaScript</option>
+                                <option value="datascience">Data Science & Python</option>
+                                <option value="uxui">UX/UI Design Pro</option>
+                                <option value="ia">IA & Machine Learning</option>
+                                <option value="marketing">Growth & Marketing</option>
+                                <option value="cyber">Cybersecurity Ops</option>
+                            </select>
+                            <p class="error-msg hidden font-comic text-comic-red text-xs mt-1" role="alert"></p>
+                        </div>
+
+                        <!-- Consent -->
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="consent" name="consent" required
+                                   class="mt-1 w-5 h-5 rounded border-2 border-comic-black text-comic-blue focus:ring-comic-blue"
+                                   aria-required="true">
+                            <label for="consent" class="font-comic text-comic-black/60 text-xs leading-relaxed">
+                                Acepto la <a href="#privacy" class="text-comic-blue underline hover:text-comic-red">política de privacidad</a> y recibir comunicaciones de KABOOM! Academy. Puedo darme de baja en cualquier momento.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full px-8 py-4 bg-comic-yellow text-comic-black font-bangers text-xl tracking-wide rounded-xl comic-border-sm hover:bg-comic-orange hover:scale-[1.02] active:scale-100 transition-all duration-200">
+                            ¡EMPIEZA TU AVENTURA GRATIS! 💥
+                        </button>
+                    </div>
+
+                    <!-- Success message -->
+                    <div id="form-success" class="hidden text-center py-8">
+                        <div class="w-20 h-20 bg-comic-green starburst flex items-center justify-center mx-auto mb-4">
+                            <span class="font-bangers text-white text-xl">YES!</span>
+                        </div>
+                        <h3 class="font-bangers text-comic-black text-2xl tracking-wide">¡KABOOM! ESTÁS DENTRO</h3>
+                        <p class="font-comic text-comic-black/60 text-sm mt-2">Revisa tu email para los siguientes pasos. ¡La aventura comienza!</p>
+                    </div>
+                </form>
+
+                <p class="text-center font-comic text-comic-black/50 text-xs mt-4">
+                    🔒 Tu información está segura. No spam, lo prometemos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer id="privacy" class="bg-comic-dark border-t-4 border-comic-yellow py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand -->
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <span class="font-bangers text-4xl text-comic-yellow tracking-wider">KABOOM!</span>
+                    <p class="font-comic text-white/40 text-sm mt-3 max-w-xs">
+                        La plataforma de educación online que explota tu potencial. Aprende, construye y conquista el mundo tech.
+                    </p>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-comic-yellow hover:text-comic-black transition-all text-white/60" aria-label="Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-comic-yellow hover:text-comic-black transition-all text-white/60" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-comic-yellow hover:text-comic-black transition-all text-white/60" aria-label="YouTube">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-comic-yellow hover:text-comic-black transition-all text-white/60" aria-label="LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h3 class="font-bangers text-white text-lg tracking-wide mb-4">CURSOS</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">Fullstack JavaScript</a></li>
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">Data Science</a></li>
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">UX/UI Design</a></li>
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">IA & ML</a></li>
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">Marketing Digital</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bangers text-white text-lg tracking-wide mb-4">EMPRESA</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">Blog</a></li>
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">Carreras</a></li>
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">Prensa</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bangers text-white text-lg tracking-wide mb-4">LEGAL</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">Política de Privacidad</a></li>
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">Términos de Servicio</a></li>
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">Cookies</a></li>
+                        <li><a href="#" class="font-comic text-white/50 text-sm hover:text-comic-yellow transition-colors">Aviso Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="font-comic text-white/30 text-xs">© 2026 KABOOM! Academy. Todos los derechos reservados.</p>
+                <p class="font-comic text-white/30 text-xs">Hecho con 💥 para futuros héroes del tech.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======================== COOKIE BANNER ======================== -->
+    <div id="cookie-banner" class="cookie-banner fixed bottom-0 left-0 right-0 z-50 bg-comic-black border-t-4 border-comic-yellow p-4 sm:p-6" role="dialog" aria-modal="true" aria-label="Consentimiento de cookies">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="font-comic text-white/70 text-sm text-center sm:text-left">
+                🍪 Usamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra <a href="#" class="text-comic-yellow underline">política de cookies</a>.
+            </p>
+            <div class="flex gap-3 flex-shrink-0">
+                <button id="cookie-reject" class="px-4 py-2 border-2 border-white/30 text-white/70 font-comic font-bold text-sm rounded-lg hover:border-comic-yellow hover:text-comic-yellow transition-all">
+                    Rechazar
+                </button>
+                <button id="cookie-accept" class="px-6 py-2 bg-comic-yellow text-comic-black font-bangers text-base tracking-wide rounded-lg hover:bg-comic-orange transition-all comic-border-sm">
+                    ¡Acepto!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== SCRIPTS ======================== -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        'use strict';
+
+        // === MOBILE MENU ===
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden');
+                menuBtn.setAttribute('aria-expanded', !isOpen);
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // === SCROLL REVEAL ===
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // === COUNTER ANIMATION ===
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-target'));
+                    let display;
+                    if (target >= 1000) {
+                        display = Math.round(target / 1000);
+                    } else {
+                        display = target;
+                    }
+                    let current = 0;
+                    const increment = Math.max(1, Math.floor(display / 40));
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= display) {
+                            current = display;
+                            clearInterval(timer);
+                        }
+                        el.textContent = current;
+                    }, 30);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+        // === FAQ ACCORDION ===
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                const icon = btn.querySelector('.faq-icon');
+                const isOpen = answer.classList.contains('open');
+
+                // Close all
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+                document.querySelectorAll('.faq-icon').forEach(i => {
+                    i.textContent = '+';
+                    i.style.transform = 'rotate(0)';
+                });
+                document.querySelectorAll('.faq-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    icon.textContent = '−';
+                    icon.style.transform = 'rotate(180deg)';
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // === FORM VALIDATION ===
+        const form = document.getElementById('signup-form');
+        if (form) {
+            // Sanitize input
+            const sanitize = (str) => {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            };
+
+            const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+            const showError = (input, message) => {
+                const errorEl = input.parentElement.querySelector('.error-msg');
+                if (errorEl) {
+                    errorEl.textContent = message;
+                    errorEl.classList.remove('hidden');
+                }
+                input.classList.add('border-comic-red');
+            };
+
+            const clearError = (input) => {
+                const errorEl = input.parentElement.querySelector('.error-msg');
+                if (errorEl) {
+                    errorEl.classList.add('hidden');
+                }
+                input.classList.remove('border-comic-red');
+            };
+
+            // Clear errors on input
+            form.querySelectorAll('input, select').forEach(input => {
+                input.addEventListener('input', () => clearError(input));
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let isValid = true;
+
+                const nombre = form.querySelector('#nombre');
+                const email = form.querySelector('#email');
+                const curso = form.querySelector('#curso');
+                const consent = form.querySelector('#consent');
+
+                // Validate nombre
+                const nombreVal = sanitize(nombre.value.trim());
+                if (!nombreVal || nombreVal.length < 2) {
+                    showError(nombre, 'Ingresa tu nombre (mínimo 2 caracteres)');
+                    isValid = false;
+                } else {
+                    clearError(nombre);
+                }
+
+                // Validate email
+                const emailVal = sanitize(email.value.trim());
+                if (!emailVal || !validateEmail(emailVal)) {
+                    showError(email, 'Ingresa un email válido');
+                    isValid = false;
+                } else {
+                    clearError(email);
+                }
+
+                // Validate curso
+                if (!curso.value) {
+                    showError(curso, 'Elige un curso');
+                    isValid = false;
+                } else {
+                    clearError(curso);
+                }
+
+                // Validate consent
+                if (!consent.checked) {
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    // Hide form, show success
+                    form.querySelector('.space-y-4').classList.add('hidden');
+                    document.getElementById('form-success').classList.remove('hidden');
+                }
+            });
+        }
+
+        // === COOKIE BANNER ===
+        const cookieBanner = document.getElementById('cookie-banner');
+        if (cookieBanner && !localStorage.getItem('kaboom-cookies')) {
+            setTimeout(() => cookieBanner.classList.add('show'), 2000);
+
+            document.getElementById('cookie-accept')?.addEventListener('click', () => {
+                localStorage.setItem('kaboom-cookies', 'accepted');
+                cookieBanner.classList.remove('show');
+            });
+
+            document.getElementById('cookie-reject')?.addEventListener('click', () => {
+                localStorage.setItem('kaboom-cookies', 'rejected');
+                cookieBanner.classList.remove('show');
+            });
+        }
+
+        // === NAVBAR SCROLL BEHAVIOR ===
+        const navbar = document.getElementById('navbar');
+        let scrollTicking = false;
+        window.addEventListener('scroll', () => {
+            if (!scrollTicking) {
+                requestAnimationFrame(() => {
+                    const currentScroll = window.pageYOffset;
+                    if (currentScroll > 100) {
+                        navbar.classList.add('shadow-lg', 'shadow-comic-yellow/10');
+                    } else {
+                        navbar.classList.remove('shadow-lg', 'shadow-comic-yellow/10');
+                    }
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
+            }
+        }, { passive: true });
+
+        // === SMOOTH SCROLL FOR ANCHOR LINKS ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const targetId = anchor.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const navHeight = navbar?.offsetHeight || 80;
+                    const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({ top: targetPos, behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>

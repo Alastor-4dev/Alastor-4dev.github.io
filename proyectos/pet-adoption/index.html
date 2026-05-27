@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patitas Felices - Estética Canina & Spa</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; frame-ancestors 'none';">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo">
+        <img src="logo.svg" alt="Patitas Felices" class="logo-img">
+        <span class="logo-text">Patitas Felices</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#reservaciones">Reservaciones</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Tu mascota merece <span class="highlight">lo mejor</span></h1>
+        <p>Estética canina profesional con amor y dedicación. Baño, corte, spa y mucho más para que tu peludo luzca y se sienta increíble.</p>
+        <div class="hero-buttons">
+          <a href="#reservaciones" class="btn btn-primary">Reservar Cita</a>
+          <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-illustration">
+          <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="heroBg" cx="0.5" cy="0.5">
+                <stop offset="0%" stop-color="#FFF0F5"/>
+                <stop offset="60%" stop-color="#FFE0EC"/>
+                <stop offset="100%" stop-color="#FFCCDD"/>
+              </radialGradient>
+              <linearGradient id="furGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFFFFF"/>
+                <stop offset="60%" stop-color="#FAF0E0"/>
+                <stop offset="100%" stop-color="#E8D5B7"/>
+              </linearGradient>
+              <linearGradient id="earGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#D4A574"/>
+                <stop offset="100%" stop-color="#A87E55"/>
+              </linearGradient>
+              <linearGradient id="bowGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FF8FB8"/>
+                <stop offset="100%" stop-color="#E91E63"/>
+              </linearGradient>
+              <linearGradient id="catGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFD180"/>
+                <stop offset="100%" stop-color="#FFA726"/>
+              </linearGradient>
+              <radialGradient id="eyeShine" cx="0.3" cy="0.3">
+                <stop offset="0%" stop-color="#5D4037"/>
+                <stop offset="100%" stop-color="#1A0E07"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Background circle -->
+            <circle cx="200" cy="210" r="195" fill="url(#heroBg)"/>
+
+            <!-- Decorative shapes -->
+            <circle cx="55" cy="100" r="20" fill="#FFD54F" opacity="0.5"/>
+            <circle cx="345" cy="115" r="14" fill="#7C4DFF" opacity="0.4"/>
+            <circle cx="350" cy="295" r="22" fill="#4DD0E1" opacity="0.4"/>
+            <circle cx="50" cy="300" r="12" fill="#FF6B9D" opacity="0.5"/>
+
+            <!-- Sparkles -->
+            <g fill="#FFD54F">
+              <path d="M 80 200 L 84 192 L 92 188 L 84 184 L 80 176 L 76 184 L 68 188 L 76 192 Z"/>
+              <path d="M 320 240 L 322 234 L 328 232 L 322 230 L 320 224 L 318 230 L 312 232 L 318 234 Z"/>
+            </g>
+            <g fill="#FF8FB8">
+              <path d="M 310 150 L 312 145 L 317 143 L 312 141 L 310 136 L 308 141 L 303 143 L 308 145 Z"/>
+            </g>
+
+            <!-- Cat (smaller, behind) -->
+            <g transform="translate(280 240)">
+              <!-- Cat body/head -->
+              <circle cx="0" cy="20" r="38" fill="url(#catGrad)"/>
+              <!-- Pointy ears -->
+              <path d="M -22 -2 L -18 -22 L -8 -10 Z" fill="url(#catGrad)"/>
+              <path d="M 22 -2 L 18 -22 L 8 -10 Z" fill="url(#catGrad)"/>
+              <!-- Inner ears -->
+              <path d="M -19 -3 L -17 -16 L -11 -7 Z" fill="#FF8FA3"/>
+              <path d="M 19 -3 L 17 -16 L 11 -7 Z" fill="#FF8FA3"/>
+              <!-- Stripes -->
+              <path d="M -28 12 Q -22 10 -18 12" stroke="#E65100" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M -28 20 Q -22 18 -18 20" stroke="#E65100" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M 28 12 Q 22 10 18 12" stroke="#E65100" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M 28 20 Q 22 18 18 20" stroke="#E65100" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <!-- Cat eyes (closed happy) -->
+              <path d="M -15 12 Q -10 8 -5 12" stroke="#2D1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M 5 12 Q 10 8 15 12" stroke="#2D1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <!-- Cheeks -->
+              <circle cx="-13" cy="22" r="4" fill="#FF6B9D" opacity="0.5"/>
+              <circle cx="13" cy="22" r="4" fill="#FF6B9D" opacity="0.5"/>
+              <!-- Nose -->
+              <path d="M -3 20 L 3 20 L 0 24 Z" fill="#FF6B9D"/>
+              <!-- Mouth -->
+              <path d="M 0 24 L 0 27" stroke="#2D1810" stroke-width="1.5"/>
+              <path d="M 0 27 Q 0 30 -4 30" stroke="#2D1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M 0 27 Q 0 30 4 30" stroke="#2D1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <!-- Whiskers -->
+              <path d="M -28 25 L -18 26" stroke="#2D1810" stroke-width="1" stroke-linecap="round"/>
+              <path d="M -28 30 L -18 30" stroke="#2D1810" stroke-width="1" stroke-linecap="round"/>
+              <path d="M 28 25 L 18 26" stroke="#2D1810" stroke-width="1" stroke-linecap="round"/>
+              <path d="M 28 30 L 18 30" stroke="#2D1810" stroke-width="1" stroke-linecap="round"/>
+            </g>
+
+            <!-- DOG (main, front) -->
+            <!-- Body (fluffy) -->
+            <ellipse cx="180" cy="340" rx="95" ry="55" fill="url(#furGrad)"/>
+            <!-- Fluffy texture -->
+            <circle cx="115" cy="325" r="22" fill="#FFFFFF"/>
+            <circle cx="145" cy="315" r="18" fill="#FFFFFF"/>
+            <circle cx="180" cy="305" r="20" fill="#FFFFFF"/>
+            <circle cx="215" cy="315" r="18" fill="#FFFFFF"/>
+            <circle cx="245" cy="325" r="20" fill="#FFFFFF"/>
+
+            <!-- Front paws -->
+            <ellipse cx="150" cy="385" rx="22" ry="14" fill="#FAF0E0"/>
+            <ellipse cx="210" cy="385" rx="22" ry="14" fill="#FAF0E0"/>
+            <!-- Paw pads -->
+            <ellipse cx="150" cy="390" rx="6" ry="3.5" fill="#FFB6C1"/>
+            <ellipse cx="210" cy="390" rx="6" ry="3.5" fill="#FFB6C1"/>
+            <!-- Toe pads -->
+            <circle cx="142" cy="384" r="1.5" fill="#FFB6C1"/>
+            <circle cx="148" cy="382" r="1.5" fill="#FFB6C1"/>
+            <circle cx="154" cy="382" r="1.5" fill="#FFB6C1"/>
+            <circle cx="160" cy="384" r="1.5" fill="#FFB6C1"/>
+            <circle cx="202" cy="384" r="1.5" fill="#FFB6C1"/>
+            <circle cx="208" cy="382" r="1.5" fill="#FFB6C1"/>
+            <circle cx="214" cy="382" r="1.5" fill="#FFB6C1"/>
+            <circle cx="220" cy="384" r="1.5" fill="#FFB6C1"/>
+
+            <!-- Ears (long, floppy, brown) -->
+            <ellipse cx="115" cy="195" rx="32" ry="58" fill="url(#earGrad)" transform="rotate(-22 115 195)"/>
+            <ellipse cx="245" cy="195" rx="32" ry="58" fill="url(#earGrad)" transform="rotate(22 245 195)"/>
+            <!-- Inner ear shadow -->
+            <ellipse cx="115" cy="210" rx="14" ry="35" fill="#7A5230" opacity="0.5" transform="rotate(-22 115 210)"/>
+            <ellipse cx="245" cy="210" rx="14" ry="35" fill="#7A5230" opacity="0.5" transform="rotate(22 245 210)"/>
+            <!-- Ear highlights -->
+            <ellipse cx="105" cy="180" rx="8" ry="20" fill="#E8C49A" opacity="0.6" transform="rotate(-22 105 180)"/>
+            <ellipse cx="255" cy="180" rx="8" ry="20" fill="#E8C49A" opacity="0.6" transform="rotate(22 255 180)"/>
+
+            <!-- Head -->
+            <circle cx="180" cy="200" r="82" fill="url(#furGrad)"/>
+            <!-- Fluffy fur details -->
+            <circle cx="125" cy="170" r="22" fill="#FFFFFF"/>
+            <circle cx="235" cy="170" r="22" fill="#FFFFFF"/>
+            <circle cx="150" cy="140" r="16" fill="#FFFFFF"/>
+            <circle cx="210" cy="140" r="16" fill="#FFFFFF"/>
+            <circle cx="180" cy="128" r="18" fill="#FFFFFF"/>
+
+            <!-- Cheek blush -->
+            <ellipse cx="135" cy="225" rx="15" ry="9" fill="#FF8FA3" opacity="0.55"/>
+            <ellipse cx="225" cy="225" rx="15" ry="9" fill="#FF8FA3" opacity="0.55"/>
+
+            <!-- Eyebrows -->
+            <path d="M 138 168 Q 153 162 168 167" stroke="#2D1810" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+            <path d="M 192 167 Q 207 162 222 168" stroke="#2D1810" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+
+            <!-- Eyes (big, expressive) -->
+            <ellipse cx="153" cy="195" rx="14" ry="18" fill="url(#eyeShine)"/>
+            <ellipse cx="207" cy="195" rx="14" ry="18" fill="url(#eyeShine)"/>
+            <!-- Eye highlights -->
+            <ellipse cx="157" cy="188" rx="5.5" ry="6.5" fill="white"/>
+            <ellipse cx="211" cy="188" rx="5.5" ry="6.5" fill="white"/>
+            <circle cx="150" cy="202" r="2.5" fill="white" opacity="0.8"/>
+            <circle cx="204" cy="202" r="2.5" fill="white" opacity="0.8"/>
+
+            <!-- Snout -->
+            <ellipse cx="180" cy="240" rx="28" ry="20" fill="#FFFFFF"/>
+
+            <!-- Nose (rounded, glossy) -->
+            <ellipse cx="180" cy="232" rx="11" ry="8" fill="#2D1810"/>
+            <ellipse cx="177" cy="229" rx="3" ry="2" fill="#FFFFFF" opacity="0.7"/>
+
+            <!-- Mouth -->
+            <path d="M 180 240 L 180 252" stroke="#2D1810" stroke-width="2"/>
+            <path d="M 180 252 Q 180 263 168 263" stroke="#2D1810" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M 180 252 Q 180 263 192 263" stroke="#2D1810" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- Tongue -->
+            <ellipse cx="180" cy="266" rx="8" ry="5" fill="#FF6B9D"/>
+            <path d="M 180 266 L 180 270" stroke="#E91E63" stroke-width="1" opacity="0.6"/>
+
+            <!-- Bow on head -->
+            <g transform="translate(180 115)">
+              <path d="M 0 0 L -28 -10 L -28 18 L 0 8 Z" fill="url(#bowGrad)"/>
+              <path d="M 0 0 L 28 -10 L 28 18 L 0 8 Z" fill="url(#bowGrad)"/>
+              <ellipse cx="0" cy="4" rx="9" ry="11" fill="#C2185B"/>
+              <ellipse cx="-2" cy="1" rx="3.5" ry="4.5" fill="#FF8FB8"/>
+              <!-- Bow shadows -->
+              <path d="M -28 -10 L -28 -5 L -5 3 Z" fill="#000000" opacity="0.15"/>
+              <path d="M 28 -10 L 28 -5 L 5 3 Z" fill="#000000" opacity="0.15"/>
+            </g>
+
+            <!-- Floating hearts -->
+            <g fill="#FF6B9D">
+              <path d="M 75 245 C 73 240, 65 240, 65 248 C 65 254, 75 262, 75 262 C 75 262, 85 254, 85 248 C 85 240, 77 240, 75 245 Z" opacity="0.8"/>
+            </g>
+            <g fill="#7C4DFF">
+              <path d="M 330 195 C 328.5 192, 322 192, 322 197 C 322 201, 330 207, 330 207 C 330 207, 338 201, 338 197 C 338 192, 331.5 192, 330 195 Z" opacity="0.7"/>
+            </g>
+
+            <!-- Bubbles -->
+            <circle cx="90" cy="320" r="9" fill="none" stroke="#4DD0E1" stroke-width="2.5" opacity="0.7"/>
+            <circle cx="105" cy="345" r="6" fill="none" stroke="#4DD0E1" stroke-width="2" opacity="0.5"/>
+            <circle cx="65" cy="350" r="4" fill="none" stroke="#4DD0E1" stroke-width="2" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,60 C360,120 720,0 1440,60 L1440,120 L0,120 Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="statDog" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFE0B2"/>
+                <stop offset="100%" stop-color="#D4A574"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="22" cy="28" rx="9" ry="14" fill="url(#statDog)" transform="rotate(-15 22 28)"/>
+            <ellipse cx="58" cy="28" rx="9" ry="14" fill="url(#statDog)" transform="rotate(15 58 28)"/>
+            <ellipse cx="22" cy="32" rx="4" ry="8" fill="#A87E55" opacity="0.6" transform="rotate(-15 22 32)"/>
+            <ellipse cx="58" cy="32" rx="4" ry="8" fill="#A87E55" opacity="0.6" transform="rotate(15 58 32)"/>
+            <circle cx="40" cy="42" r="26" fill="url(#statDog)"/>
+            <circle cx="30" cy="49" r="4" fill="#FF8FA3" opacity="0.6"/>
+            <circle cx="50" cy="49" r="4" fill="#FF8FA3" opacity="0.6"/>
+            <ellipse cx="32" cy="40" rx="3.5" ry="4.5" fill="#2D1810"/>
+            <ellipse cx="48" cy="40" rx="3.5" ry="4.5" fill="#2D1810"/>
+            <circle cx="33" cy="38" r="1.5" fill="white"/>
+            <circle cx="49" cy="38" r="1.5" fill="white"/>
+            <ellipse cx="40" cy="50" rx="3.5" ry="2.5" fill="#2D1810"/>
+            <path d="M 40 53 Q 40 57 36 57" stroke="#2D1810" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <path d="M 40 53 Q 40 57 44 57" stroke="#2D1810" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <ellipse cx="40" cy="58" rx="3" ry="2" fill="#FF6B9D"/>
+          </svg>
+        </div>
+        <span class="stat-number" data-target="2500">0</span>
+        <span class="stat-label">Mascotas Felices</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="statStar" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFE082"/>
+                <stop offset="100%" stop-color="#FFA000"/>
+              </linearGradient>
+            </defs>
+            <path d="M 40 8 L 49 28 L 71 31 L 55 46 L 59 68 L 40 57 L 21 68 L 25 46 L 9 31 L 31 28 Z" fill="url(#statStar)" stroke="#FF8F00" stroke-width="1.5"/>
+            <ellipse cx="32" cy="38" rx="2.5" ry="3.5" fill="#FF6B9D"/>
+            <ellipse cx="48" cy="38" rx="2.5" ry="3.5" fill="#FF6B9D"/>
+            <ellipse cx="28" cy="46" rx="2.5" ry="3.5" fill="#FF6B9D"/>
+            <ellipse cx="52" cy="46" rx="2.5" ry="3.5" fill="#FF6B9D"/>
+            <ellipse cx="40" cy="50" rx="6" ry="5" fill="#FF6B9D"/>
+            <ellipse cx="36" cy="36" rx="1" ry="1.5" fill="white" opacity="0.6"/>
+          </svg>
+        </div>
+        <span class="stat-number" data-target="5">0</span>
+        <span class="stat-label">Años de Experiencia</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="statCat" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFD180"/>
+                <stop offset="100%" stop-color="#F57C00"/>
+              </linearGradient>
+            </defs>
+            <path d="M 18 28 L 22 10 L 32 26 Z" fill="url(#statCat)"/>
+            <path d="M 62 28 L 58 10 L 48 26 Z" fill="url(#statCat)"/>
+            <path d="M 21 26 L 23 14 L 29 25 Z" fill="#FF8FA3"/>
+            <path d="M 59 26 L 57 14 L 51 25 Z" fill="#FF8FA3"/>
+            <circle cx="40" cy="42" r="24" fill="url(#statCat)"/>
+            <path d="M 16 38 L 22 40" stroke="#E65100" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M 16 44 L 22 44" stroke="#E65100" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M 64 38 L 58 40" stroke="#E65100" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M 64 44 L 58 44" stroke="#E65100" stroke-width="1.8" stroke-linecap="round"/>
+            <ellipse cx="32" cy="40" rx="3" ry="4.5" fill="#43A047"/>
+            <ellipse cx="48" cy="40" rx="3" ry="4.5" fill="#43A047"/>
+            <ellipse cx="32" cy="40" rx="0.9" ry="3.5" fill="black"/>
+            <ellipse cx="48" cy="40" rx="0.9" ry="3.5" fill="black"/>
+            <circle cx="33" cy="38" r="0.8" fill="white"/>
+            <circle cx="49" cy="38" r="0.8" fill="white"/>
+            <path d="M 36 49 L 44 49 L 40 53 Z" fill="#FF6B9D"/>
+            <path d="M 40 53 L 40 56" stroke="#2D1810" stroke-width="1.5"/>
+            <path d="M 40 56 Q 40 59 36 59" stroke="#2D1810" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M 40 56 Q 40 59 44 59" stroke="#2D1810" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M 14 52 L 26 53" stroke="#2D1810" stroke-width="0.8" stroke-linecap="round"/>
+            <path d="M 14 56 L 26 56" stroke="#2D1810" stroke-width="0.8" stroke-linecap="round"/>
+            <path d="M 66 52 L 54 53" stroke="#2D1810" stroke-width="0.8" stroke-linecap="round"/>
+            <path d="M 66 56 L 54 56" stroke="#2D1810" stroke-width="0.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="stat-number" data-target="15">0</span>
+        <span class="stat-label">Servicios Disponibles</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="statHeart" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FF8FB8"/>
+                <stop offset="100%" stop-color="#E91E63"/>
+              </linearGradient>
+            </defs>
+            <path d="M 40 70 C 12 52, 6 30, 22 18 C 30 14, 38 18, 40 24 C 42 18, 50 14, 58 18 C 74 30, 68 52, 40 70 Z" fill="url(#statHeart)"/>
+            <ellipse cx="30" cy="32" rx="3" ry="4" fill="white"/>
+            <ellipse cx="38" cy="29" rx="3" ry="4" fill="white"/>
+            <ellipse cx="42" cy="29" rx="3" ry="4" fill="white"/>
+            <ellipse cx="50" cy="32" rx="3" ry="4" fill="white"/>
+            <ellipse cx="40" cy="44" rx="8" ry="7" fill="white"/>
+            <ellipse cx="32" cy="26" rx="3" ry="3" fill="white" opacity="0.5"/>
+          </svg>
+        </div>
+        <span class="stat-number" data-target="100">0</span>
+        <span class="stat-label">% Satisfacción</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="servicios" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nuestros Servicios</span>
+        <h2>Consentimos a tu mascota</h2>
+        <p>Ofrecemos una variedad de servicios profesionales para que tu peludo amigo luzca espectacular</p>
+      </div>
+      <div class="servicios-grid">
+        <div class="servicio-card">
+          <div class="servicio-icon" style="background: linear-gradient(135deg, #4DD0E1, #00ACC1);">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="14" r="3" fill="white" opacity="0.95"/>
+              <circle cx="32" cy="8" r="2.5" fill="white" opacity="0.85"/>
+              <circle cx="48" cy="10" r="2" fill="white" opacity="0.75"/>
+              <circle cx="60" cy="14" r="2.8" fill="white" opacity="0.9"/>
+              <circle cx="40" cy="18" r="3.2" fill="white" opacity="0.95"/>
+              <circle cx="52" cy="20" r="2.2" fill="white" opacity="0.8"/>
+              <ellipse cx="40" cy="36" rx="14" ry="10" fill="white"/>
+              <ellipse cx="32" cy="30" rx="6" ry="8" fill="white"/>
+              <ellipse cx="48" cy="30" rx="6" ry="8" fill="white"/>
+              <circle cx="36" cy="34" r="1.5" fill="#00838F"/>
+              <circle cx="44" cy="34" r="1.5" fill="#00838F"/>
+              <path d="M 38 38 Q 40 40 42 38" stroke="#00838F" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <path d="M 14 50 Q 14 46 18 46 L 62 46 Q 66 46 66 50 L 64 64 Q 64 70 58 70 L 22 70 Q 16 70 16 64 Z" fill="white"/>
+              <path d="M 18 52 L 62 52" stroke="#4DD0E1" stroke-width="1" opacity="0.5"/>
+              <ellipse cx="50" cy="58" rx="4" ry="2" fill="#4DD0E1" opacity="0.4"/>
+              <ellipse cx="28" cy="62" rx="3" ry="1.5" fill="#4DD0E1" opacity="0.4"/>
+            </svg>
+          </div>
+          <h3>Baño Completo</h3>
+          <p>Baño con shampoo premium, acondicionador, secado profesional y perfumado. Incluye limpieza de oídos.</p>
+          <span class="servicio-precio">Desde $350 MXN</span>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon" style="background: linear-gradient(135deg, #FF6B9D, #E91E63);">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="9" fill="none" stroke="white" stroke-width="3.5"/>
+              <circle cx="22" cy="58" r="9" fill="none" stroke="white" stroke-width="3.5"/>
+              <path d="M 30 28 L 70 60" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M 30 52 L 70 20" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="22" cy="22" r="2.5" fill="white"/>
+              <circle cx="22" cy="58" r="2.5" fill="white"/>
+              <path d="M 60 14 L 75 18 L 75 22 L 62 22 Z" fill="white"/>
+              <path d="M 60 66 L 75 62 L 75 58 L 62 58 Z" fill="white"/>
+            </svg>
+          </div>
+          <h3>Corte de Pelo</h3>
+          <p>Corte a la medida según la raza de tu mascota. Estilismo profesional y detallado con tijera o máquina.</p>
+          <span class="servicio-precio">Desde $450 MXN</span>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon" style="background: linear-gradient(135deg, #7C4DFF, #651FFF);">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="40" cy="40" rx="6" ry="22" fill="white" opacity="0.95"/>
+              <ellipse cx="40" cy="40" rx="22" ry="6" fill="white" opacity="0.95"/>
+              <ellipse cx="40" cy="40" rx="18" ry="14" fill="white" opacity="0.85" transform="rotate(45 40 40)"/>
+              <ellipse cx="40" cy="40" rx="18" ry="14" fill="white" opacity="0.85" transform="rotate(-45 40 40)"/>
+              <circle cx="40" cy="40" r="7" fill="#FFD54F"/>
+              <circle cx="38" cy="38" r="2" fill="white" opacity="0.7"/>
+              <path d="M 22 18 Q 24 22 22 26" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.7"/>
+              <path d="M 58 18 Q 60 22 58 26" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.7"/>
+              <path d="M 14 14 Q 16 17 14 20" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+              <path d="M 66 14 Q 68 17 66 20" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3>Spa & Relajación</h3>
+          <p>Aromaterapia, masajes relajantes y tratamiento hidratante para piel y pelaje. Tu mascota saldrá renovada.</p>
+          <span class="servicio-precio">Desde $600 MXN</span>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon" style="background: linear-gradient(135deg, #FFA726, #F57C00);">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="22" cy="28" rx="6" ry="9" fill="white" transform="rotate(-20 22 28)"/>
+              <ellipse cx="34" cy="18" rx="6" ry="10" fill="white" transform="rotate(-8 34 18)"/>
+              <ellipse cx="46" cy="18" rx="6" ry="10" fill="white" transform="rotate(8 46 18)"/>
+              <ellipse cx="58" cy="28" rx="6" ry="9" fill="white" transform="rotate(20 58 28)"/>
+              <path d="M 40 68 C 22 68, 16 56, 20 46 C 24 38, 32 38, 40 41 C 48 38, 56 38, 60 46 C 64 56, 58 68, 40 68 Z" fill="white"/>
+              <path d="M 22 26 L 18 30" stroke="#FFEB3B" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M 60 26 L 64 30" stroke="#FFEB3B" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M 40 35 L 40 30" stroke="#FFEB3B" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="68" cy="22" r="2" fill="white" opacity="0.9"/>
+              <circle cx="14" cy="22" r="2" fill="white" opacity="0.9"/>
+            </svg>
+          </div>
+          <h3>Corte de Uñas</h3>
+          <p>Corte y limado profesional de uñas. Servicio rápido y sin estrés para tu mascota.</p>
+          <span class="servicio-precio">Desde $150 MXN</span>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon" style="background: linear-gradient(135deg, #66BB6A, #2E7D32);">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 40 14 C 28 14, 22 22, 22 32 C 22 38, 24 44, 26 50 C 28 56, 30 64, 34 64 C 36 64, 36 56, 40 56 C 44 56, 44 64, 46 64 C 50 64, 52 56, 54 50 C 56 44, 58 38, 58 32 C 58 22, 52 14, 40 14 Z" fill="white"/>
+              <path d="M 40 18 C 32 18, 28 24, 28 30" stroke="#A5D6A7" stroke-width="2" fill="none" opacity="0.6"/>
+              <circle cx="64" cy="20" r="2.5" fill="white"/>
+              <path d="M 60 18 L 68 18 M 64 14 L 64 22" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="16" cy="56" r="2" fill="white"/>
+              <path d="M 13 56 L 19 56 M 16 53 L 16 59" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="68" cy="58" r="1.5" fill="white" opacity="0.8"/>
+            </svg>
+          </div>
+          <h3>Cepillado Dental</h3>
+          <p>Higiene bucal profesional que previene enfermedades y mantiene una sonrisa saludable.</p>
+          <span class="servicio-precio">Desde $200 MXN</span>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon" style="background: linear-gradient(135deg, #FF8A65, #F4511E);">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 40 8 L 16 16 L 16 38 C 16 54, 26 66, 40 72 C 54 66, 64 54, 64 38 L 64 16 Z" fill="white"/>
+              <ellipse cx="32" cy="32" rx="3" ry="4" fill="#FF8A65"/>
+              <ellipse cx="40" cy="28" rx="3" ry="4" fill="#FF8A65"/>
+              <ellipse cx="48" cy="32" rx="3" ry="4" fill="#FF8A65"/>
+              <ellipse cx="40" cy="46" rx="7" ry="6" fill="#FF8A65"/>
+              <ellipse cx="28" cy="40" rx="2.5" ry="3.5" fill="#FF8A65"/>
+              <ellipse cx="52" cy="40" rx="2.5" ry="3.5" fill="#FF8A65"/>
+              <path d="M 30 50 L 32 52 L 36 48" stroke="#FF8A65" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3>Tratamiento Antipulgas</h3>
+          <p>Baño medicado antipulgas y garrapatas. Protección completa para tu mascota y tu hogar.</p>
+          <span class="servicio-precio">Desde $500 MXN</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos -->
+  <section class="productos" id="productos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tienda</span>
+        <h2>Productos para tu Mascota</h2>
+        <p>Los mejores productos de higiene, alimentación y accesorios para consentir a tu peludo</p>
+      </div>
+      <div class="productos-grid">
+        <div class="producto-card">
+          <div class="producto-img" style="background: linear-gradient(135deg, #E3F2FD, #90CAF9);">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="22" r="3" fill="white" opacity="0.8"/>
+              <circle cx="78" cy="20" r="2.5" fill="white" opacity="0.8"/>
+              <circle cx="85" cy="35" r="2" fill="white" opacity="0.7"/>
+              <path d="M 30 40 L 70 40 L 68 88 Q 68 92 64 92 L 36 92 Q 32 92 32 88 Z" fill="#1976D2"/>
+              <rect x="35" y="30" width="30" height="14" rx="2" fill="#0D47A1"/>
+              <rect x="38" y="32" width="24" height="3" rx="1" fill="#1976D2"/>
+              <ellipse cx="50" cy="60" rx="14" ry="6" fill="#90CAF9" opacity="0.7"/>
+              <ellipse cx="50" cy="62" rx="3" ry="3" fill="white"/>
+              <ellipse cx="46" cy="64" rx="2" ry="2" fill="white"/>
+              <ellipse cx="54" cy="64" rx="2" ry="2" fill="white"/>
+              <text x="50" y="82" font-family="Arial" font-size="6" font-weight="bold" fill="white" text-anchor="middle">SHAMPOO</text>
+            </svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-categoria">Higiene</span>
+            <h4>Shampoo Premium</h4>
+            <p>Fórmula hipoalergénica para pelaje brillante y suave</p>
+            <span class="producto-precio">$280 MXN</span>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-img" style="background: linear-gradient(135deg, #FFF3E0, #FFCC80);">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 35 30 C 28 28, 24 36, 26 42 C 22 44, 22 52, 28 54 C 28 60, 34 64, 40 60 L 50 70 C 58 76, 70 70, 70 60 C 76 58, 76 50, 70 48 C 74 42, 70 36, 64 38 C 64 30, 56 26, 50 30 C 44 26, 38 26, 35 30 Z" fill="#E65100"/>
+              <ellipse cx="34" cy="38" rx="3" ry="3" fill="#FF8F00"/>
+              <ellipse cx="58" cy="36" rx="3" ry="3" fill="#FF8F00"/>
+              <ellipse cx="46" cy="50" rx="3" ry="3" fill="#FF8F00"/>
+              <ellipse cx="62" cy="56" rx="3" ry="3" fill="#FF8F00"/>
+              <ellipse cx="36" cy="56" rx="3" ry="3" fill="#FF8F00"/>
+              <path d="M 48 25 L 45 18 L 45 8 L 50 12 L 55 8 L 55 18 L 52 25 Z" fill="#5D4037"/>
+              <ellipse cx="38" cy="62" rx="2" ry="2" fill="#FF8F00"/>
+              <ellipse cx="55" cy="64" rx="2" ry="2" fill="#FF8F00"/>
+              <circle cx="22" cy="78" r="3" fill="#E65100"/>
+              <circle cx="80" cy="80" r="3" fill="#E65100"/>
+              <circle cx="50" cy="84" r="2.5" fill="#E65100"/>
+            </svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-categoria">Alimentación</span>
+            <h4>Premios Naturales</h4>
+            <p>Snacks saludables hechos con ingredientes 100% naturales</p>
+            <span class="producto-precio">$150 MXN</span>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-img" style="background: linear-gradient(135deg, #F3E5F5, #CE93D8);">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="50" cy="50" rx="35" ry="32" fill="none" stroke="#7B1FA2" stroke-width="6"/>
+              <rect x="40" y="62" width="20" height="14" rx="3" fill="#FFD54F"/>
+              <rect x="42" y="64" width="16" height="2" rx="1" fill="#FFA000"/>
+              <text x="50" y="73" font-family="Arial" font-size="5" font-weight="bold" fill="#5D4037" text-anchor="middle">FIDO</text>
+              <circle cx="46" cy="78" r="1.5" fill="#7B1FA2"/>
+              <circle cx="54" cy="78" r="1.5" fill="#7B1FA2"/>
+              <circle cx="50" cy="20" r="6" fill="#FFD54F"/>
+              <ellipse cx="50" cy="22" rx="3" ry="2" fill="#FFA000"/>
+              <ellipse cx="44" cy="40" rx="2" ry="2.5" fill="#7B1FA2" opacity="0.6"/>
+              <ellipse cx="56" cy="40" rx="2" ry="2.5" fill="#7B1FA2" opacity="0.6"/>
+              <ellipse cx="50" cy="48" rx="4" ry="3" fill="#7B1FA2" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-categoria">Accesorios</span>
+            <h4>Collar con Placa</h4>
+            <p>Collar ajustable con placa personalizada grabada con láser</p>
+            <span class="producto-precio">$350 MXN</span>
+          </div>
+        </div>
+        <div class="producto-card">
+          <div class="producto-img" style="background: linear-gradient(135deg, #E8F5E9, #A5D6A7);">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 38 30 L 62 30 L 62 88 Q 62 92 58 92 L 42 92 Q 38 92 38 88 Z" fill="#2E7D32"/>
+              <rect x="42" y="22" width="16" height="10" rx="2" fill="#1B5E20"/>
+              <rect x="44" y="14" width="12" height="10" rx="1" fill="#388E3C"/>
+              <rect x="44" y="42" width="12" height="20" rx="1" fill="white"/>
+              <text x="50" y="52" font-family="Arial" font-size="5" font-weight="bold" fill="#2E7D32" text-anchor="middle">ANTI</text>
+              <text x="50" y="58" font-family="Arial" font-size="5" font-weight="bold" fill="#2E7D32" text-anchor="middle">PULGAS</text>
+              <circle cx="80" cy="40" r="3" fill="#2E7D32" opacity="0.5"/>
+              <circle cx="22" cy="55" r="2.5" fill="#2E7D32" opacity="0.5"/>
+              <circle cx="78" cy="65" r="2" fill="#2E7D32" opacity="0.5"/>
+              <path d="M 30 25 Q 32 22 30 19" stroke="#388E3C" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+              <path d="M 70 25 Q 72 22 70 19" stroke="#388E3C" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="producto-info">
+            <span class="producto-categoria">Salud</span>
+            <h4>Spray Antipulgas</h4>
+            <p>Protección duradera contra pulgas y garrapatas</p>
+            <span class="producto-precio">$220 MXN</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section class="galeria" id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Galería</span>
+        <h2>Nuestros Consentidos</h2>
+        <p>Mira cómo lucen nuestros clientes peludos después de su sesión de estética</p>
+      </div>
+      <div class="galeria-grid">
+        <div class="galeria-item">
+          <div class="galeria-placeholder" style="background: linear-gradient(135deg, #FFCDD2, #F48FB1);">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="35" cy="40" rx="10" ry="20" fill="#8D6E63" transform="rotate(-20 35 40)"/>
+              <ellipse cx="85" cy="40" rx="10" ry="20" fill="#8D6E63" transform="rotate(20 85 40)"/>
+              <circle cx="60" cy="60" r="32" fill="#FFE0B2"/>
+              <circle cx="48" cy="58" r="5" fill="#2D1810"/>
+              <circle cx="72" cy="58" r="5" fill="#2D1810"/>
+              <circle cx="50" cy="55" r="2" fill="white"/>
+              <circle cx="74" cy="55" r="2" fill="white"/>
+              <ellipse cx="44" cy="68" rx="6" ry="4" fill="#FF8FA3" opacity="0.6"/>
+              <ellipse cx="76" cy="68" rx="6" ry="4" fill="#FF8FA3" opacity="0.6"/>
+              <ellipse cx="60" cy="72" rx="5" ry="4" fill="#2D1810"/>
+              <path d="M 60 76 Q 60 82 54 82" stroke="#2D1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M 60 76 Q 60 82 66 82" stroke="#2D1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <ellipse cx="60" cy="84" rx="4" ry="3" fill="#FF6B9D"/>
+              <path d="M 95 30 L 97 25 L 102 23 L 97 21 L 95 16 L 93 21 L 88 23 L 93 25 Z" fill="white" opacity="0.8"/>
+            </svg>
+            <span class="galeria-label">Antes & Después</span>
+          </div>
+        </div>
+        <div class="galeria-item">
+          <div class="galeria-placeholder" style="background: linear-gradient(135deg, #C8E6C9, #81C784);">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 30 38 L 36 18 L 50 36 Z" fill="#FFA726"/>
+              <path d="M 90 38 L 84 18 L 70 36 Z" fill="#FFA726"/>
+              <path d="M 33 36 L 36 22 L 46 34 Z" fill="#FF8FA3"/>
+              <path d="M 87 36 L 84 22 L 74 34 Z" fill="#FF8FA3"/>
+              <circle cx="60" cy="62" r="32" fill="#FFB74D"/>
+              <path d="M 26 56 L 36 58" stroke="#E65100" stroke-width="2" stroke-linecap="round"/>
+              <path d="M 26 64 L 36 64" stroke="#E65100" stroke-width="2" stroke-linecap="round"/>
+              <path d="M 94 56 L 84 58" stroke="#E65100" stroke-width="2" stroke-linecap="round"/>
+              <path d="M 94 64 L 84 64" stroke="#E65100" stroke-width="2" stroke-linecap="round"/>
+              <ellipse cx="48" cy="58" rx="4" ry="6" fill="#43A047"/>
+              <ellipse cx="72" cy="58" rx="4" ry="6" fill="#43A047"/>
+              <ellipse cx="48" cy="58" rx="1.2" ry="5" fill="black"/>
+              <ellipse cx="72" cy="58" rx="1.2" ry="5" fill="black"/>
+              <circle cx="49" cy="55" r="1.2" fill="white"/>
+              <circle cx="73" cy="55" r="1.2" fill="white"/>
+              <path d="M 54 72 L 66 72 L 60 78 Z" fill="#FF6B9D"/>
+              <path d="M 60 78 L 60 82" stroke="#2D1810" stroke-width="2"/>
+              <path d="M 60 82 Q 60 86 54 86" stroke="#2D1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M 60 82 Q 60 86 66 86" stroke="#2D1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M 22 76 L 36 78" stroke="#2D1810" stroke-width="1" stroke-linecap="round"/>
+              <path d="M 22 82 L 36 82" stroke="#2D1810" stroke-width="1" stroke-linecap="round"/>
+              <path d="M 98 76 L 84 78" stroke="#2D1810" stroke-width="1" stroke-linecap="round"/>
+              <path d="M 98 82 L 84 82" stroke="#2D1810" stroke-width="1" stroke-linecap="round"/>
+            </svg>
+            <span class="galeria-label">Corte Especial</span>
+          </div>
+        </div>
+        <div class="galeria-item">
+          <div class="galeria-placeholder" style="background: linear-gradient(135deg, #B3E5FC, #4FC3F7);">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="32" cy="40" rx="10" ry="22" fill="#FAF0E0" transform="rotate(-20 32 40)"/>
+              <ellipse cx="88" cy="40" rx="10" ry="22" fill="#FAF0E0" transform="rotate(20 88 40)"/>
+              <circle cx="60" cy="62" r="34" fill="#FFFFFF"/>
+              <circle cx="38" cy="50" r="10" fill="#FFFFFF"/>
+              <circle cx="82" cy="50" r="10" fill="#FFFFFF"/>
+              <ellipse cx="48" cy="62" rx="5" ry="6" fill="#2D1810"/>
+              <ellipse cx="72" cy="62" rx="5" ry="6" fill="#2D1810"/>
+              <circle cx="50" cy="59" r="2" fill="white"/>
+              <circle cx="74" cy="59" r="2" fill="white"/>
+              <ellipse cx="42" cy="72" rx="5" ry="3" fill="#FF8FA3" opacity="0.6"/>
+              <ellipse cx="78" cy="72" rx="5" ry="3" fill="#FF8FA3" opacity="0.6"/>
+              <ellipse cx="60" cy="74" rx="5" ry="3.5" fill="#2D1810"/>
+              <path d="M 60 78 Q 60 84 54 84" stroke="#2D1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M 60 78 Q 60 84 66 84" stroke="#2D1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <ellipse cx="60" cy="86" rx="4" ry="3" fill="#FF6B9D"/>
+              <circle cx="100" cy="30" r="4" fill="white" opacity="0.5"/>
+              <circle cx="20" cy="80" r="3" fill="white" opacity="0.5"/>
+            </svg>
+            <span class="galeria-label">Spa Premium</span>
+          </div>
+        </div>
+        <div class="galeria-item">
+          <div class="galeria-placeholder" style="background: linear-gradient(135deg, #FFF9C4, #FFD54F);">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="35" cy="42" rx="9" ry="18" fill="#A1887F" transform="rotate(-15 35 42)"/>
+              <ellipse cx="85" cy="42" rx="9" ry="18" fill="#A1887F" transform="rotate(15 85 42)"/>
+              <ellipse cx="35" cy="44" rx="4" ry="10" fill="#6D4C41" opacity="0.6" transform="rotate(-15 35 44)"/>
+              <ellipse cx="85" cy="44" rx="4" ry="10" fill="#6D4C41" opacity="0.6" transform="rotate(15 85 44)"/>
+              <circle cx="60" cy="60" r="32" fill="#D7CCC8"/>
+              <circle cx="48" cy="58" r="4.5" fill="#2D1810"/>
+              <circle cx="72" cy="58" r="4.5" fill="#2D1810"/>
+              <circle cx="50" cy="55" r="1.5" fill="white"/>
+              <circle cx="74" cy="55" r="1.5" fill="white"/>
+              <ellipse cx="60" cy="70" rx="5" ry="4" fill="#2D1810"/>
+              <path d="M 60 74 Q 60 80 54 80" stroke="#2D1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M 60 74 Q 60 80 66 80" stroke="#2D1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <ellipse cx="60" cy="82" rx="3.5" ry="2.5" fill="#FF6B9D"/>
+              <ellipse cx="44" cy="66" rx="5" ry="3" fill="#FF8FA3" opacity="0.5"/>
+              <ellipse cx="76" cy="66" rx="5" ry="3" fill="#FF8FA3" opacity="0.5"/>
+            </svg>
+            <span class="galeria-label">Baño Medicado</span>
+          </div>
+        </div>
+        <div class="galeria-item galeria-wide">
+          <div class="galeria-placeholder" style="background: linear-gradient(135deg, #E1BEE7, #BA68C8);">
+            <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="60" cy="40" rx="9" ry="20" fill="#FAF0E0" transform="rotate(-20 60 40)"/>
+              <ellipse cx="100" cy="40" rx="9" ry="20" fill="#FAF0E0" transform="rotate(20 100 40)"/>
+              <circle cx="80" cy="62" r="30" fill="#FFFFFF"/>
+              <ellipse cx="70" cy="62" rx="4" ry="5" fill="#2D1810"/>
+              <ellipse cx="90" cy="62" rx="4" ry="5" fill="#2D1810"/>
+              <circle cx="71" cy="60" r="1.5" fill="white"/>
+              <circle cx="91" cy="60" r="1.5" fill="white"/>
+              <ellipse cx="80" cy="72" rx="5" ry="3.5" fill="#2D1810"/>
+              <path d="M 80 75 Q 80 80 75 80" stroke="#2D1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M 80 75 Q 80 80 85 80" stroke="#2D1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M 145 40 L 150 22 L 160 38 Z" fill="#FFA726"/>
+              <path d="M 195 40 L 190 22 L 180 38 Z" fill="#FFA726"/>
+              <circle cx="170" cy="62" r="28" fill="#FFB74D"/>
+              <ellipse cx="160" cy="62" rx="3.5" ry="5" fill="#43A047"/>
+              <ellipse cx="180" cy="62" rx="3.5" ry="5" fill="#43A047"/>
+              <ellipse cx="160" cy="62" rx="1" ry="4" fill="black"/>
+              <ellipse cx="180" cy="62" rx="1" ry="4" fill="black"/>
+              <path d="M 165 72 L 175 72 L 170 77 Z" fill="#FF6B9D"/>
+              <path d="M 170 77 Q 170 82 165 82" stroke="#2D1810" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M 170 77 Q 170 82 175 82" stroke="#2D1810" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M 142 76 L 154 78" stroke="#2D1810" stroke-width="0.8" stroke-linecap="round"/>
+              <path d="M 198 76 L 186 78" stroke="#2D1810" stroke-width="0.8" stroke-linecap="round"/>
+              <path d="M 110 100 C 108 95, 100 95, 100 102 C 100 107, 110 113, 110 113 C 110 113, 120 107, 120 102 C 120 95, 112 95, 110 100 Z" fill="white" opacity="0.7"/>
+            </svg>
+            <span class="galeria-label">Nuestras Instalaciones</span>
+          </div>
+        </div>
+        <div class="galeria-item">
+          <div class="galeria-placeholder" style="background: linear-gradient(135deg, #FFCCBC, #FF8A65);">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 28 36 L 32 16 L 46 32 Z" fill="#5D4037"/>
+              <path d="M 92 36 L 88 16 L 74 32 Z" fill="#5D4037"/>
+              <path d="M 31 32 L 33 20 L 42 30 Z" fill="#FF8FA3"/>
+              <path d="M 89 32 L 87 20 L 78 30 Z" fill="#FF8FA3"/>
+              <circle cx="60" cy="62" r="33" fill="#3E2723"/>
+              <ellipse cx="48" cy="60" rx="4" ry="6" fill="#FFEB3B"/>
+              <ellipse cx="72" cy="60" rx="4" ry="6" fill="#FFEB3B"/>
+              <ellipse cx="48" cy="60" rx="1.2" ry="5" fill="black"/>
+              <ellipse cx="72" cy="60" rx="1.2" ry="5" fill="black"/>
+              <circle cx="49" cy="57" r="1.2" fill="white"/>
+              <circle cx="73" cy="57" r="1.2" fill="white"/>
+              <path d="M 54 72 L 66 72 L 60 78 Z" fill="#FF6B9D"/>
+              <path d="M 60 78 L 60 82" stroke="#FFB74D" stroke-width="1.5"/>
+              <path d="M 60 82 Q 60 86 54 86" stroke="#FFB74D" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M 60 82 Q 60 86 66 86" stroke="#FFB74D" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M 24 78 L 36 78" stroke="#FFB74D" stroke-width="1" stroke-linecap="round"/>
+              <path d="M 96 78 L 84 78" stroke="#FFB74D" stroke-width="1" stroke-linecap="round"/>
+              <path d="M 95 25 L 97 20 L 102 18 L 97 16 L 95 11 L 93 16 L 88 18 L 93 20 Z" fill="white" opacity="0.7"/>
+            </svg>
+            <span class="galeria-label">Cliente Feliz</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservaciones -->
+  <section class="reservaciones" id="reservaciones">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Agenda tu Cita</span>
+        <h2>Reservaciones</h2>
+        <p>Reserva el servicio ideal para tu mascota en pocos pasos</p>
+      </div>
+      <div class="reservacion-wrapper">
+        <div class="reservacion-info">
+          <h3>Horario de Atención</h3>
+          <div class="horario-list">
+            <div class="horario-item">
+              <span class="horario-dia">Lunes a Viernes</span>
+              <span class="horario-hora">9:00 AM - 7:00 PM</span>
+            </div>
+            <div class="horario-item">
+              <span class="horario-dia">Sábado</span>
+              <span class="horario-hora">9:00 AM - 5:00 PM</span>
+            </div>
+            <div class="horario-item">
+              <span class="horario-dia">Domingo</span>
+              <span class="horario-hora">10:00 AM - 3:00 PM</span>
+            </div>
+          </div>
+          <div class="reservacion-beneficios">
+            <div class="beneficio">
+              <span class="beneficio-icon">✅</span>
+              <span>Confirmación inmediata</span>
+            </div>
+            <div class="beneficio">
+              <span class="beneficio-icon">🚗</span>
+              <span>Estacionamiento gratuito</span>
+            </div>
+            <div class="beneficio">
+              <span class="beneficio-icon">💝</span>
+              <span>Primera visita con 15% de descuento</span>
+            </div>
+          </div>
+        </div>
+        <form class="reservacion-form" id="reservacionForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Tu Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ej: María García" required>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="Ej: 55 1234 5678" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mascota">Nombre de tu Mascota</label>
+              <input type="text" id="mascota" name="mascota" placeholder="Ej: Firulais" required>
+            </div>
+            <div class="form-group">
+              <label for="raza">Raza</label>
+              <input type="text" id="raza" name="raza" placeholder="Ej: Golden Retriever">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="servicio">Servicio</label>
+              <select id="servicio" name="servicio" required>
+                <option value="">Selecciona un servicio</option>
+                <option value="bano">Baño Completo - $350</option>
+                <option value="corte">Corte de Pelo - $450</option>
+                <option value="spa">Spa & Relajación - $600</option>
+                <option value="unas">Corte de Uñas - $150</option>
+                <option value="dental">Cepillado Dental - $200</option>
+                <option value="antipulgas">Tratamiento Antipulgas - $500</option>
+                <option value="paquete">Paquete Completo - $900</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fecha">Fecha</label>
+              <input type="date" id="fecha" name="fecha" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="hora">Hora Preferida</label>
+            <select id="hora" name="hora" required>
+              <option value="">Selecciona un horario</option>
+              <option value="09:00">9:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">1:00 PM</option>
+              <option value="14:00">2:00 PM</option>
+              <option value="15:00">3:00 PM</option>
+              <option value="16:00">4:00 PM</option>
+              <option value="17:00">5:00 PM</option>
+              <option value="18:00">6:00 PM</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="notas">Notas Adicionales</label>
+            <textarea id="notas" name="notas" rows="3" placeholder="¿Alguna indicación especial? Ej: Mi perrito es nervioso, tiene alguna condición médica, etc."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Reservar Cita</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="testimonios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Opiniones</span>
+        <h2>Lo que dicen nuestros clientes</h2>
+      </div>
+      <div class="testimonios-grid">
+        <div class="testimonio-card">
+          <div class="testimonio-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Mi perrita Luna siempre sale feliz y hermosa. El equipo es súper cariñoso y profesional. Totalmente recomendado."</p>
+          <div class="testimonio-author">
+            <div class="testimonio-avatar" style="background: #FF6B9D;">MR</div>
+            <div>
+              <strong>María Rodríguez</strong>
+              <span>Dueña de Luna (Poodle)</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonio-card">
+          <div class="testimonio-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Llevé a mi Golden por primera vez y quedó espectacular. El servicio de spa es increíble, Max salió relajadísimo."</p>
+          <div class="testimonio-author">
+            <div class="testimonio-avatar" style="background: #7C4DFF;">CL</div>
+            <div>
+              <strong>Carlos López</strong>
+              <span>Dueño de Max (Golden Retriever)</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonio-card">
+          <div class="testimonio-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Excelente servicio y precios justos. Mi Chihuahua es muy nervioso pero aquí lo tratan con mucha paciencia y amor."</p>
+          <div class="testimonio-author">
+            <div class="testimonio-avatar" style="background: #4DD0E1;">AG</div>
+            <div>
+              <strong>Ana García</strong>
+              <span>Dueña de Chispas (Chihuahua)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="contacto" id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Encuéntranos</span>
+        <h2>Contacto y Ubicación</h2>
+        <p>Estamos cerca de ti para consentir a tu mascota</p>
+      </div>
+      <div class="contacto-grid">
+        <div class="contacto-info">
+          <div class="contacto-item">
+            <div class="contacto-icon">📍</div>
+            <div>
+              <h4>Dirección</h4>
+              <p>Av. Reforma 234, Col. Centro<br>Ciudad de México, CP 06040</p>
+            </div>
+          </div>
+          <div class="contacto-item">
+            <div class="contacto-icon">📞</div>
+            <div>
+              <h4>Teléfono</h4>
+              <p>(55) 1234-5678<br>WhatsApp: (55) 9876-5432</p>
+            </div>
+          </div>
+          <div class="contacto-item">
+            <div class="contacto-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p>hola@patitasfelices.com</p>
+            </div>
+          </div>
+          <div class="contacto-item">
+            <div class="contacto-icon">🕐</div>
+            <div>
+              <h4>Horario</h4>
+              <p>Lun-Vie: 9AM-7PM<br>Sáb: 9AM-5PM | Dom: 10AM-3PM</p>
+            </div>
+          </div>
+          <div class="redes-sociales">
+            <h4>Síguenos</h4>
+            <div class="redes-icons">
+              <a href="#" class="red-social" aria-label="Facebook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="#" class="red-social" aria-label="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              <a href="#" class="red-social" aria-label="TikTok">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+              </a>
+              <a href="#" class="red-social" aria-label="WhatsApp">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mapa-container">
+          <div class="mapa-placeholder">
+            <div class="mapa-overlay">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="#FF6B9D">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <p>Av. Reforma 234, Col. Centro, CDMX</p>
+              <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Ver en Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.svg" alt="Patitas Felices" class="footer-logo">
+          <p>Estética canina profesional con amor y dedicación. Porque tu mascota merece lo mejor.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#reservaciones">Reservaciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#servicios">Baño Completo</a></li>
+            <li><a href="#servicios">Corte de Pelo</a></li>
+            <li><a href="#servicios">Spa & Relajación</a></li>
+            <li><a href="#servicios">Tratamiento Antipulgas</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contacto</h4>
+          <ul>
+            <li>(55) 1234-5678</li>
+            <li>hola@patitasfelices.com</li>
+            <li>Av. Reforma 234, CDMX</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Patitas Felices. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de confirmación -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-icon">🎉</div>
+      <h3>¡Cita Reservada!</h3>
+      <p>Tu reservación ha sido registrada exitosamente. Te contactaremos para confirmar los detalles.</p>
+      <button class="btn btn-primary" id="modalClose">Entendido</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iron Men — Gimnasio Premium de Alto Rendimiento</title>
+  <meta name="description" content="Gimnasio rudo y premium. Fuerza, hipertrofia y powerlifting.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,300;1,9..144,600&family=Inter:wght@400;600;800&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css?v=20260519">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; frame-ancestors 'none';">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+  <!-- Splash Screen -->
+  <div class="splash" id="splash">
+    <div class="splash-text">FORJANDO HIERRO</div>
+  </div>
+
+  <header class="header">
+    <div class="header-logo">IRON MEN</div>
+    <nav class="header-nav">
+      <a href="#filosofia">Filosofía</a>
+      <a href="#zonas">Zonas</a>
+      <a href="#tarifas">Tarifas</a>
+    </nav>
+    <a href="#contacto" class="btn btn-ghost">Unirse</a>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="assets/img/hero.jpg" alt="Entrenamiento en Iron Men" fetchpriority="high" loading="eager" />
+        <div class="hero-bg-tint"></div>
+      </div>
+      <div class="hero-mesh"></div>
+      <div class="hero-grain"></div>
+      <div class="hero-inner">
+        <div class="hero-meta"><span class="dot"></span><span>Abierto 24/7 · Premium</span></div>
+        <span class="hero-glyph">鉄人</span>
+        <h1 class="hero-title">
+          <span>El templo de la <em>fuerza pura</em>.</span>
+          <span>Sin distracciones.</span>
+        </h1>
+        <p class="hero-loc">Madrid, España</p>
+        <div class="hero-foot">
+          <div class="hero-rating"><span data-count-to="4.9">4,9</span> ★ · <span data-count-to="340">340</span> espartanos</div>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary">Prueba Gratis</a>
+            <a href="#zonas" class="btn btn-ghost">Ver Instalaciones</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="filosofia" class="section editorial-concept">
+      <div class="container concept-grid">
+        <div class="concept-text reveal" data-split>
+          <p class="kicker">Nuestra Filosofía</p>
+          <h2>No venimos a pasear. Venimos a <em>construir</em>.</h2>
+          <p>Iron Men es un espacio diseñado para el alto rendimiento. Máquinas seleccionadas biomecánicamente, barras olímpicas calibradas y un entorno oscuro, concentrado y premium que respeta tu esfuerzo.</p>
+        </div>
+        <div class="concept-stats">
+          <div class="stat"><span data-count-to="1500">0</span> kg <span>En discos libres</span></div>
+          <div class="stat"><span data-count-to="8">0</span> <span>Plataformas Powerlifting</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="zonas" class="section pinned-showcase-section">
+      <div class="pinned-header container">
+        <p class="kicker">Instalaciones</p>
+        <h2>Las zonas de batalla</h2>
+      </div>
+      <div class="showcase-wrapper">
+        <div class="showcase-track" data-services>
+          <!-- Mounted by JS -->
+        </div>
+      </div>
+    </section>
+
+    <section id="tarifas" class="section dark-alt">
+      <div class="container">
+        <div class="text-center">
+          <p class="kicker">Membresías</p>
+          <h2>Invierte en tu <em>poder</em>.</h2>
+        </div>
+        <div class="pricing-grid" data-pricing>
+          <!-- Mounted by JS -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section form-section">
+      <div class="container form-container">
+        <div class="form-info reveal" data-split>
+          <span class="hero-glyph">挑戦</span>
+          <h2>Acepta el <em>reto</em>.</h2>
+          <p>Déjanos tus datos para agendar tu primera sesión de prueba gratuita o resolver cualquier duda sobre las cuotas.</p>
+          <div class="contact-details">
+            <p data-contact-email>unete@ironmen.com</p>
+            <p>+34 600 000 000</p>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" required placeholder="Tu Nombre">
+            <label for="name">Tu Nombre</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" required placeholder="Correo Electrónico">
+            <label for="email">Correo Electrónico</label>
+          </div>
+          <div class="form-group">
+            <select id="goal" required>
+              <option value="" disabled selected>¿Cuál es tu objetivo?</option>
+              <option value="hipertrofia">Hipertrofia / Culturismo</option>
+              <option value="fuerza">Powerlifting / Fuerza</option>
+              <option value="salud">Acondicionamiento General</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary submit-btn">
+            <span class="btn-text">Solicitar Acceso</span>
+            <svg class="success-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 7"/></svg>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">IRON MEN © 2026</div>
+      <div class="footer-links">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="lib/gsap.min.js"></script>
+  <script defer src="lib/ScrollTrigger.min.js"></script>
+  <script defer src="lib/manifest.js?v=20260519"></script>
+  <script defer src="main.js?v=20260519"></script>
+</body>
+</html>

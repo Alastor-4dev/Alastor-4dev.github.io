@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurum Capital — Inversiones Inteligentes</title>
+    <meta name="description" content="Aurum Capital: plataforma de inversiones inteligentes con IA. Haz crecer tu patrimonio con estrategias automatizadas y rendimientos superiores al mercado.">
+    <meta name="keywords" content="inversiones, fintech, portafolio, IA, rendimientos, patrimonio, trading algorítmico">
+    <meta name="author" content="Aurum Capital">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Aurum Capital — Inversiones Inteligentes">
+    <meta property="og:description" content="Haz crecer tu patrimonio con estrategias automatizadas impulsadas por IA.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aurumcapital.com">
+    <meta property="og:image" content="https://aurumcapital.com/og-image.jpg">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aurum Capital — Inversiones Inteligentes">
+    <meta name="twitter:description" content="Haz crecer tu patrimonio con estrategias automatizadas impulsadas por IA.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23D4AF37'/><stop offset='100%25' style='stop-color:%23F5E6A3'/></linearGradient></defs><circle cx='50' cy='50' r='45' fill='url(%23g)'/><text x='50' y='68' font-size='55' font-family='serif' font-weight='bold' fill='%23111' text-anchor='middle'>A</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FFF9E6',
+                            100: '#F5E6A3',
+                            200: '#EDD978',
+                            300: '#E5CC4D',
+                            400: '#D4AF37',
+                            500: '#C49B2A',
+                            600: '#A67C1E',
+                            700: '#7A5B16',
+                            800: '#4E3A0E',
+                            900: '#221906',
+                        },
+                        obsidian: {
+                            50: '#1a1a2e',
+                            100: '#16162a',
+                            200: '#121226',
+                            300: '#0e0e22',
+                            400: '#0a0a1e',
+                            500: '#08081a',
+                            600: '#060616',
+                            700: '#040412',
+                            800: '#02020e',
+                            900: '#00000a',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #08081a; color: #e8e8e8; overflow-x: hidden; }
+
+        /* Gold gradient text */
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #F5E6A3 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Glass card */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+        }
+
+        .glass-strong {
+            background: rgba(212, 175, 55, 0.05);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Gold button */
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37, #F5E6A3, #D4AF37);
+            background-size: 200% 200%;
+            color: #0a0a1e;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 30px rgba(212, 175, 55, 0.3);
+        }
+        .btn-gold:hover {
+            background-position: right center;
+            box-shadow: 0 8px 50px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-gold {
+            border: 1.5px solid rgba(212, 175, 55, 0.5);
+            color: #D4AF37;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-gold:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #D4AF37;
+        }
+
+        /* Glow orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        /* Animated grid */
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Noise texture overlay */
+        .noise::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Chart animation */
+        .chart-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 3s ease forwards;
+        }
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* Float animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+
+        /* Pulse ring */
+        @keyframes pulseRing {
+            0% { transform: scale(1); opacity: 0.4; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+        .pulse-ring::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid #D4AF37;
+            animation: pulseRing 2s ease-out infinite;
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Number counter */
+        .counter { font-variant-numeric: tabular-nums; }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #08081a; }
+        ::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.3); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(212, 175, 55, 0.5); }
+
+        /* Marquee */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track { animation: marquee 30s linear infinite; }
+
+        /* Testimonial card shine */
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(212, 175, 55, 0) 0%,
+                rgba(212, 175, 55, 0.03) 40%,
+                rgba(212, 175, 55, 0.08) 50%,
+                rgba(212, 175, 55, 0.03) 60%,
+                rgba(212, 175, 55, 0) 100%
+            );
+            transform: rotate(30deg);
+            transition: transform 0.8s;
+            pointer-events: none;
+        }
+        .shine-effect:hover::after {
+            transform: rotate(30deg) translateY(-30%);
+        }
+
+        /* Divider */
+        .gold-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent);
+        }
+
+        /* FAQ */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.3s;
+        }
+        .faq-answer.open {
+            max-height: 300px;
+        }
+
+        /* Form focus — higher specificity avoids !important */
+        html body input:focus, html body textarea:focus, html body select:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+        }
+
+        /* Focus-visible for keyboard navigation */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid #D4AF37;
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-float, .marquee-track, .chart-line { animation: none; }
+            .pulse-ring::after { animation: none; }
+            .reveal { opacity: 1; transform: none; transition: none; }
+            .shine-effect::after, .shine-effect:hover::after { transition: none; }
+            .btn-gold, .btn-outline-gold { transition: none; }
+        }
+
+        /* Nav blur */
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Cookie banner */
+        .cookie-banner {
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+    </style>
+
+    <link rel="canonical" href="https://aurumcapital.com">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=700&fit=crop&q=80" fetchpriority="high">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": "Aurum Capital",
+        "description": "Plataforma de inversiones inteligentes con IA",
+        "url": "https://aurumcapital.com",
+        "areaServed": "Global",
+        "serviceType": "Investment Management"
+    }
+    </script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://images.unsplash.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';">
+</head>
+
+<body class="noise grid-bg">
+
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] bg-gold-400 text-obsidian-500 px-4 py-2 rounded font-semibold text-sm">Saltar al contenido principal</a>
+
+<!-- ========== NAVIGATION ========== -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" aria-label="Navegación principal">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group" aria-label="Aurum Capital Home">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-gold-100 flex items-center justify-center">
+                    <span class="font-display font-bold text-obsidian-500 text-lg">A</span>
+                </div>
+                <span class="font-display text-xl font-semibold text-gradient-gold tracking-wide">Aurum Capital</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#beneficios" class="text-sm text-gray-400 hover:text-gold-400 transition-colors">Beneficios</a>
+                <a href="#servicios" class="text-sm text-gray-400 hover:text-gold-400 transition-colors">Servicios</a>
+                <a href="#rendimiento" class="text-sm text-gray-400 hover:text-gold-400 transition-colors">Rendimiento</a>
+                <a href="#testimonios" class="text-sm text-gray-400 hover:text-gold-400 transition-colors">Testimonios</a>
+                <a href="#faq" class="text-sm text-gray-400 hover:text-gold-400 transition-colors">FAQ</a>
+                <a href="#contacto" class="btn-gold px-6 py-2.5 rounded-full text-sm">Comenzar ahora</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menuBtn" class="md:hidden text-gold-400 p-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden glass" aria-label="Menú móvil">
+        <div class="px-6 py-6 space-y-4">
+            <a href="#beneficios" class="block text-gray-300 hover:text-gold-400 transition-colors py-2">Beneficios</a>
+            <a href="#servicios" class="block text-gray-300 hover:text-gold-400 transition-colors py-2">Servicios</a>
+            <a href="#rendimiento" class="block text-gray-300 hover:text-gold-400 transition-colors py-2">Rendimiento</a>
+            <a href="#testimonios" class="block text-gray-300 hover:text-gold-400 transition-colors py-2">Testimonios</a>
+            <a href="#faq" class="block text-gray-300 hover:text-gold-400 transition-colors py-2">FAQ</a>
+            <a href="#contacto" class="btn-gold block text-center px-6 py-3 rounded-full text-sm mt-4">Comenzar ahora</a>
+        </div>
+    </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ========== HERO ========== -->
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <!-- Background orbs -->
+    <div class="orb w-[600px] h-[600px] bg-gold-400 -top-40 -right-40" style="opacity:0.08"></div>
+    <div class="orb w-[400px] h-[400px] bg-gold-600 bottom-20 -left-20" style="opacity:0.06"></div>
+
+    <!-- Animated lines -->
+    <svg class="absolute inset-0 w-full h-full opacity-10" aria-hidden="true">
+        <line x1="10%" y1="0" x2="30%" y2="100%" stroke="rgba(212,175,55,0.15)" stroke-width="0.5"/>
+        <line x1="50%" y1="0" x2="70%" y2="100%" stroke="rgba(212,175,55,0.1)" stroke-width="0.5"/>
+        <line x1="80%" y1="0" x2="90%" y2="100%" stroke="rgba(212,175,55,0.08)" stroke-width="0.5"/>
+    </svg>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 glass rounded-full px-5 py-2 mb-8 reveal">
+            <span class="relative w-2 h-2 rounded-full bg-emerald-400 pulse-ring"></span>
+            <span class="text-xs text-gray-400 font-medium tracking-wider uppercase">Rendimientos activos — Mayo 2026</span>
+        </div>
+
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] mb-8 reveal">
+            <span class="text-white">Tu dinero</span><br>
+            <span class="text-gradient-gold">merece más.</span>
+        </h1>
+
+        <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gray-400 font-light leading-relaxed mb-10 reveal">
+            Algoritmos de inversión impulsados por inteligencia artificial que superan al mercado.
+            Sin comisiones ocultas. Sin complicaciones. Solo resultados.
+        </p>
+
+        <!-- CTA group -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 reveal">
+            <a href="#contacto" class="btn-gold px-10 py-4 rounded-full text-base tracking-wide">
+                Abrir cuenta gratuita
+            </a>
+            <a href="#rendimiento" class="btn-outline-gold px-10 py-4 rounded-full text-base tracking-wide">
+                Ver rendimientos
+            </a>
+        </div>
+
+        <!-- Stats row -->
+        <div class="flex flex-wrap lg:flex-nowrap gap-4 sm:gap-6 w-full reveal">
+            <div class="glass rounded-2xl px-6 py-6 sm:px-8 sm:py-8 text-center flex-1 min-w-[calc(50%-0.5rem)] lg:min-w-0">
+                <div class="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-gradient-gold whitespace-nowrap"><span class="counter" data-target="18.7">0</span>%</div>
+                <div class="text-[10px] sm:text-xs text-gray-500 mt-3 uppercase tracking-wider">Rendimiento anual</div>
+            </div>
+            <div class="glass rounded-2xl px-6 py-6 sm:px-8 sm:py-8 text-center flex-1 min-w-[calc(50%-0.5rem)] lg:min-w-0">
+                <div class="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-gradient-gold whitespace-nowrap"><span class="counter" data-target="42">0</span>K+</div>
+                <div class="text-[10px] sm:text-xs text-gray-500 mt-3 uppercase tracking-wider">Inversores activos</div>
+            </div>
+            <div class="glass rounded-2xl px-6 py-6 sm:px-8 sm:py-8 text-center flex-1 min-w-[calc(50%-0.5rem)] lg:min-w-0">
+                <div class="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-gradient-gold whitespace-nowrap">$<span class="counter" data-target="2.4">0</span>B</div>
+                <div class="text-[10px] sm:text-xs text-gray-500 mt-3 uppercase tracking-wider">Bajo gestión</div>
+            </div>
+            <div class="glass rounded-2xl px-6 py-6 sm:px-8 sm:py-8 text-center flex-1 min-w-[calc(50%-0.5rem)] lg:min-w-0">
+                <div class="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-gradient-gold whitespace-nowrap"><span class="counter" data-target="99.9">0</span>%</div>
+                <div class="text-[10px] sm:text-xs text-gray-500 mt-3 uppercase tracking-wider">Uptime</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero image - floating dashboard mockup -->
+    <div class="relative max-w-7xl mx-auto mt-20 px-6 reveal">
+        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-gold-400/5">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=700&fit=crop&q=80"
+                 alt="Dashboard de inversiones con gráficos de rendimiento en tiempo real"
+                 class="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover opacity-80"
+                 loading="eager"
+                 width="1600" height="700">
+            <!-- Overlay gradient -->
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-500 via-obsidian-500/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-obsidian-500/60 to-transparent"></div>
+            <!-- Floating metric badges -->
+            <div class="absolute top-6 right-6 glass rounded-xl px-4 py-3 animate-float hidden sm:block">
+                <div class="text-emerald-400 text-xs font-semibold">+3.42% hoy</div>
+                <div class="text-gray-400 text-[10px]">Portfolio value</div>
+            </div>
+            <div class="absolute bottom-12 left-6 glass rounded-xl px-4 py-3 hidden sm:block" style="animation: float 6s ease-in-out 1s infinite">
+                <div class="text-gold-400 text-xs font-semibold">$247,891.00</div>
+                <div class="text-gray-400 text-[10px]">Balance total</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+        <span class="text-[10px] uppercase tracking-[0.3em] text-gray-500">Scroll</span>
+        <div class="w-px h-10 bg-gradient-to-b from-gold-400 to-transparent animate-pulse"></div>
+    </div>
+</section>
+
+<!-- ========== MARQUEE TRUST BAR ========== -->
+<div class="py-8 overflow-hidden border-y border-white/5" aria-hidden="true">
+    <div class="flex whitespace-nowrap marquee-track">
+        <span class="mx-12 text-sm text-gray-500 font-light tracking-widest uppercase">Bloomberg Featured</span>
+        <span class="mx-4 text-gold-700">◆</span>
+        <span class="mx-12 text-sm text-gray-500 font-light tracking-widest uppercase">SEC Regulated</span>
+        <span class="mx-4 text-gold-700">◆</span>
+        <span class="mx-12 text-sm text-gray-500 font-light tracking-widest uppercase">ISO 27001 Certified</span>
+        <span class="mx-4 text-gold-700">◆</span>
+        <span class="mx-12 text-sm text-gray-500 font-light tracking-widest uppercase">SOC 2 Type II</span>
+        <span class="mx-4 text-gold-700">◆</span>
+        <span class="mx-12 text-sm text-gray-500 font-light tracking-widest uppercase">Forbes Fintech 50</span>
+        <span class="mx-4 text-gold-700">◆</span>
+        <span class="mx-12 text-sm text-gray-500 font-light tracking-widest uppercase">$2.4B+ AUM</span>
+        <span class="mx-4 text-gold-700">◆</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="mx-12 text-sm text-gray-500 font-light tracking-widest uppercase">Bloomberg Featured</span>
+        <span class="mx-4 text-gold-700">◆</span>
+        <span class="mx-12 text-sm text-gray-500 font-light tracking-widest uppercase">SEC Regulated</span>
+        <span class="mx-4 text-gold-700">◆</span>
+        <span class="mx-12 text-sm text-gray-500 font-light tracking-widest uppercase">ISO 27001 Certified</span>
+        <span class="mx-4 text-gold-700">◆</span>
+        <span class="mx-12 text-sm text-gray-500 font-light tracking-widest uppercase">SOC 2 Type II</span>
+        <span class="mx-4 text-gold-700">◆</span>
+        <span class="mx-12 text-sm text-gray-500 font-light tracking-widest uppercase">Forbes Fintech 50</span>
+        <span class="mx-4 text-gold-700">◆</span>
+        <span class="mx-12 text-sm text-gray-500 font-light tracking-widest uppercase">$2.4B+ AUM</span>
+    </div>
+</div>
+
+<!-- ========== BENEFICIOS ========== -->
+<section id="beneficios" class="py-28 relative" aria-labelledby="beneficios-title">
+    <div class="orb w-[500px] h-[500px] bg-gold-400 top-0 left-1/2 -translate-x-1/2" style="opacity:0.04"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+        <div class="text-center mb-20 reveal">
+            <span class="text-gold-400 text-xs uppercase tracking-[0.3em] font-medium">¿Por qué Aurum?</span>
+            <h2 id="beneficios-title" class="font-display text-4xl lg:text-6xl font-bold text-white mt-4">
+                Ventajas que <span class="text-gradient-gold">transforman</span>
+            </h2>
+            <p class="text-gray-500 mt-6 max-w-xl mx-auto">Tecnología institucional al alcance de cualquier inversor.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 - Image card -->
+            <div class="glass-strong rounded-3xl overflow-hidden hover:border-gold-400/30 transition-all duration-500 group reveal shine-effect">
+                <div class="relative h-44 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=350&fit=crop&q=80"
+                         alt="Red neuronal de inteligencia artificial procesando datos financieros"
+                         class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                         loading="lazy" width="600" height="350">
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-500 via-obsidian-500/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-6">
+                        <h3 class="font-display text-xl font-semibold text-white">IA Predictiva</h3>
+                    </div>
+                </div>
+                <div class="p-6 pt-4">
+                    <p class="text-gray-400 text-sm leading-relaxed">Modelos de machine learning que analizan millones de datos en tiempo real para anticipar movimientos del mercado con precisión institucional.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 - Image card -->
+            <div class="glass-strong rounded-3xl overflow-hidden hover:border-gold-400/30 transition-all duration-500 group reveal shine-effect">
+                <div class="relative h-44 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=350&fit=crop&q=80"
+                         alt="Bóveda digital con cifrado de seguridad avanzada"
+                         class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                         loading="lazy" width="600" height="350">
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-500 via-obsidian-500/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-6">
+                        <h3 class="font-display text-xl font-semibold text-white">Seguridad Bancaria</h3>
+                    </div>
+                </div>
+                <div class="p-6 pt-4">
+                    <p class="text-gray-400 text-sm leading-relaxed">Cifrado AES-256, autenticación biométrica, cold storage para activos digitales y auditorías de seguridad trimestrales por firmas Big Four.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 - Image card -->
+            <div class="glass-strong rounded-3xl overflow-hidden hover:border-gold-400/30 transition-all duration-500 group reveal shine-effect">
+                <div class="relative h-44 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=350&fit=crop&q=80"
+                         alt="Monedas y gráficos financieros representando transparencia en costos"
+                         class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                         loading="lazy" width="600" height="350">
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-500 via-obsidian-500/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-6">
+                        <h3 class="font-display text-xl font-semibold text-white">Cero Comisiones Ocultas</h3>
+                    </div>
+                </div>
+                <div class="p-6 pt-4">
+                    <p class="text-gray-400 text-sm leading-relaxed">Transparencia total. Una sola tarifa clara sin spreads inflados, sin cargos por retiro, sin costos por inactividad. Tu dinero trabaja para ti.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 - Image card -->
+            <div class="glass-strong rounded-3xl overflow-hidden hover:border-gold-400/30 transition-all duration-500 group reveal shine-effect">
+                <div class="relative h-44 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&h=350&fit=crop&q=80"
+                         alt="Mapa mundial con conexiones financieras globales"
+                         class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                         loading="lazy" width="600" height="350">
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-500 via-obsidian-500/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-6">
+                        <h3 class="font-display text-xl font-semibold text-white">Acceso Global</h3>
+                    </div>
+                </div>
+                <div class="p-6 pt-4">
+                    <p class="text-gray-400 text-sm leading-relaxed">Invierte en más de 40 mercados internacionales desde una sola plataforma. Acciones, ETFs, bonos, commodities y criptoactivos regulados.</p>
+                </div>
+            </div>
+
+            <!-- Card 5 - Image card -->
+            <div class="glass-strong rounded-3xl overflow-hidden hover:border-gold-400/30 transition-all duration-500 group reveal shine-effect">
+                <div class="relative h-44 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=350&fit=crop&q=80"
+                         alt="Pantallas de trading con gráficos de portafolio automatizado"
+                         class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                         loading="lazy" width="600" height="350">
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-500 via-obsidian-500/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-6">
+                        <h3 class="font-display text-xl font-semibold text-white">Portafolios Automáticos</h3>
+                    </div>
+                </div>
+                <div class="p-6 pt-4">
+                    <p class="text-gray-400 text-sm leading-relaxed">Rebalanceo inteligente, reinversión de dividendos y optimización fiscal automática. Tu portafolio se adapta al mercado sin que muevas un dedo.</p>
+                </div>
+            </div>
+
+            <!-- Card 6 - Image card -->
+            <div class="glass-strong rounded-3xl overflow-hidden hover:border-gold-400/30 transition-all duration-500 group reveal shine-effect">
+                <div class="relative h-44 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=350&fit=crop&q=80"
+                         alt="Equipo de asesores financieros en reunión profesional"
+                         class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                         loading="lazy" width="600" height="350">
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-500 via-obsidian-500/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-6">
+                        <h3 class="font-display text-xl font-semibold text-white">Soporte Premium 24/7</h3>
+                    </div>
+                </div>
+                <div class="p-6 pt-4">
+                    <p class="text-gray-400 text-sm leading-relaxed">Asesores financieros certificados disponibles por chat, llamada o videollamada. Respuesta promedio en menos de 2 minutos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ========== SERVICIOS ========== -->
+<section id="servicios" class="py-28 relative" aria-labelledby="servicios-title">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-20 reveal">
+            <span class="text-gold-400 text-xs uppercase tracking-[0.3em] font-medium">Nuestros planes</span>
+            <h2 id="servicios-title" class="font-display text-4xl lg:text-6xl font-bold text-white mt-4">
+                Elige tu <span class="text-gradient-gold">estrategia</span>
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Plan 1 -->
+            <div class="glass rounded-3xl p-8 flex flex-col reveal">
+                <span class="text-gold-400 text-xs uppercase tracking-[0.2em] font-medium">Starter</span>
+                <div class="mt-4 mb-6">
+                    <span class="font-display text-5xl font-bold text-white">$0</span>
+                    <span class="text-gray-500 text-sm">/mes</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-8">Ideal para comenzar a invertir sin compromiso.</p>
+                <ul class="space-y-3 mb-10 flex-1" role="list">
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Portafolio básico automatizado
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        3 clases de activos
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Reportes mensuales
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Soporte por chat
+                    </li>
+                </ul>
+                <a href="#contacto" class="btn-outline-gold text-center py-3.5 rounded-full text-sm">Comenzar gratis</a>
+            </div>
+
+            <!-- Plan 2 - Featured -->
+            <div class="glass-strong rounded-3xl p-8 flex flex-col relative reveal scale-[1.02]">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-gold-400 to-gold-200 text-obsidian-500 text-xs font-bold uppercase tracking-wider px-6 py-1.5 rounded-full">Popular</div>
+                <span class="text-gold-400 text-xs uppercase tracking-[0.2em] font-medium">Growth</span>
+                <div class="mt-4 mb-6">
+                    <span class="font-display text-5xl font-bold text-gradient-gold">$29</span>
+                    <span class="text-gray-500 text-sm">/mes</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-8">Para inversores que buscan rendimiento superior.</p>
+                <ul class="space-y-3 mb-10 flex-1" role="list">
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        IA predictiva avanzada
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Todos los mercados globales
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Rebalanceo automático diario
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Optimización fiscal
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Soporte prioritario 24/7
+                    </li>
+                </ul>
+                <a href="#contacto" class="btn-gold text-center py-3.5 rounded-full text-sm">Elegir Growth</a>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="glass rounded-3xl p-8 flex flex-col reveal">
+                <span class="text-gold-400 text-xs uppercase tracking-[0.2em] font-medium">Prestige</span>
+                <div class="mt-4 mb-6">
+                    <span class="font-display text-5xl font-bold text-white">$149</span>
+                    <span class="text-gray-500 text-sm">/mes</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-8">Gestión patrimonial con asesor dedicado.</p>
+                <ul class="space-y-3 mb-10 flex-1" role="list">
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Todo en Growth
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Asesor financiero dedicado
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Private equity access
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Estrategias personalizadas
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-300">
+                        <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Reportes fiscales completos
+                    </li>
+                </ul>
+                <a href="#contacto" class="btn-outline-gold text-center py-3.5 rounded-full text-sm">Contactar ventas</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ========== VISUAL BREAK - Full width image ========== -->
+<section class="relative h-[50vh] min-h-[400px] overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1600&h=800&fit=crop&q=80"
+         alt="Visualización abstracta de blockchain y tecnología financiera"
+         class="absolute inset-0 w-full h-full object-cover opacity-30"
+         loading="lazy" width="1600" height="800">
+    <div class="absolute inset-0 bg-gradient-to-b from-obsidian-500 via-transparent to-obsidian-500"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-obsidian-500/80 to-transparent"></div>
+    <div class="relative h-full flex items-center">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="max-w-lg reveal">
+                <span class="text-gold-400 text-xs uppercase tracking-[0.3em] font-medium">Tecnología de clase mundial</span>
+                <h2 class="font-display text-3xl lg:text-5xl font-bold text-white mt-4 mb-4">
+                    Algoritmos que <span class="text-gradient-gold">nunca duermen</span>
+                </h2>
+                <p class="text-gray-400 leading-relaxed">Procesamos más de 50 millones de señales de mercado por segundo. Infraestructura distribuida en 12 data centers globales con latencia inferior a 3ms.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ========== RENDIMIENTO ========== -->
+<section id="rendimiento" class="py-28 relative" aria-labelledby="rendimiento-title">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <span class="text-gold-400 text-xs uppercase tracking-[0.3em] font-medium">Track record</span>
+                <h2 id="rendimiento-title" class="font-display text-4xl lg:text-5xl font-bold text-white mt-4 mb-6">
+                    Resultados que <span class="text-gradient-gold">hablan solos</span>
+                </h2>
+                <p class="text-gray-400 leading-relaxed mb-8">
+                    Nuestro algoritmo ha superado consistentemente al S&P 500 durante los últimos 5 años. Sin trucos, sin cherry-picking. Rendimientos auditados por Ernst & Young.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-white font-semibold">+18.7% anualizado</div>
+                            <div class="text-gray-500 text-sm">vs +11.2% S&P 500 (mismos periodos)</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-400/10 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-white font-semibold">Drawdown máximo: -8.3%</div>
+                            <div class="text-gray-500 text-sm">vs -23.9% S&P 500 en 2022</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-white font-semibold">5 años consecutivos positivos</div>
+                            <div class="text-gray-500 text-sm">Incluyendo crisis COVID y 2022</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart -->
+            <div class="glass rounded-3xl p-8 reveal">
+                <div class="flex items-center justify-between mb-6">
+                    <span class="text-sm text-gray-400">Rendimiento acumulado (2021–2026)</span>
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center gap-2 text-xs"><span class="w-3 h-0.5 bg-gold-400 inline-block"></span> Aurum</span>
+                        <span class="flex items-center gap-2 text-xs text-gray-500"><span class="w-3 h-0.5 bg-gray-600 inline-block"></span> S&P 500</span>
+                    </div>
+                </div>
+                <svg viewBox="0 0 600 300" class="w-full" role="img" aria-label="Gráfico de rendimiento Aurum vs S&P 500">
+                    <!-- Grid lines -->
+                    <line x1="0" y1="60" x2="600" y2="60" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                    <line x1="0" y1="120" x2="600" y2="120" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                    <line x1="0" y1="180" x2="600" y2="180" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                    <line x1="0" y1="240" x2="600" y2="240" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+                    <!-- S&P 500 line -->
+                    <polyline class="chart-line" fill="none" stroke="rgba(100,100,120,0.5)" stroke-width="2"
+                        points="0,240 60,220 120,210 180,250 240,230 300,260 360,240 420,220 480,200 540,195 600,180"/>
+
+                    <!-- Aurum line gradient fill -->
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="rgba(212,175,55,0.3)"/>
+                            <stop offset="100%" stop-color="rgba(212,175,55,0)"/>
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#goldGrad)"
+                        d="M0,240 L60,215 120,195 180,210 240,175 300,190 360,150 420,120 480,85 540,60 600,40 L600,300 L0,300 Z"/>
+
+                    <!-- Aurum line -->
+                    <polyline class="chart-line" fill="none" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                        points="0,240 60,215 120,195 180,210 240,175 300,190 360,150 420,120 480,85 540,60 600,40"/>
+
+                    <!-- Dot at end -->
+                    <circle cx="600" cy="40" r="5" fill="#D4AF37" class="animate-pulse"/>
+
+                    <!-- Year labels -->
+                    <text x="0" y="295" fill="rgba(255,255,255,0.2)" font-size="11" font-family="Inter">2021</text>
+                    <text x="120" y="295" fill="rgba(255,255,255,0.2)" font-size="11" font-family="Inter">2022</text>
+                    <text x="240" y="295" fill="rgba(255,255,255,0.2)" font-size="11" font-family="Inter">2023</text>
+                    <text x="360" y="295" fill="rgba(255,255,255,0.2)" font-size="11" font-family="Inter">2024</text>
+                    <text x="480" y="295" fill="rgba(255,255,255,0.2)" font-size="11" font-family="Inter">2025</text>
+                    <text x="570" y="295" fill="rgba(255,255,255,0.2)" font-size="11" font-family="Inter">2026</text>
+
+                    <!-- Value labels -->
+                    <text x="555" y="35" fill="#D4AF37" font-size="12" font-weight="600" font-family="Inter">+142%</text>
+                    <text x="555" y="175" fill="rgba(100,100,120,0.6)" font-size="12" font-family="Inter">+68%</text>
+                </svg>
+                <p class="text-[10px] text-gray-600 mt-4">Rendimientos pasados no garantizan resultados futuros. Datos auditados por Ernst & Young. Cifras netas de comisiones.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ========== TESTIMONIOS ========== -->
+<section id="testimonios" class="py-28 relative overflow-hidden" aria-labelledby="testimonios-title">
+    <img src="https://images.unsplash.com/photo-1504607798333-52a30db54a5d?w=1600&h=900&fit=crop&q=80"
+         alt="" role="presentation"
+         class="absolute inset-0 w-full h-full object-cover opacity-[0.03]"
+         loading="lazy" width="1600" height="900">
+    <div class="orb w-[600px] h-[600px] bg-gold-400 -bottom-60 -right-60" style="opacity:0.05"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-20 reveal">
+            <span class="text-gold-400 text-xs uppercase tracking-[0.3em] font-medium">Testimonios</span>
+            <h2 id="testimonios-title" class="font-display text-4xl lg:text-6xl font-bold text-white mt-4">
+                Confían en <span class="text-gradient-gold">nosotros</span>
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="glass rounded-3xl p-8 reveal shine-effect">
+                <div class="flex items-center gap-1 mb-6">
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">"Migré mi portafolio de un banco tradicional a Aurum y en 14 meses ya superé lo que habría ganado en 5 años. La IA realmente funciona."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-obsidian-500 font-bold text-sm">MR</div>
+                    <div>
+                        <div class="text-white text-sm font-medium">Mariana Reyes</div>
+                        <div class="text-gray-500 text-xs">CFO, TechStart MX</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="glass rounded-3xl p-8 reveal shine-effect">
+                <div class="flex items-center gap-1 mb-6">
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">"Lo que más me impresiona es la transparencia. Puedo ver cada operación, cada centavo de comisión, y los reportes fiscales se generan solos. Invierto con confianza."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-obsidian-500 font-bold text-sm">DL</div>
+                    <div>
+                        <div class="text-white text-sm font-medium">Daniel López</div>
+                        <div class="text-gray-500 text-xs">Emprendedor serial</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="glass rounded-3xl p-8 reveal shine-effect">
+                <div class="flex items-center gap-1 mb-6">
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed mb-6 italic">"Soy doctora y no tengo tiempo para seguir mercados. Con el plan Growth, configuro mi perfil de riesgo una vez y Aurum hace el resto. Ya llevo 22% de retorno este año."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-obsidian-500 font-bold text-sm">SV</div>
+                    <div>
+                        <div class="text-white text-sm font-medium">Sofía Valdés</div>
+                        <div class="text-gray-500 text-xs">Médica internista</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ========== FAQ ========== -->
+<section id="faq" class="py-28" aria-labelledby="faq-title">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+            <span class="text-gold-400 text-xs uppercase tracking-[0.3em] font-medium">FAQ</span>
+            <h2 id="faq-title" class="font-display text-4xl lg:text-5xl font-bold text-white mt-4">
+                Preguntas <span class="text-gradient-gold">frecuentes</span>
+            </h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="glass rounded-2xl overflow-hidden reveal">
+                <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+                    <span class="text-white font-medium text-sm pr-4">¿Cuál es la inversión mínima para empezar?</span>
+                    <svg class="w-5 h-5 text-gold-400 flex-shrink-0 transition-transform duration-300 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer px-6">
+                    <p class="text-gray-400 text-sm leading-relaxed pb-6">Puedes comenzar con tan solo $100 USD en el plan Starter. Para el plan Growth, la inversión mínima es de $1,000 USD, y para Prestige, $50,000 USD. No hay límite máximo.</p>
+                </div>
+            </div>
+
+            <div class="glass rounded-2xl overflow-hidden reveal">
+                <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+                    <span class="text-white font-medium text-sm pr-4">¿Cómo funciona la IA de inversión?</span>
+                    <svg class="w-5 h-5 text-gold-400 flex-shrink-0 transition-transform duration-300 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer px-6">
+                    <p class="text-gray-400 text-sm leading-relaxed pb-6">Nuestros modelos procesan datos de mercado, indicadores macroeconómicos, sentimiento de noticias y patrones técnicos en tiempo real. Combinan análisis cuantitativo con gestión de riesgo dinámica para ajustar tu portafolio automáticamente según las condiciones del mercado.</p>
+                </div>
+            </div>
+
+            <div class="glass rounded-2xl overflow-hidden reveal">
+                <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+                    <span class="text-white font-medium text-sm pr-4">¿Es seguro invertir con Aurum?</span>
+                    <svg class="w-5 h-5 text-gold-400 flex-shrink-0 transition-transform duration-300 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer px-6">
+                    <p class="text-gray-400 text-sm leading-relaxed pb-6">Tus fondos están custodiados en instituciones financieras reguladas con cobertura SIPC hasta $500,000 USD. Utilizamos cifrado de grado bancario, autenticación multifactor y auditorías de seguridad trimestrales. Estamos registrados ante la SEC y cumplimos con SOC 2 Type II.</p>
+                </div>
+            </div>
+
+            <div class="glass rounded-2xl overflow-hidden reveal">
+                <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+                    <span class="text-white font-medium text-sm pr-4">¿Puedo retirar mi dinero en cualquier momento?</span>
+                    <svg class="w-5 h-5 text-gold-400 flex-shrink-0 transition-transform duration-300 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer px-6">
+                    <p class="text-gray-400 text-sm leading-relaxed pb-6">Sí, no hay periodos de bloqueo. Puedes solicitar un retiro en cualquier momento y los fondos estarán en tu cuenta bancaria en 1-3 días hábiles. Sin penalizaciones ni cargos por retiro.</p>
+                </div>
+            </div>
+
+            <div class="glass rounded-2xl overflow-hidden reveal">
+                <button class="faq-toggle w-full flex items-center justify-between p-6 text-left" aria-expanded="false">
+                    <span class="text-white font-medium text-sm pr-4">¿Los rendimientos están garantizados?</span>
+                    <svg class="w-5 h-5 text-gold-400 flex-shrink-0 transition-transform duration-300 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer px-6">
+                    <p class="text-gray-400 text-sm leading-relaxed pb-6">Ninguna inversión tiene rendimientos garantizados. Lo que ofrecemos es un track record auditado de 5 años con rendimiento consistentemente superior al mercado. Nuestros modelos de IA están diseñados para minimizar riesgos mientras maximizan retornos ajustados, pero toda inversión conlleva riesgo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ========== CONTACTO / FORMULARIO ========== -->
+<section id="contacto" class="py-28 relative" aria-labelledby="contacto-title">
+    <div class="orb w-[500px] h-[500px] bg-gold-400 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="opacity:0.04"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <span class="text-gold-400 text-xs uppercase tracking-[0.3em] font-medium">Empieza hoy</span>
+                <h2 id="contacto-title" class="font-display text-4xl lg:text-5xl font-bold text-white mt-4 mb-6">
+                    Tu futuro financiero<br><span class="text-gradient-gold">comienza aquí</span>
+                </h2>
+                <p class="text-gray-400 leading-relaxed mb-8">
+                    Abre tu cuenta en menos de 5 minutos. Sin papeleo innecesario, sin compromisos, sin letra pequeña. Nuestro equipo te guiará en cada paso.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-full bg-gold-400/10 flex items-center justify-center flex-shrink-0">
+                            <span class="text-gold-400 text-xs font-bold">1</span>
+                        </div>
+                        <span class="text-gray-300 text-sm">Completa el formulario con tus datos básicos</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-full bg-gold-400/10 flex items-center justify-center flex-shrink-0">
+                            <span class="text-gold-400 text-xs font-bold">2</span>
+                        </div>
+                        <span class="text-gray-300 text-sm">Un asesor te contactará en menos de 24 horas</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-full bg-gold-400/10 flex items-center justify-center flex-shrink-0">
+                            <span class="text-gold-400 text-xs font-bold">3</span>
+                        </div>
+                        <span class="text-gray-300 text-sm">Configura tu perfil de riesgo y empieza a invertir</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form with background image -->
+            <div class="glass-strong rounded-3xl p-8 lg:p-10 reveal relative overflow-hidden">
+                <!-- Subtle bg image -->
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=1000&fit=crop&q=80"
+                     alt="" role="presentation"
+                     class="absolute inset-0 w-full h-full object-cover opacity-[0.04]"
+                     loading="lazy" width="800" height="1000">
+                <div class="relative z-10">
+                <form id="contactForm" class="space-y-5" method="post" novalidate>
+                    <div>
+                        <label for="name" class="block text-xs text-gray-400 uppercase tracking-wider mb-2">Nombre completo</label>
+                        <input type="text" id="name" name="name" required minlength="2" maxlength="100" autocomplete="name"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm placeholder-gray-600 transition-all"
+                            placeholder="Tu nombre">
+                        <span class="error-msg text-red-400 text-xs mt-1 hidden" role="alert"></span>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-xs text-gray-400 uppercase tracking-wider mb-2">Email</label>
+                        <input type="email" id="email" name="email" required maxlength="254" autocomplete="email"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm placeholder-gray-600 transition-all"
+                            placeholder="tu@email.com">
+                        <span class="error-msg text-red-400 text-xs mt-1 hidden" role="alert"></span>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-xs text-gray-400 uppercase tracking-wider mb-2">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" maxlength="20" autocomplete="tel"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm placeholder-gray-600 transition-all"
+                            placeholder="+52 55 1234 5678">
+                        <span class="error-msg text-red-400 text-xs mt-1 hidden" role="alert"></span>
+                    </div>
+                    <div>
+                        <label for="investment" class="block text-xs text-gray-400 uppercase tracking-wider mb-2">Capital estimado a invertir</label>
+                        <select id="investment" name="investment" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm transition-all appearance-none cursor-pointer"
+                            style="background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23D4AF37' viewBox='0 0 20 20'%3E%3Cpath d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'/%3E%3C/svg%3E&quot;); background-position: right 1rem center; background-repeat: no-repeat; background-size: 1.2em;">
+                            <option value="" disabled selected style="color:#666">Selecciona un rango</option>
+                            <option value="100-1000">$100 — $1,000 USD</option>
+                            <option value="1000-10000">$1,000 — $10,000 USD</option>
+                            <option value="10000-50000">$10,000 — $50,000 USD</option>
+                            <option value="50000-100000">$50,000 — $100,000 USD</option>
+                            <option value="100000+">$100,000+ USD</option>
+                        </select>
+                        <span class="error-msg text-red-400 text-xs mt-1 hidden" role="alert"></span>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-xs text-gray-400 uppercase tracking-wider mb-2">Mensaje <span class="text-gray-600">(opcional)</span></label>
+                        <textarea id="message" name="message" rows="3" maxlength="1000"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm placeholder-gray-600 transition-all resize-none"
+                            placeholder="¿Alguna pregunta?"></textarea>
+                    </div>
+
+                    <!-- Consent -->
+                    <div class="flex items-start gap-3">
+                        <input type="checkbox" id="consent" name="consent" required
+                            class="mt-1 w-4 h-4 rounded border-white/20 bg-white/5 text-gold-400 focus:ring-gold-400/30 cursor-pointer">
+                        <label for="consent" class="text-xs text-gray-500 leading-relaxed cursor-pointer">
+                            Acepto la <a href="#" class="text-gold-400 hover:underline">Política de Privacidad</a> y autorizo el tratamiento de mis datos personales. Consulta nuestro <a href="#" class="text-gold-400 hover:underline">Aviso Legal</a>.
+                        </label>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-gold w-full py-4 rounded-xl text-sm tracking-wide mt-2">
+                        Solicitar mi cuenta gratuita
+                    </button>
+
+                    <p class="text-[10px] text-gray-600 text-center">Sin compromiso. Cancelación gratuita en cualquier momento.</p>
+                </form>
+
+                <!-- Success message -->
+                <div id="formSuccess" class="hidden text-center py-12">
+                    <div class="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-2">Solicitud enviada</h3>
+                    <p class="text-gray-400 text-sm">Un asesor te contactará en menos de 24 horas.</p>
+                </div>
+            </div><!-- close z-10 -->
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="border-t border-white/5 py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-10 mb-12">
+            <!-- Brand -->
+            <div class="md:col-span-1">
+                <a href="#" class="flex items-center gap-3 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-gold-400 to-gold-100 flex items-center justify-center">
+                        <span class="font-display font-bold text-obsidian-500 text-sm">A</span>
+                    </div>
+                    <span class="font-display text-lg font-semibold text-gradient-gold">Aurum Capital</span>
+                </a>
+                <p class="text-gray-400 text-xs leading-relaxed">Inversiones inteligentes impulsadas por IA. Registrados ante la SEC. Fondos custodiados por instituciones reguladas.</p>
+            </div>
+
+            <!-- Links -->
+            <div>
+                <h4 class="text-xs text-gray-400 uppercase tracking-wider font-medium mb-4">Producto</h4>
+                <ul class="space-y-2 text-sm" role="list">
+                    <li><a href="#beneficios" class="text-gray-500 hover:text-gold-400 transition-colors">Beneficios</a></li>
+                    <li><a href="#servicios" class="text-gray-500 hover:text-gold-400 transition-colors">Planes</a></li>
+                    <li><a href="#rendimiento" class="text-gray-500 hover:text-gold-400 transition-colors">Rendimiento</a></li>
+                    <li><a href="#faq" class="text-gray-500 hover:text-gold-400 transition-colors">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs text-gray-400 uppercase tracking-wider font-medium mb-4">Legal</h4>
+                <ul class="space-y-2 text-sm" role="list">
+                    <li><a href="#" class="text-gray-500 hover:text-gold-400 transition-colors">Aviso de privacidad</a></li>
+                    <li><a href="#" class="text-gray-500 hover:text-gold-400 transition-colors">Términos de uso</a></li>
+                    <li><a href="#" class="text-gray-500 hover:text-gold-400 transition-colors">Política de cookies</a></li>
+                    <li><a href="#" class="text-gray-500 hover:text-gold-400 transition-colors">Regulación</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs text-gray-400 uppercase tracking-wider font-medium mb-4">Contacto</h4>
+                <ul class="space-y-2 text-sm" role="list">
+                    <li class="text-gray-500">hola@aurumcapital.com</li>
+                    <li class="text-gray-500">+52 55 8000 1234</li>
+                    <li class="text-gray-500">Ciudad de México, MX</li>
+                </ul>
+                <div class="flex gap-3 mt-4">
+                    <a href="#" class="w-9 h-9 rounded-full glass flex items-center justify-center hover:border-gold-400/30 transition-colors" aria-label="Twitter">
+                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-full glass flex items-center justify-center hover:border-gold-400/30 transition-colors" aria-label="LinkedIn">
+                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="#" class="w-9 h-9 rounded-full glass flex items-center justify-center hover:border-gold-400/30 transition-colors" aria-label="Instagram">
+                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="gold-divider mb-8"></div>
+
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-gray-400 text-xs">&copy; 2026 Aurum Capital. Todos los derechos reservados.</p>
+            <p class="text-gray-500 text-[10px] max-w-lg text-center md:text-right leading-relaxed">
+                Invertir implica riesgos. Rendimientos pasados no garantizan resultados futuros. Lee nuestro prospecto de inversión antes de tomar decisiones. Aurum Capital está registrado como asesor de inversiones ante las autoridades regulatorias correspondientes.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- ========== COOKIE BANNER ========== -->
+<div id="cookieBanner" class="cookie-banner fixed bottom-0 left-0 right-0 z-50 p-4" role="dialog" aria-label="Preferencias de cookies" aria-modal="true">
+    <div class="max-w-4xl mx-auto glass-strong rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4">
+        <p class="text-gray-400 text-xs leading-relaxed flex-1">
+            Utilizamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y personalizar contenido. Puedes configurar tus preferencias o aceptar todas.
+            <a href="#" class="text-gold-400 hover:underline ml-1">Más información</a>
+        </p>
+        <div class="flex gap-3 flex-shrink-0">
+            <button id="cookieReject" class="btn-outline-gold px-5 py-2 rounded-full text-xs">Solo esenciales</button>
+            <button id="cookieAccept" class="btn-gold px-5 py-2 rounded-full text-xs">Aceptar todas</button>
+        </div>
+    </div>
+</div>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+(function() {
+    'use strict';
+
+    // ---- Navbar scroll effect ----
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
+        const current = window.scrollY;
+        if (current > 80) {
+            navbar.classList.add('nav-blur', 'bg-obsidian-500/80', 'border-b', 'border-white/5');
+        } else {
+            navbar.classList.remove('nav-blur', 'bg-obsidian-500/80', 'border-b', 'border-white/5');
+        }
+    }, { passive: true });
+
+    // ---- Mobile menu ----
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    menuBtn.addEventListener('click', function() {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', !isOpen);
+        menuIcon.setAttribute('d', isOpen
+            ? 'M4 6h16M4 12h16M4 18h16'
+            : 'M6 18L18 6M6 6l12 12'
+        );
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        });
+    });
+
+    // ---- Scroll reveal ----
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(function(el) { revealObserver.observe(el); });
+
+    // ---- Counter animation ----
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseFloat(el.getAttribute('data-target'));
+                const isDecimal = target % 1 !== 0;
+                const duration = 2000;
+                const start = performance.now();
+
+                function update(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 4);
+                    const current = target * eased;
+
+                    if (target >= 1000) {
+                        el.textContent = Math.floor(current).toLocaleString('en-US');
+                    } else if (isDecimal) {
+                        el.textContent = current.toFixed(1);
+                    } else {
+                        el.textContent = Math.floor(current);
+                    }
+
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        if (target >= 1000) {
+                            el.textContent = target.toLocaleString('en-US');
+                        } else if (isDecimal) {
+                            el.textContent = target.toFixed(1);
+                        } else {
+                            el.textContent = target;
+                        }
+                    }
+                }
+                requestAnimationFrame(update);
+                counterObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(function(c) { counterObserver.observe(c); });
+
+    // ---- FAQ toggles ----
+    document.querySelectorAll('.faq-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const chevron = this.querySelector('.faq-chevron');
+            const isOpen = answer.classList.contains('open');
+
+            // Close all others
+            document.querySelectorAll('.faq-answer.open').forEach(function(a) {
+                a.classList.remove('open');
+                a.previousElementSibling.querySelector('.faq-chevron').style.transform = '';
+                a.previousElementSibling.setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+                answer.classList.add('open');
+                chevron.style.transform = 'rotate(180deg)';
+                this.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // ---- Form validation & submission ----
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('formSuccess');
+
+    function showError(input, msg) {
+        const errorEl = input.parentElement.querySelector('.error-msg');
+        if (errorEl) {
+            errorEl.textContent = msg;
+            errorEl.classList.remove('hidden');
+        }
+        input.classList.add('border-red-500/50');
+    }
+
+    function clearError(input) {
+        const errorEl = input.parentElement.querySelector('.error-msg');
+        if (errorEl) {
+            errorEl.classList.add('hidden');
+        }
+        input.classList.remove('border-red-500/50');
+    }
+
+    // Real-time validation
+    form.querySelectorAll('input, select, textarea').forEach(function(el) {
+        el.addEventListener('input', function() { clearError(this); });
+    });
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let valid = true;
+
+        const nameEl = document.getElementById('name');
+        const emailEl = document.getElementById('email');
+        const investmentEl = document.getElementById('investment');
+        const consentEl = document.getElementById('consent');
+
+        // Clear previous
+        form.querySelectorAll('input, select, textarea').forEach(clearError);
+
+        // Name
+        if (!nameEl.value.trim() || nameEl.value.trim().length < 2) {
+            showError(nameEl, 'Ingresa tu nombre completo');
+            valid = false;
+        }
+
+        // Email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailEl.value.trim() || !emailPattern.test(emailEl.value)) {
+            showError(emailEl, 'Ingresa un email válido');
+            valid = false;
+        }
+
+        // Investment
+        if (!investmentEl.value) {
+            showError(investmentEl, 'Selecciona un rango de inversión');
+            valid = false;
+        }
+
+        // Consent
+        if (!consentEl.checked) {
+            showError(consentEl, 'Debes aceptar la política de privacidad');
+            valid = false;
+        }
+
+        if (valid) {
+            const btn = document.getElementById('submitBtn');
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+            btn.style.opacity = '0.6';
+
+            setTimeout(function() {
+                form.classList.add('hidden');
+                successMsg.classList.remove('hidden');
+            }, 1500);
+        }
+    });
+
+    // ---- Cookie banner ----
+    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieAccept = document.getElementById('cookieAccept');
+    const cookieReject = document.getElementById('cookieReject');
+
+    (function initCookieBanner() {
+        let hasConsent = false;
+        try { hasConsent = !!localStorage.getItem('cookieConsent'); } catch (e) {}
+        if (!hasConsent) {
+            setTimeout(function() { cookieBanner.classList.add('show'); }, 2000);
+        } else {
+            cookieBanner.style.display = 'none';
+        }
+    }());
+
+    function closeCookieBanner(accepted) {
+        try { localStorage.setItem('cookieConsent', accepted ? 'all' : 'essential'); } catch (e) {}
+        cookieBanner.classList.remove('show');
+        setTimeout(function() { cookieBanner.style.display = 'none'; }, 500);
+    }
+
+    cookieAccept.addEventListener('click', function() { closeCookieBanner(true); });
+    cookieReject.addEventListener('click', function() { closeCookieBanner(false); });
+
+    // ---- Smooth scroll for anchor links ----
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            var href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            try {
+                var target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            } catch (ex) {}
+        });
+    });
+
+    // ---- Keyboard navigation ----
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            }
+            closeCookieBanner(false);
+        }
+    });
+
+})();
+</script>
+
+</body>
+</html>

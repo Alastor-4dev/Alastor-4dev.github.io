@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAR ÓXIDO — Donde el Metal Habla</title>
+  <meta name="description" content="Bar Óxido — San Telmo, Buenos Aires. Whiskey, bourbon y cervezas artesanales en un ambiente de madera y metal. Est. 2019. Av. San Juan 1842." />
+  <link rel="canonical" href="https://baroxido.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://baroxido.com/" />
+  <meta property="og:title" content="BAR ÓXIDO — Donde el Metal Habla" />
+  <meta property="og:description" content="Un bar sin pretensiones en San Telmo. 47 whiskies, 12 cervezas artesanales, música en vivo los viernes. Av. San Juan 1842, Buenos Aires." />
+  <meta property="og:locale" content="es_AR" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="BAR ÓXIDO — Donde el Metal Habla" />
+  <meta name="twitter:description" content="Un bar sin pretensiones en San Telmo. 47 whiskies, 12 cervezas artesanales, música en vivo los viernes." />
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:     #0a0a0a;
+      --carbon:    #111111;
+      --charcoal:  #1a1a1a;
+      --steel:     #2a2a2a;
+      --iron:      #3d3d3d;
+      --ash:       #878787;
+      --silver:    #9a9a9a;
+      --fog:       #d0ccc8;
+      --copper:    #b87333;
+      --copper-lt: #d4894a;
+      --bourbon:   #8b4e1e;
+      --amber:     #c17d19;
+      --gold-dim:  #a0722a;
+      --rust:      #7a3b1e;
+      --white:     #f0ece6;
+
+      --font-display: 'Georgia', 'Times New Roman', serif;
+      --font-body: 'Trebuchet MS', 'Segoe UI', sans-serif;
+      --font-mono: 'Courier New', monospace;
+
+      --section-pad: clamp(3rem, 8vw, 6rem);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--fog);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    a { color: var(--copper); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--copper-lt); }
+
+    /* ─── Utility ─── */
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: .7rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: .75rem;
+    }
+
+    .divider {
+      width: 3rem;
+      height: 2px;
+      background: var(--copper);
+      margin: 1.25rem 0 2rem;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 2rem;
+      background: rgba(10,10,10,.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(184,115,51,.18);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--copper);
+    }
+
+    .nav-logo span { color: var(--silver); font-weight: 400; }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--silver);
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--copper-lt); }
+
+    .nav-cta {
+      padding: .45rem 1.2rem;
+      border: 1px solid var(--copper);
+      border-radius: 2px;
+      font-family: var(--font-mono);
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--copper) !important;
+      transition: background .2s, color .2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--copper);
+      color: var(--black) !important;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: .25rem;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--copper);
+      transition: transform .3s, opacity .3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      background: rgba(10,10,10,.97);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      letter-spacing: .08em;
+      color: var(--fog);
+      text-transform: uppercase;
+    }
+
+    .mobile-menu a:hover { color: var(--copper); }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 60%, rgba(139,78,30,.22) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 20%, rgba(184,115,51,.08) 0%, transparent 60%),
+        linear-gradient(180deg, #0a0a0a 0%, #120d08 40%, #0e0a06 70%, #0a0a0a 100%);
+    }
+
+    /* Metal texture overlay */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(255,255,255,.012) 2px,
+          rgba(255,255,255,.012) 4px
+        );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      padding: 2rem;
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      letter-spacing: .4em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 12vw, 9rem);
+      font-weight: 700;
+      line-height: .9;
+      letter-spacing: -.02em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-shadow:
+        0 0 80px rgba(184,115,51,.35),
+        0 4px 30px rgba(0,0,0,.8);
+    }
+
+    .hero-title .accent { color: var(--copper); }
+
+    .hero-tagline {
+      margin-top: 1.5rem;
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-style: italic;
+      color: var(--silver);
+      letter-spacing: .06em;
+    }
+
+    .hero-divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--copper), transparent);
+      margin: 2rem auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: .5rem;
+    }
+
+    .btn-primary {
+      padding: .9rem 2.2rem;
+      background: var(--copper);
+      color: var(--black);
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+
+    .btn-primary:hover { background: var(--copper-lt); transform: translateY(-1px); }
+
+    .btn-ghost {
+      padding: .9rem 2.2rem;
+      background: transparent;
+      color: var(--fog);
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      border: 1px solid var(--iron);
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+    }
+
+    .btn-ghost:hover { border-color: var(--copper); color: var(--copper); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      letter-spacing: .2em;
+      color: var(--ash);
+      text-transform: uppercase;
+    }
+
+    .hero-scroll::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(180deg, var(--ash), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: .4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
+
+    /* ─── AMBIENTE ─── */
+    #ambiente {
+      padding: var(--section-pad) 2rem;
+      background: var(--carbon);
+    }
+
+    .ambiente-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .ambiente-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .ambiente-text h2 em {
+      font-style: normal;
+      color: var(--copper);
+    }
+
+    .ambiente-text p {
+      color: var(--silver);
+      font-size: .95rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .ambiente-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat {
+      border-left: 2px solid var(--copper);
+      padding-left: 1rem;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--copper);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: .65rem;
+      letter-spacing: .15em;
+      color: var(--ash);
+      text-transform: uppercase;
+      margin-top: .25rem;
+    }
+
+    .ambiente-visual {
+      position: relative;
+    }
+
+    .ambiente-card {
+      background: var(--charcoal);
+      border: 1px solid var(--steel);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ambiente-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--copper), var(--amber), var(--bourbon));
+    }
+
+    .ambiente-card-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      letter-spacing: .06em;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      font-size: .9rem;
+      color: var(--silver);
+    }
+
+    .feature-list li::before {
+      content: '//';
+      font-family: var(--font-mono);
+      color: var(--copper);
+      font-size: .75rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .corner-deco {
+      position: absolute;
+      bottom: 1rem; right: 1rem;
+      width: 40px; height: 40px;
+      border-bottom: 2px solid var(--iron);
+      border-right: 2px solid var(--iron);
+    }
+
+    /* ─── LA CARTA ─── */
+    #carta {
+      padding: var(--section-pad) 2rem;
+      background: var(--black);
+      position: relative;
+    }
+
+    #carta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--copper), transparent);
+    }
+
+    .carta-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 4rem;
+    }
+
+    .carta-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--white);
+      letter-spacing: .04em;
+    }
+
+    .carta-header p {
+      color: var(--silver);
+      font-size: .9rem;
+      margin-top: .75rem;
+    }
+
+    .carta-divider {
+      width: 4rem;
+      height: 2px;
+      background: var(--copper);
+      margin: 1.25rem auto 0;
+    }
+
+    .carta-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 3rem;
+      border: 1px solid var(--steel);
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 3rem;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: .75rem 1rem;
+      background: none;
+      border: none;
+      border-right: 1px solid var(--steel);
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--ash);
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+
+    .tab-btn:last-child { border-right: none; }
+    .tab-btn.active { background: var(--copper); color: var(--black); }
+    .tab-btn:hover:not(.active) { background: var(--charcoal); color: var(--fog); }
+
+    .menu-panel { display: none; }
+    .menu-panel[hidden] { display: none; }
+    .menu-panel.active { display: block; }
+
+    .menu-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--steel);
+      border: 1px solid var(--steel);
+    }
+
+    .menu-item {
+      background: var(--charcoal);
+      padding: 1.5rem;
+      transition: background .2s;
+      position: relative;
+    }
+
+    .menu-item:hover { background: #1e1814; }
+
+    .menu-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: .4rem;
+    }
+
+    .menu-item-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .menu-item-price {
+      font-family: var(--font-mono);
+      font-size: .8rem;
+      color: var(--copper);
+      white-space: nowrap;
+    }
+
+    .menu-item-origin {
+      font-family: var(--font-mono);
+      font-size: .62rem;
+      letter-spacing: .1em;
+      color: var(--copper);
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+
+    .menu-item-desc {
+      font-size: .82rem;
+      color: var(--ash);
+      line-height: 1.5;
+    }
+
+    .menu-item-badge {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      font-family: var(--font-mono);
+      font-size: .55rem;
+      letter-spacing: .1em;
+      padding: .2rem .4rem;
+      border: 1px solid var(--copper);
+      color: var(--copper);
+      text-transform: uppercase;
+    }
+
+    /* ─── GALERÍA ─── */
+    #galeria {
+      padding: var(--section-pad) 2rem;
+      background: var(--charcoal);
+    }
+
+    .galeria-header {
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .galeria-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .gallery-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 220px 220px;
+      gap: 6px;
+    }
+
+    .g-item {
+      overflow: hidden;
+      position: relative;
+      background: var(--steel);
+    }
+
+    .g-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10,10,10,.3);
+      transition: opacity .3s;
+    }
+
+    .g-item:hover::after { opacity: 0; }
+
+    /* SVG placeholder arts via inline background */
+    .g-item .g-img {
+      width: 100%;
+      height: 100%;
+      transition: transform .5s ease;
+    }
+
+    .g-item:hover .g-img { transform: scale(1.04); }
+
+    .g1  { grid-column: 1 / 5;  grid-row: 1; }
+    .g2  { grid-column: 5 / 8;  grid-row: 1; }
+    .g3  { grid-column: 8 / 13; grid-row: 1; }
+    .g4  { grid-column: 1 / 4;  grid-row: 2; }
+    .g5  { grid-column: 4 / 9;  grid-row: 2; }
+    .g6  { grid-column: 9 / 13; grid-row: 2; }
+
+    /* Rich dark SVG scenes */
+    .g1 .g-img  { background: linear-gradient(135deg, #1a0f05 0%, #2d1a0a 40%, #0d0905 100%); }
+    .g2 .g-img  { background: linear-gradient(160deg, #0a0a0a 0%, #1e1409 60%, #2a1a08 100%); }
+    .g3 .g-img  { background: linear-gradient(110deg, #12090d 0%, #1a0d0a 50%, #0a0a0a 100%); }
+    .g4 .g-img  { background: linear-gradient(145deg, #0f0f0f 0%, #1e130a 55%, #140e07 100%); }
+    .g5 .g-img  { background: linear-gradient(155deg, #1a0d09 0%, #100808 50%, #0a0a0a 100%); }
+    .g6 .g-img  { background: linear-gradient(125deg, #0a0e0a 0%, #0f1a0d 50%, #0a0d0a 100%); }
+
+    /* Overlaid scene text */
+    .g-label {
+      position: absolute;
+      bottom: 1rem; left: 1rem;
+      z-index: 2;
+      font-family: var(--font-mono);
+      font-size: .62rem;
+      letter-spacing: .15em;
+      color: rgba(240,236,230,.82);
+      text-transform: uppercase;
+    }
+
+    /* decorative copper frame on hover */
+    .g-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid transparent;
+      transition: border-color .3s;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .g-item:hover::before { border-color: var(--copper); }
+
+    /* ─── UBICACIÓN ─── */
+    #ubicacion {
+      padding: var(--section-pad) 2rem;
+      background: var(--black);
+      position: relative;
+    }
+
+    #ubicacion::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(184,115,51,.4), transparent);
+    }
+
+    .ubicacion-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .ubicacion-info h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .info-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .info-block {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .info-icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--copper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .info-icon svg { width: 16px; height: 16px; fill: var(--copper); }
+
+    .info-label {
+      font-family: var(--font-mono);
+      font-size: .62rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: .35rem;
+    }
+
+    .info-value {
+      color: var(--fog);
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+
+    .horario-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: .25rem 1.5rem;
+      font-size: .9rem;
+    }
+
+    .horario-day { color: var(--silver); }
+    .horario-time { color: var(--fog); }
+    .horario-closed { color: var(--ash); font-style: italic; }
+
+    .map-placeholder {
+      background: var(--charcoal);
+      border: 1px solid var(--steel);
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .map-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(184,115,51,.04) 29px, rgba(184,115,51,.04) 30px),
+        repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(184,115,51,.04) 29px, rgba(184,115,51,.04) 30px);
+    }
+
+    .map-pin {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .map-pin-icon {
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--copper);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      background: rgba(184,115,51,.1);
+    }
+
+    .map-pin-icon svg { width: 22px; height: 22px; fill: var(--copper); }
+
+    .map-pin p {
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      color: var(--ash);
+      text-transform: uppercase;
+    }
+
+    .map-pin strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--fog);
+      font-weight: 700;
+      margin-bottom: .3rem;
+      font-style: normal;
+    }
+
+    .map-cta {
+      margin-top: 1.5rem;
+      padding: .65rem 1.6rem;
+      border: 1px solid var(--copper);
+      font-family: var(--font-mono);
+      font-size: .68rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--copper);
+      background: none;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+
+    .map-cta:hover { background: var(--copper); color: var(--black); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--carbon);
+      border-top: 1px solid var(--steel);
+      padding: 3rem 2rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--steel);
+    }
+
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--copper);
+    }
+
+    .footer-tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--ash);
+      font-size: .88rem;
+      margin-top: .3rem;
+    }
+
+    .footer-about {
+      font-size: .82rem;
+      color: var(--ash);
+      line-height: 1.7;
+      margin-top: 1rem;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-mono);
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .footer-col ul a {
+      font-size: .85rem;
+      color: var(--ash);
+      transition: color .2s;
+    }
+
+    .footer-col ul a:hover { color: var(--fog); }
+
+    .social-links {
+      display: flex;
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+
+    .social-link {
+      width: 36px; height: 36px;
+      border: 1px solid var(--steel);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color .2s, background .2s;
+    }
+
+    .social-link:hover { border-color: var(--copper); background: rgba(184,115,51,.1); }
+    .social-link svg { width: 14px; height: 14px; fill: var(--silver); }
+
+    .footer-bottom {
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      letter-spacing: .12em;
+      color: var(--ash);
+      text-transform: uppercase;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-legal a {
+      font-family: var(--font-mono);
+      font-size: .6rem;
+      letter-spacing: .1em;
+      color: var(--ash);
+      text-transform: uppercase;
+    }
+
+    .footer-legal a:hover { color: var(--silver); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .ambiente-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 180px);
+        gap: 4px;
+      }
+      .g1 { grid-column: 1 / 2; grid-row: 1; }
+      .g2 { grid-column: 2 / 3; grid-row: 1; }
+      .g3 { grid-column: 1 / 3; grid-row: 2; }
+      .g4 { grid-column: 1 / 2; grid-row: 3; }
+      .g5 { grid-column: 2 / 3; grid-row: 3; }
+      .g6 { display: none; }
+
+      .ubicacion-inner { grid-template-columns: 1fr; }
+
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-top > :first-child { grid-column: 1 / -1; }
+    }
+
+    /* ─── SKIP NAV ─── */
+    .skip-nav {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      z-index: 9999;
+      padding: .55rem 1.2rem;
+      background: var(--copper);
+      color: var(--black);
+      font-family: var(--font-mono);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: top .2s;
+    }
+    .skip-nav:focus { top: .75rem; outline: 2px solid var(--amber); outline-offset: 2px; }
+
+    /* ─── REDUCED MOTION ─── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+
+    @media (max-width: 600px) {
+      .ambiente-stats { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(4, 200px); }
+      .g3, .g5 { grid-column: 1; }
+      .g3 { grid-row: 3; } .g4 { grid-row: 2; } .g5 { grid-row: 4; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-top > :first-child { grid-column: 1; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';">
+</head>
+<body>
+
+<a href="#main-content" class="skip-nav">Saltar al contenido principal</a>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="#hero" class="nav-logo">Bar <span>&</span> Óxido</a>
+  <ul class="nav-links">
+    <li><a href="#ambiente">El Ambiente</a></li>
+    <li><a href="#carta">La Carta</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#ubicacion">Ubicación</a></li>
+    <li><a href="#ubicacion" class="nav-cta" aria-label="Hacer una reserva">Reservar</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú de navegación" aria-modal="true">
+  <a href="#ambiente" class="mobile-link">El Ambiente</a>
+  <a href="#carta" class="mobile-link">La Carta</a>
+  <a href="#galeria" class="mobile-link">Galería</a>
+  <a href="#ubicacion" class="mobile-link">Ubicación</a>
+  <a href="#ubicacion" class="mobile-link">Reservar</a>
+</div>
+
+<!-- ─── MAIN ─── -->
+<main id="main-content">
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Est. 2019 — Buenos Aires</p>
+    <h1 class="hero-title">Bar<br><span class="accent">Óxido</span></h1>
+    <p class="hero-tagline">Donde el metal habla y el bourbon corre</p>
+    <div class="hero-divider"></div>
+    <div class="hero-actions">
+      <a href="#carta" class="btn-primary">Ver la Carta</a>
+      <a href="#ubicacion" class="btn-ghost">Encontrarnos</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">Bajar</div>
+</section>
+
+<!-- ─── EL AMBIENTE ─── -->
+<section id="ambiente">
+  <div class="ambiente-inner">
+    <div class="ambiente-text">
+      <p class="section-label">// El Ambiente</p>
+      <h2>Sin <em>adornos.</em><br>Sin pretensiones.</h2>
+      <div class="divider"></div>
+      <p>
+        BAR ÓXIDO nació del cansancio de los bares iguales. Acá no hay música electrónica ni cócteles con nombres raros. Hay madera oscura, metal viejo, luz cálida y tragos que se respetan.
+      </p>
+      <p>
+        Un lugar donde el silencio vale tanto como la charla, donde podés tomarte tres horas con un vaso y nadie te mira mal. Rudeza en el buen sentido: honestidad.
+      </p>
+      <div class="ambiente-stats">
+        <div class="stat">
+          <div class="stat-number">47</div>
+          <div class="stat-label">Whiskies en carta</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Cervezas artesanales</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Años en el barrio</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">1</div>
+          <div class="stat-label">Regla: respeto</div>
+        </div>
+      </div>
+    </div>
+    <div class="ambiente-visual">
+      <div class="ambiente-card">
+        <div class="ambiente-card-title">Lo que vas a encontrar</div>
+        <ul class="feature-list">
+          <li>Barra de madera maciza recuperada, más de 100 años de historia</li>
+          <li>Iluminación de tungsteno y velas — nada de LED blanco</li>
+          <li>Música en vivo los viernes: jazz, blues, rock clásico</li>
+          <li>Sin pantallas, sin WiFi pública — venís a estar, no a mirar</li>
+          <li>Salón privado para reuniones de hasta 20 personas</li>
+          <li>Fichines y pool — dos mesas, sin ficha, sin turno</li>
+        </ul>
+        <div class="corner-deco"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LA CARTA ─── -->
+<section id="carta">
+  <div class="carta-header">
+    <p class="section-label">// La Carta</p>
+    <h2>Lo que hay</h2>
+    <div class="carta-divider"></div>
+    <p>Sin cócteles de diseñador. Sin nombres inventados. Solo buenos tragos, bien servidos.</p>
+  </div>
+
+  <div class="carta-tabs" role="tablist" aria-label="Categorías de la carta">
+    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-whiskey" id="tab-btn-whiskey" data-tab="whiskey">Whiskey</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-bourbon" id="tab-btn-bourbon" data-tab="bourbon">Bourbon</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-cerveza" id="tab-btn-cerveza" data-tab="cerveza">Cerveza</button>
+  </div>
+
+  <!-- WHISKEY -->
+  <div class="menu-panel active" id="tab-whiskey" role="tabpanel" aria-labelledby="tab-btn-whiskey" tabindex="0">
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Glenfiddich 12</div>
+          <div class="menu-item-price">$4.200</div>
+        </div>
+        <div class="menu-item-origin">Escocia — Single Malt</div>
+        <div class="menu-item-desc">Suave, con notas de pera, manzana y roble. El clásico que nunca falla.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-badge">Staff Pick</div>
+        <div class="menu-item-header">
+          <div class="menu-item-name">Laphroaig 10</div>
+          <div class="menu-item-price">$5.100</div>
+        </div>
+        <div class="menu-item-origin">Islay — Single Malt</div>
+        <div class="menu-item-desc">Turba agresiva, ahumado, sal marina. No es para todos. Si te gusta, ya sabés.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Jameson Black</div>
+          <div class="menu-item-price">$3.800</div>
+        </div>
+        <div class="menu-item-origin">Irlanda — Blended</div>
+        <div class="menu-item-desc">Triple destilado. Suave, redondo, con un dulzor honesto. El mejor de Irlanda.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Chivas 18</div>
+          <div class="menu-item-price">$5.800</div>
+        </div>
+        <div class="menu-item-origin">Escocia — Blended</div>
+        <div class="menu-item-desc">18 años de envejecimiento. Chocolate, ciruela, nuez moscada. Elegancia sin pretensión.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Johnnie Walker Blue</div>
+          <div class="menu-item-price">$9.500</div>
+        </div>
+        <div class="menu-item-origin">Escocia — Blended</div>
+        <div class="menu-item-desc">Rareza embotellada. Para cuando la noche lo merece o lo necesita.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Macallan 12 Sherry</div>
+          <div class="menu-item-price">$6.200</div>
+        </div>
+        <div class="menu-item-origin">Escocia — Single Malt</div>
+        <div class="menu-item-desc">Barrica de jerez español. Frutos rojos, especias, caramelo. Oscuro y honesto.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOURBON -->
+  <div class="menu-panel" id="tab-bourbon" role="tabpanel" aria-labelledby="tab-btn-bourbon" tabindex="0" hidden>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-badge">Casa</div>
+        <div class="menu-item-header">
+          <div class="menu-item-name">Bulleit Bourbon</div>
+          <div class="menu-item-price">$3.900</div>
+        </div>
+        <div class="menu-item-origin">Kentucky — High Rye</div>
+        <div class="menu-item-desc">Alto en centeno, picante, miel y madera. El bourbon de la casa desde el día uno.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Maker's Mark</div>
+          <div class="menu-item-price">$4.100</div>
+        </div>
+        <div class="menu-item-origin">Kentucky — Wheated</div>
+        <div class="menu-item-desc">Trigo en lugar de centeno. Suave, mantecoso, vainilla intensa. Para los que odian el picante.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Wild Turkey 101</div>
+          <div class="menu-item-price">$3.600</div>
+        </div>
+        <div class="menu-item-origin">Kentucky — 101 Proof</div>
+        <div class="menu-item-desc">50.5% alcohol. Roble, caramelo, especias. Sin filtrado en frío. Así es el bourbon de verdad.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Buffalo Trace</div>
+          <div class="menu-item-price">$4.400</div>
+        </div>
+        <div class="menu-item-origin">Kentucky — Straight</div>
+        <div class="menu-item-desc">Toffee, menta, anís. Equilibrado. La destilería más antigua de EE.UU. en actividad.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Pappy Van Winkle 15</div>
+          <div class="menu-item-price">$18.000</div>
+        </div>
+        <div class="menu-item-origin">Kentucky — Wheated</div>
+        <div class="menu-item-desc">Tenemos dos botellas. Preguntá antes. No siempre está disponible, y hay razón.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Woodford Reserve</div>
+          <div class="menu-item-price">$4.700</div>
+        </div>
+        <div class="menu-item-origin">Kentucky — Small Batch</div>
+        <div class="menu-item-desc">Triple destilado en cobre. Fruta seca, especias de pastelería, cereales tostados.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERVEZA -->
+  <div class="menu-panel" id="tab-cerveza" role="tabpanel" aria-labelledby="tab-btn-cerveza" tabindex="0" hidden>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Óxido Negra</div>
+          <div class="menu-item-price">$2.100</div>
+        </div>
+        <div class="menu-item-origin">Propia — Stout</div>
+        <div class="menu-item-desc">Nuestra stout de barril. Café, chocolate amargo, cuerpo sedoso. 6.2% ABV.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-badge">De Barril</div>
+        <div class="menu-item-header">
+          <div class="menu-item-name">Óxido Roja</div>
+          <div class="menu-item-price">$1.900</div>
+        </div>
+        <div class="menu-item-origin">Propia — Red Ale</div>
+        <div class="menu-item-desc">Red Ale de producción propia. Caramelo, tostado suave, lúpulo equilibrado. 5.8% ABV.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Antares Porter</div>
+          <div class="menu-item-price">$2.300</div>
+        </div>
+        <div class="menu-item-origin">Mar del Plata — Porter</div>
+        <div class="menu-item-desc">Robusta y oscura. Notas de cacao, tostado, ligero ahumado. Para acompañar una larga charla.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Patagonia Weisse</div>
+          <div class="menu-item-price">$2.000</div>
+        </div>
+        <div class="menu-item-origin">Bariloche — Wheat</div>
+        <div class="menu-item-desc">Trigo, banana, clavo de olor. Refrescante sin ser frívola. Para el que quiere algo más liviano.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Jerome IPA</div>
+          <div class="menu-item-price">$2.400</div>
+        </div>
+        <div class="menu-item-origin">Mendoza — IPA</div>
+        <div class="menu-item-desc">Lúpulo americano. Cítrico, resinoso, amargo honesto. 6.5% ABV. La favorita de los hopheads.</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <div class="menu-item-name">Quilmes Cristal</div>
+          <div class="menu-item-price">$900</div>
+        </div>
+        <div class="menu-item-origin">Nacional — Lager</div>
+        <div class="menu-item-desc">La nacional de siempre. Fría, en botella, sin vergüenza. A veces lo que necesitás es esto.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GALERÍA ─── -->
+<section id="galeria">
+  <div class="galeria-header">
+    <p class="section-label">// Galería</p>
+    <h2>El lugar</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="g-item g1">
+      <div class="g-img" style="background: linear-gradient(135deg,#1a0f05,#3d2010,#0d0905); display:flex; align-items:center; justify-content:center;">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.25">
+          <rect x="10" y="30" width="60" height="35" rx="2" fill="#b87333"/>
+          <rect x="5" y="28" width="70" height="5" rx="1" fill="#a06025"/>
+          <circle cx="40" cy="48" r="10" fill="#7a4010"/>
+          <rect x="35" y="5" width="10" height="25" rx="1" fill="#8b4e1e"/>
+        </svg>
+      </div>
+      <div class="g-label">Barra Principal</div>
+    </div>
+    <div class="g-item g2">
+      <div class="g-img" style="background: linear-gradient(160deg,#0a0a0a,#1e1409,#2a1a08); display:flex; align-items:center; justify-content:center;">
+        <svg width="60" height="80" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.3">
+          <rect x="20" y="5" width="20" height="45" rx="10" fill="#b87333"/>
+          <rect x="10" y="50" width="40" height="5" rx="2" fill="#a06025"/>
+          <rect x="15" y="55" width="30" height="20" rx="2" fill="#7a4010"/>
+        </svg>
+      </div>
+      <div class="g-label">Selección de Whiskey</div>
+    </div>
+    <div class="g-item g3">
+      <div class="g-img" style="background: linear-gradient(110deg,#12090d,#1a0d0a,#0a0a0a); display:flex; align-items:center; justify-content:center;">
+        <svg width="100" height="60" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.22">
+          <rect x="5" y="10" width="30" height="45" rx="2" fill="#3d3d3d"/>
+          <rect x="40" y="15" width="30" height="40" rx="2" fill="#2a2a2a"/>
+          <rect x="75" y="5" width="20" height="50" rx="2" fill="#4a3020"/>
+          <circle cx="20" cy="35" r="8" fill="#b87333" opacity=".6"/>
+        </svg>
+      </div>
+      <div class="g-label">Salón Nocturno</div>
+    </div>
+    <div class="g-item g4">
+      <div class="g-img" style="background: linear-gradient(145deg,#0f0f0f,#1e130a,#140e07); display:flex; align-items:center; justify-content:center;">
+        <svg width="60" height="70" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.28">
+          <ellipse cx="30" cy="20" rx="15" ry="18" fill="#b87333"/>
+          <rect x="22" y="38" width="16" height="30" rx="1" fill="#7a4010"/>
+          <ellipse cx="30" cy="68" rx="18" ry="3" fill="#5a2e08"/>
+        </svg>
+      </div>
+      <div class="g-label">Barril de Bourbon</div>
+    </div>
+    <div class="g-item g5">
+      <div class="g-img" style="background: linear-gradient(155deg,#1a0d09,#100808,#0a0a0a); display:flex; align-items:center; justify-content:center;">
+        <svg width="90" height="50" viewBox="0 0 90 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.25">
+          <rect x="5" y="30" width="80" height="15" rx="2" fill="#3d3d3d"/>
+          <rect x="10" y="5" width="15" height="25" rx="8" fill="#b87333" opacity=".7"/>
+          <rect x="38" y="8" width="15" height="22" rx="8" fill="#a06025" opacity=".6"/>
+          <rect x="65" y="3" width="15" height="27" rx="8" fill="#c17d19" opacity=".7"/>
+        </svg>
+      </div>
+      <div class="g-label">Cervezas en Barril</div>
+    </div>
+    <div class="g-item g6">
+      <div class="g-img" style="background: linear-gradient(125deg,#0a0e0a,#0f1a0d,#0a0d0a); display:flex; align-items:center; justify-content:center;">
+        <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.22">
+          <circle cx="35" cy="35" r="30" stroke="#b87333" stroke-width="2" fill="none"/>
+          <line x1="35" y1="5" x2="35" y2="65" stroke="#7a4010" stroke-width="1"/>
+          <line x1="5" y1="35" x2="65" y2="35" stroke="#7a4010" stroke-width="1"/>
+          <circle cx="35" cy="35" r="8" fill="#b87333" opacity=".4"/>
+        </svg>
+      </div>
+      <div class="g-label">Salón Privado</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── UBICACIÓN ─── -->
+<section id="ubicacion">
+  <div class="ubicacion-inner">
+    <div class="ubicacion-info">
+      <p class="section-label">// Cómo Llegar</p>
+      <h2>Encontrarnos</h2>
+      <div class="divider"></div>
+
+      <div class="info-blocks">
+        <div class="info-block">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+          </div>
+          <div>
+            <div class="info-label">Dirección</div>
+            <div class="info-value">Av. San Juan 1842, San Telmo<br>Ciudad Autónoma de Buenos Aires</div>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L11 13V7h1.5v5.25l4.5 2.67-1.5 1.08z"/></svg>
+          </div>
+          <div>
+            <div class="info-label">Horarios</div>
+            <div class="horario-grid">
+              <span class="horario-day">Lunes — Jueves</span>
+              <span class="horario-time">17:00 — 02:00</span>
+              <span class="horario-day">Viernes — Sábado</span>
+              <span class="horario-time">16:00 — 04:00</span>
+              <span class="horario-day">Domingo</span>
+              <span class="horario-time">18:00 — 00:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <div class="info-label">Contacto</div>
+            <div class="info-value">
+              <a href="tel:+541143001842">+54 11 4300-1842</a><br>
+              <a href="mailto:reservas@baroxido.com">reservas@baroxido.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          </div>
+          <div>
+            <div class="info-label">Estacionamiento</div>
+            <div class="info-value">Playa privada a media cuadra.<br>Validamos 3 horas con consumo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-placeholder">
+      <div class="map-pin">
+        <div class="map-pin-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        </div>
+        <p><strong>BAR ÓXIDO</strong>Av. San Juan 1842, San Telmo</p>
+        <button class="map-cta" id="mapCta">Abrir en Maps</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Bar Óxido</div>
+        <div class="footer-tagline">Donde el metal habla y el bourbon corre</div>
+        <p class="footer-about">
+          Un bar sin pretensiones en el corazón de San Telmo. Para los que saben lo que quieren, cómo lo quieren, y están dispuestos a esperar que se sirva bien.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram de Bar Óxido">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook de Bar Óxido">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter/X de Bar Óxido">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.631L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>El Bar</h4>
+        <ul>
+          <li><a href="#ambiente">El Ambiente</a></li>
+          <li><a href="#carta">La Carta</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+          <li><a href="#">Salón Privado</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+541143001842">+54 11 4300-1842</a></li>
+          <li><a href="mailto:reservas@baroxido.com">reservas@baroxido.com</a></li>
+          <li><a href="#">Hacer una reserva</a></li>
+          <li><a href="#">Eventos privados</a></li>
+          <li><a href="#">Trabaja con nosotros</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2026 Bar Óxido — San Telmo, Buenos Aires. Beber con moderación.
+      </div>
+      <div class="footer-legal">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+        <a href="#">Carta completa</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── JS ─── -->
+<script>
+  // Tabs con ARIA
+  const tabBtns = document.querySelectorAll('[role="tab"]');
+  const menuPanels = document.querySelectorAll('[role="tabpanel"]');
+
+  function activateTab(btn) {
+    const tab = btn.dataset.tab;
+    tabBtns.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+      b.setAttribute('tabindex', '-1');
+    });
+    menuPanels.forEach(p => {
+      p.classList.remove('active');
+      p.setAttribute('hidden', '');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    btn.removeAttribute('tabindex');
+    const panel = document.getElementById('tab-' + tab);
+    panel.classList.add('active');
+    panel.removeAttribute('hidden');
+  }
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => activateTab(btn));
+    btn.addEventListener('keydown', (e) => {
+      const btns = [...tabBtns];
+      const idx = btns.indexOf(btn);
+      if (e.key === 'ArrowRight') { e.preventDefault(); activateTab(btns[(idx + 1) % btns.length]); btns[(idx + 1) % btns.length].focus(); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); activateTab(btns[(idx - 1 + btns.length) % btns.length]); btns[(idx - 1 + btns.length) % btns.length].focus(); }
+    });
+  });
+
+  // Mobile menu con ARIA y focus trap
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileLinks = [...mobileMenu.querySelectorAll('.mobile-link')];
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    hamburger.setAttribute('aria-label', 'Cerrar menú de navegación');
+    if (mobileLinks.length) mobileLinks[0].focus();
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-label', 'Abrir menú de navegación');
+    hamburger.focus();
+  }
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+  mobileMenu.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { closeMenu(); return; }
+    if (e.key !== 'Tab') return;
+    const first = mobileLinks[0];
+    const last  = mobileLinks[mobileLinks.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  // Nav shadow en scroll — throttled con rAF
+  const nav = document.querySelector('nav');
+  let scrollPending = false;
+  window.addEventListener('scroll', () => {
+    if (!scrollPending) {
+      scrollPending = true;
+      requestAnimationFrame(() => {
+        nav.style.borderBottomColor = window.scrollY > 50
+          ? 'rgba(184,115,51,.35)'
+          : 'rgba(184,115,51,.18)';
+        scrollPending = false;
+      });
+    }
+  }, { passive: true });
+
+  // Botón de mapa
+  const mapCta = document.getElementById('mapCta');
+  if (mapCta) {
+    mapCta.addEventListener('click', () => {
+      window.open(
+        'https://www.google.com/maps/search/?api=1&query=Av.+San+Juan+1842,+San+Telmo,+Buenos+Aires',
+        '_blank',
+        'noopener,noreferrer'
+      );
+    });
+  }
+</script>
+
+</body>
+</html>

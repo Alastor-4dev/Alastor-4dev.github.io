@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriCore — Nutrición Inteligente del Futuro</title>
+    <meta name="description" content="NutriCore usa inteligencia artificial para crear planes de nutrición personalizados. Transforma tu alimentación con ciencia de vanguardia y resultados medibles.">
+    <meta name="keywords" content="nutrición personalizada, IA nutrición, planes alimenticios, salud inteligente, dieta personalizada">
+    <meta name="author" content="NutriCore">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="NutriCore — Nutrición Inteligente del Futuro">
+    <meta property="og:description" content="Planes de nutrición personalizados con IA. Ciencia de vanguardia para resultados reales.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nutricore.ai">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&h=630&fit=crop&q=80">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NutriCore — Nutrición Inteligente del Futuro">
+    <meta name="twitter:description" content="Planes de nutrición personalizados con IA.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&h=630&fit=crop&q=80">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://nutricore.ai">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Space Grotesk', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'neon': {
+                            'lime': '#5CB87A',
+                            'cyan': '#D4A574',
+                            'purple': '#C48B6A',
+                            'dark': '#111A14',
+                            'darker': '#0C140F',
+                            'card': '#162019',
+                            'border': '#243029',
+                            'muted': '#94A89A',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "NutriCore",
+        "description": "Plataforma de nutrición personalizada con inteligencia artificial",
+        "url": "https://nutricore.ai",
+        "logo": "https://nutricore.ai/logo.svg",
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "hola@nutricore.ai"
+        }
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B1210;
+            color: #E4E8E5;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0B1210; }
+        ::-webkit-scrollbar-thumb { background: #22C55E; border-radius: 3px; }
+
+        /* Glow effects */
+        .glow-lime { box-shadow: 0 0 30px rgba(34, 197, 94, 0.15), 0 0 60px rgba(34, 197, 94, 0.05); }
+        .glow-cyan { box-shadow: 0 0 30px rgba(217, 119, 6, 0.15), 0 0 60px rgba(217, 119, 6, 0.05); }
+        .text-glow-lime { text-shadow: 0 0 20px rgba(34, 197, 94, 0.25); }
+        .text-glow-cyan { text-shadow: 0 0 20px rgba(217, 119, 6, 0.25); }
+
+        /* Grid pattern */
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(34, 197, 94, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(34, 197, 94, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Animated gradient border */
+        .gradient-border {
+            position: relative;
+            background: #12121A;
+            border-radius: 16px;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 17px;
+            background: linear-gradient(135deg, #22C55E, #D97706, #E07B4F, #22C55E);
+            background-size: 300% 300%;
+            animation: gradientShift 6s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-float-delay { animation: float 6s ease-in-out 2s infinite; }
+        .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+        /* Fade in on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero orb */
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        /* Scan line effect */
+        .scan-line::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #22C55E, transparent);
+            animation: scan 4s ease-in-out infinite;
+        }
+        @keyframes scan {
+            0% { top: 0; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        /* Card hover */
+        .service-card:hover .service-img {
+            transform: scale(1.05);
+        }
+
+        /* Cookie banner slide up */
+        .cookie-banner {
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        /* Nav blur */
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Testimonial gradient */
+        .testimonial-bg {
+            background: radial-gradient(ellipse at 50% 0%, rgba(34, 197, 94, 0.05) 0%, transparent 70%);
+        }
+
+        /* Reduced motion accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-float,
+            .animate-float-delay,
+            .animate-pulse-glow {
+                animation: none;
+            }
+            .gradient-border::before {
+                animation: none;
+            }
+            .scan-line::after {
+                animation: none;
+            }
+            .fade-in {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .service-card:hover .service-img,
+            .cookie-banner {
+                transition: none;
+            }
+        }
+    </style>
+    <!-- CSP: frame-ancestors solo funciona como HTTP header, no como meta tag -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self';">
+</head>
+<body class="antialiased">
+
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-neon-lime focus:text-neon-dark focus:font-bold focus:rounded-lg focus:outline-none">Saltar al contenido principal</a>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner fixed bottom-0 left-0 right-0 z-50 p-4" role="alert" aria-label="Aviso de cookies">
+        <div class="max-w-4xl mx-auto bg-neon-card border border-neon-border rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-neon-muted font-body">Usamos cookies esenciales para mejorar tu experiencia. No rastreamos datos personales. <a href="#privacidad" class="text-neon-cyan underline hover:text-neon-lime transition-colors">Política de privacidad</a></p>
+            <div class="flex gap-3 shrink-0">
+                <button id="acceptCookiesBtn" class="px-5 py-2 bg-neon-lime text-neon-dark text-sm font-semibold rounded-lg hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-neon-lime focus:ring-offset-2 focus:ring-offset-neon-dark" aria-label="Aceptar cookies">Aceptar</button>
+                <button id="declineCookiesBtn" class="px-5 py-2 border border-neon-border text-neon-muted text-sm rounded-lg hover:border-neon-lime hover:text-neon-lime transition-all focus:outline-none focus:ring-2 focus:ring-neon-lime focus:ring-offset-2 focus:ring-offset-neon-dark" aria-label="Rechazar cookies">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-blur fixed top-0 left-0 right-0 z-40 bg-neon-dark/80 border-b border-neon-border/50" role="navigation" aria-label="Navegación principal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group" aria-label="NutriCore - Inicio">
+                    <div class="w-9 h-9 rounded-lg bg-neon-lime flex items-center justify-center group-hover:glow-lime transition-all">
+                        <svg class="w-5 h-5 text-neon-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+                    </div>
+                    <span class="font-display font-bold text-lg sm:text-xl text-white">Nutri<span class="text-neon-lime">Core</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#beneficios" class="text-sm text-neon-muted hover:text-neon-lime transition-colors font-medium">Beneficios</a>
+                    <a href="#servicios" class="text-sm text-neon-muted hover:text-neon-lime transition-colors font-medium">Servicios</a>
+                    <a href="#testimonios" class="text-sm text-neon-muted hover:text-neon-lime transition-colors font-medium">Testimonios</a>
+                    <a href="#faq" class="text-sm text-neon-muted hover:text-neon-lime transition-colors font-medium">FAQ</a>
+                    <a href="#contacto" class="px-5 py-2.5 bg-neon-lime text-neon-dark text-sm font-bold rounded-lg hover:bg-opacity-90 glow-lime transition-all focus:outline-none focus:ring-2 focus:ring-neon-lime focus:ring-offset-2 focus:ring-offset-neon-dark">Comenzar Ahora</a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-neon-muted hover:text-neon-lime transition-colors focus:outline-none focus:ring-2 focus:ring-neon-lime rounded-lg" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-neon-dark/95 border-t border-neon-border" role="menu">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#beneficios" class="block text-neon-muted hover:text-neon-lime transition-colors font-medium" role="menuitem">Beneficios</a>
+                <a href="#servicios" class="block text-neon-muted hover:text-neon-lime transition-colors font-medium" role="menuitem">Servicios</a>
+                <a href="#testimonios" class="block text-neon-muted hover:text-neon-lime transition-colors font-medium" role="menuitem">Testimonios</a>
+                <a href="#faq" class="block text-neon-muted hover:text-neon-lime transition-colors font-medium" role="menuitem">FAQ</a>
+                <a href="#contacto" class="block w-full text-center px-5 py-3 bg-neon-lime text-neon-dark text-sm font-bold rounded-lg" role="menuitem">Comenzar Ahora</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="main-content" class="relative min-h-screen flex items-center justify-center overflow-hidden grid-pattern pt-20" aria-label="Sección principal">
+        <!-- Orbs -->
+        <div class="hero-orb w-[500px] h-[500px] bg-neon-lime/10 top-[-10%] left-[-10%]" aria-hidden="true"></div>
+        <div class="hero-orb w-[400px] h-[400px] bg-neon-cyan/10 bottom-[-5%] right-[-5%]" aria-hidden="true"></div>
+        <div class="hero-orb w-[300px] h-[300px] bg-neon-purple/10 top-[40%] right-[20%]" aria-hidden="true"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-neon-card border border-neon-border rounded-full mb-8 animate-float">
+                <span class="w-2 h-2 rounded-full bg-neon-lime animate-pulse-glow" aria-hidden="true"></span>
+                <span class="text-xs sm:text-sm font-medium text-neon-muted font-body">Potenciado por Inteligencia Artificial</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight mb-6">
+                <span class="text-white">Tu nutrición,</span><br>
+                <span class="text-neon-lime text-glow-lime">reprogramada.</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-neon-muted font-body leading-relaxed mb-10">
+                NutriCore analiza tu metabolismo, objetivos y estilo de vida para crear el plan alimenticio perfecto. Ciencia real, resultados visibles en semanas.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+                <a href="#contacto" class="w-full sm:w-auto px-8 py-4 bg-neon-lime text-neon-dark font-display font-bold text-base rounded-xl glow-lime hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-neon-lime focus:ring-offset-2 focus:ring-offset-neon-dark">
+                    Obtener Mi Plan Gratis
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto px-8 py-4 border border-neon-border text-white font-display font-medium text-base rounded-xl hover:border-neon-cyan hover:text-neon-cyan transition-all focus:outline-none focus:ring-2 focus:ring-neon-cyan focus:ring-offset-2 focus:ring-offset-neon-dark">
+                    Explorar Servicios →
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 mb-14">
+                <div class="text-center">
+                    <div class="flex items-baseline justify-center whitespace-nowrap">
+                        <span class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-white" data-counter="50">0</span><span class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-neon-lime">K+</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-neon-muted mt-1 font-body">Usuarios activos</p>
+                </div>
+                <div class="w-px h-10 bg-neon-border hidden sm:block" aria-hidden="true"></div>
+                <div class="text-center">
+                    <div class="flex items-baseline justify-center whitespace-nowrap">
+                        <span class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-white" data-counter="97">0</span><span class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-neon-lime">%</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-neon-muted mt-1 font-body">Satisfacción</p>
+                </div>
+                <div class="w-px h-10 bg-neon-border hidden sm:block" aria-hidden="true"></div>
+                <div class="text-center">
+                    <div class="flex items-baseline justify-center whitespace-nowrap">
+                        <span class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-white" data-counter="2">0</span><span class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-neon-lime">M+</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-neon-muted mt-1 font-body">Planes generados</p>
+                </div>
+                <div class="w-px h-10 bg-neon-border hidden sm:block" aria-hidden="true"></div>
+                <div class="text-center">
+                    <div class="flex items-baseline justify-center whitespace-nowrap">
+                        <span class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-white">4.9</span><span class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-neon-lime">★</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-neon-muted mt-1 font-body">Rating promedio</p>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative max-w-7xl mx-auto">
+                <div class="relative rounded-2xl overflow-hidden border border-neon-border/50 glow-lime">
+                    <img
+                        src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&h=600&fit=crop&q=80"
+                        alt="Mesa con alimentos saludables y coloridos preparados de forma elegante"
+                        width="1600" height="600"
+                        loading="eager"
+                        class="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-neon-dark via-neon-dark/40 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 flex items-center gap-4">
+                        <div class="px-4 py-2 bg-neon-card/80 border border-neon-border rounded-lg backdrop-blur-sm">
+                            <span class="text-neon-lime text-xs font-bold font-display">IA ACTIVA</span>
+                        </div>
+                        <div class="px-4 py-2 bg-neon-card/80 border border-neon-border rounded-lg backdrop-blur-sm">
+                            <span class="text-neon-cyan text-xs font-bold font-display">ANÁLISIS EN TIEMPO REAL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TRUSTED BY ==================== -->
+    <section class="py-16 bg-neon-darker border-y border-neon-border/30" aria-label="Empresas que confían en nosotros">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm text-neon-muted mb-8 font-body uppercase tracking-widest">Confían en NutriCore</p>
+            <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-14 opacity-40">
+                <span class="font-display font-bold text-xl sm:text-2xl text-white">TechHealth</span>
+                <span class="font-display font-bold text-xl sm:text-2xl text-white">VitaLab</span>
+                <span class="font-display font-bold text-xl sm:text-2xl text-white">FitCloud</span>
+                <span class="font-display font-bold text-xl sm:text-2xl text-white">WellnessAI</span>
+                <span class="font-display font-bold text-xl sm:text-2xl text-white">BioSync</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BENEFITS ==================== -->
+    <section id="beneficios" class="py-20 sm:py-28 relative" aria-labelledby="benefits-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <span class="inline-block px-3 py-1 text-xs font-bold font-display text-neon-lime bg-neon-lime/10 border border-neon-lime/20 rounded-full mb-4 uppercase tracking-wider">Por qué NutriCore</span>
+                <h2 id="benefits-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-5">
+                    Nutrición que <span class="text-neon-cyan text-glow-cyan">evoluciona</span> contigo
+                </h2>
+                <p class="max-w-2xl mx-auto text-neon-muted text-base sm:text-lg font-body">No es una dieta genérica. Es un sistema inteligente que aprende de tu cuerpo y se adapta cada semana.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Benefit 1 -->
+                <div class="fade-in gradient-border p-6 sm:p-8 group hover:scale-[1.02] transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-neon-lime/10 border border-neon-lime/20 flex items-center justify-center mb-5 group-hover:glow-lime transition-all">
+                        <svg class="w-6 h-6 text-neon-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg text-white mb-3">IA Adaptativa</h3>
+                    <p class="text-neon-muted font-body text-sm leading-relaxed">Nuestro motor de IA analiza tus respuestas metabólicas y ajusta macronutrientes en tiempo real para maximizar resultados.</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="fade-in gradient-border p-6 sm:p-8 group hover:scale-[1.02] transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-neon-cyan/10 border border-neon-cyan/20 flex items-center justify-center mb-5 group-hover:glow-cyan transition-all">
+                        <svg class="w-6 h-6 text-neon-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg text-white mb-3">Métricas en Vivo</h3>
+                    <p class="text-neon-muted font-body text-sm leading-relaxed">Dashboard personal con seguimiento de peso, energía, hidratación y adherencia al plan. Todo sincronizado con tus wearables.</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="fade-in gradient-border p-6 sm:p-8 group hover:scale-[1.02] transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-neon-purple/10 border border-neon-purple/20 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-neon-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg text-white mb-3">Resultados en 14 Días</h3>
+                    <p class="text-neon-muted font-body text-sm leading-relaxed">El 89% de nuestros usuarios reportan mejoras medibles en energía y composición corporal en las primeras dos semanas.</p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="fade-in gradient-border p-6 sm:p-8 group hover:scale-[1.02] transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-neon-lime/10 border border-neon-lime/20 flex items-center justify-center mb-5 group-hover:glow-lime transition-all">
+                        <svg class="w-6 h-6 text-neon-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg text-white mb-3">Nutriólogos Reales</h3>
+                    <p class="text-neon-muted font-body text-sm leading-relaxed">Cada plan es supervisado por nutriólogos certificados. La IA potencia su expertise, no lo reemplaza.</p>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="fade-in gradient-border p-6 sm:p-8 group hover:scale-[1.02] transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-neon-cyan/10 border border-neon-cyan/20 flex items-center justify-center mb-5 group-hover:glow-cyan transition-all">
+                        <svg class="w-6 h-6 text-neon-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg text-white mb-3">Sin Restricciones Extremas</h3>
+                    <p class="text-neon-muted font-body text-sm leading-relaxed">Planes flexibles que incluyen tus alimentos favoritos. Sin eliminar grupos alimenticios completos. Sostenible a largo plazo.</p>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="fade-in gradient-border p-6 sm:p-8 group hover:scale-[1.02] transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-neon-purple/10 border border-neon-purple/20 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-neon-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
+                    </div>
+                    <h3 class="font-display font-semibold text-lg text-white mb-3">App Integrada</h3>
+                    <p class="text-neon-muted font-body text-sm leading-relaxed">Recetas paso a paso, lista de compras automática, escáner de alimentos y recordatorios inteligentes. Todo en tu bolsillo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VISUAL BREAK ==================== -->
+    <section class="relative h-[400px] sm:h-[500px] overflow-hidden" aria-label="Imagen decorativa de alimentos saludables">
+        <img
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1600&h=700&fit=crop&q=80"
+            alt="Variedad de verduras frescas y coloridas sobre una superficie oscura"
+            width="1600" height="700"
+            loading="lazy"
+            class="w-full h-full object-cover"
+        >
+        <div class="absolute inset-0 bg-gradient-to-b from-neon-dark via-transparent to-neon-dark"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center px-4">
+                <p class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">La comida es <span class="text-neon-lime text-glow-lime">código</span></p>
+                <p class="text-neon-muted text-base sm:text-lg font-body max-w-lg mx-auto">Cada alimento envía instrucciones a tus células. Nosotros optimizamos ese código para que tu cuerpo funcione al máximo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section id="servicios" class="py-20 sm:py-28 relative" aria-labelledby="services-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <span class="inline-block px-3 py-1 text-xs font-bold font-display text-neon-cyan bg-neon-cyan/10 border border-neon-cyan/20 rounded-full mb-4 uppercase tracking-wider">Servicios</span>
+                <h2 id="services-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-5">
+                    Planes diseñados para <span class="text-neon-lime text-glow-lime">tu realidad</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-neon-muted text-base sm:text-lg font-body">Desde principiantes hasta atletas de élite. Cada plan es único como tu metabolismo.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <article class="service-card fade-in bg-neon-card border border-neon-border rounded-2xl overflow-hidden group hover:border-neon-lime/30 transition-all duration-300">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&h=400&fit=crop&q=80" alt="Plato saludable con ingredientes frescos y balanceados" width="600" height="400" loading="lazy" class="service-img w-full h-full object-cover opacity-60 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neon-card via-neon-card/60 to-transparent"></div>
+                        <h3 class="absolute bottom-4 left-5 font-display font-bold text-lg text-white">NutriCore Essential</h3>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-neon-muted font-body text-sm leading-relaxed mb-4">Plan personalizado básico con análisis de macronutrientes, recetas semanales y lista de compras automatizada.</p>
+                        <div class="flex items-baseline gap-1 mb-4">
+                            <span class="font-display font-bold text-2xl text-white whitespace-nowrap">$29</span>
+                            <span class="text-neon-muted text-sm">/mes</span>
+                        </div>
+                        <a href="#contacto" class="block w-full text-center px-4 py-3 border border-neon-lime/30 text-neon-lime text-sm font-bold font-display rounded-lg hover:bg-neon-lime hover:text-neon-dark transition-all focus:outline-none focus:ring-2 focus:ring-neon-lime">Comenzar</a>
+                    </div>
+                </article>
+
+                <!-- Service 2 -->
+                <article class="service-card fade-in bg-neon-card border border-neon-lime/40 rounded-2xl overflow-hidden group glow-lime relative">
+                    <div class="absolute top-4 right-4 z-10 px-3 py-1 bg-neon-lime text-neon-dark text-xs font-bold font-display rounded-full">Popular</div>
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&h=400&fit=crop&q=80" alt="Chef preparando un plato gourmet saludable" width="600" height="400" loading="lazy" class="service-img w-full h-full object-cover opacity-60 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neon-card via-neon-card/60 to-transparent"></div>
+                        <h3 class="absolute bottom-4 left-5 font-display font-bold text-lg text-white">NutriCore Pro</h3>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-neon-muted font-body text-sm leading-relaxed mb-4">Todo lo Essential más IA adaptativa semanal, consultas con nutriólogo, integración con wearables y coaching por chat.</p>
+                        <div class="flex items-baseline gap-1 mb-4">
+                            <span class="font-display font-bold text-2xl text-neon-lime whitespace-nowrap">$59</span>
+                            <span class="text-neon-muted text-sm">/mes</span>
+                        </div>
+                        <a href="#contacto" class="block w-full text-center px-4 py-3 bg-neon-lime text-neon-dark text-sm font-bold font-display rounded-lg hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-neon-lime">Elegir Pro</a>
+                    </div>
+                </article>
+
+                <!-- Service 3 -->
+                <article class="service-card fade-in bg-neon-card border border-neon-border rounded-2xl overflow-hidden group hover:border-neon-cyan/30 transition-all duration-300">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=400&fit=crop&q=80" alt="Plato elegante de alta cocina saludable" width="600" height="400" loading="lazy" class="service-img w-full h-full object-cover opacity-60 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neon-card via-neon-card/60 to-transparent"></div>
+                        <h3 class="absolute bottom-4 left-5 font-display font-bold text-lg text-white">NutriCore Elite</h3>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-neon-muted font-body text-sm leading-relaxed mb-4">Experiencia premium con análisis genético, consultas ilimitadas, chef personal digital y optimización deportiva avanzada.</p>
+                        <div class="flex items-baseline gap-1 mb-4">
+                            <span class="font-display font-bold text-2xl text-white whitespace-nowrap">$119</span>
+                            <span class="text-neon-muted text-sm">/mes</span>
+                        </div>
+                        <a href="#contacto" class="block w-full text-center px-4 py-3 border border-neon-cyan/30 text-neon-cyan text-sm font-bold font-display rounded-lg hover:bg-neon-cyan hover:text-neon-dark transition-all focus:outline-none focus:ring-2 focus:ring-neon-cyan">Ir Elite</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <section class="py-20 sm:py-28 bg-neon-darker relative overflow-hidden" aria-labelledby="how-title">
+        <div class="hero-orb w-[400px] h-[400px] bg-neon-cyan/5 top-[20%] left-[-10%]" aria-hidden="true"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 fade-in">
+                <span class="inline-block px-3 py-1 text-xs font-bold font-display text-neon-purple bg-neon-purple/10 border border-neon-purple/20 rounded-full mb-4 uppercase tracking-wider">Proceso</span>
+                <h2 id="how-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-5">
+                    Cómo <span class="text-neon-cyan text-glow-cyan">funciona</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="fade-in text-center p-6">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-neon-lime/10 border border-neon-lime/20 flex items-center justify-center mb-5">
+                        <span class="font-display font-bold text-2xl text-neon-lime">01</span>
+                    </div>
+                    <h3 class="font-display font-semibold text-white mb-2">Cuestionario IA</h3>
+                    <p class="text-neon-muted font-body text-sm">Respondé un test de 5 minutos sobre tu estilo de vida, metas y preferencias alimenticias.</p>
+                </div>
+                <div class="fade-in text-center p-6">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-neon-cyan/10 border border-neon-cyan/20 flex items-center justify-center mb-5">
+                        <span class="font-display font-bold text-2xl text-neon-cyan">02</span>
+                    </div>
+                    <h3 class="font-display font-semibold text-white mb-2">Análisis Profundo</h3>
+                    <p class="text-neon-muted font-body text-sm">Nuestra IA procesa tus datos y crea un perfil metabólico único con más de 200 variables.</p>
+                </div>
+                <div class="fade-in text-center p-6">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-neon-purple/10 border border-neon-purple/20 flex items-center justify-center mb-5">
+                        <span class="font-display font-bold text-2xl text-neon-purple">03</span>
+                    </div>
+                    <h3 class="font-display font-semibold text-white mb-2">Tu Plan Llega</h3>
+                    <p class="text-neon-muted font-body text-sm">Recibís tu plan personalizado con recetas, macros, horarios y lista de compras lista.</p>
+                </div>
+                <div class="fade-in text-center p-6">
+                    <div class="w-16 h-16 mx-auto rounded-2xl bg-neon-lime/10 border border-neon-lime/20 flex items-center justify-center mb-5">
+                        <span class="font-display font-bold text-2xl text-neon-lime">04</span>
+                    </div>
+                    <h3 class="font-display font-semibold text-white mb-2">Evolución Semanal</h3>
+                    <p class="text-neon-muted font-body text-sm">Cada semana el plan se ajusta automáticamente basado en tu progreso y feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VISUAL BREAK 2 ==================== -->
+    <section class="relative" aria-label="Imagen de smoothie saludable">
+        <div class="grid md:grid-cols-2">
+            <div class="relative h-[300px] md:h-[450px] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=900&h=600&fit=crop&q=80" alt="Smoothie verde saludable con frutas y vegetales" width="900" height="600" loading="lazy" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-neon-dark/40"></div>
+            </div>
+            <div class="relative h-[300px] md:h-[450px] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=900&h=600&fit=crop&q=80" alt="Bowl de açaí con frutas frescas y granola" width="900" height="600" loading="lazy" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-neon-dark/40"></div>
+            </div>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center bg-neon-dark/60">
+            <div class="text-center px-4">
+                <p class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-white mb-3">Alimentación que se siente <span class="text-neon-cyan text-glow-cyan">increíble</span></p>
+                <p class="text-neon-muted font-body max-w-md mx-auto">Platos deliciosos diseñados por IA, supervisados por nutriólogos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section id="testimonios" class="py-20 sm:py-28 testimonial-bg relative" aria-labelledby="testimonials-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <span class="inline-block px-3 py-1 text-xs font-bold font-display text-neon-lime bg-neon-lime/10 border border-neon-lime/20 rounded-full mb-4 uppercase tracking-wider">Testimonios</span>
+                <h2 id="testimonials-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-5">
+                    Resultados que <span class="text-neon-lime text-glow-lime">hablan</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="fade-in bg-neon-card border border-neon-border rounded-2xl p-6 sm:p-8 relative">
+                    <div class="absolute top-6 right-6 text-neon-lime/20 font-display text-5xl font-bold" aria-hidden="true">"</div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&q=80" alt="Foto de Valentina R." width="80" height="80" loading="lazy" class="w-12 h-12 rounded-full object-cover border-2 border-neon-lime/30">
+                        <div>
+                            <p class="font-display font-semibold text-white text-sm">Valentina R.</p>
+                            <p class="text-neon-muted text-xs font-body">Perdió 8kg en 3 meses</p>
+                        </div>
+                    </div>
+                    <p class="text-neon-muted font-body text-sm leading-relaxed">Probé mil dietas antes. NutriCore fue lo primero que realmente se adaptó a mi ritmo de vida. No sentí que estaba restringiéndome, sino mejorando.</p>
+                    <div class="flex gap-1 mt-4" aria-label="5 estrellas">
+                        <svg class="w-4 h-4 text-neon-lime" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-neon-lime" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-neon-lime" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-neon-lime" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-neon-lime" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="fade-in bg-neon-card border border-neon-border rounded-2xl p-6 sm:p-8 relative">
+                    <div class="absolute top-6 right-6 text-neon-cyan/20 font-display text-5xl font-bold" aria-hidden="true">"</div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&q=80" alt="Foto de Marcos T." width="80" height="80" loading="lazy" class="w-12 h-12 rounded-full object-cover border-2 border-neon-cyan/30">
+                        <div>
+                            <p class="font-display font-semibold text-white text-sm">Marcos T.</p>
+                            <p class="text-neon-muted text-xs font-body">Triatleta amateur</p>
+                        </div>
+                    </div>
+                    <p class="text-neon-muted font-body text-sm leading-relaxed">Como deportista, necesitaba algo que entendiera mis cargas de entrenamiento. NutriCore ajusta mis macros según mi plan de entrenamiento semanal. Es otro nivel.</p>
+                    <div class="flex gap-1 mt-4" aria-label="5 estrellas">
+                        <svg class="w-4 h-4 text-neon-cyan" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-neon-cyan" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-neon-cyan" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-neon-cyan" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-neon-cyan" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="fade-in bg-neon-card border border-neon-border rounded-2xl p-6 sm:p-8 relative">
+                    <div class="absolute top-6 right-6 text-neon-purple/20 font-display text-5xl font-bold" aria-hidden="true">"</div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&q=80" alt="Foto de Lucía M." width="80" height="80" loading="lazy" class="w-12 h-12 rounded-full object-cover border-2 border-neon-purple/30">
+                        <div>
+                            <p class="font-display font-semibold text-white text-sm">Lucía M.</p>
+                            <p class="text-neon-muted text-xs font-body">Mamá de 2, trabaja remoto</p>
+                        </div>
+                    </div>
+                    <p class="text-neon-muted font-body text-sm leading-relaxed">La lista de compras automática me salvó la vida. Ya no pierdo tiempo pensando qué cocinar. Las recetas son rápidas y a mis hijos les encantan.</p>
+                    <div class="flex gap-1 mt-4" aria-label="5 estrellas">
+                        <svg class="w-4 h-4 text-neon-purple" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-neon-purple" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-neon-purple" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-neon-purple" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-neon-purple" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section id="faq" class="py-20 sm:py-28 bg-neon-darker" aria-labelledby="faq-title">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <span class="inline-block px-3 py-1 text-xs font-bold font-display text-neon-lime bg-neon-lime/10 border border-neon-lime/20 rounded-full mb-4 uppercase tracking-wider">FAQ</span>
+                <h2 id="faq-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-5">
+                    Preguntas <span class="text-neon-cyan text-glow-cyan">frecuentes</span>
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="fade-in faq-item bg-neon-card border border-neon-border rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none focus:ring-2 focus:ring-neon-lime focus:ring-inset" aria-expanded="false">
+                        <span class="font-display font-semibold text-white text-sm sm:text-base pr-4">¿Cómo personaliza la IA mi plan?</span>
+                        <svg class="faq-icon w-5 h-5 text-neon-lime shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-neon-muted font-body text-sm leading-relaxed">Analizamos más de 200 variables incluyendo tu peso, altura, nivel de actividad, preferencias alimenticias, alergias, objetivos, horarios y hasta tu nivel de estrés. El algoritmo genera combinaciones óptimas de macros y micronutrientes que se ajustan semanalmente según tu progreso.</p>
+                    </div>
+                </div>
+
+                <div class="fade-in faq-item bg-neon-card border border-neon-border rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none focus:ring-2 focus:ring-neon-lime focus:ring-inset" aria-expanded="false">
+                        <span class="font-display font-semibold text-white text-sm sm:text-base pr-4">¿Necesito comprar suplementos especiales?</span>
+                        <svg class="faq-icon w-5 h-5 text-neon-lime shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-neon-muted font-body text-sm leading-relaxed">No. Nuestros planes se basan en alimentos reales que encontrás en cualquier supermercado. Si tu perfil muestra alguna deficiencia específica, podemos sugerir suplementos básicos, pero nunca es obligatorio.</p>
+                    </div>
+                </div>
+
+                <div class="fade-in faq-item bg-neon-card border border-neon-border rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none focus:ring-2 focus:ring-neon-lime focus:ring-inset" aria-expanded="false">
+                        <span class="font-display font-semibold text-white text-sm sm:text-base pr-4">¿Puedo cancelar en cualquier momento?</span>
+                        <svg class="faq-icon w-5 h-5 text-neon-lime shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-neon-muted font-body text-sm leading-relaxed">Sí, sin compromiso. Podés cancelar tu suscripción en cualquier momento desde tu dashboard y mantenés acceso hasta el final de tu período de facturación. Sin penalizaciones ni preguntas.</p>
+                    </div>
+                </div>
+
+                <div class="fade-in faq-item bg-neon-card border border-neon-border rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none focus:ring-2 focus:ring-neon-lime focus:ring-inset" aria-expanded="false">
+                        <span class="font-display font-semibold text-white text-sm sm:text-base pr-4">¿Funciona si tengo alergias o restricciones?</span>
+                        <svg class="faq-icon w-5 h-5 text-neon-lime shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-neon-muted font-body text-sm leading-relaxed">Absolutamente. NutriCore soporta más de 40 tipos de alergias, intolerancias y restricciones dietéticas incluyendo celiaquía, intolerancia a la lactosa, veganismo, vegetarianismo, dieta kosher, halal y más. Tu plan nunca incluirá alimentos que no puedas consumir.</p>
+                    </div>
+                </div>
+
+                <div class="fade-in faq-item bg-neon-card border border-neon-border rounded-xl overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-5 text-left focus:outline-none focus:ring-2 focus:ring-neon-lime focus:ring-inset" aria-expanded="false">
+                        <span class="font-display font-semibold text-white text-sm sm:text-base pr-4">¿Qué wearables son compatibles?</span>
+                        <svg class="faq-icon w-5 h-5 text-neon-lime shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-neon-muted font-body text-sm leading-relaxed">Nos integramos con Apple Watch, Fitbit, Garmin, Samsung Galaxy Watch, Whoop y Oura Ring. También conectamos con Apple Health y Google Fit para centralizar todos tus datos de salud.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT / CTA ==================== -->
+    <section id="contacto" class="py-20 sm:py-28 relative overflow-hidden" aria-labelledby="contact-title">
+        <div class="hero-orb w-[500px] h-[500px] bg-neon-lime/5 bottom-[-20%] right-[-10%]" aria-hidden="true"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Image + Text -->
+                <div class="fade-in">
+                    <span class="inline-block px-3 py-1 text-xs font-bold font-display text-neon-lime bg-neon-lime/10 border border-neon-lime/20 rounded-full mb-6 uppercase tracking-wider">Comienza hoy</span>
+                    <h2 id="contact-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-5">
+                        Tu plan personalizado a un <span class="text-neon-lime text-glow-lime">click</span>
+                    </h2>
+                    <p class="text-neon-muted font-body text-base sm:text-lg leading-relaxed mb-8">Completá el formulario y recibí tu análisis nutricional preliminar gratis en menos de 24 horas. Sin compromiso.</p>
+                    <div class="relative rounded-2xl overflow-hidden">
+                        <img
+                            src="https://images.unsplash.com/photo-1505576399279-0d754c0fbc04?w=800&h=500&fit=crop&q=80"
+                            alt="Persona preparando un plato saludable en una cocina moderna"
+                            width="800" height="500"
+                            loading="lazy"
+                            class="w-full h-[250px] sm:h-[300px] object-cover rounded-2xl"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-neon-dark/80 to-transparent rounded-2xl"></div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="fade-in">
+                    <form id="contactForm" method="post" class="gradient-border p-6 sm:p-8 space-y-5" novalidate>
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-neon-muted mb-2 font-body">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="100" autocomplete="name"
+                                class="w-full px-4 py-3 bg-neon-darker border border-neon-border rounded-lg text-white font-body text-sm placeholder-neon-muted/50 focus:outline-none focus:border-neon-lime focus:ring-1 focus:ring-neon-lime transition-colors"
+                                placeholder="Tu nombre">
+                            <p class="error-msg hidden text-red-400 text-xs mt-1 font-body" aria-live="polite"></p>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-neon-muted mb-2 font-body">Email</label>
+                            <input type="email" id="email" name="email" required maxlength="254" autocomplete="email"
+                                class="w-full px-4 py-3 bg-neon-darker border border-neon-border rounded-lg text-white font-body text-sm placeholder-neon-muted/50 focus:outline-none focus:border-neon-lime focus:ring-1 focus:ring-neon-lime transition-colors"
+                                placeholder="tu@email.com">
+                            <p class="error-msg hidden text-red-400 text-xs mt-1 font-body" aria-live="polite"></p>
+                        </div>
+                        <div>
+                            <label for="objetivo" class="block text-sm font-medium text-neon-muted mb-2 font-body">Tu objetivo principal</label>
+                            <select id="objetivo" name="objetivo" required
+                                class="w-full px-4 py-3 bg-neon-darker border border-neon-border rounded-lg text-white font-body text-sm focus:outline-none focus:border-neon-lime focus:ring-1 focus:ring-neon-lime transition-colors appearance-none">
+                                <option value="" disabled selected>Seleccioná tu objetivo</option>
+                                <option value="perder-peso">Perder peso</option>
+                                <option value="ganar-musculo">Ganar músculo</option>
+                                <option value="mas-energia">Más energía</option>
+                                <option value="salud-general">Mejorar salud general</option>
+                                <option value="rendimiento">Rendimiento deportivo</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <p class="error-msg hidden text-red-400 text-xs mt-1 font-body" aria-live="polite"></p>
+                        </div>
+                        <div>
+                            <label for="mensaje" class="block text-sm font-medium text-neon-muted mb-2 font-body">Cuéntanos sobre ti <span class="text-neon-muted/50">(opcional)</span></label>
+                            <textarea id="mensaje" name="mensaje" rows="3" maxlength="1000"
+                                class="w-full px-4 py-3 bg-neon-darker border border-neon-border rounded-lg text-white font-body text-sm placeholder-neon-muted/50 focus:outline-none focus:border-neon-lime focus:ring-1 focus:ring-neon-lime transition-colors resize-none"
+                                placeholder="Tu edad, restricciones alimenticias, nivel de actividad..."></textarea>
+                        </div>
+
+                        <!-- GDPR Consent -->
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="consent" name="consent" required class="mt-1 w-4 h-4 rounded border-neon-border bg-neon-darker text-neon-lime focus:ring-neon-lime">
+                            <label for="consent" class="text-xs text-neon-muted font-body leading-relaxed">Acepto la <a href="#privacidad" class="text-neon-cyan underline hover:text-neon-lime transition-colors">política de privacidad</a> y el tratamiento de mis datos para recibir mi plan nutricional personalizado.</label>
+                        </div>
+
+                        <button type="submit" id="submitBtn"
+                            class="w-full px-6 py-4 bg-neon-lime text-neon-dark font-display font-bold text-base rounded-xl glow-lime hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-neon-lime focus:ring-offset-2 focus:ring-offset-neon-dark disabled:opacity-50 disabled:cursor-not-allowed">
+                            Obtener Mi Plan Gratis
+                        </button>
+                        <p class="text-center text-xs text-neon-muted font-body">Sin tarjeta de crédito. Cancelá cuando quieras.</p>
+
+                        <!-- Success message -->
+                        <div id="formSuccess" class="hidden text-center py-4">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-neon-lime/10 border border-neon-lime/20 flex items-center justify-center mb-4">
+                                <svg class="w-8 h-8 text-neon-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                            </div>
+                            <p class="font-display font-bold text-white text-lg">¡Recibido!</p>
+                            <p class="text-neon-muted font-body text-sm mt-2">Tu análisis nutricional llegará a tu email en menos de 24 horas.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="privacidad" class="py-12 sm:py-16 bg-neon-darker border-t border-neon-border/30" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand -->
+                <div class="lg:col-span-1">
+                    <a href="#" class="flex items-center gap-2 mb-4" aria-label="NutriCore - Inicio">
+                        <div class="w-8 h-8 rounded-lg bg-neon-lime flex items-center justify-center">
+                            <svg class="w-4 h-4 text-neon-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+                        </div>
+                        <span class="font-display font-bold text-white">Nutri<span class="text-neon-lime">Core</span></span>
+                    </a>
+                    <p class="text-neon-muted font-body text-sm leading-relaxed">Nutrición personalizada potenciada por inteligencia artificial. Ciencia que se adapta a tu vida.</p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="font-display font-semibold text-white text-sm mb-4">Producto</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#beneficios" class="text-neon-muted font-body text-sm hover:text-neon-lime transition-colors">Beneficios</a></li>
+                        <li><a href="#servicios" class="text-neon-muted font-body text-sm hover:text-neon-lime transition-colors">Planes</a></li>
+                        <li><a href="#faq" class="text-neon-muted font-body text-sm hover:text-neon-lime transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-neon-muted font-body text-sm hover:text-neon-lime transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold text-white text-sm mb-4">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-neon-muted font-body text-sm hover:text-neon-lime transition-colors">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-neon-muted font-body text-sm hover:text-neon-lime transition-colors">Términos de Servicio</a></li>
+                        <li><a href="#" class="text-neon-muted font-body text-sm hover:text-neon-lime transition-colors">Aviso de Cookies</a></li>
+                        <li><a href="#" class="text-neon-muted font-body text-sm hover:text-neon-lime transition-colors">GDPR</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display font-semibold text-white text-sm mb-4">Contacto</h4>
+                    <ul class="space-y-3">
+                        <li><a href="mailto:hola@nutricore.ai" class="text-neon-muted font-body text-sm hover:text-neon-lime transition-colors">hola@nutricore.ai</a></li>
+                        <li><span class="text-neon-muted font-body text-sm">+52 55 1234 5678</span></li>
+                        <li class="flex gap-3 pt-2">
+                            <a href="#" class="text-neon-muted hover:text-neon-lime transition-colors" aria-label="Instagram">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            </a>
+                            <a href="#" class="text-neon-muted hover:text-neon-lime transition-colors" aria-label="Twitter / X">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                            <a href="#" class="text-neon-muted hover:text-neon-lime transition-colors" aria-label="LinkedIn">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-neon-border/30 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-neon-muted font-body text-xs">&copy; 2026 NutriCore. Todos los derechos reservados.</p>
+                <p class="text-neon-muted/50 font-body text-xs">Hecho con IA y amor por la nutrición</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+    (function() {
+        'use strict';
+
+        // --- Mobile Menu ---
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', function() {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // --- Cookie Banner ---
+        function showCookieBanner() {
+            var banner = document.getElementById('cookieBanner');
+            setTimeout(function() { banner.classList.add('show'); }, 1500);
+        }
+
+        function dismissCookieBanner() {
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+
+        var acceptCookiesBtn = document.getElementById('acceptCookiesBtn');
+        var declineCookiesBtn = document.getElementById('declineCookiesBtn');
+        if (acceptCookiesBtn) acceptCookiesBtn.addEventListener('click', dismissCookieBanner);
+        if (declineCookiesBtn) declineCookiesBtn.addEventListener('click', dismissCookieBanner);
+
+        showCookieBanner();
+
+        // --- FAQ Accordion ---
+        document.querySelectorAll('.faq-toggle').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = btn.closest('.faq-item');
+                var content = item.querySelector('.faq-content');
+                var icon = item.querySelector('.faq-icon');
+                var isOpen = !content.classList.contains('hidden');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(function(i) {
+                    i.querySelector('.faq-content').classList.add('hidden');
+                    i.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    i.querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
+                });
+
+                // Open clicked if was closed
+                if (!isOpen) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(45deg)';
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // --- Scroll Animations ---
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(function(el) {
+            observer.observe(el);
+        });
+
+        // --- Counter Animation ---
+        var counterObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var el = entry.target;
+                    var target = parseInt(el.getAttribute('data-counter'));
+                    var duration = 2000;
+                    var start = 0;
+                    var startTime = null;
+
+                    function animate(timestamp) {
+                        if (!startTime) startTime = timestamp;
+                        var progress = Math.min((timestamp - startTime) / duration, 1);
+                        var eased = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.floor(eased * target);
+                        if (progress < 1) requestAnimationFrame(animate);
+                        else el.textContent = target;
+                    }
+
+                    requestAnimationFrame(animate);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('[data-counter]').forEach(function(el) {
+            counterObserver.observe(el);
+        });
+
+        // --- Form Validation & Sanitization ---
+        var form = document.getElementById('contactForm');
+
+        function sanitize(str) {
+            return String(str).trim();
+        }
+
+        function showError(input, msg) {
+            var err = input.parentElement.querySelector('.error-msg');
+            if (err) {
+                err.textContent = msg;
+                err.classList.remove('hidden');
+            }
+            input.classList.add('border-red-400');
+        }
+
+        function clearErrors() {
+            form.querySelectorAll('.error-msg').forEach(function(e) {
+                e.classList.add('hidden');
+                e.textContent = '';
+            });
+            form.querySelectorAll('input, select').forEach(function(i) {
+                i.classList.remove('border-red-400');
+            });
+        }
+
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            clearErrors();
+
+            var nombre = form.querySelector('#nombre');
+            var email = form.querySelector('#email');
+            var objetivo = form.querySelector('#objetivo');
+            var consent = form.querySelector('#consent');
+            var valid = true;
+
+            var cleanName = sanitize(nombre.value.trim());
+            var cleanEmail = sanitize(email.value.trim());
+
+            if (cleanName.length < 2) {
+                showError(nombre, 'Ingresá tu nombre completo');
+                valid = false;
+            }
+
+            if (!validateEmail(cleanEmail)) {
+                showError(email, 'Ingresá un email válido');
+                valid = false;
+            }
+
+            if (!objetivo.value) {
+                showError(objetivo, 'Seleccioná un objetivo');
+                valid = false;
+            }
+
+            if (!consent.checked) {
+                valid = false;
+                consent.focus();
+            }
+
+            if (valid) {
+                var btn = document.getElementById('submitBtn');
+                btn.disabled = true;
+                btn.textContent = 'Enviando...';
+
+                // Simulate submission
+                setTimeout(function() {
+                    form.querySelectorAll('div:not(#formSuccess)').forEach(function(d) {
+                        if (d.closest('form') === form && !d.id) d.style.display = 'none';
+                    });
+                    // Hide direct children that are not formSuccess
+                    Array.from(form.children).forEach(function(child) {
+                        if (child.id !== 'formSuccess') child.style.display = 'none';
+                    });
+                    document.getElementById('formSuccess').classList.remove('hidden');
+                }, 1200);
+            }
+        });
+
+        // --- Smooth scroll for nav links ---
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                var target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+    })();
+    </script>
+
+</body>
+</html>

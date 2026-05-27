@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NUBE AMBAR">
+  <rect width="64" height="64" rx="16" fill="#16120d"/>
+  <circle cx="32" cy="32" r="22" fill="#241a12" stroke="#d9c6a2" stroke-width="2"/>
+  <path d="M32 11c8 10 14 17 14 29a14 14 0 0 1-28 0c0-12 6-19 14-29Z" fill="#c98538"/>
+  <path d="M23 39c6 5 12 5 18 0" fill="none" stroke="#fff7e8" stroke-width="3" stroke-linecap="round"/>
+  <path d="M22 25c7 3 13 3 20 0" fill="none" stroke="#5f6d50" stroke-width="3" stroke-linecap="round"/>
+</svg>

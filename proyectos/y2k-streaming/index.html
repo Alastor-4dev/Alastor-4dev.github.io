@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarWave — Streaming Sin Límites | Películas, Series y Anime</title>
+    <meta name="description" content="StarWave es la plataforma de streaming definitiva. Miles de películas, series y anime en calidad 4K. Prueba gratis 30 días. Sin compromisos.">
+    <meta name="keywords" content="streaming, películas, series, anime, 4K, entretenimiento, StarWave">
+    <meta name="author" content="StarWave">
+    <meta name="robots" content="index, follow">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="StarWave — Streaming Sin Límites">
+    <meta property="og:description" content="Miles de películas, series y anime en calidad 4K. Prueba gratis 30 días.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://starwave.stream">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1574375927938-d5a98e8d7e28?w=1200&h=630&fit=crop&q=80">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="StarWave — Streaming Sin Límites">
+    <meta name="twitter:description" content="Miles de películas, series y anime en calidad 4K. Prueba gratis 30 días.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1574375927938-d5a98e8d7e28?w=1200&h=630&fit=crop&q=80">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://starwave.stream">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'y2k-pink': '#FF69B4',
+                        'y2k-blue': '#00BFFF',
+                        'y2k-lime': '#ADFF2F',
+                        'y2k-purple': '#9B59FF',
+                        'y2k-silver': '#C0C0C0',
+                        'y2k-chrome': '#E8E8E8',
+                        'y2k-dark': '#0A0A1A',
+                        'y2k-darker': '#050510',
+                    },
+                    fontFamily: {
+                        'display': ['Space Grotesk', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delay': 'float 6s ease-in-out 2s infinite',
+                        'shimmer': 'shimmer 3s ease-in-out infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        shimmer: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(255,105,180,0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(255,105,180,0.6), 0 0 60px rgba(0,191,255,0.3)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "StarWave",
+        "description": "Plataforma de streaming con miles de películas, series y anime en calidad 4K",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Prueba gratis 30 días"
+        }
+    }
+    </script>
+
+    <style>
+        /* Y2K Chrome/Metallic Effects */
+        .y2k-gradient-text {
+            background: linear-gradient(135deg, #FF69B4, #00BFFF, #ADFF2F, #9B59FF, #FF69B4);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s ease-in-out infinite;
+        }
+
+        .y2k-chrome-text {
+            background: linear-gradient(180deg, #fff 0%, #C0C0C0 30%, #fff 50%, #888 70%, #C0C0C0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .y2k-border {
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+        .y2k-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #FF69B4, #00BFFF, #ADFF2F, #9B59FF);
+            z-index: -1;
+        }
+
+        .y2k-glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .y2k-card {
+            background: linear-gradient(135deg, rgba(255,105,180,0.05), rgba(0,191,255,0.05));
+            border: 1px solid rgba(255,105,180,0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .y2k-card:hover {
+            border-color: rgba(255,105,180,0.4);
+            box-shadow: 0 0 30px rgba(255,105,180,0.15), 0 0 60px rgba(0,191,255,0.08);
+            transform: translateY(-4px);
+        }
+
+        .y2k-btn-primary {
+            background: linear-gradient(135deg, #FF69B4, #9B59FF);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .y2k-btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .y2k-btn-primary:hover::before {
+            left: 100%;
+        }
+        .y2k-btn-primary:hover {
+            box-shadow: 0 0 25px rgba(255,105,180,0.5), 0 0 50px rgba(155,89,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .y2k-btn-secondary {
+            border: 2px solid rgba(0,191,255,0.5);
+            color: #00BFFF;
+            transition: all 0.3s ease;
+        }
+        .y2k-btn-secondary:hover {
+            background: rgba(0,191,255,0.1);
+            border-color: #00BFFF;
+            box-shadow: 0 0 20px rgba(0,191,255,0.3);
+        }
+
+        /* Y2K Star Decorations */
+        .y2k-star {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #FF69B4, #ADFF2F);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Blob decorations */
+        .y2k-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A1A; }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #FF69B4, #9B59FF);
+            border-radius: 4px;
+        }
+
+        /* Intersection Observer animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Cookie banner */
+        .cookie-banner {
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        /* Mobile nav */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* FAQ accordion */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-answer.open {
+            max-height: 500px;
+        }
+
+        /* Counter animation */
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html { scroll-behavior: auto !important; }
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'none'; connect-src 'none';">
+</head>
+<body class="bg-y2k-dark text-white font-body overflow-x-hidden">
+
+    <!-- Skip navigation -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-y2k-pink focus:text-white focus:rounded-lg focus:font-display focus:font-semibold">Saltar al contenido principal</a>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner fixed bottom-0 left-0 right-0 z-[100] p-4" role="dialog" aria-label="Consentimiento de cookies">
+        <div class="max-w-4xl mx-auto y2k-glass rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4">
+            <p class="text-sm text-gray-300 flex-1">
+                Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra
+                <a href="#privacidad" class="text-y2k-pink hover:underline">política de privacidad</a>.
+            </p>
+            <div class="flex gap-3 shrink-0">
+                <button id="acceptCookiesBtn" class="px-5 py-2 bg-y2k-pink/20 border border-y2k-pink/40 rounded-full text-sm text-y2k-pink hover:bg-y2k-pink/30 transition-colors" aria-label="Aceptar cookies">Aceptar</button>
+                <button id="rejectCookiesBtn" class="px-5 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-400 hover:bg-white/10 transition-colors" aria-label="Rechazar cookies">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group" aria-label="StarWave inicio">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-y2k-pink to-y2k-purple flex items-center justify-center group-hover:shadow-lg group-hover:shadow-y2k-pink/30 transition-shadow">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <span class="font-display font-bold text-xl sm:text-2xl y2k-chrome-text">StarWave</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#catalogo" class="text-sm text-gray-300 hover:text-y2k-pink transition-colors">Catálogo</a>
+                    <a href="#planes" class="text-sm text-gray-300 hover:text-y2k-pink transition-colors">Planes</a>
+                    <a href="#beneficios" class="text-sm text-gray-300 hover:text-y2k-pink transition-colors">Beneficios</a>
+                    <a href="#testimonios" class="text-sm text-gray-300 hover:text-y2k-pink transition-colors">Opiniones</a>
+                    <a href="#faq" class="text-sm text-gray-300 hover:text-y2k-pink transition-colors">FAQ</a>
+                    <a href="#registro" class="y2k-btn-primary px-6 py-2.5 rounded-full font-display font-semibold text-sm text-white">Prueba Gratis</a>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button id="menuToggle" class="md:hidden p-2 text-gray-300 hover:text-y2k-pink transition-colors" aria-label="Abrir menú" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-y2k-darker/95 backdrop-blur-xl z-50 p-8 md:hidden" role="dialog" aria-label="Menú móvil">
+            <button id="menuClose" class="absolute top-4 right-4 p-2 text-gray-400 hover:text-white" aria-label="Cerrar menú">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div class="flex flex-col gap-6 mt-12">
+                <a href="#catalogo" class="text-lg text-gray-300 hover:text-y2k-pink transition-colors">Catálogo</a>
+                <a href="#planes" class="text-lg text-gray-300 hover:text-y2k-pink transition-colors">Planes</a>
+                <a href="#beneficios" class="text-lg text-gray-300 hover:text-y2k-pink transition-colors">Beneficios</a>
+                <a href="#testimonios" class="text-lg text-gray-300 hover:text-y2k-pink transition-colors">Opiniones</a>
+                <a href="#faq" class="text-lg text-gray-300 hover:text-y2k-pink transition-colors">FAQ</a>
+                <a href="#registro" class="y2k-btn-primary px-6 py-3 rounded-full font-display font-semibold text-center text-white mt-4">Prueba Gratis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"></div>
+
+    <main id="main-content">
+        <!-- ========== HERO SECTION ========== -->
+        <section class="relative min-h-screen flex items-center pt-20 overflow-hidden" aria-label="Hero">
+            <!-- Y2K Blobs -->
+            <div class="y2k-blob w-[500px] h-[500px] bg-y2k-pink/20 top-[-100px] left-[-200px] animate-blob" aria-hidden="true"></div>
+            <div class="y2k-blob w-[400px] h-[400px] bg-y2k-blue/20 bottom-[-50px] right-[-100px] animate-blob" style="animation-delay: 2s" aria-hidden="true"></div>
+            <div class="y2k-blob w-[300px] h-[300px] bg-y2k-purple/15 top-[30%] right-[20%] animate-blob" style="animation-delay: 4s" aria-hidden="true"></div>
+
+            <!-- Stars -->
+            <div class="y2k-star top-[15%] left-[10%] opacity-60" style="animation-delay: 0s" aria-hidden="true"></div>
+            <div class="y2k-star top-[25%] right-[15%] opacity-40 w-[14px] h-[14px]" style="animation-delay: 1s" aria-hidden="true"></div>
+            <div class="y2k-star bottom-[30%] left-[20%] opacity-50 w-[16px] h-[16px]" style="animation-delay: 2.5s" aria-hidden="true"></div>
+            <div class="y2k-star top-[60%] right-[8%] opacity-30" style="animation-delay: 3.5s" aria-hidden="true"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+                <div class="text-center">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-y2k-pink/10 border border-y2k-pink/20 mb-8 animate-slide-up">
+                        <span class="w-2 h-2 rounded-full bg-y2k-lime animate-pulse"></span>
+                        <span class="text-sm font-medium text-y2k-pink">Nuevo: Anime en 4K Ultra HD</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight mb-6 animate-slide-up" style="animation-delay: 0.1s">
+                        <span class="y2k-gradient-text">Streaming</span><br>
+                        <span class="y2k-chrome-text">Sin Límites</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 animate-slide-up" style="animation-delay: 0.2s">
+                        Miles de películas, series y anime en calidad cinematográfica.
+                        <span class="text-y2k-blue">30 días gratis.</span> Sin compromisos. Cancela cuando quieras.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up" style="animation-delay: 0.3s">
+                        <a href="#registro" class="y2k-btn-primary px-8 py-4 rounded-full font-display font-bold text-lg text-white w-full sm:w-auto text-center animate-pulse-glow">
+                            Empezar Gratis →
+                        </a>
+                        <a href="#catalogo" class="y2k-btn-secondary px-8 py-4 rounded-full font-display font-semibold text-lg w-full sm:w-auto text-center">
+                            Ver Catálogo
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="flex flex-wrap justify-center gap-6 sm:gap-10 mb-12 animate-slide-up" style="animation-delay: 0.4s">
+                        <div class="text-center whitespace-nowrap">
+                            <div class="font-display font-bold text-xl sm:text-2xl lg:text-3xl y2k-gradient-text">
+                                <span class="counter" data-target="50">0</span>K<span class="text-y2k-lime">+</span>
+                            </div>
+                            <div class="text-xs sm:text-sm text-gray-500 mt-1">Títulos</div>
+                        </div>
+                        <div class="text-center whitespace-nowrap">
+                            <div class="font-display font-bold text-xl sm:text-2xl lg:text-3xl y2k-gradient-text">
+                                <span class="counter" data-target="12">0</span>M<span class="text-y2k-lime">+</span>
+                            </div>
+                            <div class="text-xs sm:text-sm text-gray-500 mt-1">Usuarios</div>
+                        </div>
+                        <div class="text-center whitespace-nowrap">
+                            <div class="font-display font-bold text-xl sm:text-2xl lg:text-3xl y2k-gradient-text">4K</div>
+                            <div class="text-xs sm:text-sm text-gray-500 mt-1">Ultra HD</div>
+                        </div>
+                        <div class="text-center whitespace-nowrap">
+                            <div class="font-display font-bold text-xl sm:text-2xl lg:text-3xl y2k-gradient-text">
+                                <span class="counter" data-target="5">0</span><span class="text-y2k-lime">+</span>
+                            </div>
+                            <div class="text-xs sm:text-sm text-gray-500 mt-1">Dispositivos</div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Image -->
+                    <div class="relative max-w-7xl mx-auto animate-slide-up" style="animation-delay: 0.5s">
+                        <div class="relative rounded-2xl overflow-hidden h-[300px] sm:h-[400px] lg:h-[500px] group">
+                            <img
+                                src="https://images.unsplash.com/photo-1574375927938-d5a98e8d7e28?w=1600&h=900&fit=crop&q=80"
+                                alt="Personas disfrutando de una sesión de cine en casa con streaming"
+                                width="1600" height="900"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                loading="eager"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-y2k-dark via-y2k-dark/40 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-r from-y2k-pink/10 to-y2k-blue/10"></div>
+                            <!-- Play button overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div id="heroPlayBtn" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center cursor-pointer hover:bg-white/20 hover:scale-110 transition-all duration-300" role="button" tabindex="0" aria-label="Reproducir trailer de StarWave">
+                                    <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Chrome border effect -->
+                        <div class="absolute -inset-[2px] rounded-2xl bg-gradient-to-r from-y2k-pink/30 via-y2k-blue/30 to-y2k-purple/30 -z-10 blur-sm"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== LOGOS / PARTNERS ========== -->
+        <section class="py-12 border-y border-white/5" aria-label="Disponible en">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-center text-sm text-gray-500 mb-8 font-display uppercase tracking-widest">Disponible en todos tus dispositivos</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 sm:gap-12 opacity-40">
+                    <span class="font-display font-bold text-lg sm:text-xl text-gray-400"><span aria-hidden="true">📱</span> iOS</span>
+                    <span class="font-display font-bold text-lg sm:text-xl text-gray-400"><span aria-hidden="true">🤖</span> Android</span>
+                    <span class="font-display font-bold text-lg sm:text-xl text-gray-400"><span aria-hidden="true">🖥️</span> Smart TV</span>
+                    <span class="font-display font-bold text-lg sm:text-xl text-gray-400"><span aria-hidden="true">🎮</span> Consolas</span>
+                    <span class="font-display font-bold text-lg sm:text-xl text-gray-400"><span aria-hidden="true">💻</span> Web</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CATÁLOGO ========== -->
+        <section id="catalogo" class="py-20 sm:py-28 relative" aria-labelledby="catalogo-title">
+            <div class="y2k-blob w-[400px] h-[400px] bg-y2k-purple/15 top-0 left-[-100px] animate-blob" aria-hidden="true"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <span class="inline-block px-3 py-1 rounded-full bg-y2k-blue/10 border border-y2k-blue/20 text-y2k-blue text-xs font-semibold uppercase tracking-wider mb-4">Explora</span>
+                    <h2 id="catalogo-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mb-4">
+                        <span class="y2k-chrome-text">Tu universo de</span> <span class="y2k-gradient-text">entretenimiento</span>
+                    </h2>
+                    <p class="text-gray-400 max-w-xl mx-auto">Descubre categorías que se adaptan a tu mood. Desde blockbusters hasta joyas independientes.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1: Películas -->
+                    <div class="y2k-card rounded-2xl overflow-hidden reveal">
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&h=400&fit=crop&q=80"
+                                 alt="Sala de cine con asientos rojos y pantalla iluminada"
+                                 width="600" height="400"
+                                 class="w-full h-full object-cover opacity-60 hover:scale-105 transition-transform duration-700"
+                                 loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-y2k-dark via-y2k-dark/60 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-4 font-display font-bold text-xl text-white">Películas</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-sm text-gray-400">Estrenos, clásicos y producciones originales StarWave en calidad cinematográfica 4K HDR.</p>
+                            <div class="flex items-center gap-2 mt-3 text-y2k-pink text-sm font-semibold">
+                                <span>15K+ títulos</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Series -->
+                    <div class="y2k-card rounded-2xl overflow-hidden reveal" style="animation-delay: 0.1s">
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=600&h=400&fit=crop&q=80"
+                                 alt="Setup acogedor para ver series con palomitas y control remoto"
+                                 width="600" height="400"
+                                 class="w-full h-full object-cover opacity-60 hover:scale-105 transition-transform duration-700"
+                                 loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-y2k-dark via-y2k-dark/60 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-4 font-display font-bold text-xl text-white">Series</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-sm text-gray-400">Maratones épicos con temporadas completas. Nuevos episodios cada semana de series originales.</p>
+                            <div class="flex items-center gap-2 mt-3 text-y2k-blue text-sm font-semibold">
+                                <span>8K+ temporadas</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Anime -->
+                    <div class="y2k-card rounded-2xl overflow-hidden reveal" style="animation-delay: 0.2s">
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&h=400&fit=crop&q=80"
+                                 alt="Cultura anime y entretenimiento japonés vibrante"
+                                 width="600" height="400"
+                                 class="w-full h-full object-cover opacity-60 hover:scale-105 transition-transform duration-700"
+                                 loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-y2k-dark via-y2k-dark/60 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-4 font-display font-bold text-xl text-white">Anime</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-sm text-gray-400">El catálogo de anime más grande de Latinoamérica. Simulcast directo desde Japón con subs y dubs.</p>
+                            <div class="flex items-center gap-2 mt-3 text-y2k-lime text-sm font-semibold">
+                                <span>5K+ series</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Documentales -->
+                    <div class="y2k-card rounded-2xl overflow-hidden reveal">
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600&h=400&fit=crop&q=80"
+                                 alt="Cinematografía documental con paisajes impresionantes"
+                                 width="600" height="400"
+                                 class="w-full h-full object-cover opacity-60 hover:scale-105 transition-transform duration-700"
+                                 loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-y2k-dark via-y2k-dark/60 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-4 font-display font-bold text-xl text-white">Documentales</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-sm text-gray-400">Historias reales que inspiran. Naturaleza, ciencia, true crime y cultura pop en alta definición.</p>
+                            <div class="flex items-center gap-2 mt-3 text-y2k-purple text-sm font-semibold">
+                                <span>3K+ títulos</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: En Vivo -->
+                    <div class="y2k-card rounded-2xl overflow-hidden reveal" style="animation-delay: 0.1s">
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&q=80"
+                                 alt="Evento en vivo con luces del escenario y audiencia"
+                                 width="600" height="400"
+                                 class="w-full h-full object-cover opacity-60 hover:scale-105 transition-transform duration-700"
+                                 loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-y2k-dark via-y2k-dark/60 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-4 font-display font-bold text-xl text-white">En Vivo</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-sm text-gray-400">Conciertos, deportes y eventos exclusivos en tiempo real. La experiencia premium del directo.</p>
+                            <div class="flex items-center gap-2 mt-3 text-y2k-pink text-sm font-semibold">
+                                <span>24/7 streaming</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Kids -->
+                    <div class="y2k-card rounded-2xl overflow-hidden reveal" style="animation-delay: 0.2s">
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&h=400&fit=crop&q=80"
+                                 alt="Niños disfrutando contenido infantil y animaciones"
+                                 width="600" height="400"
+                                 class="w-full h-full object-cover opacity-60 hover:scale-105 transition-transform duration-700"
+                                 loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-y2k-dark via-y2k-dark/60 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-4 font-display font-bold text-xl text-white">StarWave Kids</h3>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-sm text-gray-400">Contenido seguro y educativo para los más pequeños. Control parental avanzado incluido.</p>
+                            <div class="flex items-center gap-2 mt-3 text-y2k-blue text-sm font-semibold">
+                                <span>2K+ títulos</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FULL-WIDTH VISUAL BREAK ========== -->
+        <section class="relative h-[300px] sm:h-[400px] overflow-hidden" aria-label="Visual inmersivo" role="presentation">
+            <img src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=1600&h=600&fit=crop&q=80"
+                 alt="Experiencia inmersiva de entretenimiento digital con luces neón"
+                 width="1600" height="600"
+                 class="w-full h-full object-cover"
+                 loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-r from-y2k-dark via-y2k-dark/60 to-y2k-dark"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-y2k-dark/50 via-transparent to-y2k-dark"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-center px-4">
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl y2k-gradient-text mb-4">Una experiencia que no olvidarás</h2>
+                    <p class="text-gray-300 text-lg max-w-lg mx-auto">Sonido Dolby Atmos · Video HDR10+ · Sin anuncios</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== BENEFICIOS ========== -->
+        <section id="beneficios" class="py-20 sm:py-28 relative" aria-labelledby="beneficios-title">
+            <div class="y2k-blob w-[350px] h-[350px] bg-y2k-lime/10 bottom-0 right-[-50px] animate-blob" style="animation-delay: 3s" aria-hidden="true"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <span class="inline-block px-3 py-1 rounded-full bg-y2k-lime/10 border border-y2k-lime/20 text-y2k-lime text-xs font-semibold uppercase tracking-wider mb-4">Ventajas</span>
+                    <h2 id="beneficios-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mb-4">
+                        <span class="y2k-chrome-text">¿Por qué elegir</span> <span class="y2k-gradient-text">StarWave?</span>
+                    </h2>
+                    <p class="text-gray-400 max-w-xl mx-auto">No somos otro servicio de streaming. Somos la evolución del entretenimiento digital.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Benefit 1 -->
+                    <div class="y2k-card rounded-2xl p-6 text-center reveal">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-y2k-pink/20 to-y2k-purple/20 border border-y2k-pink/20 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-y2k-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-lg mb-2">4K Ultra HD</h3>
+                        <p class="text-sm text-gray-400">Cada frame en calidad cinematográfica con HDR10+ y Dolby Vision.</p>
+                    </div>
+
+                    <!-- Benefit 2 -->
+                    <div class="y2k-card rounded-2xl p-6 text-center reveal" style="animation-delay: 0.1s">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-y2k-blue/20 to-y2k-lime/20 border border-y2k-blue/20 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-y2k-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-lg mb-2">Offline Mode</h3>
+                        <p class="text-sm text-gray-400">Descarga hasta 100 títulos y mira sin conexión en cualquier lugar.</p>
+                    </div>
+
+                    <!-- Benefit 3 -->
+                    <div class="y2k-card rounded-2xl p-6 text-center reveal" style="animation-delay: 0.2s">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-y2k-lime/20 to-y2k-blue/20 border border-y2k-lime/20 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-y2k-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-lg mb-2">5 Perfiles</h3>
+                        <p class="text-sm text-gray-400">Cada miembro de tu familia con recomendaciones personalizadas por IA.</p>
+                    </div>
+
+                    <!-- Benefit 4 -->
+                    <div class="y2k-card rounded-2xl p-6 text-center reveal" style="animation-delay: 0.3s">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-y2k-purple/20 to-y2k-pink/20 border border-y2k-purple/20 flex items-center justify-center">
+                            <svg class="w-7 h-7 text-y2k-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-lg mb-2">Zero Ads</h3>
+                        <p class="text-sm text-gray-400">Sin interrupciones. Sin anuncios. Solo tú y tu contenido favorito.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PLANES / PRICING ========== -->
+        <section id="planes" class="py-20 sm:py-28 relative" aria-labelledby="planes-title">
+            <div class="y2k-blob w-[500px] h-[500px] bg-y2k-pink/10 top-[20%] left-[-150px] animate-blob" aria-hidden="true"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <span class="inline-block px-3 py-1 rounded-full bg-y2k-purple/10 border border-y2k-purple/20 text-y2k-purple text-xs font-semibold uppercase tracking-wider mb-4">Planes</span>
+                    <h2 id="planes-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mb-4">
+                        <span class="y2k-chrome-text">Elige tu plan</span> <span class="y2k-gradient-text">perfecto</span>
+                    </h2>
+                    <p class="text-gray-400 max-w-xl mx-auto">Todos los planes incluyen 30 días gratis. Cancela cuando quieras.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    <!-- Plan Basic -->
+                    <div class="y2k-card rounded-2xl p-8 reveal">
+                        <div class="mb-6">
+                            <h3 class="font-display font-bold text-xl text-gray-300 mb-1">Básico</h3>
+                            <p class="text-sm text-gray-500">Para empezar a explorar</p>
+                        </div>
+                        <div class="mb-6">
+                            <span class="font-display font-bold text-3xl sm:text-4xl text-white whitespace-nowrap">$4.99</span>
+                            <span class="text-gray-500 text-sm">/mes</span>
+                        </div>
+                        <ul class="space-y-3 mb-8" role="list">
+                            <li class="flex items-center gap-3 text-sm text-gray-400">
+                                <svg class="w-5 h-5 text-y2k-lime shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                1 dispositivo simultáneo
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-400">
+                                <svg class="w-5 h-5 text-y2k-lime shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                Calidad HD 1080p
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-400">
+                                <svg class="w-5 h-5 text-y2k-lime shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                Catálogo completo
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-500">
+                                <svg class="w-5 h-5 text-gray-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                                Sin descargas offline
+                            </li>
+                        </ul>
+                        <a href="#registro" class="y2k-btn-secondary block text-center py-3 rounded-full font-display font-semibold">Empezar Gratis</a>
+                    </div>
+
+                    <!-- Plan Pro (Featured) -->
+                    <div class="relative y2k-card rounded-2xl p-8 border-y2k-pink/40 reveal" style="animation-delay: 0.1s">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-y2k-pink to-y2k-purple rounded-full text-xs font-display font-bold text-white whitespace-nowrap">Más Popular</div>
+                        <div class="mb-6">
+                            <h3 class="font-display font-bold text-xl text-white mb-1">Pro</h3>
+                            <p class="text-sm text-gray-400">La experiencia completa</p>
+                        </div>
+                        <div class="mb-6">
+                            <span class="font-display font-bold text-3xl sm:text-4xl y2k-gradient-text whitespace-nowrap">$9.99</span>
+                            <span class="text-gray-500 text-sm">/mes</span>
+                        </div>
+                        <ul class="space-y-3 mb-8" role="list">
+                            <li class="flex items-center gap-3 text-sm text-gray-300">
+                                <svg class="w-5 h-5 text-y2k-lime shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                3 dispositivos simultáneos
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300">
+                                <svg class="w-5 h-5 text-y2k-lime shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                4K Ultra HD + HDR
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300">
+                                <svg class="w-5 h-5 text-y2k-lime shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                50 descargas offline
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300">
+                                <svg class="w-5 h-5 text-y2k-lime shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                Dolby Atmos
+                            </li>
+                        </ul>
+                        <a href="#registro" class="y2k-btn-primary block text-center py-3 rounded-full font-display font-bold text-white animate-pulse-glow">Empezar Gratis</a>
+                    </div>
+
+                    <!-- Plan Ultra -->
+                    <div class="y2k-card rounded-2xl p-8 reveal" style="animation-delay: 0.2s">
+                        <div class="mb-6">
+                            <h3 class="font-display font-bold text-xl text-gray-300 mb-1">Ultra</h3>
+                            <p class="text-sm text-gray-500">Para familias y fanáticos</p>
+                        </div>
+                        <div class="mb-6">
+                            <span class="font-display font-bold text-3xl sm:text-4xl text-white whitespace-nowrap">$14.99</span>
+                            <span class="text-gray-500 text-sm">/mes</span>
+                        </div>
+                        <ul class="space-y-3 mb-8" role="list">
+                            <li class="flex items-center gap-3 text-sm text-gray-400">
+                                <svg class="w-5 h-5 text-y2k-lime shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                5 dispositivos simultáneos
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-400">
+                                <svg class="w-5 h-5 text-y2k-lime shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                4K + Dolby Vision + Atmos
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-400">
+                                <svg class="w-5 h-5 text-y2k-lime shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                100 descargas offline
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-400">
+                                <svg class="w-5 h-5 text-y2k-lime shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                Estrenos anticipados + Live
+                            </li>
+                        </ul>
+                        <a href="#registro" class="y2k-btn-secondary block text-center py-3 rounded-full font-display font-semibold">Empezar Gratis</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECOND VISUAL BREAK ========== -->
+        <section class="relative h-[250px] sm:h-[350px] overflow-hidden" aria-label="Visual de entretenimiento" role="presentation">
+            <img src="https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=1600&h=600&fit=crop&q=80"
+                 alt="Setup gaming y streaming con luces de colores vibrantes"
+                 width="1600" height="600"
+                 class="w-full h-full object-cover"
+                 loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-r from-y2k-dark via-y2k-dark/50 to-y2k-dark"></div>
+            <div class="absolute inset-0 bg-y2k-pink/5 mix-blend-overlay"></div>
+        </section>
+
+        <!-- ========== TESTIMONIOS ========== -->
+        <section id="testimonios" class="py-20 sm:py-28 relative" aria-labelledby="testimonios-title">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <span class="inline-block px-3 py-1 rounded-full bg-y2k-pink/10 border border-y2k-pink/20 text-y2k-pink text-xs font-semibold uppercase tracking-wider mb-4">Comunidad</span>
+                    <h2 id="testimonios-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mb-4">
+                        <span class="y2k-chrome-text">Lo que dicen</span> <span class="y2k-gradient-text">nuestros fans</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Testimonial 1 -->
+                    <div class="y2k-card rounded-2xl p-6 reveal">
+                        <div class="flex items-center gap-1 mb-4" role="img" aria-label="5 de 5 estrellas">
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <blockquote class="text-gray-300 text-sm mb-4 leading-relaxed">"Cancelé todas mis otras suscripciones de streaming. StarWave tiene todo lo que necesito y la calidad del 4K es insuperable. El catálogo de anime me tiene enganchada."</blockquote>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-y2k-pink to-y2k-purple flex items-center justify-center font-display font-bold text-sm">ML</div>
+                            <div>
+                                <div class="font-display font-semibold text-sm">Mariana López</div>
+                                <div class="text-xs text-gray-500">Plan Pro · 8 meses</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="y2k-card rounded-2xl p-6 reveal" style="animation-delay: 0.1s">
+                        <div class="flex items-center gap-1 mb-4" role="img" aria-label="5 de 5 estrellas">
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <blockquote class="text-gray-300 text-sm mb-4 leading-relaxed">"La función de descargas offline me salvó en un vuelo de 12 horas. Descargué toda una temporada en minutos. La interfaz es hermosa y súper fluida."</blockquote>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-y2k-blue to-y2k-lime flex items-center justify-center font-display font-bold text-sm">CR</div>
+                            <div>
+                                <div class="font-display font-semibold text-sm">Carlos Ramírez</div>
+                                <div class="text-xs text-gray-500">Plan Ultra · 1 año</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="y2k-card rounded-2xl p-6 reveal" style="animation-delay: 0.2s">
+                        <div class="flex items-center gap-1 mb-4" role="img" aria-label="5 de 5 estrellas">
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-y2k-pink" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <blockquote class="text-gray-300 text-sm mb-4 leading-relaxed">"StarWave Kids le cambió la vida a mi familia. Mis hijos ven contenido seguro y yo veo mis documentales tranquila. El control parental es de otro nivel."</blockquote>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-y2k-purple to-y2k-blue flex items-center justify-center font-display font-bold text-sm">AV</div>
+                            <div>
+                                <div class="font-display font-semibold text-sm">Ana Villegas</div>
+                                <div class="text-xs text-gray-500">Plan Ultra · 6 meses</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FAQ ========== -->
+        <section id="faq" class="py-20 sm:py-28 relative" aria-labelledby="faq-title">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <span class="inline-block px-3 py-1 rounded-full bg-y2k-blue/10 border border-y2k-blue/20 text-y2k-blue text-xs font-semibold uppercase tracking-wider mb-4">FAQ</span>
+                    <h2 id="faq-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mb-4">
+                        <span class="y2k-chrome-text">Preguntas</span> <span class="y2k-gradient-text">frecuentes</span>
+                    </h2>
+                </div>
+
+                <div class="space-y-4 reveal">
+                    <!-- FAQ Item 1 -->
+                    <div class="y2k-card rounded-xl">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                            <span class="font-display font-semibold text-sm sm:text-base pr-4">¿Qué incluye la prueba gratuita de 30 días?</span>
+                            <svg class="w-5 h-5 text-y2k-pink shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer px-5">
+                            <p class="text-sm text-gray-400 pb-5">Acceso completo a todo el catálogo de películas, series, anime y documentales. Incluye calidad 4K, descargas offline y todas las funciones del plan que elijas. No se cobra nada durante los 30 días y puedes cancelar en cualquier momento.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="y2k-card rounded-xl">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                            <span class="font-display font-semibold text-sm sm:text-base pr-4">¿Puedo cambiar de plan en cualquier momento?</span>
+                            <svg class="w-5 h-5 text-y2k-pink shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer px-5">
+                            <p class="text-sm text-gray-400 pb-5">Sí, puedes subir o bajar de plan cuando quieras desde tu perfil. El cambio se aplica inmediatamente y se prorratea el costo. Sin penalizaciones ni cargos ocultos.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="y2k-card rounded-xl">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                            <span class="font-display font-semibold text-sm sm:text-base pr-4">¿En qué dispositivos puedo ver StarWave?</span>
+                            <svg class="w-5 h-5 text-y2k-pink shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer px-5">
+                            <p class="text-sm text-gray-400 pb-5">StarWave está disponible en iOS, Android, Smart TVs (Samsung, LG, Sony), consolas (PlayStation, Xbox, Nintendo Switch), navegadores web, Fire TV, Chromecast y Apple TV. Tu progreso se sincroniza automáticamente entre todos tus dispositivos.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="y2k-card rounded-xl">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                            <span class="font-display font-semibold text-sm sm:text-base pr-4">¿Cómo funciona el control parental?</span>
+                            <svg class="w-5 h-5 text-y2k-pink shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer px-5">
+                            <p class="text-sm text-gray-400 pb-5">Cada perfil puede configurarse con restricciones de edad (infantil, adolescente, adulto). Los perfiles infantiles solo muestran contenido aprobado y no pueden modificar la configuración. También puedes establecer límites de tiempo de pantalla y recibir reportes de actividad.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="y2k-card rounded-xl">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+                            <span class="font-display font-semibold text-sm sm:text-base pr-4">¿Puedo cancelar en cualquier momento?</span>
+                            <svg class="w-5 h-5 text-y2k-pink shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="faq-answer px-5">
+                            <p class="text-sm text-gray-400 pb-5">Absolutamente. Sin contratos, sin cargos de cancelación. Puedes cancelar desde tu perfil con dos clics. Seguirás teniendo acceso hasta que termine tu período de facturación actual.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== REGISTRO / CTA FINAL ========== -->
+        <section id="registro" class="py-20 sm:py-28 relative" aria-labelledby="registro-title">
+            <div class="y2k-blob w-[400px] h-[400px] bg-y2k-pink/15 top-[10%] right-[-100px] animate-blob" aria-hidden="true"></div>
+            <div class="y2k-blob w-[300px] h-[300px] bg-y2k-purple/15 bottom-[10%] left-[-80px] animate-blob" style="animation-delay: 3s" aria-hidden="true"></div>
+
+            <!-- Background image -->
+            <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1600&h=900&fit=crop&q=80"
+                     alt="" role="presentation"
+                     width="1600" height="900"
+                     class="w-full h-full object-cover opacity-10"
+                     loading="lazy">
+            </div>
+
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-12 reveal">
+                    <h2 id="registro-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mb-4">
+                        <span class="y2k-gradient-text">Empieza a ver hoy</span>
+                    </h2>
+                    <p class="text-gray-400 max-w-lg mx-auto">30 días gratis. Sin tarjeta de crédito. Cancela cuando quieras. Solo necesitas un email para comenzar.</p>
+                </div>
+
+                <form id="registroForm" class="y2k-card rounded-2xl p-6 sm:p-8 reveal" method="post" novalidate>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="nombre" class="block text-sm font-display font-semibold text-gray-300 mb-1.5">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="100"
+                                   class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-y2k-pink/50 focus:ring-2 focus:ring-y2k-pink/20 focus:outline-none transition-all"
+                                   placeholder="Tu nombre" autocomplete="given-name" aria-required="true">
+                            <p class="text-xs text-red-400 mt-1 hidden" id="nombreError" role="alert"></p>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-display font-semibold text-gray-300 mb-1.5">Email</label>
+                            <input type="email" id="email" name="email" required maxlength="254"
+                                   class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-y2k-pink/50 focus:ring-2 focus:ring-y2k-pink/20 focus:outline-none transition-all"
+                                   placeholder="tu@email.com" autocomplete="email" aria-required="true">
+                            <p class="text-xs text-red-400 mt-1 hidden" id="emailError" role="alert"></p>
+                        </div>
+                        <div>
+                            <label for="plan" class="block text-sm font-display font-semibold text-gray-300 mb-1.5">Plan preferido</label>
+                            <select id="plan" name="plan" required
+                                    class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:border-y2k-pink/50 focus:ring-2 focus:ring-y2k-pink/20 focus:outline-none transition-all appearance-none"
+                                    aria-required="true">
+                                <option value="" disabled selected class="bg-y2k-dark">Selecciona un plan</option>
+                                <option value="basico" class="bg-y2k-dark">Básico — $4.99/mes</option>
+                                <option value="pro" class="bg-y2k-dark">Pro — $9.99/mes (Más Popular)</option>
+                                <option value="ultra" class="bg-y2k-dark">Ultra — $14.99/mes</option>
+                            </select>
+                        </div>
+                        <div class="flex items-start gap-3 pt-2">
+                            <input type="checkbox" id="privacidad" name="privacidad" required
+                                   class="mt-1 w-4 h-4 rounded border-white/20 bg-white/5 text-y2k-pink focus:ring-y2k-pink/20"
+                                   aria-required="true">
+                            <label for="privacidad" class="text-xs text-gray-400">
+                                Acepto la <a href="#privacidad-info" class="text-y2k-pink hover:underline">política de privacidad</a> y los
+                                <a href="#terminos" class="text-y2k-pink hover:underline">términos de servicio</a>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full y2k-btn-primary py-4 rounded-xl font-display font-bold text-lg text-white mt-6 animate-pulse-glow">
+                        Crear Cuenta Gratis
+                    </button>
+                    <p class="text-center text-xs text-gray-500 mt-4">Sin tarjeta de crédito · Cancela cuando quieras</p>
+                </form>
+
+                <!-- Success Message (hidden by default) -->
+                <div id="formSuccess" class="hidden y2k-card rounded-2xl p-8 text-center reveal">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-y2k-lime/20 to-y2k-blue/20 border border-y2k-lime/30 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-y2k-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl y2k-gradient-text mb-2">¡Bienvenido a StarWave!</h3>
+                    <p class="text-gray-400">Revisa tu email para activar tu cuenta y empezar a disfrutar.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="border-t border-white/5 py-12 sm:py-16" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-12">
+                <!-- Col 1 -->
+                <div class="col-span-2 sm:col-span-1">
+                    <a href="#" class="flex items-center gap-2 mb-4" aria-label="StarWave inicio">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-y2k-pink to-y2k-purple flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="font-display font-bold text-lg y2k-chrome-text">StarWave</span>
+                    </a>
+                    <p class="text-sm text-gray-500">Tu universo de entretenimiento en un solo lugar.</p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h3 class="font-display font-semibold text-sm text-gray-300 mb-4">Producto</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#catalogo" class="text-sm text-gray-500 hover:text-y2k-pink transition-colors">Catálogo</a></li>
+                        <li><a href="#planes" class="text-sm text-gray-500 hover:text-y2k-pink transition-colors">Planes</a></li>
+                        <li><a href="#beneficios" class="text-sm text-gray-500 hover:text-y2k-pink transition-colors">Beneficios</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-y2k-pink transition-colors">Apps</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h3 class="font-display font-semibold text-sm text-gray-300 mb-4">Compañía</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-y2k-pink transition-colors">Sobre nosotros</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-y2k-pink transition-colors">Prensa</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-y2k-pink transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-y2k-pink transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h3 class="font-display font-semibold text-sm text-gray-300 mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" id="privacidad-info" class="text-sm text-gray-500 hover:text-y2k-pink transition-colors">Privacidad</a></li>
+                        <li><a href="#" id="terminos" class="text-sm text-gray-500 hover:text-y2k-pink transition-colors">Términos</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-y2k-pink transition-colors">Cookies</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-y2k-pink transition-colors">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-gray-600">&copy; 2026 StarWave. Todos los derechos reservados.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="text-gray-500 hover:text-y2k-pink transition-colors" aria-label="Twitter">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-y2k-pink transition-colors" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-y2k-pink transition-colors" aria-label="YouTube">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-y2k-pink transition-colors" aria-label="TikTok">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // === SANITIZATION ===
+        function sanitize(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 254;
+        }
+
+        function isValidName(name) {
+            return name.length >= 2 && name.length <= 100 && /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+$/.test(name);
+        }
+
+        // === CSRF TOKEN ===
+        function generateCSRFToken() {
+            const array = new Uint8Array(32);
+            crypto.getRandomValues(array);
+            return Array.from(array, b => b.toString(16).padStart(2, '0')).join('');
+        }
+        const csrfToken = generateCSRFToken();
+
+        // === MOBILE MENU ===
+        const menuToggle = document.getElementById('menuToggle');
+        const menuClose = document.getElementById('menuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.remove('hidden');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.add('hidden');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        menuToggle.addEventListener('click', openMobileMenu);
+        menuClose.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // === NAVBAR SCROLL ===
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-y2k-dark/90', 'backdrop-blur-xl', 'border-b', 'border-white/5');
+            } else {
+                navbar.classList.remove('bg-y2k-dark/90', 'backdrop-blur-xl', 'border-b', 'border-white/5');
+            }
+        }, { passive: true });
+
+        // === FAQ ACCORDION ===
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                const icon = btn.querySelector('svg');
+                const isOpen = answer.classList.contains('open');
+
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+                document.querySelectorAll('.faq-toggle svg').forEach(i => i.style.transform = 'rotate(0deg)');
+                document.querySelectorAll('.faq-toggle').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    icon.style.transform = 'rotate(180deg)';
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // === FORM VALIDATION ===
+        const form = document.getElementById('registroForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let valid = true;
+
+            const nombreRaw = document.getElementById('nombre').value.trim();
+            const emailRaw = document.getElementById('email').value.trim();
+            const plan = document.getElementById('plan').value;
+            const privacidad = document.getElementById('privacidad').checked;
+
+            document.querySelectorAll('[id$="Error"]').forEach(el => el.classList.add('hidden'));
+
+            if (!isValidName(nombreRaw)) {
+                showError('nombreError', 'Ingresa un nombre válido (solo letras, 2-100 caracteres)');
+                valid = false;
+            }
+
+            if (!isValidEmail(emailRaw)) {
+                showError('emailError', 'Ingresa un email válido');
+                valid = false;
+            }
+
+            if (!plan || !privacidad) {
+                valid = false;
+            }
+
+            if (valid) {
+                form.classList.add('hidden');
+                document.getElementById('formSuccess').classList.remove('hidden');
+            }
+        });
+
+        function showError(id, msg) {
+            const el = document.getElementById(id);
+            el.textContent = msg;
+            el.classList.remove('hidden');
+        }
+
+        // === COUNTER ANIMATION ===
+        function animateCounters() {
+            document.querySelectorAll('.counter').forEach(counter => {
+                if (counter.dataset.animated) return;
+                const target = parseInt(counter.dataset.target);
+                const duration = 2000;
+                const start = performance.now();
+
+                function update(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    counter.textContent = Math.floor(eased * target);
+                    if (progress < 1) requestAnimationFrame(update);
+                    else counter.dataset.animated = 'true';
+                }
+                requestAnimationFrame(update);
+            });
+        }
+
+        // === INTERSECTION OBSERVER ===
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    if (entry.target.querySelector('.counter')) {
+                        animateCounters();
+                    }
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        window.addEventListener('load', () => {
+            setTimeout(animateCounters, 1000);
+        });
+
+        // === COOKIE CONSENT ===
+        const cookieBanner = document.getElementById('cookieBanner');
+
+        function acceptCookies() {
+            try { localStorage.setItem('cookieConsent', 'accepted'); } catch (_) {}
+            cookieBanner.classList.remove('show');
+        }
+
+        function rejectCookies() {
+            try { localStorage.setItem('cookieConsent', 'rejected'); } catch (_) {}
+            cookieBanner.classList.remove('show');
+        }
+
+        document.getElementById('acceptCookiesBtn').addEventListener('click', acceptCookies);
+        document.getElementById('rejectCookiesBtn').addEventListener('click', rejectCookies);
+
+        setTimeout(() => {
+            let consent = null;
+            try { consent = localStorage.getItem('cookieConsent'); } catch (_) {}
+            if (!consent) {
+                cookieBanner.classList.add('show');
+            }
+        }, 2000);
+
+        // === SMOOTH SCROLL ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // === KEYBOARD NAVIGATION ===
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+
+        // === PLAY BUTTON KEYBOARD SUPPORT ===
+        const heroPlayBtn = document.getElementById('heroPlayBtn');
+        if (heroPlayBtn) {
+            heroPlayBtn.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    heroPlayBtn.click();
+                }
+            });
+        }
+    </script>
+</body>
+</html>

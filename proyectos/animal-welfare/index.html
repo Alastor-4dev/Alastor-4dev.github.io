@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patitas Felices | Estética Canina y Spa</title>
+  <meta name="description" content="Patitas Felices: El mejor spa y estética para tus mejores amigos. Baño, corte, vacunas y más en un ambiente alegre y seguro.">
+  <meta name="theme-color" content="#7ED957">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://patitasfelices.com/">
+  <meta property="og:title" content="Patitas Felices | Estética Canina y Spa">
+  <meta property="og:description" content="El spa más amigable para perros y gatos. ¡Donde cada cola no deja de mover!">
+  <meta property="og:image" content="https://patitasfelices.com/og-image.jpg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='25' cy='35' rx='10' ry='14' fill='%23FF8EAA' transform='rotate(-25 25 35)'/%3E%3Cellipse cx='42' cy='20' rx='10' ry='14' fill='%23FF8EAA' transform='rotate(-10 42 20)'/%3E%3Cellipse cx='58' cy='20' rx='10' ry='14' fill='%23FF8EAA' transform='rotate(10 58 20)'/%3E%3Cellipse cx='75' cy='35' rx='10' ry='14' fill='%23FF8EAA' transform='rotate(25 75 35)'/%3E%3Cpath d='M 50 85 C 15 85, 10 55, 25 45 C 35 35, 50 48, 50 48 C 50 48, 65 35, 75 45 C 90 55, 85 85, 50 85 Z' fill='%23FF8EAA'/%3E%3Cpath d='M 50 72 C 30 72, 28 58, 35 52 C 40 45, 50 52, 50 52 C 50 52, 60 45, 65 52 C 72 58, 70 72, 50 72 Z' fill='%23FFD166'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; frame-ancestors 'none';">
+</head>
+<body>
+  <header class="pixel-header">
+    <nav class="container">
+      <div class="logo">
+        <svg class="paw-logo floating" viewBox="0 0 100 100" width="50" height="50">
+          <ellipse cx="25" cy="35" rx="10" ry="14" fill="var(--primary)" transform="rotate(-25 25 35)" />
+          <ellipse cx="42" cy="20" rx="10" ry="14" fill="var(--primary)" transform="rotate(-10 42 20)" />
+          <ellipse cx="58" cy="20" rx="10" ry="14" fill="var(--primary)" transform="rotate(10 58 20)" />
+          <ellipse cx="75" cy="35" rx="10" ry="14" fill="var(--primary)" transform="rotate(25 75 35)" />
+          <path d="M 50 85 C 15 85, 10 55, 25 45 C 35 35, 50 48, 50 48 C 50 48, 65 35, 75 45 C 90 55, 85 85, 50 85 Z" fill="var(--primary)" />
+          <path d="M 50 72 C 30 72, 28 58, 35 52 C 40 45, 50 52, 50 52 C 50 52, 60 45, 65 52 C 72 58, 70 72, 50 72 Z" fill="var(--secondary)" />
+        </svg>
+        <span>Patitas Felices</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#citas">Citas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <a href="#citas" class="btn-primary">¡Reserva Ya!</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>¡Donde cada cola <span class="highlight">no deja de mover!</span></h1>
+          <p>En Patitas Felices, consentimos a tus peluditos con amor, suavidad y mucha alegría. El spa más amigable para perros y gatos.</p>
+          <div class="hero-btns">
+            <a href="#servicios" class="btn-primary">Ver Servicios</a>
+            <a href="tel:+1234567890" class="btn-outline">Llamar Ahora</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- Using a CSS-based artistic composition since generate_image is out -->
+          <div class="pet-blob">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="var(--secondary)" d="M44.7,-76.4C58.2,-69.2,69.7,-57.4,77.3,-43.8C84.8,-30.2,88.4,-15.1,87.4,-0.6C86.3,13.9,80.7,27.8,72.4,40.1C64.1,52.4,53.2,63.1,40.4,70.1C27.6,77.1,13.8,80.4,-0.4,81.1C-14.6,81.8,-29.2,79.9,-42.6,73.5C-56,67.1,-68.2,56.2,-76.1,43C-84,29.8,-87.6,14.3,-87.1,1.1C-86.6,-13.2,-82.1,-27.2,-74.2,-39.8C-66.3,-52.4,-55.1,-63.5,-42,-70.8C-28.9,-78.1,-14.4,-81.6,0.3,-82.1C15,-82.6,31.2,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+            </svg>
+            <div class="pet-placeholder">🐶🐱✨</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="services">
+      <div class="container">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+          <!-- Service Cards will go here -->
+          <div class="service-card">
+            <div class="icon">✂️</div>
+            <h3>Corte de Garritas</h3>
+            <p>Manicura suave y segura para que caminen felices y sin molestias.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon">🛁</div>
+            <h3>Baño Premium</h3>
+            <p>Shampoos orgánicos y masajes relajantes para un pelaje brillante.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon">🐛</div>
+            <h3>Desparasitado</h3>
+            <p>Protección total interna y externa para una salud de hierro.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon">🦴</div>
+            <h3>Alimentos</h3>
+            <p>La mejor nutrición seleccionada para cada etapa de su vida.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon">💉</div>
+            <h3>Vacunas</h3>
+            <p>Esquema completo para mantenerlos siempre protegidos.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon">❤️</div>
+            <h3>Esterilización</h3>
+            <p>Cuidado profesional y post-operatorio con todo el cariño.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="citas" class="appointments">
+      <div class="container">
+        <div class="appointment-card pixel-box">
+          <h2>Reserva una Cita</h2>
+          <p>¡Danos unos detalles y nos pondremos en contacto!</p>
+          <form id="booking-form">
+            <div class="form-group">
+              <input type="text" placeholder="Tu Nombre" required>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Nombre de tu Mascota" required>
+            </div>
+            <div class="form-group">
+              <select required>
+                <option value="" disabled selected>Tipo de Mascota</option>
+                <option value="perro">Perro</option>
+                <option value="gato">Gato</option>
+                <option value="otro">Otro Animalito Lindo</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Teléfono" required>
+            </div>
+            <button type="submit" class="btn-primary w-full">Agendar Cita</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <div class="container">
+        <h2 class="section-title">Encuéntranos</h2>
+        <div class="contact-wrapper">
+          <div class="map-placeholder">
+            <div class="map-info">
+              <h3>Ubicación</h3>
+              <p>📍 Calle de los Perritos Felices #123, Ciudad Amigable</p>
+              <p>📞 <a href="tel:+1234567890">+52 (55) 1234-5678</a></p>
+            </div>
+            <!-- Interactive Map Placeholder -->
+            <div class="fake-map">
+               <div class="pin">📍</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>&copy; 2026 Patitas Felices. Hecho con ❤️ para tus peluditos.</p>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

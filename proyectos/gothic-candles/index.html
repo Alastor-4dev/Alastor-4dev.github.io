@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ēterna — Velas Artesanales de Autor</title>
+  <meta name="description" content="Velas artesanales elaboradas con cera de soja, fragancias exclusivas y diseño gótico. Ilumina tus espacios con arte oscuro y elegante.">
+  <meta name="keywords" content="velas artesanales, velas góticas, velas de soja, decoración oscura, velas premium, dark aesthetic">
+  <meta name="author" content="Ēterna">
+  <meta name="robots" content="index, follow">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Ēterna — Velas Artesanales de Autor">
+  <meta property="og:description" content="Fragancias exclusivas, diseño gótico, cera de soja 100%. Arte que arde.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476900164809-ff19b8ae5968?w=1200&h=630&fit=crop&q=80&auto=format">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eterna-velas.com">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://eterna-velas.com">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕯️</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0a0a0a',
+            onyx: '#111111',
+            charcoal: '#1a1a1a',
+            smoke: '#2a2a2a',
+            ash: '#3a3a3a',
+            silver: '#8a8a8a',
+            bone: '#d4cfc4',
+            ivory: '#e8e4db',
+            parchment: '#f0ece3',
+            flame: '#c4943a',
+            ember: '#b8860b',
+            candle: '#daa520',
+            burgundy: '#4a0e2e',
+            wine: '#722f37',
+            blood: '#8b0000',
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            cormorant: ['Cormorant Garamond', 'serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'flicker': 'flicker 3s ease-in-out infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'fade-up': 'fadeUp 0.8s ease-out forwards',
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'slide-left': 'slideLeft 0.8s ease-out forwards',
+            'slide-right': 'slideRight 0.8s ease-out forwards',
+          },
+          keyframes: {
+            flicker: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0.8' },
+              '25%': { opacity: '0.9' },
+              '75%': { opacity: '0.85' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 20px rgba(196,148,58,0.3)' },
+              '100%': { boxShadow: '0 0 40px rgba(196,148,58,0.6)' },
+            },
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideLeft: {
+              '0%': { opacity: '0', transform: 'translateX(50px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+            slideRight: {
+              '0%': { opacity: '0', transform: 'translateX(-50px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    ::selection {
+      background: rgba(196,148,58,0.3);
+      color: #f0ece3;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #0a0a0a;
+      color: #e8e4db;
+      font-family: 'Cormorant Garamond', serif;
+      overflow-x: hidden;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #3a3a3a; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #c4943a; }
+
+    /* Gothic ornament divider */
+    .gothic-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem 0;
+    }
+    .gothic-divider::before,
+    .gothic-divider::after {
+      content: '';
+      height: 1px;
+      width: 120px;
+      background: linear-gradient(90deg, transparent, #c4943a, transparent);
+    }
+    .gothic-divider-icon {
+      color: #c4943a;
+      font-size: 1.2rem;
+    }
+
+    /* Candle flame effect */
+    .flame-glow {
+      position: relative;
+    }
+    .flame-glow::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, rgba(196,148,58,0.4) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: flicker 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    /* Text gradient */
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #c4943a, #daa520, #b8860b, #c4943a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Gothic border */
+    .gothic-border {
+      border: 1px solid rgba(196,148,58,0.2);
+      position: relative;
+    }
+    .gothic-border::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px; right: -1px; bottom: -1px;
+      border: 1px solid rgba(196,148,58,0.1);
+      pointer-events: none;
+    }
+
+    /* Nav blur */
+    .nav-blur {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* Intersection Observer animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Form focus */
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #c4943a !important;
+      box-shadow: 0 0 0 3px rgba(196,148,58,0.15);
+    }
+
+    /* Cookie banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      transform: translateY(100%);
+      transition: transform 0.5s ease;
+    }
+    .cookie-banner.show {
+      transform: translateY(0);
+    }
+
+    /* Particle container */
+    .particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(196,148,58,0.4);
+      border-radius: 50%;
+      animation: particleFloat linear infinite;
+    }
+    @keyframes particleFloat {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* Smooth image hover */
+    .img-hover-zoom {
+      overflow: hidden;
+    }
+    .img-hover-zoom img {
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .img-hover-zoom:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Gothic pattern background */
+    .gothic-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='none' stroke='rgba(196,148,58,0.05)' stroke-width='0.5'/%3E%3C/svg%3E");
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    /* Skip navigation link */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      padding: 0.5rem 1.25rem;
+      background: #c4943a;
+      color: #0a0a0a;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      z-index: 99999;
+      text-decoration: none;
+      border-radius: 0 0 4px 0;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Respect reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal,
+      .reveal-left,
+      .reveal-right {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .particle {
+        display: none;
+      }
+    }
+  </style>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none';">
+  <!-- NOTA: frame-ancestors requiere cabecera HTTP para ser efectivo. Configurar X-Frame-Options: DENY en el servidor. -->
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-obsidian/80 border-b border-flame/10 transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3 group" aria-label="Ēterna - Inicio">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-flame/40 flex items-center justify-center group-hover:border-flame transition-colors duration-300">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-flame" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C12 2 7 8 7 13C7 15.21 8.47 17.1 10.5 17.71C10.18 17.18 10 16.56 10 15.9C10 14.07 12 11 12 11C12 11 14 14.07 14 15.9C14 16.56 13.82 17.18 13.5 17.71C15.53 17.1 17 15.21 17 13C17 8 12 2 12 2Z"/>
+            </svg>
+          </div>
+          <span class="font-cinzel text-lg sm:text-xl font-semibold tracking-[0.2em] text-ivory group-hover:text-flame transition-colors duration-300">ĒTERNA</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="#colecciones" class="font-inter text-xs tracking-[0.15em] uppercase text-silver hover:text-flame transition-colors duration-300">Colecciones</a>
+          <a href="#proceso" class="font-inter text-xs tracking-[0.15em] uppercase text-silver hover:text-flame transition-colors duration-300">Proceso</a>
+          <a href="#fragancias" class="font-inter text-xs tracking-[0.15em] uppercase text-silver hover:text-flame transition-colors duration-300">Fragancias</a>
+          <a href="#testimonios" class="font-inter text-xs tracking-[0.15em] uppercase text-silver hover:text-flame transition-colors duration-300">Testimonios</a>
+          <a href="#faq" class="font-inter text-xs tracking-[0.15em] uppercase text-silver hover:text-flame transition-colors duration-300">FAQ</a>
+          <a href="#contacto" class="ml-4 px-6 py-2.5 bg-flame/10 border border-flame/30 text-flame font-inter text-xs tracking-[0.15em] uppercase hover:bg-flame hover:text-obsidian transition-all duration-300 rounded-sm">Reservar</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="menuBtn" class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 group" aria-label="Abrir menú" aria-expanded="false">
+          <span class="w-6 h-px bg-ivory group-hover:bg-flame transition-all duration-300 menu-line-1"></span>
+          <span class="w-4 h-px bg-ivory group-hover:bg-flame transition-all duration-300 menu-line-2"></span>
+          <span class="w-6 h-px bg-ivory group-hover:bg-flame transition-all duration-300 menu-line-3"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-full h-screen bg-obsidian/98 nav-blur lg:hidden flex flex-col items-center justify-center gap-8" role="dialog" aria-label="Menú de navegación">
+      <button id="closeMenu" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-ivory hover:text-flame transition-colors" aria-label="Cerrar menú">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <a href="#colecciones" class="mobile-link font-cinzel text-2xl tracking-[0.2em] text-ivory hover:text-flame transition-colors">Colecciones</a>
+      <a href="#proceso" class="mobile-link font-cinzel text-2xl tracking-[0.2em] text-ivory hover:text-flame transition-colors">Proceso</a>
+      <a href="#fragancias" class="mobile-link font-cinzel text-2xl tracking-[0.2em] text-ivory hover:text-flame transition-colors">Fragancias</a>
+      <a href="#testimonios" class="mobile-link font-cinzel text-2xl tracking-[0.2em] text-ivory hover:text-flame transition-colors">Testimonios</a>
+      <a href="#faq" class="mobile-link font-cinzel text-2xl tracking-[0.2em] text-ivory hover:text-flame transition-colors">FAQ</a>
+      <a href="#contacto" class="mobile-link mt-4 px-8 py-3 border border-flame/30 text-flame font-cinzel text-lg tracking-[0.2em] hover:bg-flame hover:text-obsidian transition-all duration-300">Reservar</a>
+    </div>
+  </nav>
+
+  <main id="main-content" tabindex="-1">
+
+  <!-- ============ HERO SECTION ============ -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1476900164809-ff19b8ae5968?w=1920&h=1080&fit=crop&q=80&auto=format"
+           alt="Velas artesanales en ambiente oscuro y elegante"
+           class="w-full h-full object-cover opacity-40"
+           loading="eager" width="1920" height="1080">
+      <div class="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian/60 to-obsidian"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-obsidian/80 via-transparent to-obsidian/80"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles" aria-hidden="true"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 border border-flame/20 rounded-full mb-8 animate-fade-in">
+        <span class="w-1.5 h-1.5 rounded-full bg-flame animate-glow"></span>
+        <span class="font-inter text-xs tracking-[0.2em] uppercase text-flame/80">Edición Limitada — Colección Noctis 2026</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="font-cinzel text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] mb-6 animate-fade-up">
+        <span class="block text-ivory">Donde la</span>
+        <span class="block text-gradient-gold mt-2">Oscuridad</span>
+        <span class="block text-ivory mt-2">se Enciende</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="font-cormorant text-lg sm:text-xl md:text-2xl text-silver/80 max-w-2xl mx-auto mb-10 italic leading-relaxed animate-fade-in" style="animation-delay: 0.3s">
+        Velas artesanales vertidas a mano con cera de soja, fragancias de autor
+        y un diseño que convierte cada llama en una obra de arte efímera.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in" style="animation-delay: 0.5s">
+        <a href="#colecciones" class="group relative px-8 py-4 bg-flame text-obsidian font-cinzel text-sm tracking-[0.2em] uppercase hover:bg-candle transition-all duration-300 rounded-sm overflow-hidden">
+          <span class="relative z-10">Explorar Colecciones</span>
+          <div class="absolute inset-0 bg-candle transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+        </a>
+        <a href="#proceso" class="group px-8 py-4 border border-flame/30 text-flame font-cinzel text-sm tracking-[0.2em] uppercase hover:bg-flame/10 transition-all duration-300 rounded-sm">
+          Nuestro Ritual
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12 animate-fade-in" style="animation-delay: 0.7s">
+        <div class="text-center">
+          <span class="block font-cinzel text-xl sm:text-2xl lg:text-3xl font-bold text-flame whitespace-nowrap" data-counter="2847">0</span>
+          <span class="font-inter text-xs tracking-[0.15em] uppercase text-silver/60 mt-1 block">Velas Creadas</span>
+        </div>
+        <div class="w-px h-10 bg-flame/20 hidden sm:block"></div>
+        <div class="text-center">
+          <span class="block font-cinzel text-xl sm:text-2xl lg:text-3xl font-bold text-flame whitespace-nowrap" data-counter="18">0</span>
+          <span class="font-inter text-xs tracking-[0.15em] uppercase text-silver/60 mt-1 block">Fragancias Únicas</span>
+        </div>
+        <div class="w-px h-10 bg-flame/20 hidden sm:block"></div>
+        <div class="text-center">
+          <span class="block font-cinzel text-xl sm:text-2xl lg:text-3xl font-bold text-flame whitespace-nowrap" data-counter="100">0</span>
+          <span class="font-inter text-xs tracking-[0.15em] uppercase text-silver/60 mt-1 block whitespace-nowrap"><span class="text-flame">%</span> Cera de Soja</span>
+        </div>
+        <div class="w-px h-10 bg-flame/20 hidden sm:block"></div>
+        <div class="text-center">
+          <span class="block font-cinzel text-xl sm:text-2xl lg:text-3xl font-bold text-flame whitespace-nowrap" data-counter="60">0</span>
+          <span class="font-inter text-xs tracking-[0.15em] uppercase text-silver/60 mt-1 block whitespace-nowrap"><span class="text-flame">h+</span> de Combustión</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float">
+      <span class="font-inter text-[10px] tracking-[0.3em] uppercase text-silver/40">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-flame/40 to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- ============ COLECCIONES ============ -->
+  <section id="colecciones" class="relative py-24 sm:py-32 gothic-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section header -->
+      <div class="text-center mb-16 reveal">
+        <span class="font-inter text-xs tracking-[0.3em] uppercase text-flame/60 block mb-4">Nuestras Creaciones</span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-ivory mb-4">Colecciones de Autor</h2>
+        <div class="gothic-divider">
+          <span class="gothic-divider-icon">&#10040;</span>
+        </div>
+        <p class="font-cormorant text-lg text-silver/70 max-w-xl mx-auto italic">Cada colección nace de una obsesión distinta — una emoción, un lugar, una era olvidada.</p>
+      </div>
+
+      <!-- Collections grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Card 1 -->
+        <div class="reveal group gothic-border rounded-lg overflow-hidden bg-charcoal/50 hover:bg-charcoal/80 transition-all duration-500" style="transition-delay: 0.1s">
+          <div class="img-hover-zoom relative h-44 sm:h-52">
+            <img src="https://images.unsplash.com/photo-1601379327279-44b026715787?w=800&h=500&fit=crop&q=80&auto=format"
+                 alt="Colección Noctis — vela encendida con llama dorada en la oscuridad"
+                 class="w-full h-full object-cover opacity-60" loading="lazy" width="800" height="500">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent"></div>
+            <h3 class="absolute bottom-4 left-5 font-cinzel text-xl font-semibold text-ivory group-hover:text-flame transition-colors duration-300">Noctis</h3>
+          </div>
+          <div class="p-5 sm:p-6">
+            <p class="font-cormorant text-base text-silver/70 leading-relaxed mb-4">Inspirada en la noche eterna. Notas de ámbar negro, vetiver ahumado y cuero antiguo. Para quienes encuentran belleza en la penumbra.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-inter text-xs tracking-[0.15em] uppercase text-flame/60">6 piezas</span>
+              <span class="font-cinzel text-lg text-flame">$48<span class="text-sm text-silver/40"> — $89</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="reveal group gothic-border rounded-lg overflow-hidden bg-charcoal/50 hover:bg-charcoal/80 transition-all duration-500" style="transition-delay: 0.2s">
+          <div class="img-hover-zoom relative h-44 sm:h-52">
+            <img src="https://images.unsplash.com/photo-1706922122654-e209628fdd48?w=800&h=500&fit=crop&q=80&auto=format"
+                 alt="Colección Catedral — grupo de velas encendidas en ambiente de catedral"
+                 class="w-full h-full object-cover opacity-60" loading="lazy" width="800" height="500">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent"></div>
+            <h3 class="absolute bottom-4 left-5 font-cinzel text-xl font-semibold text-ivory group-hover:text-flame transition-colors duration-300">Catedral</h3>
+          </div>
+          <div class="p-5 sm:p-6">
+            <p class="font-cormorant text-base text-silver/70 leading-relaxed mb-4">Eco de templos olvidados. Incienso de copal, mirra bizantina y piedra húmeda. Cada vela es una plegaria silenciosa encendida en la oscuridad.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-inter text-xs tracking-[0.15em] uppercase text-flame/60">4 piezas</span>
+              <span class="font-cinzel text-lg text-flame">$55<span class="text-sm text-silver/40"> — $120</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="reveal group gothic-border rounded-lg overflow-hidden bg-charcoal/50 hover:bg-charcoal/80 transition-all duration-500" style="transition-delay: 0.3s">
+          <div class="img-hover-zoom relative h-44 sm:h-52">
+            <img src="https://images.unsplash.com/photo-1632770385660-5c51b3adbf60?w=800&h=500&fit=crop&q=80&auto=format"
+                 alt="Colección Sangre y Rosas — tres velas rojas encendidas en la oscuridad"
+                 class="w-full h-full object-cover opacity-60" loading="lazy" width="800" height="500">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent"></div>
+            <h3 class="absolute bottom-4 left-5 font-cinzel text-xl font-semibold text-ivory group-hover:text-flame transition-colors duration-300">Sangre & Rosas</h3>
+          </div>
+          <div class="p-5 sm:p-6">
+            <p class="font-cormorant text-base text-silver/70 leading-relaxed mb-4">Romanticismo oscuro destilado. Rosa damascena, sangre de dragón y sándalo rojo. Amor que arde lento y deja marca.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-inter text-xs tracking-[0.15em] uppercase text-flame/60">5 piezas</span>
+              <span class="font-cinzel text-lg text-flame">$52<span class="text-sm text-silver/40"> — $95</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="reveal group gothic-border rounded-lg overflow-hidden bg-charcoal/50 hover:bg-charcoal/80 transition-all duration-500" style="transition-delay: 0.4s">
+          <div class="img-hover-zoom relative h-44 sm:h-52">
+            <img src="https://images.unsplash.com/photo-1663872585330-437b683914c2?w=800&h=500&fit=crop&q=80&auto=format"
+                 alt="Colección Abismo — vela solitaria encendida en habitación oscura"
+                 class="w-full h-full object-cover opacity-60" loading="lazy" width="800" height="500">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent"></div>
+            <h3 class="absolute bottom-4 left-5 font-cinzel text-xl font-semibold text-ivory group-hover:text-flame transition-colors duration-300">Abismo</h3>
+          </div>
+          <div class="p-5 sm:p-6">
+            <p class="font-cormorant text-base text-silver/70 leading-relaxed mb-4">Para los que miran hacia adentro. Notas de oud, café tostado y tabaco de pipa. Profundidad hecha fragancia, silencio hecho cera.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-inter text-xs tracking-[0.15em] uppercase text-flame/60">4 piezas</span>
+              <span class="font-cinzel text-lg text-flame">$62<span class="text-sm text-silver/40"> — $110</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="reveal group gothic-border rounded-lg overflow-hidden bg-charcoal/50 hover:bg-charcoal/80 transition-all duration-500" style="transition-delay: 0.5s">
+          <div class="img-hover-zoom relative h-44 sm:h-52">
+            <img src="https://images.unsplash.com/photo-1508093989287-061d64de7324?w=800&h=500&fit=crop&q=80&auto=format"
+                 alt="Colección Éter — vela tealight con luz suave y etérea"
+                 class="w-full h-full object-cover opacity-60" loading="lazy" width="800" height="500">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent"></div>
+            <h3 class="absolute bottom-4 left-5 font-cinzel text-xl font-semibold text-ivory group-hover:text-flame transition-colors duration-300">Éter</h3>
+          </div>
+          <div class="p-5 sm:p-6">
+            <p class="font-cormorant text-base text-silver/70 leading-relaxed mb-4">Lo que existe entre mundos. Iris blanco, musgo lunar y agua de lluvia fantasma. La colección más etérea y misteriosa.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-inter text-xs tracking-[0.15em] uppercase text-flame/60">3 piezas</span>
+              <span class="font-cinzel text-lg text-flame">$70<span class="text-sm text-silver/40"> — $135</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="reveal group gothic-border rounded-lg overflow-hidden bg-charcoal/50 hover:bg-charcoal/80 transition-all duration-500" style="transition-delay: 0.6s">
+          <div class="img-hover-zoom relative h-44 sm:h-52">
+            <img src="https://images.unsplash.com/photo-1668954443518-34de30690425?w=800&h=500&fit=crop&q=80&auto=format"
+                 alt="Colección Ruina — vela artesanal en vaso de cristal con ambiente oscuro"
+                 class="w-full h-full object-cover opacity-60" loading="lazy" width="800" height="500">
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent"></div>
+            <h3 class="absolute bottom-4 left-5 font-cinzel text-xl font-semibold text-ivory group-hover:text-flame transition-colors duration-300">Ruina</h3>
+          </div>
+          <div class="p-5 sm:p-6">
+            <p class="font-cormorant text-base text-silver/70 leading-relaxed mb-4">Belleza en la decadencia. Higo maduro, madera quemada y tierra después de la lluvia. Lo hermoso siempre tiene grietas.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-inter text-xs tracking-[0.15em] uppercase text-flame/60">5 piezas</span>
+              <span class="font-cinzel text-lg text-flame">$45<span class="text-sm text-silver/40"> — $88</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESO / RITUAL ============ -->
+  <section id="proceso" class="relative py-24 sm:py-32 overflow-hidden">
+    <!-- Full-width image break -->
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1514436598301-27a65f40469f?w=1920&h=1080&fit=crop&q=80&auto=format"
+           alt="Proceso artesanal de creación de velas"
+           class="w-full h-full object-cover opacity-15" loading="lazy" width="1920" height="1080">
+      <div class="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian/90 to-obsidian"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="font-inter text-xs tracking-[0.3em] uppercase text-flame/60 block mb-4">De Nuestras Manos</span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-ivory mb-4">El Ritual de Creación</h2>
+        <div class="gothic-divider">
+          <span class="gothic-divider-icon">&#10040;</span>
+        </div>
+        <p class="font-cormorant text-lg text-silver/70 max-w-xl mx-auto italic">Cada vela atraviesa un proceso de 72 horas donde la paciencia es el ingrediente principal.</p>
+      </div>
+
+      <!-- Process steps -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="reveal text-center group" style="transition-delay: 0.1s">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full border border-flame/20 flex items-center justify-center group-hover:border-flame/60 transition-colors duration-500">
+            <span class="font-cinzel text-2xl text-flame/60 group-hover:text-flame transition-colors">I</span>
+          </div>
+          <h3 class="font-cinzel text-lg font-semibold text-ivory mb-3">Selección</h3>
+          <p class="font-cormorant text-base text-silver/60 leading-relaxed">Cera de soja orgánica, mechas de algodón sin plomo y aceites esenciales de grado terapéutico.</p>
+        </div>
+
+        <div class="reveal text-center group" style="transition-delay: 0.2s">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full border border-flame/20 flex items-center justify-center group-hover:border-flame/60 transition-colors duration-500">
+            <span class="font-cinzel text-2xl text-flame/60 group-hover:text-flame transition-colors">II</span>
+          </div>
+          <h3 class="font-cinzel text-lg font-semibold text-ivory mb-3">Alquimia</h3>
+          <p class="font-cormorant text-base text-silver/60 leading-relaxed">Fusión a temperatura controlada. Cada fragancia se compone de 8 a 12 notas cuidadosamente equilibradas.</p>
+        </div>
+
+        <div class="reveal text-center group" style="transition-delay: 0.3s">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full border border-flame/20 flex items-center justify-center group-hover:border-flame/60 transition-colors duration-500">
+            <span class="font-cinzel text-2xl text-flame/60 group-hover:text-flame transition-colors">III</span>
+          </div>
+          <h3 class="font-cinzel text-lg font-semibold text-ivory mb-3">Vertido</h3>
+          <p class="font-cormorant text-base text-silver/60 leading-relaxed">Vertido a mano a 65°C exactos. Cada pieza se deja curar 48 horas para maximizar la proyección aromática.</p>
+        </div>
+
+        <div class="reveal text-center group" style="transition-delay: 0.4s">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full border border-flame/20 flex items-center justify-center group-hover:border-flame/60 transition-colors duration-500">
+            <span class="font-cinzel text-2xl text-flame/60 group-hover:text-flame transition-colors">IV</span>
+          </div>
+          <h3 class="font-cinzel text-lg font-semibold text-ivory mb-3">Sellado</h3>
+          <p class="font-cormorant text-base text-silver/60 leading-relaxed">Empaque artesanal con lacre, papel de seda negro y una nota escrita a mano. Cada caja es una experiencia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISUAL BREAK — FULL WIDTH IMAGE ============ -->
+  <section class="relative h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1489101960932-eb71762e6bc8?w=1920&h=600&fit=crop&q=80&auto=format"
+         alt="Vela roja encendida en atmósfera gótica oscura"
+         class="w-full h-full object-cover" loading="lazy" width="1920" height="600">
+    <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-obsidian/60"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <blockquote class="text-center px-4 reveal">
+        <p class="font-cormorant text-2xl sm:text-3xl lg:text-4xl italic text-ivory/90 max-w-3xl leading-relaxed">
+          "La llama no ilumina la oscuridad —<br>la hace más hermosa."
+        </p>
+        <cite class="block mt-4 font-inter text-xs tracking-[0.2em] uppercase text-flame/60 not-italic">— Manifiesto Ēterna</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ FRAGANCIAS / BENEFICIOS ============ -->
+  <section id="fragancias" class="relative py-24 sm:py-32 gothic-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="font-inter text-xs tracking-[0.3em] uppercase text-flame/60 block mb-4">Sensorial</span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-ivory mb-4">Más que una Vela</h2>
+        <div class="gothic-divider">
+          <span class="gothic-divider-icon">&#10040;</span>
+        </div>
+        <p class="font-cormorant text-lg text-silver/70 max-w-xl mx-auto italic">Cada aspecto ha sido diseñado para transformar tu espacio en un santuario.</p>
+      </div>
+
+      <!-- Benefits grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Benefit 1 -->
+        <div class="reveal gothic-border rounded-lg p-6 sm:p-8 bg-charcoal/30 hover:bg-charcoal/50 transition-all duration-500 group" style="transition-delay: 0.1s">
+          <div class="w-12 h-12 rounded-full border border-flame/20 flex items-center justify-center mb-5 group-hover:border-flame/50 transition-colors">
+            <svg class="w-5 h-5 text-flame/60 group-hover:text-flame transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <h3 class="font-cinzel text-lg font-semibold text-ivory mb-3">60+ Horas de Luz</h3>
+          <p class="font-cormorant text-base text-silver/60 leading-relaxed">Combustión limpia y prolongada. La cera de soja arde un 50% más lento que la parafina, sin hollín ni toxinas.</p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="reveal gothic-border rounded-lg p-6 sm:p-8 bg-charcoal/30 hover:bg-charcoal/50 transition-all duration-500 group" style="transition-delay: 0.2s">
+          <div class="w-12 h-12 rounded-full border border-flame/20 flex items-center justify-center mb-5 group-hover:border-flame/50 transition-colors">
+            <svg class="w-5 h-5 text-flame/60 group-hover:text-flame transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="font-cinzel text-lg font-semibold text-ivory mb-3">Fragancias de Autor</h3>
+          <p class="font-cormorant text-base text-silver/60 leading-relaxed">Composiciones exclusivas con aceites esenciales puros. No encontrarás estas notas en ningún otro lugar del mundo.</p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="reveal gothic-border rounded-lg p-6 sm:p-8 bg-charcoal/30 hover:bg-charcoal/50 transition-all duration-500 group" style="transition-delay: 0.3s">
+          <div class="w-12 h-12 rounded-full border border-flame/20 flex items-center justify-center mb-5 group-hover:border-flame/50 transition-colors">
+            <svg class="w-5 h-5 text-flame/60 group-hover:text-flame transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-cinzel text-lg font-semibold text-ivory mb-3">100% Eco-Conscious</h3>
+          <p class="font-cormorant text-base text-silver/60 leading-relaxed">Veganas, cruelty-free, sin parafina. Envases reutilizables de cerámica artesanal y empaques compostables.</p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="reveal gothic-border rounded-lg p-6 sm:p-8 bg-charcoal/30 hover:bg-charcoal/50 transition-all duration-500 group" style="transition-delay: 0.4s">
+          <div class="w-12 h-12 rounded-full border border-flame/20 flex items-center justify-center mb-5 group-hover:border-flame/50 transition-colors">
+            <svg class="w-5 h-5 text-flame/60 group-hover:text-flame transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+          </div>
+          <h3 class="font-cinzel text-lg font-semibold text-ivory mb-3">Empaque Ritual</h3>
+          <p class="font-cormorant text-base text-silver/60 leading-relaxed">Caja negra con lacre dorado, papel de seda y nota manuscrita. Cada unboxing es una ceremonia en sí misma.</p>
+        </div>
+
+        <!-- Benefit 5 -->
+        <div class="reveal gothic-border rounded-lg p-6 sm:p-8 bg-charcoal/30 hover:bg-charcoal/50 transition-all duration-500 group" style="transition-delay: 0.5s">
+          <div class="w-12 h-12 rounded-full border border-flame/20 flex items-center justify-center mb-5 group-hover:border-flame/50 transition-colors">
+            <svg class="w-5 h-5 text-flame/60 group-hover:text-flame transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-cinzel text-lg font-semibold text-ivory mb-3">Seguridad Premium</h3>
+          <p class="font-cormorant text-base text-silver/60 leading-relaxed">Mechas autoextinguibles, base termorresistente y certificación de seguridad. Arte que cuida de ti.</p>
+        </div>
+
+        <!-- Benefit 6 -->
+        <div class="reveal gothic-border rounded-lg p-6 sm:p-8 bg-charcoal/30 hover:bg-charcoal/50 transition-all duration-500 group" style="transition-delay: 0.6s">
+          <div class="w-12 h-12 rounded-full border border-flame/20 flex items-center justify-center mb-5 group-hover:border-flame/50 transition-colors">
+            <svg class="w-5 h-5 text-flame/60 group-hover:text-flame transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <h3 class="font-cinzel text-lg font-semibold text-ivory mb-3">Recargables</h3>
+          <p class="font-cormorant text-base text-silver/60 leading-relaxed">Trae tu envase de cerámica y obtén un 20% de descuento en la recarga. Belleza circular, impacto reducido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIOS ============ -->
+  <section id="testimonios" class="relative py-24 sm:py-32 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1715837602242-8e3fb8c06124?w=1920&h=1080&fit=crop&q=80&auto=format"
+           alt="Vela encendida en ambiente oscuro y misterioso"
+           class="w-full h-full object-cover opacity-10" loading="lazy" width="1920" height="1080">
+      <div class="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian/95 to-obsidian"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="font-inter text-xs tracking-[0.3em] uppercase text-flame/60 block mb-4">Voces en la Penumbra</span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-ivory mb-4">Lo que Dicen</h2>
+        <div class="gothic-divider">
+          <span class="gothic-divider-icon">&#10040;</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="reveal gothic-border rounded-lg p-6 sm:p-8 bg-charcoal/20" style="transition-delay: 0.1s">
+          <div class="flex gap-1 mb-4">
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="font-cormorant text-lg text-ivory/80 italic leading-relaxed mb-6">"El unboxing fue una experiencia casi ritual. El olor a ámbar llenó mi estudio en minutos. Nunca había sentido tanta presencia en una vela."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-flame/20 flex items-center justify-center">
+              <span class="font-cinzel text-sm text-flame">VS</span>
+            </div>
+            <div>
+              <span class="font-cinzel text-sm text-ivory block">Valentina S.</span>
+              <span class="font-inter text-xs text-silver/50">Diseñadora de interiores</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="reveal gothic-border rounded-lg p-6 sm:p-8 bg-charcoal/20" style="transition-delay: 0.2s">
+          <div class="flex gap-1 mb-4">
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="font-cormorant text-lg text-ivory/80 italic leading-relaxed mb-6">"Compré 'Catedral' como regalo y terminé pidiendo tres más para mí. La mezcla de incienso y mirra es absolutamente hipnótica. Arte puro."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-flame/20 flex items-center justify-center">
+              <span class="font-cinzel text-sm text-flame">MR</span>
+            </div>
+            <div>
+              <span class="font-cinzel text-sm text-ivory block">Marco R.</span>
+              <span class="font-inter text-xs text-silver/50">Fotógrafo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="reveal gothic-border rounded-lg p-6 sm:p-8 bg-charcoal/20" style="transition-delay: 0.3s">
+          <div class="flex gap-1 mb-4">
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-flame" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="font-cormorant text-lg text-ivory/80 italic leading-relaxed mb-6">"Mi terapeuta me pidió crear un espacio seguro en casa. Encender 'Abismo' se convirtió en mi ritual nocturno. La fragancia de oud es extraordinaria."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-flame/20 flex items-center justify-center">
+              <span class="font-cinzel text-sm text-flame">LC</span>
+            </div>
+            <div>
+              <span class="font-cinzel text-sm text-ivory block">Lucía C.</span>
+              <span class="font-inter text-xs text-silver/50">Escritora</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="relative py-24 sm:py-32 gothic-pattern">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="font-inter text-xs tracking-[0.3em] uppercase text-flame/60 block mb-4">Respuestas</span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-ivory mb-4">Preguntas Frecuentes</h2>
+        <div class="gothic-divider">
+          <span class="gothic-divider-icon">&#10040;</span>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="reveal faq-item gothic-border rounded-lg overflow-hidden bg-charcoal/20">
+          <button class="faq-btn w-full flex items-center justify-between p-5 sm:p-6 text-left group" aria-expanded="false" aria-controls="faq-content-1">
+            <span class="font-cinzel text-base sm:text-lg text-ivory group-hover:text-flame transition-colors pr-4">¿De qué están hechas las velas Ēterna?</span>
+            <svg class="w-5 h-5 text-flame/60 flex-shrink-0 transition-transform duration-300 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6" id="faq-content-1">
+            <p class="font-cormorant text-base text-silver/70 leading-relaxed">100% cera de soja orgánica, mechas de algodón trenzado sin plomo, aceites esenciales puros y pigmentos naturales. No usamos parafina, colorantes sintéticos ni fragancias artificiales. Cada ingrediente es vegano y cruelty-free.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="reveal faq-item gothic-border rounded-lg overflow-hidden bg-charcoal/20" style="transition-delay: 0.1s">
+          <button class="faq-btn w-full flex items-center justify-between p-5 sm:p-6 text-left group" aria-expanded="false" aria-controls="faq-content-2">
+            <span class="font-cinzel text-base sm:text-lg text-ivory group-hover:text-flame transition-colors pr-4">¿Cuánto dura cada vela?</span>
+            <svg class="w-5 h-5 text-flame/60 flex-shrink-0 transition-transform duration-300 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6" id="faq-content-2">
+            <p class="font-cormorant text-base text-silver/70 leading-relaxed">Nuestras velas estándar (250g) ofrecen entre 50 y 60 horas de combustión limpia. Las ediciones grandes (400g) alcanzan hasta 80 horas. La cera de soja arde más lento y a menor temperatura que la parafina, lo que prolonga significativamente su vida útil.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="reveal faq-item gothic-border rounded-lg overflow-hidden bg-charcoal/20" style="transition-delay: 0.2s">
+          <button class="faq-btn w-full flex items-center justify-between p-5 sm:p-6 text-left group" aria-expanded="false" aria-controls="faq-content-3">
+            <span class="font-cinzel text-base sm:text-lg text-ivory group-hover:text-flame transition-colors pr-4">¿Hacen envíos internacionales?</span>
+            <svg class="w-5 h-5 text-flame/60 flex-shrink-0 transition-transform duration-300 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6" id="faq-content-3">
+            <p class="font-cormorant text-base text-silver/70 leading-relaxed">Sí. Enviamos a toda América Latina, Estados Unidos y Europa. El empaque incluye protección térmica y amortiguación para garantizar que cada vela llegue en perfectas condiciones. Envío gratuito en pedidos superiores a $150.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="reveal faq-item gothic-border rounded-lg overflow-hidden bg-charcoal/20" style="transition-delay: 0.3s">
+          <button class="faq-btn w-full flex items-center justify-between p-5 sm:p-6 text-left group" aria-expanded="false" aria-controls="faq-content-4">
+            <span class="font-cinzel text-base sm:text-lg text-ivory group-hover:text-flame transition-colors pr-4">¿Puedo crear una vela personalizada?</span>
+            <svg class="w-5 h-5 text-flame/60 flex-shrink-0 transition-transform duration-300 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6" id="faq-content-4">
+            <p class="font-cormorant text-base text-silver/70 leading-relaxed">Absolutamente. Nuestro servicio de "Vela de Autor" te permite elegir la fragancia base, las notas complementarias, el color de la cera, el tipo de envase y el mensaje en la nota manuscrita. Pedidos mínimos: 1 unidad para personal, 12 unidades para eventos y corporativos.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="reveal faq-item gothic-border rounded-lg overflow-hidden bg-charcoal/20" style="transition-delay: 0.4s">
+          <button class="faq-btn w-full flex items-center justify-between p-5 sm:p-6 text-left group" aria-expanded="false" aria-controls="faq-content-5">
+            <span class="font-cinzel text-base sm:text-lg text-ivory group-hover:text-flame transition-colors pr-4">¿Son seguras para personas con alergias?</span>
+            <svg class="w-5 h-5 text-flame/60 flex-shrink-0 transition-transform duration-300 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-5 sm:px-6 pb-5 sm:pb-6" id="faq-content-5">
+            <p class="font-cormorant text-base text-silver/70 leading-relaxed">La cera de soja produce significativamente menos hollín y compuestos orgánicos volátiles que la parafina. Sin embargo, si tienes sensibilidad a fragancias específicas, consulta la lista de ingredientes de cada colección en nuestra tienda o contáctanos para una recomendación personalizada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO / FORMULARIO ============ -->
+  <section id="contacto" class="relative py-24 sm:py-32 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1695041404407-e1afde845b33?w=1920&h=1080&fit=crop&q=80&auto=format"
+           alt="Vela artesanal sobre mesa como fondo de la sección de contacto"
+           class="w-full h-full object-cover opacity-10" loading="lazy" width="1920" height="1080">
+      <div class="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian/95 to-obsidian"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <!-- Left side -->
+        <div class="reveal-left">
+          <span class="font-inter text-xs tracking-[0.3em] uppercase text-flame/60 block mb-4">Contacto</span>
+          <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold text-ivory mb-6">Enciende tu Ritual</h2>
+          <p class="font-cormorant text-lg text-silver/70 italic leading-relaxed mb-8">¿Lista para transformar tu espacio? Reserva tu colección, solicita una vela personalizada o simplemente cuéntanos qué buscas.</p>
+
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full border border-flame/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-flame/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <span class="font-cormorant text-lg text-silver/70">ritual@eterna-velas.com</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full border border-flame/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-flame/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <span class="font-cormorant text-lg text-silver/70">Taller — Ciudad de México, CDMX</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full border border-flame/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-flame/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <span class="font-cormorant text-lg text-silver/70">Lun — Vie, 10:00 — 19:00</span>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="flex items-center gap-4 mt-8">
+            <a href="#" class="w-10 h-10 rounded-full border border-flame/20 flex items-center justify-center hover:border-flame hover:bg-flame/10 transition-all duration-300" aria-label="Instagram">
+              <svg class="w-4 h-4 text-flame/60" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full border border-flame/20 flex items-center justify-center hover:border-flame hover:bg-flame/10 transition-all duration-300" aria-label="Pinterest">
+              <svg class="w-4 h-4 text-flame/60" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full border border-flame/20 flex items-center justify-center hover:border-flame hover:bg-flame/10 transition-all duration-300" aria-label="TikTok">
+              <svg class="w-4 h-4 text-flame/60" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.89a8.21 8.21 0 004.76 1.52V7.01a4.85 4.85 0 01-1-.32z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right side — Form -->
+        <div class="reveal-right">
+          <form id="contactForm" method="post" class="gothic-border rounded-lg p-6 sm:p-8 bg-charcoal/20" novalidate>
+            <div class="space-y-5">
+              <div>
+                <label for="nombre" class="block font-inter text-xs tracking-[0.15em] uppercase text-silver/60 mb-2">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="100"
+                       class="w-full bg-obsidian/50 border border-ash/30 rounded-sm px-4 py-3 font-cormorant text-lg text-ivory placeholder-silver/30 transition-all duration-300"
+                       placeholder="Tu nombre" autocomplete="name">
+                <span class="error-msg hidden font-inter text-xs text-blood mt-1 block"></span>
+              </div>
+
+              <div>
+                <label for="email" class="block font-inter text-xs tracking-[0.15em] uppercase text-silver/60 mb-2">Correo electrónico</label>
+                <input type="email" id="email" name="email" required maxlength="254"
+                       class="w-full bg-obsidian/50 border border-ash/30 rounded-sm px-4 py-3 font-cormorant text-lg text-ivory placeholder-silver/30 transition-all duration-300"
+                       placeholder="tu@correo.com" autocomplete="email">
+                <span class="error-msg hidden font-inter text-xs text-blood mt-1 block"></span>
+              </div>
+
+              <div>
+                <label for="interes" class="block font-inter text-xs tracking-[0.15em] uppercase text-silver/60 mb-2">Interés</label>
+                <select id="interes" name="interes" required
+                        class="w-full bg-obsidian/50 border border-ash/30 rounded-sm px-4 py-3 font-cormorant text-lg text-ivory transition-all duration-300 appearance-none cursor-pointer">
+                  <option value="" class="bg-obsidian">Selecciona una opción</option>
+                  <option value="coleccion" class="bg-obsidian">Comprar una colección</option>
+                  <option value="personalizada" class="bg-obsidian">Vela personalizada</option>
+                  <option value="mayoreo" class="bg-obsidian">Pedido corporativo / mayoreo</option>
+                  <option value="recarga" class="bg-obsidian">Servicio de recarga</option>
+                  <option value="otro" class="bg-obsidian">Otra consulta</option>
+                </select>
+                <span class="error-msg hidden font-inter text-xs text-blood mt-1 block"></span>
+              </div>
+
+              <div>
+                <label for="mensaje" class="block font-inter text-xs tracking-[0.15em] uppercase text-silver/60 mb-2">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required minlength="10" maxlength="1000"
+                          class="w-full bg-obsidian/50 border border-ash/30 rounded-sm px-4 py-3 font-cormorant text-lg text-ivory placeholder-silver/30 transition-all duration-300 resize-none"
+                          placeholder="Cuéntanos qué buscas..." autocomplete="off"></textarea>
+                <span class="error-msg hidden font-inter text-xs text-blood mt-1 block"></span>
+              </div>
+
+              <!-- GDPR consent -->
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="privacidad" name="privacidad" required
+                       class="mt-1 w-4 h-4 rounded-sm border-ash/30 bg-obsidian/50 text-flame focus:ring-flame/30 cursor-pointer">
+                <label for="privacidad" class="font-inter text-xs text-silver/50 leading-relaxed cursor-pointer">
+                  Acepto la <a href="#" class="text-flame/60 hover:text-flame underline">política de privacidad</a> y el tratamiento de mis datos personales.
+                </label>
+              </div>
+
+              <button type="submit"
+                      class="w-full px-8 py-4 bg-flame text-obsidian font-cinzel text-sm tracking-[0.2em] uppercase hover:bg-candle transition-all duration-300 rounded-sm relative overflow-hidden group">
+                <span class="relative z-10 submit-text">Enviar Mensaje</span>
+                <span class="relative z-10 submit-loading hidden">
+                  <svg class="w-5 h-5 animate-spin mx-auto" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                </span>
+              </button>
+            </div>
+
+            <!-- Success message -->
+            <div id="formSuccess" class="hidden mt-6 p-4 border border-flame/20 rounded-sm bg-flame/5 text-center">
+              <p class="font-cinzel text-lg text-flame mb-1">Mensaje Recibido</p>
+              <p class="font-cormorant text-base text-silver/70 italic">Tu ritual ha comenzado. Te contactaremos pronto.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="relative border-t border-flame/10 py-12 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- Brand -->
+        <div>
+          <a href="#hero" class="flex items-center gap-3 mb-4" aria-label="Ēterna - Inicio">
+            <div class="w-8 h-8 rounded-full border border-flame/40 flex items-center justify-center">
+              <svg class="w-4 h-4 text-flame" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C12 2 7 8 7 13C7 15.21 8.47 17.1 10.5 17.71C10.18 17.18 10 16.56 10 15.9C10 14.07 12 11 12 11C12 11 14 14.07 14 15.9C14 16.56 13.82 17.18 13.5 17.71C15.53 17.1 17 15.21 17 13C17 8 12 2 12 2Z"/>
+              </svg>
+            </div>
+            <span class="font-cinzel text-lg font-semibold tracking-[0.2em] text-ivory">ĒTERNA</span>
+          </a>
+          <p class="font-cormorant text-base text-silver/50 italic leading-relaxed">Arte que arde. Fragancias que permanecen.<br>Desde Ciudad de México para el mundo.</p>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="font-cinzel text-sm tracking-[0.15em] uppercase text-ivory mb-4">Explorar</h4>
+          <div class="space-y-2">
+            <a href="#colecciones" class="block font-cormorant text-base text-silver/50 hover:text-flame transition-colors">Colecciones</a>
+            <a href="#proceso" class="block font-cormorant text-base text-silver/50 hover:text-flame transition-colors">Nuestro Proceso</a>
+            <a href="#fragancias" class="block font-cormorant text-base text-silver/50 hover:text-flame transition-colors">Beneficios</a>
+            <a href="#contacto" class="block font-cormorant text-base text-silver/50 hover:text-flame transition-colors">Contacto</a>
+          </div>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h4 class="font-cinzel text-sm tracking-[0.15em] uppercase text-ivory mb-4">Legal</h4>
+          <div class="space-y-2">
+            <a href="#" class="block font-cormorant text-base text-silver/50 hover:text-flame transition-colors">Aviso de Privacidad</a>
+            <a href="#" class="block font-cormorant text-base text-silver/50 hover:text-flame transition-colors">Términos y Condiciones</a>
+            <a href="#" class="block font-cormorant text-base text-silver/50 hover:text-flame transition-colors">Política de Cookies</a>
+            <a href="#" class="block font-cormorant text-base text-silver/50 hover:text-flame transition-colors">Devoluciones</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-flame/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="font-inter text-xs text-silver/30">&copy; 2026 Ēterna. Todos los derechos reservados.</p>
+        <p class="font-inter text-xs text-silver/30">Hecho a mano con obsesión en CDMX</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ COOKIE BANNER ============ -->
+  <div id="cookieBanner" class="cookie-banner" role="alert" aria-live="polite">
+    <div class="bg-charcoal/95 nav-blur border-t border-flame/10 p-4 sm:p-6">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="font-cormorant text-sm text-silver/70 text-center sm:text-left">
+          Usamos cookies esenciales para mejorar tu experiencia. No compartimos tus datos con terceros.
+          <a href="#" class="text-flame/60 hover:text-flame underline ml-1">Más información</a>
+        </p>
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <button id="cookieReject" class="px-4 py-2 border border-ash/30 text-silver/60 font-inter text-xs tracking-[0.1em] uppercase hover:border-flame/30 hover:text-ivory transition-all duration-300 rounded-sm">Rechazar</button>
+          <button id="cookieAccept" class="px-4 py-2 bg-flame text-obsidian font-inter text-xs tracking-[0.1em] uppercase hover:bg-candle transition-all duration-300 rounded-sm">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ JAVASCRIPT ============ -->
+  <script>
+    // =========================
+    // Particles
+    // =========================
+    (function createParticles() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const container = document.getElementById('particles');
+      if (!container) return;
+      const count = window.innerWidth < 768 ? 15 : 30;
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.classList.add('particle');
+        p.style.left = Math.random() * 100 + '%';
+        p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+        p.style.animationDelay = (Math.random() * 10) + 's';
+        p.style.width = (Math.random() * 3 + 1) + 'px';
+        p.style.height = p.style.width;
+        container.appendChild(p);
+      }
+    })();
+
+    // =========================
+    // Counter Animation
+    // =========================
+    function animateCounters() {
+      document.querySelectorAll('[data-counter]').forEach(el => {
+        const target = parseInt(el.dataset.counter);
+        const duration = 2000;
+        const start = performance.now();
+        function update(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(eased * target);
+          el.textContent = current.toLocaleString('es-MX');
+          if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+      });
+    }
+
+    // =========================
+    // Intersection Observer
+    // =========================
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (entry.target.querySelector('[data-counter]')) {
+            animateCounters();
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+    // Trigger counters on hero (visible on load)
+    const heroSection = document.getElementById('hero');
+    if (heroSection) {
+      const heroObs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          setTimeout(animateCounters, 800);
+          heroObs.disconnect();
+        }
+      });
+      heroObs.observe(heroSection);
+    }
+
+    // =========================
+    // Navbar
+    // =========================
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 100) {
+        navbar.classList.add('bg-obsidian/95');
+        navbar.style.borderBottomColor = 'rgba(196,148,58,0.15)';
+      } else {
+        navbar.classList.remove('bg-obsidian/95');
+        navbar.style.borderBottomColor = 'rgba(196,148,58,0.1)';
+      }
+      lastScroll = currentScroll;
+    }, { passive: true });
+
+    // =========================
+    // Mobile Menu
+    // =========================
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenuBtn = document.getElementById('closeMenu');
+
+    function toggleMenu(open) {
+      mobileMenu.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    menuBtn.addEventListener('click', () => toggleMenu(true));
+    closeMenuBtn.addEventListener('click', () => toggleMenu(false));
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => toggleMenu(false));
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) toggleMenu(false);
+    });
+
+    // =========================
+    // FAQ Accordion
+    // =========================
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const content = item.querySelector('.faq-content');
+        const icon = btn.querySelector('.faq-icon');
+        const isOpen = !content.classList.contains('hidden');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(other => {
+          other.querySelector('.faq-content').classList.add('hidden');
+          other.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+          other.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // =========================
+    // Form Validation & Submission
+    // =========================
+    const form = document.getElementById('contactForm');
+    if (form) {
+      function validateField(field) {
+        const errorEl = field.parentElement.querySelector('.error-msg');
+        if (!errorEl) return true;
+        let valid = true;
+        let msg = '';
+
+        if (field.required && !field.value.trim()) {
+          valid = false;
+          msg = 'Este campo es obligatorio.';
+        } else if (field.type === 'email' && field.value) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(field.value)) {
+            valid = false;
+            msg = 'Ingresa un correo válido.';
+          }
+        } else if (field.minLength > 0 && field.value.length < field.minLength) {
+          valid = false;
+          msg = `Mínimo ${field.minLength} caracteres.`;
+        }
+
+        if (!valid) {
+          errorEl.textContent = msg;
+          errorEl.classList.remove('hidden');
+          field.classList.add('border-blood/50');
+          field.classList.remove('border-ash/30');
+        } else {
+          errorEl.classList.add('hidden');
+          field.classList.remove('border-blood/50');
+          field.classList.add('border-ash/30');
+        }
+        return valid;
+      }
+
+      // Real-time validation
+      form.querySelectorAll('input, textarea, select').forEach(field => {
+        field.addEventListener('blur', () => validateField(field));
+        field.addEventListener('input', () => {
+          if (field.parentElement.querySelector('.error-msg:not(.hidden)')) {
+            validateField(field);
+          }
+        });
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const fields = form.querySelectorAll('input[required], textarea[required], select[required]');
+        let allValid = true;
+        fields.forEach(f => {
+          if (!validateField(f)) allValid = false;
+        });
+
+        const privacidad = form.querySelector('#privacidad');
+        if (!privacidad.checked) {
+          allValid = false;
+          privacidad.classList.add('ring-2', 'ring-blood/50');
+        } else {
+          privacidad.classList.remove('ring-2', 'ring-blood/50');
+        }
+
+        if (!allValid) return;
+
+        // Simulate submission
+        const submitText = form.querySelector('.submit-text');
+        const submitLoading = form.querySelector('.submit-loading');
+        submitText.classList.add('hidden');
+        submitLoading.classList.remove('hidden');
+
+        setTimeout(() => {
+          submitText.classList.remove('hidden');
+          submitLoading.classList.add('hidden');
+          document.getElementById('formSuccess').classList.remove('hidden');
+          form.reset();
+        }, 1500);
+      });
+    }
+
+    // =========================
+    // Cookie Banner
+    // =========================
+    (function cookieBanner() {
+      const banner = document.getElementById('cookieBanner');
+      const accepted = localStorage.getItem('eterna_cookies');
+      if (!accepted) {
+        setTimeout(() => banner.classList.add('show'), 2000);
+      }
+      document.getElementById('cookieAccept').addEventListener('click', () => {
+        localStorage.setItem('eterna_cookies', 'accepted');
+        banner.classList.remove('show');
+      });
+      document.getElementById('cookieReject').addEventListener('click', () => {
+        localStorage.setItem('eterna_cookies', 'rejected');
+        banner.classList.remove('show');
+      });
+    })();
+
+    // =========================
+    // Smooth scroll for anchor links
+    // =========================
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 80;
+          const pos = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: pos, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        }
+      });
+    });
+
+    // =========================
+    // CSRF token generation (placeholder for backend integration)
+    // =========================
+    (function csrfProtection() {
+      const token = Array.from(crypto.getRandomValues(new Uint8Array(32)))
+        .map(b => b.toString(16).padStart(2, '0')).join('');
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = '_csrf';
+      input.value = token;
+      if (form) form.appendChild(input);
+    })();
+
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ēterna — Velas Artesanales de Autor",
+    "description": "Velas artesanales elaboradas con cera de soja, fragancias exclusivas y diseño gótico.",
+    "url": "https://eterna-velas.com",
+    "image": "https://images.unsplash.com/photo-1476900164809-ff19b8ae5968?w=1200&h=630&fit=crop&q=80&auto=format",
+    "telephone": "+52-55-1234-5678",
+    "email": "ritual@eterna-velas.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "addressCountry": "MX"
+    },
+    "priceRange": "$$",
+    "openingHours": "Mo-Fr 10:00-19:00"
+  }
+  </script>
+
+</body>
+</html>

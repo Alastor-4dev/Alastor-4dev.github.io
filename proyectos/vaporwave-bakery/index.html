@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Nébula — Pastelería Artesanal de Autor</title>
+    <meta name="description" content="Dulce Nébula: pastelería artesanal con sabores únicos y diseño de vanguardia. Pasteles, cupcakes y creaciones personalizadas para eventos especiales.">
+    <meta name="keywords" content="pastelería artesanal, pasteles personalizados, cupcakes, tortas de diseño, eventos, repostería creativa">
+    <meta name="author" content="Dulce Nébula">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dulce Nébula — Pastelería Artesanal de Autor">
+    <meta property="og:description" content="Sabores únicos con estética de otro mundo. Pedidos personalizados para eventos y celebraciones.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dulcenebula.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1200&h=630&fit=crop&q=80">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dulce Nébula — Pastelería Artesanal de Autor">
+    <meta name="twitter:description" content="Sabores únicos con estética de otro mundo.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧁</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        vapor: {
+                            pink: '#FF6AD5',
+                            magenta: '#C774E8',
+                            purple: '#AD8CFF',
+                            blue: '#94D0FF',
+                            cyan: '#00E5FF',
+                            dark: '#1A0A2E',
+                            deeper: '#0D0521',
+                            mid: '#2D1B69',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Righteous', 'cursive'],
+                        body: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Space Grotesk', sans-serif; background: #0D0521; color: #E8D5F5; }
+
+        /* Vaporwave Grid Background */
+        .vapor-grid {
+            background-image:
+                linear-gradient(rgba(255, 106, 213, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 106, 213, 0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Neon Glow Effects */
+        .neon-text {
+            text-shadow: 0 0 10px #FF6AD5, 0 0 20px #FF6AD5, 0 0 40px #C774E8;
+        }
+        .neon-text-cyan {
+            text-shadow: 0 0 10px #00E5FF, 0 0 20px #00E5FF, 0 0 40px #94D0FF;
+        }
+        .neon-border {
+            box-shadow: 0 0 15px rgba(255, 106, 213, 0.5), inset 0 0 15px rgba(255, 106, 213, 0.1);
+        }
+        .neon-border-cyan {
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.5), inset 0 0 15px rgba(0, 229, 255, 0.1);
+        }
+
+        /* Gradient Animations */
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .gradient-animate {
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-animation { animation: float 4s ease-in-out infinite; }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 106, 213, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(255, 106, 213, 0.8), 0 0 60px rgba(199, 116, 232, 0.4); }
+        }
+        .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0D0521; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(#FF6AD5, #C774E8); border-radius: 4px; }
+
+        /* Form Styles */
+        input, textarea, select {
+            background: rgba(45, 27, 105, 0.6) !important;
+            border: 1px solid rgba(255, 106, 213, 0.3) !important;
+            color: #E8D5F5 !important;
+            transition: all 0.3s ease;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #FF6AD5 !important;
+            box-shadow: 0 0 15px rgba(255, 106, 213, 0.3) !important;
+            outline: none !important;
+        }
+        input::placeholder, textarea::placeholder { color: rgba(232, 213, 245, 0.5); }
+
+        /* Card Hover */
+        .card-hover {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 106, 213, 0.3);
+        }
+
+        /* Image Zoom */
+        .img-zoom {
+            transition: transform 0.7s ease;
+        }
+        .img-zoom:hover {
+            transform: scale(1.05);
+        }
+
+        /* Sun decoration */
+        .vapor-sun {
+            background: linear-gradient(180deg, #FF6AD5 0%, #C774E8 30%, #AD8CFF 60%, transparent 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+        }
+
+        /* Reduced Motion — respeta la preferencia del sistema operativo */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .gradient-animate,
+            .float-animation,
+            .pulse-glow { animation: none; }
+            .card-hover,
+            .img-zoom { transition: none; }
+        }
+    </style>
+    <link rel="canonical" href="https://dulcenebula.com">
+    <!-- NOTA: frame-ancestors es ignorado en <meta> CSP; configurar X-Frame-Options: DENY en el servidor HTTP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-ancestors 'none';">
+</head>
+<body class="vapor-grid">
+
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-vapor-pink focus:text-white focus:rounded-full focus:font-semibold focus:outline-none">Saltar al contenido principal</a>
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-vapor-dark/95 backdrop-blur-lg border-t border-vapor-pink/30 hidden">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-vapor-blue/80">Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra <a href="#privacidad" class="text-vapor-pink underline">política de privacidad</a>.</p>
+            <div class="flex gap-3">
+                <button id="cookieAcceptBtn" class="px-4 py-2 bg-vapor-pink text-white text-sm rounded-full hover:bg-vapor-magenta transition-colors" aria-label="Aceptar cookies">Aceptar</button>
+                <button id="cookieDeclineBtn" class="px-4 py-2 border border-vapor-pink/50 text-vapor-pink text-sm rounded-full hover:bg-vapor-pink/10 transition-colors" aria-label="Rechazar cookies">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-vapor-deeper/80 backdrop-blur-xl border-b border-vapor-pink/20" role="navigation" aria-label="Navegación principal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="#" class="flex items-center gap-2" aria-label="Dulce Nébula - Inicio">
+                    <span class="text-2xl">🧁</span>
+                    <span class="font-display text-xl sm:text-2xl bg-gradient-to-r from-vapor-pink to-vapor-cyan bg-clip-text text-transparent">Dulce Nébula</span>
+                </a>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#servicios" class="text-sm text-vapor-blue/80 hover:text-vapor-pink transition-colors">Creaciones</a>
+                    <a href="#beneficios" class="text-sm text-vapor-blue/80 hover:text-vapor-pink transition-colors">Beneficios</a>
+                    <a href="#testimonios" class="text-sm text-vapor-blue/80 hover:text-vapor-pink transition-colors">Reseñas</a>
+                    <a href="#faq" class="text-sm text-vapor-blue/80 hover:text-vapor-pink transition-colors">FAQ</a>
+                    <a href="#contacto" class="px-5 py-2 bg-gradient-to-r from-vapor-pink to-vapor-magenta text-white text-sm font-semibold rounded-full hover:shadow-lg hover:shadow-vapor-pink/40 transition-all">Pedir Ahora</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-vapor-pink" aria-label="Abrir menú" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-vapor-deeper/95 backdrop-blur-xl border-b border-vapor-pink/20 pb-4">
+            <div class="px-4 flex flex-col gap-3">
+                <a href="#servicios" class="py-2 text-vapor-blue/80 hover:text-vapor-pink transition-colors">Creaciones</a>
+                <a href="#beneficios" class="py-2 text-vapor-blue/80 hover:text-vapor-pink transition-colors">Beneficios</a>
+                <a href="#testimonios" class="py-2 text-vapor-blue/80 hover:text-vapor-pink transition-colors">Reseñas</a>
+                <a href="#faq" class="py-2 text-vapor-blue/80 hover:text-vapor-pink transition-colors">FAQ</a>
+                <a href="#contacto" class="py-2 px-5 bg-gradient-to-r from-vapor-pink to-vapor-magenta text-white text-sm font-semibold rounded-full text-center">Pedir Ahora</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="main-content" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-10 w-72 h-72 bg-vapor-pink/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-10 w-96 h-96 bg-vapor-cyan/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/3 left-1/4 w-40 h-40 bg-vapor-magenta/10 rounded-full blur-2xl float-animation"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-vapor-pink/30 bg-vapor-dark/50 backdrop-blur-sm mb-8">
+                <span class="w-2 h-2 bg-vapor-cyan rounded-full animate-pulse"></span>
+                <span class="text-xs sm:text-sm text-vapor-blue/80">Nuevos sabores cada semana</span>
+            </div>
+
+            <!-- Heading -->
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6">
+                <span class="block text-white">Sabores de</span>
+                <span class="block bg-gradient-to-r from-vapor-pink via-vapor-magenta to-vapor-cyan bg-clip-text text-transparent gradient-animate">Otro Universo</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-lg sm:text-xl text-vapor-blue/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Pastelería artesanal donde cada creación es una obra de arte comestible. Sabores únicos, diseños de vanguardia y momentos inolvidables.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href="#contacto" class="px-8 py-4 bg-gradient-to-r from-vapor-pink to-vapor-magenta text-white font-semibold rounded-full hover:shadow-xl hover:shadow-vapor-pink/40 transition-all pulse-glow text-lg">
+                    Hacer mi Pedido ✨
+                </a>
+                <a href="#servicios" class="px-8 py-4 border-2 border-vapor-cyan/50 text-vapor-cyan font-semibold rounded-full hover:bg-vapor-cyan/10 hover:border-vapor-cyan transition-all text-lg">
+                    Ver Creaciones
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex flex-wrap justify-center gap-6 sm:gap-10 mb-12">
+                <div class="text-center">
+                    <span class="block font-display text-2xl sm:text-3xl text-vapor-pink whitespace-nowrap">2.4K<span class="text-vapor-magenta">+</span></span>
+                    <span class="text-xs sm:text-sm text-vapor-blue/60">Pasteles Creados</span>
+                </div>
+                <div class="text-center">
+                    <span class="block font-display text-2xl sm:text-3xl text-vapor-cyan whitespace-nowrap">98<span class="text-vapor-blue">%</span></span>
+                    <span class="text-xs sm:text-sm text-vapor-blue/60">Clientes Felices</span>
+                </div>
+                <div class="text-center">
+                    <span class="block font-display text-2xl sm:text-3xl text-vapor-purple whitespace-nowrap">5<span class="text-vapor-magenta">★</span></span>
+                    <span class="text-xs sm:text-sm text-vapor-blue/60">Rating Promedio</span>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="relative max-w-7xl mx-auto">
+                <div class="relative rounded-3xl overflow-hidden neon-border h-[300px] sm:h-[400px] lg:h-[500px]">
+                    <img
+                        src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1600&h=900&fit=crop&q=80"
+                        alt="Pastel artesanal de chocolate con decoración elegante"
+                        class="w-full h-full object-cover"
+                        width="1600" height="900" loading="eager"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-vapor-deeper via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-vapor-pink/10 to-vapor-cyan/10 mix-blend-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 sm:py-28 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-vapor-mid/20 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-vapor-cyan text-sm font-semibold tracking-widest uppercase">Nuestras Creaciones</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mt-3 mb-4">Dulzura <span class="text-vapor-pink">Dimensional</span></h2>
+                <p class="text-vapor-blue/60 max-w-xl mx-auto">Cada pieza es única, diseñada para transportarte a un universo de sabor.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card-hover rounded-2xl overflow-hidden border border-vapor-pink/20 bg-vapor-dark/60 backdrop-blur-sm">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=800&h=500&fit=crop&q=80" alt="Pasteles de boda personalizados con flores naturales" class="w-full h-full object-cover opacity-70 img-zoom" width="800" height="500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-vapor-dark via-vapor-dark/60 to-transparent"></div>
+                        <h3 class="absolute bottom-4 left-4 font-display text-xl text-white">Pasteles de Evento</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-vapor-blue/70 text-sm leading-relaxed">Bodas, quinceañeras y celebraciones. Diseños personalizados que cuentan tu historia con sabor y estilo retro-futurista.</p>
+                        <span class="inline-block mt-4 text-vapor-pink text-sm font-semibold">Desde $2,500 MXN →</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-hover rounded-2xl overflow-hidden border border-vapor-magenta/20 bg-vapor-dark/60 backdrop-blur-sm">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=800&h=500&fit=crop&q=80" alt="Cupcakes decorados con glaseado colorido" class="w-full h-full object-cover opacity-70 img-zoom" width="800" height="500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-vapor-dark via-vapor-dark/60 to-transparent"></div>
+                        <h3 class="absolute bottom-4 left-4 font-display text-xl text-white">Cupcakes Cósmicos</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-vapor-blue/70 text-sm leading-relaxed">Miniplanetas de sabor en cada bocado. Ideales para corporativos, fiestas temáticas o un capricho personal.</p>
+                        <span class="inline-block mt-4 text-vapor-magenta text-sm font-semibold">Desde $85 MXN c/u →</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-hover rounded-2xl overflow-hidden border border-vapor-cyan/20 bg-vapor-dark/60 backdrop-blur-sm">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&h=500&fit=crop&q=80" alt="Pan artesanal recién horneado con corteza dorada" class="w-full h-full object-cover opacity-70 img-zoom" width="800" height="500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-vapor-dark via-vapor-dark/60 to-transparent"></div>
+                        <h3 class="absolute bottom-4 left-4 font-display text-xl text-white">Pan de Autor</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-vapor-blue/70 text-sm leading-relaxed">Fermentación lenta, ingredientes orgánicos. Nuestros panes artesanales combinan tradición con innovación de sabores.</p>
+                        <span class="inline-block mt-4 text-vapor-cyan text-sm font-semibold">Desde $120 MXN →</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card-hover rounded-2xl overflow-hidden border border-vapor-purple/20 bg-vapor-dark/60 backdrop-blur-sm">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=800&h=500&fit=crop&q=80" alt="Macarons franceses en colores pastel" class="w-full h-full object-cover opacity-70 img-zoom" width="800" height="500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-vapor-dark via-vapor-dark/60 to-transparent"></div>
+                        <h3 class="absolute bottom-4 left-4 font-display text-xl text-white">Macarons Neón</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-vapor-blue/70 text-sm leading-relaxed">Delicadeza francesa con twist vaporwave. Sabores exóticos: lavanda-yuzu, matcha-frambuesa, violeta-limón.</p>
+                        <span class="inline-block mt-4 text-vapor-purple text-sm font-semibold">Desde $65 MXN c/u →</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card-hover rounded-2xl overflow-hidden border border-vapor-pink/20 bg-vapor-dark/60 backdrop-blur-sm">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&h=500&fit=crop&q=80" alt="Mesa de postres elegante para eventos" class="w-full h-full object-cover opacity-70 img-zoom" width="800" height="500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-vapor-dark via-vapor-dark/60 to-transparent"></div>
+                        <h3 class="absolute bottom-4 left-4 font-display text-xl text-white">Mesas de Dulces</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-vapor-blue/70 text-sm leading-relaxed">Instalaciones comestibles para tu evento. Diseñamos el universo visual completo: colores, texturas y sabores coordinados.</p>
+                        <span class="inline-block mt-4 text-vapor-pink text-sm font-semibold">Desde $8,500 MXN →</span>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card-hover rounded-2xl overflow-hidden border border-vapor-cyan/20 bg-vapor-dark/60 backdrop-blur-sm">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&h=500&fit=crop&q=80" alt="Galletas decoradas artísticas con glaseado real" class="w-full h-full object-cover opacity-70 img-zoom" width="800" height="500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-vapor-dark via-vapor-dark/60 to-transparent"></div>
+                        <h3 class="absolute bottom-4 left-4 font-display text-xl text-white">Galletas Pixel</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-vapor-blue/70 text-sm leading-relaxed">Arte comestible en cada galleta. Personalizamos con tu logo, tema o personaje favorito. Perfectas para regalos corporativos.</p>
+                        <span class="inline-block mt-4 text-vapor-cyan text-sm font-semibold">Desde $55 MXN c/u →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Break Section -->
+    <section class="relative h-[400px] sm:h-[500px] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=1600&h=800&fit=crop&q=80" alt="Interior de pastelería artesanal con vitrinas iluminadas" class="w-full h-full object-cover" width="1600" height="800" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-r from-vapor-deeper/90 via-vapor-dark/60 to-vapor-deeper/90"></div>
+        <div class="absolute inset-0 bg-vapor-pink/5 mix-blend-overlay"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center px-4">
+                <p class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mb-4 neon-text">"Donde el sabor</p>
+                <p class="font-display text-3xl sm:text-4xl lg:text-5xl text-vapor-cyan neon-text-cyan">trasciende dimensiones"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="py-20 sm:py-28 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-vapor-pink text-sm font-semibold tracking-widest uppercase">¿Por qué elegirnos?</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mt-3 mb-4">La Diferencia <span class="text-vapor-cyan">Nébula</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl border border-vapor-pink/20 bg-vapor-dark/40 backdrop-blur-sm text-center card-hover">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-vapor-pink/10 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-vapor-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg text-white mb-2">100% Artesanal</h3>
+                    <p class="text-vapor-blue/60 text-sm">Cada pieza hecha a mano con ingredientes premium seleccionados. Sin conservadores artificiales.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-vapor-magenta/20 bg-vapor-dark/40 backdrop-blur-sm text-center card-hover">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-vapor-magenta/10 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-vapor-magenta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg text-white mb-2">Diseño Único</h3>
+                    <p class="text-vapor-blue/60 text-sm">No hacemos copias. Cada pastel es una creación original diseñada exclusivamente para ti.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-vapor-cyan/20 bg-vapor-dark/40 backdrop-blur-sm text-center card-hover">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-vapor-cyan/10 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-vapor-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg text-white mb-2">Entrega Puntual</h3>
+                    <p class="text-vapor-blue/60 text-sm">Garantizamos la entrega en el día y hora que necesitas. Tu evento es nuestra prioridad.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-vapor-purple/20 bg-vapor-dark/40 backdrop-blur-sm text-center card-hover">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-vapor-purple/10 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-vapor-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg text-white mb-2">Sabores de Autor</h3>
+                    <p class="text-vapor-blue/60 text-sm">Combinaciones exclusivas creadas por nuestra chef pastelera. Sabores que no encontrarás en otro lugar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-20 sm:py-28 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-vapor-mid/10 via-transparent to-vapor-mid/10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-vapor-magenta text-sm font-semibold tracking-widest uppercase">Testimonios</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mt-3 mb-4">Viajeros del <span class="text-vapor-pink">Sabor</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl border border-vapor-pink/20 bg-vapor-dark/40 backdrop-blur-sm card-hover">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-vapor-pink">★★★★★</span>
+                    </div>
+                    <p class="text-vapor-blue/70 text-sm italic mb-6 leading-relaxed">"El pastel de mi boda fue espectacular. Todos los invitados preguntaron de dónde era. El diseño superó mis expectativas más locas."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-vapor-pink to-vapor-magenta flex items-center justify-center text-white font-bold text-sm">ML</div>
+                        <div>
+                            <p class="text-white text-sm font-semibold">Mariana L.</p>
+                            <p class="text-vapor-blue/70 text-xs">Boda — Junio 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl border border-vapor-cyan/20 bg-vapor-dark/40 backdrop-blur-sm card-hover">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-vapor-cyan">★★★★★</span>
+                    </div>
+                    <p class="text-vapor-blue/70 text-sm italic mb-6 leading-relaxed">"Pedimos 200 cupcakes para nuestro evento corporativo. Llegaron perfectos, a tiempo y el sabor fue increíble. Repetimos cada trimestre."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-vapor-cyan to-vapor-blue flex items-center justify-center text-white font-bold text-sm">CR</div>
+                        <div>
+                            <p class="text-white text-sm font-semibold">Carlos R.</p>
+                            <p class="text-vapor-blue/70 text-xs">Evento Corp. — TechMX</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl border border-vapor-purple/20 bg-vapor-dark/40 backdrop-blur-sm card-hover">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-vapor-purple">★★★★★</span>
+                    </div>
+                    <p class="text-vapor-blue/70 text-sm italic mb-6 leading-relaxed">"Los macarons de lavanda-yuzu son adictivos. Hago pedido cada semana para la oficina. La presentación es digna de revista."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-vapor-purple to-vapor-magenta flex items-center justify-center text-white font-bold text-sm">AP</div>
+                        <div>
+                            <p class="text-white text-sm font-semibold">Andrea P.</p>
+                            <p class="text-vapor-blue/70 text-xs">Cliente frecuente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section (Visual) -->
+    <section class="py-20 sm:py-28 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1556217477-d325251ece38?w=1600&h=900&fit=crop&q=80" alt="Proceso de decoración de pasteles" class="w-full h-full object-cover opacity-20" width="1600" height="900" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-b from-vapor-deeper via-vapor-deeper/80 to-vapor-deeper"></div>
+        </div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-vapor-cyan text-sm font-semibold tracking-widest uppercase">Cómo Funciona</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mt-3">Tu Pedido en <span class="text-vapor-magenta">4 Pasos</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full border-2 border-vapor-pink flex items-center justify-center">
+                        <span class="font-display text-2xl text-vapor-pink">1</span>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Cuéntanos</h3>
+                    <p class="text-vapor-blue/60 text-sm">Describe tu evento, temática y preferencias de sabor.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full border-2 border-vapor-magenta flex items-center justify-center">
+                        <span class="font-display text-2xl text-vapor-magenta">2</span>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Diseñamos</h3>
+                    <p class="text-vapor-blue/60 text-sm">Creamos un boceto exclusivo con propuesta de sabores.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full border-2 border-vapor-cyan flex items-center justify-center">
+                        <span class="font-display text-2xl text-vapor-cyan">3</span>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Creamos</h3>
+                    <p class="text-vapor-blue/60 text-sm">Horneamos con amor y decoramos a detalle tu creación.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full border-2 border-vapor-purple flex items-center justify-center">
+                        <span class="font-display text-2xl text-vapor-purple">4</span>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Entregamos</h3>
+                    <p class="text-vapor-blue/60 text-sm">Llevamos tu pedido seguro a donde lo necesites.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 sm:py-28 relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-vapor-pink text-sm font-semibold tracking-widest uppercase">Preguntas Frecuentes</span>
+                <h2 class="font-display text-3xl sm:text-4xl text-white mt-3">Resolvemos tus <span class="text-vapor-cyan">Dudas</span></h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group rounded-2xl border border-vapor-pink/20 bg-vapor-dark/40 backdrop-blur-sm overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="text-white font-medium pr-4">¿Con cuánta anticipación debo hacer mi pedido?</span>
+                        <svg class="w-5 h-5 text-vapor-pink transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-vapor-blue/70 text-sm">
+                        Para pasteles de evento recomendamos mínimo 2 semanas de anticipación. Cupcakes y galletas pueden solicitarse con 5-7 días. Para pedidos urgentes, contáctanos y haremos lo posible por ayudarte.
+                    </div>
+                </details>
+
+                <details class="group rounded-2xl border border-vapor-magenta/20 bg-vapor-dark/40 backdrop-blur-sm overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="text-white font-medium pr-4">¿Hacen entregas a domicilio?</span>
+                        <svg class="w-5 h-5 text-vapor-magenta transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-vapor-blue/70 text-sm">
+                        Sí, entregamos en toda la zona metropolitana. El costo de envío depende de la distancia. Para pasteles grandes, realizamos la entrega e instalación personalmente para garantizar que llegue perfecto.
+                    </div>
+                </details>
+
+                <details class="group rounded-2xl border border-vapor-cyan/20 bg-vapor-dark/40 backdrop-blur-sm overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="text-white font-medium pr-4">¿Trabajan con restricciones alimentarias?</span>
+                        <svg class="w-5 h-5 text-vapor-cyan transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-vapor-blue/70 text-sm">
+                        Ofrecemos opciones sin gluten, veganas y sin lactosa. También podemos adaptar recetas para alergias específicas. Indícanos tus necesidades al momento de la cotización.
+                    </div>
+                </details>
+
+                <details class="group rounded-2xl border border-vapor-purple/20 bg-vapor-dark/40 backdrop-blur-sm overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="text-white font-medium pr-4">¿Puedo hacer una degustación antes de decidir?</span>
+                        <svg class="w-5 h-5 text-vapor-purple transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-vapor-blue/70 text-sm">
+                        Para pasteles de boda y eventos grandes (más de $5,000 MXN) ofrecemos una sesión de degustación gratuita. Puedes probar hasta 4 sabores diferentes antes de decidir.
+                    </div>
+                </details>
+
+                <details class="group rounded-2xl border border-vapor-pink/20 bg-vapor-dark/40 backdrop-blur-sm overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <span class="text-white font-medium pr-4">¿Qué métodos de pago aceptan?</span>
+                        <svg class="w-5 h-5 text-vapor-pink transform group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-vapor-blue/70 text-sm">
+                        Aceptamos transferencia bancaria, tarjeta de crédito/débito, PayPal y pagos en efectivo. Para pedidos grandes, ofrecemos plan de pagos: 50% al confirmar y 50% al entregar.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA Section -->
+    <section id="contacto" class="py-20 sm:py-28 relative">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1600&h=900&fit=crop&q=80" alt="" class="w-full h-full object-cover opacity-10" width="1600" height="900" loading="lazy" aria-hidden="true">
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-vapor-cyan text-sm font-semibold tracking-widest uppercase">Contáctanos</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mt-3 mb-4">Haz tu Pedido <span class="text-vapor-pink">Ahora</span></h2>
+                <p class="text-vapor-blue/60 max-w-lg mx-auto">Cuéntanos tu idea y la convertimos en realidad comestible. Respuesta en menos de 24 horas.</p>
+            </div>
+
+            <form id="contactForm" class="max-w-2xl mx-auto space-y-6" novalidate>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="nombre" class="block text-sm text-vapor-blue/70 mb-2">Nombre *</label>
+                        <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="100" placeholder="Tu nombre" class="w-full px-4 py-3 rounded-xl" aria-required="true">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm text-vapor-blue/70 mb-2">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com" class="w-full px-4 py-3 rounded-xl" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="telefono" class="block text-sm text-vapor-blue/70 mb-2">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+52 55 1234 5678" pattern="[+]?[0-9\s\-]{7,15}" class="w-full px-4 py-3 rounded-xl">
+                    </div>
+                    <div>
+                        <label for="servicio" class="block text-sm text-vapor-blue/70 mb-2">Tipo de Pedido *</label>
+                        <select id="servicio" name="servicio" required class="w-full px-4 py-3 rounded-xl" aria-required="true">
+                            <option value="">Selecciona...</option>
+                            <option value="pastel-evento">Pastel de Evento</option>
+                            <option value="cupcakes">Cupcakes</option>
+                            <option value="macarons">Macarons</option>
+                            <option value="mesa-dulces">Mesa de Dulces</option>
+                            <option value="pan-artesanal">Pan Artesanal</option>
+                            <option value="galletas">Galletas Personalizadas</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="fecha" class="block text-sm text-vapor-blue/70 mb-2">Fecha del Evento</label>
+                    <input type="date" id="fecha" name="fecha" class="w-full px-4 py-3 rounded-xl">
+                </div>
+
+                <div>
+                    <label for="mensaje" class="block text-sm text-vapor-blue/70 mb-2">Cuéntanos tu idea *</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required minlength="10" maxlength="1000" placeholder="Describe tu evento, temática, número de personas, sabores preferidos..." class="w-full px-4 py-3 rounded-xl resize-none" aria-required="true"></textarea>
+                </div>
+
+                <div class="flex items-start gap-3">
+                    <input type="checkbox" id="privacidad" name="privacidad" required class="mt-1 w-4 h-4 rounded border-vapor-pink/50" aria-required="true">
+                    <label for="privacidad" class="text-xs text-vapor-blue/60">Acepto la <a href="#privacidad-page" class="text-vapor-pink underline">política de privacidad</a> y el tratamiento de mis datos para gestionar mi solicitud. *</label>
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-vapor-pink to-vapor-magenta text-white font-semibold text-lg rounded-full hover:shadow-xl hover:shadow-vapor-pink/40 transition-all pulse-glow">
+                    Enviar Solicitud ✨
+                </button>
+                <p id="formMessage" class="text-center text-sm hidden"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-vapor-pink/10 bg-vapor-deeper/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-2xl">🧁</span>
+                        <span class="font-display text-xl bg-gradient-to-r from-vapor-pink to-vapor-cyan bg-clip-text text-transparent">Dulce Nébula</span>
+                    </div>
+                    <p class="text-vapor-blue/70 text-sm leading-relaxed">Pastelería artesanal de autor. Creamos experiencias comestibles únicas para tus momentos más especiales.</p>
+                </div>
+                <div>
+                    <h4 class="font-display text-white mb-4">Navegación</h4>
+                    <ul class="space-y-2 text-sm text-vapor-blue/60">
+                        <li><a href="#servicios" class="hover:text-vapor-pink transition-colors">Creaciones</a></li>
+                        <li><a href="#beneficios" class="hover:text-vapor-pink transition-colors">Beneficios</a></li>
+                        <li><a href="#testimonios" class="hover:text-vapor-pink transition-colors">Reseñas</a></li>
+                        <li><a href="#faq" class="hover:text-vapor-pink transition-colors">FAQ</a></li>
+                        <li><a href="#contacto" class="hover:text-vapor-pink transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display text-white mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-sm text-vapor-blue/60">
+                        <li>📍 Col. Roma Norte, CDMX</li>
+                        <li>📞 +52 55 9876 5432</li>
+                        <li>✉️ hola@dulcenebula.com</li>
+                        <li>🕐 Lun-Sáb: 9:00 - 19:00</li>
+                    </ul>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full border border-vapor-pink/30 flex items-center justify-center text-vapor-pink hover:bg-vapor-pink/10 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="w-10 h-10 rounded-full border border-vapor-cyan/30 flex items-center justify-center text-vapor-cyan hover:bg-vapor-cyan/10 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.88 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.28 0 .56.04.82.11V9.4a6.33 6.33 0 00-.82-.05A6.34 6.34 0 003.15 15.7a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.44a8.16 8.16 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.87z"/></svg>
+                        </a>
+                        <a href="#" aria-label="WhatsApp" class="w-10 h-10 rounded-full border border-vapor-magenta/30 flex items-center justify-center text-vapor-magenta hover:bg-vapor-magenta/10 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-vapor-pink/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-vapor-blue/70 text-xs">© 2026 Dulce Nébula. Todos los derechos reservados.</p>
+                <div class="flex gap-6 text-xs text-vapor-blue/70">
+                    <a href="#" class="hover:text-vapor-pink transition-colors">Aviso de Privacidad</a>
+                    <a href="#" class="hover:text-vapor-pink transition-colors">Términos</a>
+                    <a href="#" class="hover:text-vapor-pink transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Cookie Banner — sin funciones globales, todo encapsulado
+        (function initCookieBanner() {
+            const banner = document.getElementById('cookieBanner');
+            const acceptBtn = document.getElementById('cookieAcceptBtn');
+            const declineBtn = document.getElementById('cookieDeclineBtn');
+
+            function showCookieBanner() {
+                if (!localStorage.getItem('cookieConsent')) {
+                    banner.classList.remove('hidden');
+                }
+            }
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.classList.add('hidden');
+            });
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                banner.classList.add('hidden');
+            });
+            setTimeout(showCookieBanner, 2000);
+        }());
+
+        // Form Validation & Submission
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Usar valores raw — showMessage usa textContent, no hay inserción innerHTML
+            const nombre = form.nombre.value.trim();
+            const email = form.email.value.trim();
+            const servicio = form.servicio.value;
+            const mensaje = form.mensaje.value.trim();
+            const privacidad = form.privacidad.checked;
+
+            if (!nombre || nombre.length < 2) {
+                showMessage('Por favor ingresa tu nombre.', 'error');
+                return;
+            }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showMessage('Por favor ingresa un email válido.', 'error');
+                return;
+            }
+            if (!servicio) {
+                showMessage('Por favor selecciona un tipo de pedido.', 'error');
+                return;
+            }
+            if (!mensaje || mensaje.length < 10) {
+                showMessage('Por favor describe tu idea (mínimo 10 caracteres).', 'error');
+                return;
+            }
+            if (!privacidad) {
+                showMessage('Debes aceptar la política de privacidad.', 'error');
+                return;
+            }
+
+            showMessage('¡Solicitud enviada! Te contactaremos en menos de 24 horas. 🧁', 'success');
+            form.reset();
+        });
+
+        function showMessage(msg, type) {
+            formMessage.textContent = msg;
+            formMessage.className = `text-center text-sm mt-4 ${type === 'error' ? 'text-red-400' : 'text-vapor-cyan'}`;
+            formMessage.classList.remove('hidden');
+            setTimeout(() => formMessage.classList.add('hidden'), 5000);
+        }
+
+        // Smooth scroll — validar que href sea un ID selector seguro antes de querySelector
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (!/^#[\w-]+$/.test(href)) return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Navbar background on scroll — con debounce para no disparar en cada pixel
+        const nav = document.querySelector('nav');
+        let scrollTimer;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(() => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('shadow-lg', 'shadow-vapor-pink/5');
+                } else {
+                    nav.classList.remove('shadow-lg', 'shadow-vapor-pink/5');
+                }
+            }, 50);
+        });
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "Dulce Nébula",
+        "description": "Pastelería artesanal de autor con sabores únicos y diseños de vanguardia.",
+        "url": "https://dulcenebula.com",
+        "telephone": "+525598765432",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Col. Roma Norte",
+            "addressLocality": "Ciudad de México",
+            "addressCountry": "MX"
+        },
+        "openingHours": "Mo-Sa 09:00-19:00",
+        "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "2400"
+        }
+    }
+    </script>
+</body>
+</html>

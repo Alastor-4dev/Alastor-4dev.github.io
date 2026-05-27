@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;">
+  <title>Mythos — Cafetería Exclusiva de Café Artesanal en España</title>
+  <meta name="description" content="Mythos: cafetería de autor con café de origen único y repostería artesanal. 6 locales exclusivos en España. Reserva tu experiencia.">
+  <meta property="og:title" content="Mythos — Cafetería Exclusiva de Café Artesanal">
+  <meta property="og:description" content="Café de origen único, repostería artesanal y un ambiente diseñado para quienes aprecian lo excepcional.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/hero-coffee.png" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+<!-- ========== NAVBAR ========== -->
+<header>
+<nav class="navbar" id="navbar" aria-label="Navegación principal">
+  <a href="#" class="nav-logo"><img src="assets/logo.png" alt="" width="40" height="40" class="nav-logo-img" aria-hidden="true">Mythos<span>Cafetería de Autor</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">Nosotros</a></li>
+    <li><a href="#menu">Carta</a></li>
+    <li><a href="#experience">Experiencia</a></li>
+    <li><a href="#locations">Locales</a></li>
+    <li><a href="#reservations" class="nav-cta">Reservar</a></li>
+  </ul>
+  <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+</header>
+
+<main id="main-content">
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-label">✦&nbsp; Experiencia exclusiva de café &nbsp;✦</p>
+    <h1 class="hero-title">El arte de lo <em>extraordinario</em></h1>
+    <p class="hero-subtitle">Café de origen único, repostería artesanal y un ambiente diseñado para quienes aprecian lo excepcional.</p>
+    <div class="hero-buttons">
+      <a href="#reservations" class="btn-primary">Reservar Mesa</a>
+      <a href="#menu" class="btn-secondary">Explorar Carta</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="section" id="about">
+  <div class="about reveal">
+    <div class="about-image-wrapper">
+      <img src="assets/interior.png" alt="Interior elegante de Mythos con asientos de terciopelo, barra de mármol y lámparas de latón" width="1024" height="1024" loading="lazy">
+    </div>
+    <div class="about-text">
+      <p class="section-label">Nuestra Historia</p>
+      <h2 class="section-title">Donde la tradición se encuentra con la excelencia</h2>
+      <div class="divider-gold"></div>
+      <p class="section-desc">Fundada en 2018, Mythos nació de la pasión por ofrecer una experiencia de café que trasciende lo convencional. Cada taza es una obra maestra, cada visita un momento inolvidable.</p>
+      <br>
+      <p class="section-desc">Seleccionamos los granos más exclusivos de las montañas de Colombia, Etiopía y Guatemala. Nuestros baristas, formados en las mejores escuelas del mundo, transforman cada preparación en un ritual sensorial.</p>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-number">7</div>
+          <div class="stat-text">Locales</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">12</div>
+          <div class="stat-text">Orígenes</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">5★</div>
+          <div class="stat-text">Valoración</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MENU ========== -->
+<section class="section menu-section" id="menu">
+  <div class="reveal">
+    <p class="section-label" style="text-align:center">Nuestra Carta</p>
+    <h2 class="section-title" style="text-align:center">Creaciones selectas</h2>
+    <div class="divider-gold" style="margin:20px auto"></div>
+    <p class="section-desc" style="text-align:center;margin:0 auto">Una cuidada selección de cafés de origen único, repostería artesanal y creaciones exclusivas de temporada.</p>
+  </div>
+  <div class="menu-grid reveal">
+    <div class="menu-category">
+      <div class="menu-icon">☕</div>
+      <h3 class="menu-cat-title">Cafés de Origen</h3>
+      <div class="menu-item"><span class="menu-item-name">Ethiopian Yirgacheffe</span><span class="menu-item-price">€5.50</span></div>
+      <div class="menu-item"><span class="menu-item-name">Colombian Geisha</span><span class="menu-item-price">€7.00</span></div>
+      <div class="menu-item"><span class="menu-item-name">Jamaican Blue Mountain</span><span class="menu-item-price">€8.50</span></div>
+      <div class="menu-item"><span class="menu-item-name">Kopi Luwak Reserve</span><span class="menu-item-price">€12.00</span></div>
+      <div class="menu-item"><span class="menu-item-name">Guatemala Antigua</span><span class="menu-item-price">€5.00</span></div>
+    </div>
+    <div class="menu-category">
+      <div class="menu-icon">🍵</div>
+      <h3 class="menu-cat-title">Creaciones Signature</h3>
+      <div class="menu-item"><span class="menu-item-name">Latte Dorée (Oro 24K)</span><span class="menu-item-price">€9.00</span></div>
+      <div class="menu-item"><span class="menu-item-name">Espresso Affogato Trufado</span><span class="menu-item-price">€8.50</span></div>
+      <div class="menu-item"><span class="menu-item-name">Matcha Ceremonia Imperial</span><span class="menu-item-price">€7.50</span></div>
+      <div class="menu-item"><span class="menu-item-name">Chocolate Maison Noir</span><span class="menu-item-price">€6.50</span></div>
+      <div class="menu-item"><span class="menu-item-name">Cold Brew Infusión Floral</span><span class="menu-item-price">€7.00</span></div>
+    </div>
+    <div class="menu-category">
+      <div class="menu-icon">🥐</div>
+      <h3 class="menu-cat-title">Repostería Artesanal</h3>
+      <div class="menu-item"><span class="menu-item-name">Croissant Mantequilla AOP</span><span class="menu-item-price">€4.50</span></div>
+      <div class="menu-item"><span class="menu-item-name">Éclair Pistache & Rose</span><span class="menu-item-price">€6.00</span></div>
+      <div class="menu-item"><span class="menu-item-name">Tarta Tatin de Temporada</span><span class="menu-item-price">€7.50</span></div>
+      <div class="menu-item"><span class="menu-item-name">Macarons Selección (6 ud)</span><span class="menu-item-price">€9.00</span></div>
+      <div class="menu-item"><span class="menu-item-name">Financier Almendra & Miel</span><span class="menu-item-price">€4.00</span></div>
+    </div>
+  </div>
+  <div class="menu-image-row reveal">
+    <img src="assets/coffee-beans.png" alt="Granos de café premium tostados sobre superficie oscura" width="1024" height="1024" loading="lazy">
+    <img src="assets/pastries.png" alt="Selección de repostería artesanal: croissants, éclairs y tartas" width="1024" height="1024" loading="lazy">
+  </div>
+</section>
+
+<!-- ========== EXPERIENCE ========== -->
+<section class="section experience" id="experience">
+  <div class="reveal">
+    <p class="section-label">La Experiencia</p>
+    <h2 class="section-title">Más que café, un estilo de vida</h2>
+    <div class="divider-gold" style="margin:20px auto"></div>
+  </div>
+  <div class="exp-features reveal">
+    <div class="exp-feature">
+      <div class="exp-icon">◆</div>
+      <h3 class="exp-title">Granos Exclusivos</h3>
+      <p class="exp-text">Selección directa de fincas premiadas. Solo los mejores lotes del mundo llegan a tu taza.</p>
+    </div>
+    <div class="exp-feature">
+      <div class="exp-icon">✦</div>
+      <h3 class="exp-title">Baristas de Élite</h3>
+      <p class="exp-text">Profesionales certificados con formación en las mejores escuelas de café del mundo.</p>
+    </div>
+    <div class="exp-feature">
+      <div class="exp-icon">▣</div>
+      <h3 class="exp-title">Diseño Inmersivo</h3>
+      <p class="exp-text">Espacios diseñados por arquitectos galardonados que elevan cada momento.</p>
+    </div>
+    <div class="exp-feature">
+      <div class="exp-icon">❖</div>
+      <h3 class="exp-title">Servicio Privado</h3>
+      <p class="exp-text">Reserva salas privadas para reuniones íntimas o experiencias de cata exclusivas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LOCATIONS ========== -->
+<section class="section locations-section" id="locations">
+  <div class="reveal" style="text-align:center">
+    <p class="section-label">Nuestros Locales</p>
+    <h2 class="section-title">Una cadena de experiencias únicas</h2>
+    <div class="divider-gold" style="margin:20px auto"></div>
+    <p class="section-desc" style="margin:0 auto">Cada local de Mythos es una interpretación única del lujo y la tradición cafetera, adaptada al carácter de su ciudad.</p>
+  </div>
+  <div class="locations-grid reveal">
+    <div class="location-card">
+      <div class="location-img">
+        <img src="assets/interior.png" alt="Local Mythos en el barrio de Salamanca, Madrid" width="1024" height="1024" loading="lazy">
+        <span class="location-badge">Flagship</span>
+      </div>
+      <div class="location-info">
+        <h3 class="location-name">Madrid — Salamanca</h3>
+        <p class="location-address">Calle Serrano 42, 28001 Madrid</p>
+        <div class="location-details">
+          <span class="location-detail">☎ +34 910 123 456</span>
+          <span class="location-detail">◷ 7:00 – 23:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="location-card">
+      <div class="location-img">
+        <img src="assets/hero-coffee.png" alt="Local Mythos en el Eixample, Barcelona" width="1024" height="1024" loading="lazy">
+      </div>
+      <div class="location-info">
+        <h3 class="location-name">Barcelona — Eixample</h3>
+        <p class="location-address">Passeig de Gràcia 88, 08008 Barcelona</p>
+        <div class="location-details">
+          <span class="location-detail">☎ +34 933 456 789</span>
+          <span class="location-detail">◷ 7:30 – 22:30</span>
+        </div>
+      </div>
+    </div>
+    <div class="location-card">
+      <div class="location-img">
+        <img src="assets/coffee-beans.png" alt="Local Mythos en El Carmen, Valencia" width="1024" height="1024" loading="lazy">
+      </div>
+      <div class="location-info">
+        <h3 class="location-name">Valencia — El Carmen</h3>
+        <p class="location-address">Plaza del Mercado 15, 46001 Valencia</p>
+        <div class="location-details">
+          <span class="location-detail">☎ +34 961 234 567</span>
+          <span class="location-detail">◷ 8:00 – 22:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="location-card">
+      <div class="location-img">
+        <img src="assets/pastries.png" alt="Local Mythos en Santa Cruz, Sevilla" width="1024" height="1024" loading="lazy">
+      </div>
+      <div class="location-info">
+        <h3 class="location-name">Sevilla — Santa Cruz</h3>
+        <p class="location-address">Calle Mateos Gago 8, 41004 Sevilla</p>
+        <div class="location-details">
+          <span class="location-detail">☎ +34 954 567 890</span>
+          <span class="location-detail">◷ 8:00 – 23:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="location-card">
+      <div class="location-img">
+        <img src="assets/interior.png" alt="Local Mythos en Abando, Bilbao" width="1024" height="1024" loading="lazy">
+        <span class="location-badge">Nuevo</span>
+      </div>
+      <div class="location-info">
+        <h3 class="location-name">Bilbao — Abando</h3>
+        <p class="location-address">Gran Vía de Don Diego López de Haro 25, 48009</p>
+        <div class="location-details">
+          <span class="location-detail">☎ +34 944 321 654</span>
+          <span class="location-detail">◷ 7:30 – 22:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="location-card">
+      <div class="location-img">
+        <img src="assets/hero-coffee.png" alt="Local Mythos en el centro de Málaga" width="1024" height="1024" loading="lazy">
+      </div>
+      <div class="location-info">
+        <h3 class="location-name">Málaga — Centro</h3>
+        <p class="location-address">Calle Marqués de Larios 12, 29005 Málaga</p>
+        <div class="location-details">
+          <span class="location-detail">☎ +34 952 654 321</span>
+          <span class="location-detail">◷ 8:00 – 23:30</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RESERVATIONS ========== -->
+<section class="reservations" id="reservations">
+  <div class="reservation-visual"></div>
+  <div class="reservation-form-wrapper">
+    <div class="reveal">
+      <p class="section-label">Reservaciones</p>
+      <h2 class="section-title">Reserve su experiencia</h2>
+      <div class="divider-gold"></div>
+      <p class="section-desc">Garantice su mesa en cualquiera de nuestros locales exclusivos. Para grupos o eventos privados, contáctenos directamente.</p>
+    </div>
+    <form class="reservation-form reveal" id="reservationForm" onsubmit="handleReservation(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="res-name">Nombre Completo</label>
+          <input type="text" id="res-name" name="name" autocomplete="name" placeholder="Su nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="res-email">Email</label>
+          <input type="email" id="res-email" name="email" autocomplete="email" placeholder="email@ejemplo.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="res-date">Fecha</label>
+          <input type="date" id="res-date" required>
+        </div>
+        <div class="form-group">
+          <label for="res-time">Hora</label>
+          <input type="time" id="res-time" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="res-guests">Personas</label>
+          <select id="res-guests" required>
+            <option value="">Seleccionar</option>
+            <option value="1">1 persona</option>
+            <option value="2">2 personas</option>
+            <option value="3">3 personas</option>
+            <option value="4">4 personas</option>
+            <option value="5">5 personas</option>
+            <option value="6">6+ personas (privado)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="res-location">Local</label>
+          <select id="res-location" required>
+            <option value="">Seleccionar local</option>
+            <option value="madrid">Madrid — Salamanca</option>
+            <option value="barcelona">Barcelona — Eixample</option>
+            <option value="valencia">Valencia — El Carmen</option>
+            <option value="sevilla">Sevilla — Santa Cruz</option>
+            <option value="bilbao">Bilbao — Abando</option>
+            <option value="malaga">Málaga — Centro</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group full">
+          <label for="res-notes">Notas Especiales</label>
+          <textarea id="res-notes" rows="3" placeholder="Alergias, ocasión especial, preferencias..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn-reserve" id="btnReserve">Confirmar Reserva</button>
+    </form>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section testimonial-section">
+  <div class="reveal">
+    <p class="section-label">Testimonios</p>
+    <h2 class="section-title">Lo que dicen nuestros invitados</h2>
+    <div class="divider-gold" style="margin:20px auto"></div>
+  </div>
+  <div class="testimonials-carousel reveal">
+    <div class="testimonial active">
+      <p class="testimonial-text">"Una experiencia sensorial incomparable. El café Geisha colombiano y el ambiente del local de Salamanca son absolutamente sublimes."</p>
+      <p class="testimonial-author">Elena Montero</p>
+      <p class="testimonial-role">Crítica Gastronómica, El País</p>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">"Mythos ha redefinido lo que significa tomar café. Cada detalle está cuidado con una precisión que roza la perfección."</p>
+      <p class="testimonial-author">Carlos Mendoza</p>
+      <p class="testimonial-role">Director Creativo</p>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">"El único lugar donde el ritual del café se eleva a la categoría de arte. La repostería es extraordinaria."</p>
+      <p class="testimonial-author">Isabella Ferrer</p>
+      <p class="testimonial-role">Chef con Estrella Michelin</p>
+    </div>
+    <div class="testimonial-dots">
+      <button class="testimonial-dot active" data-index="0" aria-label="Testimonio 1"></button>
+      <button class="testimonial-dot" data-index="1" aria-label="Testimonio 2"></button>
+      <button class="testimonial-dot" data-index="2" aria-label="Testimonio 3"></button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer" id="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo"><img src="assets/logo.png" alt="" width="40" height="40" class="nav-logo-img" aria-hidden="true">Mythos<span>Cafetería de Autor</span></a>
+      <p>Una cadena de cafeterías exclusivas donde cada taza cuenta una historia de excelencia y cada visita se convierte en un recuerdo.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <a href="#about">Nosotros</a>
+      <a href="#menu">Carta</a>
+      <a href="#experience">Experiencia</a>
+      <a href="#locations">Locales</a>
+      <a href="#reservations">Reservar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Locales</h4>
+      <a href="#locations">Madrid</a>
+      <a href="#locations">Barcelona</a>
+      <a href="#locations">Valencia</a>
+      <a href="#locations">Sevilla</a>
+      <a href="#locations">Bilbao</a>
+      <a href="#locations">Málaga</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="mailto:reservas@mythos.es">reservas@mythos.es</a>
+      <a href="tel:+34910123456">+34 910 123 456</a>
+      <a href="#">Prensa</a>
+      <a href="#">Trabaja con nosotros</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Mythos. Todos los derechos reservados.</p>
+    <div class="footer-social">
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="Facebook">FB</a>
+      <a href="#" aria-label="TikTok">TK</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Canvas for comet cursor trail -->
+<canvas id="cursorCanvas" aria-hidden="true"></canvas>
+
+<script>
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Mobile menu
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+reveals.forEach(el => revealObserver.observe(el));
+
+// Testimonial carousel
+const testimonials = document.querySelectorAll('.testimonial');
+const dots = document.querySelectorAll('.testimonial-dot');
+let currentTestimonial = 0;
+
+function showTestimonial(index) {
+  testimonials.forEach(t => t.classList.remove('active'));
+  dots.forEach(d => d.classList.remove('active'));
+  testimonials[index].classList.add('active');
+  dots[index].classList.add('active');
+  currentTestimonial = index;
+}
+
+dots.forEach(dot => {
+  dot.addEventListener('click', () => showTestimonial(parseInt(dot.dataset.index)));
+});
+
+setInterval(() => {
+  showTestimonial((currentTestimonial + 1) % testimonials.length);
+}, 6000);
+
+// Reservation form
+function handleReservation(e) {
+  e.preventDefault();
+  const btn = document.getElementById('btnReserve');
+  btn.textContent = '✓ Reserva Confirmada';
+  btn.style.background = '#2d7a4f';
+  btn.style.borderColor = '#2d7a4f';
+  btn.style.color = '#fff';
+  setTimeout(() => {
+    btn.textContent = 'Confirmar Reserva';
+    btn.style.background = '';
+    btn.style.borderColor = '';
+    btn.style.color = '';
+    e.target.reset();
+  }, 3000);
+}
+
+// Set min date for reservation
+const dateInput = document.getElementById('res-date');
+const today = new Date().toISOString().split('T')[0];
+dateInput.setAttribute('min', today);
+
+// ========== COMET CURSOR TRAIL (Canvas) ==========
+(function() {
+  const canvas = document.getElementById('cursorCanvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let mouseX = -100, mouseY = -100;
+  let lastMouseX = -100, lastMouseY = -100;
+  let animFrameId;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  // Throttle particle creation to ~30fps for performance
+  let lastSpawn = 0;
+  function spawnParticles(timestamp) {
+    if (timestamp - lastSpawn < 33) return;
+    if (mouseX < 0) return;
+    lastSpawn = timestamp;
+
+    // Speed of cursor movement
+    const dx = mouseX - lastMouseX;
+    const dy = mouseY - lastMouseY;
+    const speed = Math.sqrt(dx * dx + dy * dy);
+    lastMouseX = mouseX;
+    lastMouseY = mouseY;
+
+    // Number of particles proportional to speed (min 2, max 6)
+    const count = Math.min(6, Math.max(2, Math.floor(speed * 0.3)));
+
+    for (let i = 0; i < count; i++) {
+      const angle = Math.random() * Math.PI * 2; // Random direction around cursor
+      const dist = Math.random() * 8 + 2;
+      const vx = Math.cos(angle) * (Math.random() * 0.8 + 0.2);
+      const vy = Math.sin(angle) * (Math.random() * 0.8 + 0.2);
+      const size = Math.random() * 3 + 1.5;
+      particles.push({
+        x: mouseX + Math.cos(angle) * dist,
+        y: mouseY + Math.sin(angle) * dist,
+        vx: vx,
+        vy: vy,
+        size: size,
+        life: 1.0,        // starts at 1, fades to 0
+        decay: Math.random() * 0.008 + 0.006, // slow decay for long tail
+        hue: 38 + Math.random() * 12 // gold hue variation
+      });
+    }
+  }
+
+  function animate(timestamp) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    spawnParticles(timestamp);
+
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.99;  // very slight friction
+      p.vy *= 0.99;
+      p.life -= p.decay;
+      p.size *= 0.998; // slow shrink
+
+      if (p.life <= 0) {
+        particles.splice(i, 1);
+        continue;
+      }
+
+      // Golden glow with gradual fade
+      const alpha = p.life * 0.35;
+      const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 2);
+      gradient.addColorStop(0, 'hsla(' + p.hue + ', 55%, 62%, ' + alpha + ')');
+      gradient.addColorStop(0.5, 'hsla(' + p.hue + ', 50%, 50%, ' + (alpha * 0.5) + ')');
+      gradient.addColorStop(1, 'hsla(' + p.hue + ', 45%, 40%, 0)');
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size * 2, 0, Math.PI * 2);
+      ctx.fillStyle = gradient;
+      ctx.fill();
+    }
+
+    // Keep particle array bounded for memory safety
+    if (particles.length > 300) {
+      particles.splice(0, particles.length - 300);
+    }
+
+    animFrameId = requestAnimationFrame(animate);
+  }
+
+  animFrameId = requestAnimationFrame(animate);
+
+  // Disable on touch devices
+  if ('ontouchstart' in window) {
+    cancelAnimationFrame(animFrameId);
+    canvas.style.display = 'none';
+  }
+})();
+</script>
+</body>
+</html>
