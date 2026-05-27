@@ -2,7 +2,7 @@
 
 Crafted interfaces, visual concepts, and frontend experiments.
 
-**→ [alex.github.io](https://alex.github.io)**
+**→ [Alastor-4dev.github.io](https://Alastor-4dev.github.io)**
 
 ---
 
@@ -56,7 +56,7 @@ Curated collection of frontend projects spanning landing pages, dashboards, visu
   "featured": false,
   "date": "2026-05-27",
   "thumbnail": "",
-  "url": "https://alex.github.io/proyectos/your-project-slug/"
+  "url": "https://Alastor-4dev.github.io/proyectos/your-project-slug/"
 }
 ```
 
