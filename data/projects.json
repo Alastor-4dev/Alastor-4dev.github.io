@@ -2,7 +2,7 @@
   {
     "slug": "animal-welfare",
     "title": "Animal Welfare",
-    "description": "Patitas Felices: El mejor spa y estética para tus mejores amigos. Baño, corte, vacunas y más en un ambiente alegre y seguro.",
+    "description": "Patitas Felices: El mejor spa y est\u00e9tica para tus mejores amigos. Ba\u00f1o, corte, vacunas y m\u00e1s en un ambiente alegre y seguro.",
     "category": "landing-page",
     "tags": [
       "animals",
@@ -20,7 +20,7 @@
   {
     "slug": "cafe-glassmorphism",
     "title": "Cafe Glassmorphism",
-    "description": "Mythos: cafetería de autor con café de origen único y repostería artesanal. 6 locales exclusivos en España. Reserva tu experiencia.",
+    "description": "Mythos: cafeter\u00eda de autor con caf\u00e9 de origen \u00fanico y reposter\u00eda artesanal. 6 locales exclusivos en Espa\u00f1a. Reserva tu experiencia.",
     "category": "landing-page",
     "tags": [
       "glassmorphism",
@@ -39,7 +39,7 @@
   {
     "slug": "codex-pets",
     "title": "Codex Pets",
-    "description": "Patitas Felices: estética canina con estilo pixel art, servicios de baño, cuidado, veterinaria y citas para mascotas.",
+    "description": "Patitas Felices: est\u00e9tica canina con estilo pixel art, servicios de ba\u00f1o, cuidado, veterinaria y citas para mascotas.",
     "category": "prototype",
     "tags": [
       "prototype",
@@ -58,7 +58,7 @@
   {
     "slug": "comic-education",
     "title": "Comic Education",
-    "description": "KABOOM! Academy — La plataforma de educación online que explota tu potencial. Cursos interactivos, mentores expertos y una comunidad que te impulsa. ¡Aprende con estilo!",
+    "description": "KABOOM! Academy \u2014 La plataforma de educaci\u00f3n online que explota tu potencial. Cursos interactivos, mentores expertos y una comunidad que te impulsa. \u00a1Aprende con estilo!",
     "category": "landing-page",
     "tags": [
       "comic",
@@ -77,7 +77,7 @@
   {
     "slug": "creative-agency-neon",
     "title": "Creative Agency",
-    "description": "NOVA Creative Studio — Transformamos ideas en experiencias digitales extraordinarias. Branding, diseño web, marketing digital y producción audiovisual.",
+    "description": "NOVA Creative Studio \u2014 Transformamos ideas en experiencias digitales extraordinarias. Branding, dise\u00f1o web, marketing digital y producci\u00f3n audiovisual.",
     "category": "landing-page",
     "tags": [
       "neon",
@@ -97,7 +97,7 @@
   {
     "slug": "cyberpunk-gym",
     "title": "Cyberpunk Gym",
-    "description": "NEXUS GYM: El gimnasio del futuro. Tecnología de punta, entrenamiento personalizado con IA y equipos de última generación. Únete a la revolución fitness.",
+    "description": "NEXUS GYM: El gimnasio del futuro. Tecnolog\u00eda de punta, entrenamiento personalizado con IA y equipos de \u00faltima generaci\u00f3n. \u00danete a la revoluci\u00f3n fitness.",
     "category": "landing-page",
     "tags": [
       "cyberpunk",
@@ -117,7 +117,7 @@
   {
     "slug": "dark-modern-real-estate",
     "title": "Dark Real Estate",
-    "description": "Aurum Realty — Propiedades de lujo que redefinen tu estilo de vida. Encuentra residencias exclusivas en las ubicaciones más prestigiosas.",
+    "description": "Aurum Realty \u2014 Propiedades de lujo que redefinen tu estilo de vida. Encuentra residencias exclusivas en las ubicaciones m\u00e1s prestigiosas.",
     "category": "landing-page",
     "tags": [
       "real-estate",
@@ -136,7 +136,7 @@
   {
     "slug": "digital-nomads-synthwave",
     "title": "Digital Nomads",
-    "description": "NomadWave es la comunidad premium para nómadas digitales. Conecta, aprende y crece mientras trabajas desde cualquier lugar del mundo.",
+    "description": "NomadWave es la comunidad premium para n\u00f3madas digitales. Conecta, aprende y crece mientras trabajas desde cualquier lugar del mundo.",
     "category": "landing-page",
     "tags": [
       "synthwave",
@@ -155,7 +155,7 @@
   {
     "slug": "elegant-fashion",
     "title": "Elegant Fashion",
-    "description": "AURÈLE — Moda de autor con alma contemporánea. Colecciones exclusivas que fusionan artesanía europea con diseño vanguardista.",
+    "description": "AUR\u00c8LE \u2014 Moda de autor con alma contempor\u00e1nea. Colecciones exclusivas que fusionan artesan\u00eda europea con dise\u00f1o vanguardista.",
     "category": "landing-page",
     "tags": [
       "fashion",
@@ -173,7 +173,7 @@
   {
     "slug": "financial-landing",
     "title": "Financial Landing",
-    "description": "Plataforma de análisis fundamental de acciones, portafolio de inversión y métricas de mercado.",
+    "description": "Plataforma de an\u00e1lisis fundamental de acciones, portafolio de inversi\u00f3n y m\u00e9tricas de mercado.",
     "category": "landing-page",
     "tags": [
       "finance",
@@ -211,7 +211,7 @@
   {
     "slug": "futuristic-nutrition",
     "title": "Futuristic Nutrition",
-    "description": "NutriCore usa inteligencia artificial para crear planes de nutrición personalizados. Transforma tu alimentación con ciencia de vanguardia y resultados medibles.",
+    "description": "NutriCore usa inteligencia artificial para crear planes de nutrici\u00f3n personalizados. Transforma tu alimentaci\u00f3n con ciencia de vanguardia y resultados medibles.",
     "category": "landing-page",
     "tags": [
       "futuristic",
@@ -230,7 +230,7 @@
   {
     "slug": "gothic-candles",
     "title": "Gothic Candles",
-    "description": "Velas artesanales elaboradas con cera de soja, fragancias exclusivas y diseño gótico. Ilumina tus espacios con arte oscuro y elegante.",
+    "description": "Velas artesanales elaboradas con cera de soja, fragancias exclusivas y dise\u00f1o g\u00f3tico. Ilumina tus espacios con arte oscuro y elegante.",
     "category": "landing-page",
     "tags": [
       "gothic",
@@ -306,7 +306,7 @@
   {
     "slug": "pet-adoption",
     "title": "Pet Adoption",
-    "description": "Frontend concept — Pet Adoption",
+    "description": "Frontend concept \u2014 Pet Adoption",
     "category": "landing-page",
     "tags": [
       "pets",
@@ -323,8 +323,8 @@
   },
   {
     "slug": "psychology-japanese",
-    "title": "Psychology — Japanese",
-    "description": "Kokoro: Centro de psicología inspirado en la filosofía zen. Terapia individual, mindfulness y bienestar emocional. Encuentra tu equilibrio interior.",
+    "title": "Psychology \u2014 Japanese",
+    "description": "Kokoro: Centro de psicolog\u00eda inspirado en la filosof\u00eda zen. Terapia individual, mindfulness y bienestar emocional. Encuentra tu equilibrio interior.",
     "category": "landing-page",
     "tags": [
       "japanese",
@@ -343,7 +343,7 @@
   {
     "slug": "retro-veterinary",
     "title": "Retro Veterinary",
-    "description": "Clínica veterinaria con el cariño de siempre y la medicina de hoy. Consultas, vacunación, cirugía, peluquería y más para tu mejor amigo.",
+    "description": "Cl\u00ednica veterinaria con el cari\u00f1o de siempre y la medicina de hoy. Consultas, vacunaci\u00f3n, cirug\u00eda, peluquer\u00eda y m\u00e1s para tu mejor amigo.",
     "category": "landing-page",
     "tags": [
       "retro",
@@ -362,7 +362,7 @@
   {
     "slug": "rust-bar",
     "title": "Rust Bar",
-    "description": "Bar Óxido — San Telmo, Buenos Aires. Whiskey, bourbon y cervezas artesanales en un ambiente de madera y metal. Est. 2019. Av. San Juan 1842.",
+    "description": "Bar \u00d3xido \u2014 San Telmo, Buenos Aires. Whiskey, bourbon y cervezas artesanales en un ambiente de madera y metal. Est. 2019. Av. San Juan 1842.",
     "category": "landing-page",
     "tags": [
       "industrial",
@@ -400,7 +400,7 @@
   {
     "slug": "scandinavian-cafe",
     "title": "Scandinavian Cafe",
-    "description": "Fika es un café de especialidad inspirado en la filosofía escandinava del descanso consciente. Granos de origen único, repostería artesanal y un espacio diseñado para pausar.",
+    "description": "Fika es un caf\u00e9 de especialidad inspirado en la filosof\u00eda escandinava del descanso consciente. Granos de origen \u00fanico, reposter\u00eda artesanal y un espacio dise\u00f1ado para pausar.",
     "category": "landing-page",
     "tags": [
       "scandinavian",
@@ -438,7 +438,7 @@
   {
     "slug": "tattoo-studio-brutalist",
     "title": "Tattoo Studio",
-    "description": "INKA NEEDLE es un estudio de tatuaje artístico premium. Diseños únicos, artistas premiados, higiene certificada. Reserva tu sesión.",
+    "description": "INKA NEEDLE es un estudio de tatuaje art\u00edstico premium. Dise\u00f1os \u00fanicos, artistas premiados, higiene certificada. Reserva tu sesi\u00f3n.",
     "category": "landing-page",
     "tags": [
       "brutalism",
@@ -457,7 +457,7 @@
   {
     "slug": "vaporwave-bakery",
     "title": "Vaporwave Bakery",
-    "description": "Dulce Nébula: pastelería artesanal con sabores únicos y diseño de vanguardia. Pasteles, cupcakes y creaciones personalizadas para eventos especiales.",
+    "description": "Dulce N\u00e9bula: pasteler\u00eda artesanal con sabores \u00fanicos y dise\u00f1o de vanguardia. Pasteles, cupcakes y creaciones personalizadas para eventos especiales.",
     "category": "landing-page",
     "tags": [
       "vaporwave",
@@ -476,7 +476,7 @@
   {
     "slug": "y2k-streaming",
     "title": "Y2K Streaming",
-    "description": "StarWave es la plataforma de streaming definitiva. Miles de películas, series y anime en calidad 4K. Prueba gratis 30 días. Sin compromisos.",
+    "description": "StarWave es la plataforma de streaming definitiva. Miles de pel\u00edculas, series y anime en calidad 4K. Prueba gratis 30 d\u00edas. Sin compromisos.",
     "category": "landing-page",
     "tags": [
       "y2k",
@@ -491,5 +491,118 @@
     "date": "2026-05-20",
     "thumbnail": "",
     "url": "https://Alastor-4dev.github.io/proyectos/y2k-streaming/"
+  },
+  {
+    "slug": "origen-cafe",
+    "title": "Origen Cafe",
+    "description": "Origen: Cafeter\u00eda artesanal de especialidad en la colonia bohemia de CDMX. Caf\u00e9 de Veracruz, Chiapas y Oaxaca en un espacio c\u00e1lido y acogedor.",
+    "category": "landing-page",
+    "tags": [
+      "cafe",
+      "warm",
+      "mexican"
+    ],
+    "techs": [
+      "Google Fonts",
+      "Vanilla JS"
+    ],
+    "featured": true,
+    "date": "2026-05-31",
+    "thumbnail": "",
+    "url": "https://Alastor-4dev.github.io/proyectos/origen-cafe/"
+  },
+  {
+    "slug": "patitas-estetica",
+    "title": "Patitas Est\u00e9tica Canina",
+    "description": "Patitas: Est\u00e9tica canina y spa para perros en CDMX. Ba\u00f1o, corte, deslanado y aromaterapia con groomers certificados.",
+    "category": "landing-page",
+    "tags": [
+      "pets",
+      "playful",
+      "brand"
+    ],
+    "techs": [
+      "Google Fonts",
+      "Vanilla JS"
+    ],
+    "featured": true,
+    "date": "2026-05-31",
+    "thumbnail": "",
+    "url": "https://Alastor-4dev.github.io/proyectos/patitas-estetica/"
+  },
+  {
+    "slug": "raiz-nutricion",
+    "title": "Ra\u00edz Nutrici\u00f3n",
+    "description": "Ra\u00edz: Consulta de nutrici\u00f3n integral y funcional en CDMX. Planes personalizados con base en evidencia, cocina mexicana real y acompa\u00f1amiento continuo.",
+    "category": "landing-page",
+    "tags": [
+      "health",
+      "nutrition",
+      "minimal"
+    ],
+    "techs": [
+      "Next.js",
+      "Tailwind CSS"
+    ],
+    "featured": true,
+    "date": "2026-06-01",
+    "thumbnail": "",
+    "url": "https://Alastor-4dev.github.io/proyectos/raiz-nutricion/"
+  },
+  {
+    "slug": "verde-plantas",
+    "title": "Verde Plantas",
+    "description": "Verde: Tienda de plantas y decoraci\u00f3n natural. Suculentas, macetas artesanales y dise\u00f1o bot\u00e1nico para espacios urbanos.",
+    "category": "landing-page",
+    "tags": [
+      "nature",
+      "botanical",
+      "minimal"
+    ],
+    "techs": [
+      "Google Fonts"
+    ],
+    "featured": false,
+    "date": "2026-05-30",
+    "thumbnail": "",
+    "url": "https://Alastor-4dev.github.io/proyectos/verde-plantas/"
+  },
+  {
+    "slug": "navaja-barberia",
+    "title": "Navaja Barber\u00eda",
+    "description": "Navaja: Barber\u00eda cl\u00e1sica y moderna en CDMX. Cortes, afeitado con navaja, arreglo de barba y cuidado masculino profesional.",
+    "category": "landing-page",
+    "tags": [
+      "barber",
+      "dark",
+      "masculine"
+    ],
+    "techs": [
+      "Google Fonts",
+      "Vanilla JS"
+    ],
+    "featured": false,
+    "date": "2026-05-30",
+    "thumbnail": "",
+    "url": "https://Alastor-4dev.github.io/proyectos/navaja-barberia/"
+  },
+  {
+    "slug": "luz-yoga",
+    "title": "Luz Yoga",
+    "description": "Luz: Estudio de yoga y bienestar integral en CDMX. Clases de vinyasa, meditaci\u00f3n, retiros y formaci\u00f3n para todos los niveles.",
+    "category": "landing-page",
+    "tags": [
+      "yoga",
+      "wellness",
+      "calm"
+    ],
+    "techs": [
+      "Next.js",
+      "Tailwind CSS"
+    ],
+    "featured": false,
+    "date": "2026-06-01",
+    "thumbnail": "",
+    "url": "https://Alastor-4dev.github.io/proyectos/luz-yoga/"
   }
 ]

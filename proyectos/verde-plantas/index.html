@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Verde · Plantas, macetas artesanales y terrarios en CDMX</title>
+<meta name="description" content="Verde es una tienda de plantas de interior, macetas artesanales y taller de terrarios en la Ciudad de México. Lleva un poco de calma verde a tu casa." />
+<link rel="preconnect" href="https://images.unsplash.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     Verde — Design tokens
+     Palette: warm whites, forest greens, terracotta, earth tones
+     (No neon. Organic, fresh, serene — per project rules.)
+     ============================================================ */
+  :root {
+    --bg: #faf8f3;          /* warm white */
+    --bg-soft: #f1ede3;     /* paper */
+    --ink: #20251f;         /* near-black with green subtone */
+    --muted: #5c6357;       /* warm grey-green */
+    --forest: #2f4a37;      /* deep forest green */
+    --forest-deep: #1f3326;
+    --leaf: #4f7a52;        /* leaf green accent */
+    --terracotta: #c1714b;  /* warm terracotta accent */
+    --sand: #e6dcc8;
+    --line: #e3dccd;
+
+    /* Emil's strong custom easings — built-in CSS easings lack punch */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+    --maxw: 1180px;
+    --radius: 18px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--leaf);
+    margin: 0 0 18px;
+  }
+
+  /* ============================================================
+     Buttons — must feel responsive (scale on :active)
+     ============================================================ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 14px 26px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    cursor: pointer;
+    /* exact properties only — never transition: all */
+    transition: transform 160ms var(--ease-out),
+                background-color 200ms ease,
+                box-shadow 200ms ease,
+                color 200ms ease;
+    will-change: transform;
+  }
+  .btn:active { transform: scale(0.97); }
+
+  .btn--primary {
+    background: var(--forest);
+    color: #f3f1e9;
+    box-shadow: 0 1px 2px rgba(31,51,38,.25), 0 8px 24px -12px rgba(31,51,38,.5);
+  }
+  .btn--ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  .btn .arrow { transition: transform 220ms var(--ease-out); }
+
+  @media (hover: hover) and (pointer: fine) {
+    .btn--primary:hover { background: var(--forest-deep); box-shadow: 0 2px 4px rgba(31,51,38,.3), 0 14px 30px -12px rgba(31,51,38,.55); }
+    .btn--ghost:hover { background: var(--bg-soft); border-color: var(--sand); }
+    .btn:hover .arrow { transform: translateX(3px); }
+  }
+
+  /* ============================================================
+     Header / nav
+     ============================================================ */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: saturate(140%) blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 300ms ease, background-color 300ms ease;
+  }
+  header[data-scrolled="true"] { border-bottom-color: var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: 'Fraunces', serif; font-size: 23px; font-weight: 600; letter-spacing: -0.02em; }
+  .brand .mark {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, var(--leaf), var(--forest));
+    box-shadow: inset 0 0 0 3px var(--bg), 0 0 0 1px var(--line);
+  }
+  .nav-links { display: flex; gap: 34px; align-items: center; }
+  .nav-links a {
+    font-size: 15px; color: var(--muted); position: relative; padding: 4px 0;
+    transition: color 180ms ease;
+  }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; bottom: -2px; height: 1.5px; width: 100%;
+    background: var(--forest); transform: scaleX(0); transform-origin: left;
+    transition: transform 220ms var(--ease-out);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+  }
+  .nav-cta { display: flex; align-items: center; gap: 14px; }
+  @media (max-width: 860px) { .nav-links { display: none; } }
+
+  /* ============================================================
+     Hero
+     ============================================================ */
+  .hero { padding: 56px 0 28px; }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center;
+  }
+  .hero h1 { font-size: clamp(44px, 6vw, 76px); letter-spacing: -0.03em; }
+  .hero h1 em { font-style: italic; color: var(--leaf); }
+  .hero p.lede { font-size: 19px; color: var(--muted); max-width: 30ch; margin: 24px 0 32px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-stats { display: flex; gap: 40px; margin-top: 48px; }
+  .hero-stats .num { font-family: 'Fraunces', serif; font-size: 30px; color: var(--forest); }
+  .hero-stats .lbl { font-size: 13.5px; color: var(--muted); }
+
+  .hero-media { position: relative; }
+  .hero-media .photo-main {
+    border-radius: var(--radius);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    width: 100%;
+    box-shadow: 0 40px 80px -40px rgba(31,51,38,.5);
+  }
+  .hero-media .photo-float {
+    position: absolute; bottom: -28px; left: -34px;
+    width: 168px; aspect-ratio: 1; object-fit: cover;
+    border-radius: 14px; border: 6px solid var(--bg);
+    box-shadow: 0 24px 50px -24px rgba(31,51,38,.55);
+  }
+  .hero-media .chip {
+    position: absolute; top: 22px; right: -14px;
+    background: var(--bg); border: 1px solid var(--line); border-radius: 100px;
+    padding: 10px 16px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 18px 40px -22px rgba(31,51,38,.5);
+  }
+  .chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--leaf); }
+
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-media .photo-float { width: 130px; left: 0; bottom: -20px; }
+  }
+
+  /* ============================================================
+     Marquee — values strip (linear, constant motion)
+     ============================================================ */
+  .strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 64px; overflow: hidden; background: var(--bg-soft); }
+  .marquee { display: flex; gap: 56px; padding: 18px 0; white-space: nowrap; width: max-content; animation: scroll 32s linear infinite; }
+  .marquee span { font-family: 'Fraunces', serif; font-style: italic; font-size: 18px; color: var(--muted); display: inline-flex; align-items: center; gap: 56px; }
+  .marquee .sep { width: 5px; height: 5px; border-radius: 50%; background: var(--terracotta); }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+
+  /* ============================================================
+     Section scaffolding
+     ============================================================ */
+  section.block { padding: 96px 0; }
+  .section-head { max-width: 620px; margin-bottom: 52px; }
+  .section-head h2 { font-size: clamp(32px, 4vw, 46px); }
+  .section-head p { color: var(--muted); font-size: 18px; margin-top: 16px; }
+
+  /* ============================================================
+     Categories
+     ============================================================ */
+  .cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .cat {
+    position: relative; border-radius: var(--radius); overflow: hidden;
+    aspect-ratio: 3 / 4; display: flex; align-items: flex-end;
+    transition: transform 300ms var(--ease-out), box-shadow 300ms var(--ease-out);
+  }
+  .cat img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    transition: transform 600ms var(--ease-out);
+  }
+  .cat::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,30,22,.82) 0%, rgba(20,30,22,.18) 50%, transparent 100%); }
+  .cat-body { position: relative; padding: 26px; color: #f4f2ea; z-index: 2; }
+  .cat-body h3 { font-size: 25px; color: #fff; }
+  .cat-body p { font-size: 14.5px; color: #dfe5da; margin: 8px 0 0; }
+  .cat-body .more { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 500; margin-top: 16px; }
+  @media (hover: hover) and (pointer: fine) {
+    .cat:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(31,51,38,.6); }
+    .cat:hover img { transform: scale(1.06); }
+  }
+  @media (max-width: 860px) { .cats { grid-template-columns: 1fr; } .cat { aspect-ratio: 16/11; } }
+
+  /* ============================================================
+     Story / split — fresh & serene
+     ============================================================ */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .split-media img { border-radius: var(--radius); width: 100%; aspect-ratio: 5/4; object-fit: cover; box-shadow: 0 30px 60px -34px rgba(0,0,0,.5); }
+  .feature-list { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 18px; }
+  .feature-list li { display: flex; gap: 14px; align-items: flex-start; }
+  .feature-list .tick { flex: 0 0 22px; height: 22px; border-radius: 50%; background: rgba(79,122,82,.12); color: var(--leaf); display: grid; place-items: center; font-size: 12px; margin-top: 2px; }
+  @media (max-width: 860px) { .split { grid-template-columns: 1fr; gap: 36px; } }
+
+  /* ============================================================
+     Featured plants — product cards
+     ============================================================ */
+  .products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .product {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+    transition: transform 280ms var(--ease-out), box-shadow 280ms var(--ease-out);
+  }
+  .product .ph { aspect-ratio: 1; overflow: hidden; background: var(--bg-soft); }
+  .product .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--ease-out); }
+  .product-body { padding: 18px 18px 20px; }
+  .product-body .cat-tag { font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--leaf); font-weight: 600; }
+  .product-body h3 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 600; margin: 7px 0 2px; letter-spacing: -0.01em; }
+  .product-body .care { font-size: 13.5px; color: var(--muted); }
+  .product-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; }
+  .price { font-family: 'Fraunces', serif; font-size: 20px; color: var(--forest); }
+  .add {
+    width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line);
+    background: var(--bg); cursor: pointer; font-size: 19px; color: var(--forest); line-height: 1;
+    display: grid; place-items: center;
+    transition: transform 160ms var(--ease-out), background-color 200ms ease, color 200ms ease;
+  }
+  .add:active { transform: scale(0.92); }
+  @media (hover: hover) and (pointer: fine) {
+    .product:hover { transform: translateY(-5px); box-shadow: 0 26px 50px -30px rgba(31,51,38,.45); }
+    .product:hover .ph img { transform: scale(1.05); }
+    .add:hover { background: var(--forest); color: #fff; }
+  }
+  @media (max-width: 980px) { .products { grid-template-columns: repeat(2, 1fr); } }
+
+  /* ============================================================
+     Workshop — terrarios (the experiential offer)
+     ============================================================ */
+  .workshop { position: relative; border-radius: 28px; overflow: hidden; isolation: isolate; }
+  .workshop img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+  .workshop::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(105deg, rgba(20,33,24,.92) 0%, rgba(20,33,24,.62) 48%, rgba(20,33,24,.15) 100%); }
+  .workshop-inner { padding: 72px 56px; max-width: 560px; color: #eef0e8; }
+  .workshop-inner h2 { color: #fff; font-size: clamp(30px, 3.8vw, 44px); }
+  .workshop-inner p { color: #cdd6c6; margin: 18px 0 28px; }
+  .ws-meta { display: flex; gap: 30px; margin: 0 0 30px; flex-wrap: wrap; }
+  .ws-meta .k { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #9dc5a2; }
+  .ws-meta .v { font-family: 'Fraunces', serif; font-size: 21px; color: #fff; }
+  .btn--cream { background: var(--bg); color: var(--forest-deep); }
+  @media (hover: hover) and (pointer: fine) { .btn--cream:hover { background: #fff; } }
+  @media (max-width: 860px) { .workshop-inner { padding: 48px 28px; } }
+
+  /* ============================================================
+     Testimonial
+     ============================================================ */
+  .quote { max-width: 880px; margin: 0 auto; text-align: center; }
+  .quote blockquote { font-family: 'Fraunces', serif; font-size: clamp(24px, 3.4vw, 38px); line-height: 1.28; letter-spacing: -0.02em; margin: 0; }
+  .quote .who { display: inline-flex; align-items: center; gap: 14px; margin-top: 34px; }
+  .quote .who img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+  .quote .who .nm { font-weight: 600; font-size: 15px; }
+  .quote .who .rl { font-size: 13.5px; color: var(--muted); }
+
+  /* ============================================================
+     Visit / location
+     ============================================================ */
+  .visit { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: 28px; overflow: hidden; background: #fff; }
+  .visit-media img { width: 100%; height: 100%; min-height: 380px; object-fit: cover; }
+  .visit-body { padding: 56px; }
+  .visit-body h2 { font-size: clamp(28px, 3.4vw, 40px); }
+  .info-row { display: flex; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .info-row:last-of-type { border-bottom: none; }
+  .info-row .ic { flex: 0 0 38px; height: 38px; border-radius: 11px; background: var(--bg-soft); display: grid; place-items: center; font-size: 17px; }
+  .info-row .k { font-size: 13px; color: var(--muted); }
+  .info-row .v { font-weight: 500; }
+  @media (max-width: 860px) { .visit { grid-template-columns: 1fr; } .visit-body { padding: 36px 28px; } }
+
+  /* ============================================================
+     Footer
+     ============================================================ */
+  footer { background: var(--forest-deep); color: #cdd6c6; padding: 72px 0 36px; }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 40px; }
+  footer .brand { color: #fff; }
+  footer .brand .mark { box-shadow: inset 0 0 0 3px var(--forest-deep), 0 0 0 1px rgba(255,255,255,.15); }
+  footer p.about { margin: 18px 0 0; font-size: 15px; max-width: 32ch; }
+  footer h4 { font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #9dc5a2; margin: 0 0 18px; }
+  footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 11px; }
+  footer ul a { font-size: 15px; transition: color 180ms ease; }
+  @media (hover: hover) and (pointer: fine) { footer ul a:hover { color: #fff; } }
+  .newsletter { display: flex; gap: 8px; margin-top: 14px; }
+  .newsletter input { flex: 1; min-width: 0; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 100px; padding: 12px 18px; color: #fff; font-size: 14px; font-family: inherit; }
+  .newsletter input::placeholder { color: #8a9685; }
+  .newsletter input:focus { outline: none; border-color: #9dc5a2; }
+  .foot-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 56px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.1); font-size: 13.5px; color: #8a9685; flex-wrap: wrap; gap: 12px; }
+  @media (max-width: 860px) { .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+
+  /* ============================================================
+     Scroll reveal — opacity + translate, revealed in viewport
+     ============================================================ */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+  }
+  [data-reveal].in { opacity: 1; transform: none; }
+  [data-reveal-stagger] > * {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+  }
+  [data-reveal-stagger].in > * { opacity: 1; transform: none; }
+
+  /* Reduced motion: keep gentle fades, drop movement (per Emil/a11y) */
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto; }
+    .marquee { animation: none; }
+    [data-reveal], [data-reveal-stagger] > * { transform: none !important; transition: opacity 300ms ease; }
+    .cat img, .product .ph img { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span> Verde</a>
+    <nav class="nav-links">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#cuidado">Cuidado</a>
+      <a href="#taller">Taller de terrarios</a>
+      <a href="#visita">Visítanos</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn--primary" href="#catalogo">Explorar plantas <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO ---------------------------------------------------- -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div data-reveal>
+        <p class="eyebrow">Vivero & estudio · Ciudad de México</p>
+        <h1>Un poco de <em>calma verde</em><br>para tu casa.</h1>
+        <p class="lede">Plantas de interior elegidas a mano, macetas hechas por artesanos mexicanos y talleres para aprender a cuidarlas.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="#catalogo">Ver el catálogo <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="#taller">Reservar un taller</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="num">120+</div><div class="lbl">especies de interior</div></div>
+          <div><div class="num">8 años</div><div class="lbl">en la Roma Norte</div></div>
+          <div><div class="num">4.9★</div><div class="lbl">en reseñas</div></div>
+        </div>
+      </div>
+      <div class="hero-media" data-reveal>
+        <!-- Foto real (Unsplash): interior lleno de plantas verdes, sereno -->
+        <img class="photo-main" src="https://images.unsplash.com/photo-1545165375-1b744b9ed444?w=1100&q=80&auto=format&fit=crop" alt="Rincón de una casa lleno de plantas de interior junto a una ventana luminosa" loading="eager" />
+        <!-- Foto real (Unsplash): manos cuidando una planta -->
+        <img class="photo-float" src="https://images.unsplash.com/photo-1521334884684-d80222895322?w=500&q=80&auto=format&fit=crop" alt="Persona regando y cuidando una planta de interior" loading="lazy" />
+        <div class="chip"><span class="dot" aria-hidden="true"></span> Entrega el mismo día en CDMX</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES MARQUEE ------------------------------------------ -->
+  <div class="strip" aria-hidden="true">
+    <div class="marquee">
+      <span>Cultivadas con calma<span class="sep"></span>Macetas de barro artesanal<span class="sep"></span>Sustrato vivo<span class="sep"></span>Asesoría de cuidado<span class="sep"></span>Talleres de terrarios<span class="sep"></span>Entrega local<span class="sep"></span></span>
+      <span>Cultivadas con calma<span class="sep"></span>Macetas de barro artesanal<span class="sep"></span>Sustrato vivo<span class="sep"></span>Asesoría de cuidado<span class="sep"></span>Talleres de terrarios<span class="sep"></span>Entrega local<span class="sep"></span></span>
+    </div>
+  </div>
+
+  <!-- CATEGORIES ---------------------------------------------- -->
+  <section class="block" id="catalogo">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Qué encontrarás</p>
+        <h2>Tres formas de traer verde a tu día.</h2>
+        <p>Cada planta llega lista para su maceta, con una ficha de cuidado escrita a mano por nuestro equipo.</p>
+      </div>
+      <div class="cats" data-reveal-stagger>
+        <a class="cat" href="#catalogo">
+          <!-- Foto real (Unsplash): plantas de interior en macetas -->
+          <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=800&q=80&auto=format&fit=crop" alt="Colección de plantas de interior frondosas en macetas" loading="lazy" />
+          <div class="cat-body">
+            <h3>Plantas de interior</h3>
+            <p>Monsteras, potos, helechos y palmas para cada rincón de luz.</p>
+            <span class="more">Ver plantas <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="cat" href="#catalogo">
+          <!-- Foto real (Unsplash): suculentas -->
+          <img src="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?w=800&q=80&auto=format&fit=crop" alt="Variedad de suculentas pequeñas en macetas de barro" loading="lazy" />
+          <div class="cat-body">
+            <h3>Suculentas & cactus</h3>
+            <p>Resistentes, escultóricas y perfectas si apenas empiezas.</p>
+            <span class="more">Ver suculentas <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="cat" href="#catalogo">
+          <!-- Foto real (Unsplash): macetas de barro artesanales -->
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&q=80&auto=format&fit=crop" alt="Macetas de barro artesanales apiladas" loading="lazy" />
+          <div class="cat-body">
+            <h3>Macetas artesanales</h3>
+            <p>Barro y cerámica hechos a mano por talleres mexicanos.</p>
+            <span class="more">Ver macetas <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY / PHILOSOPHY -------------------------------------- -->
+  <section class="block" id="cuidado" style="padding-top:0;">
+    <div class="wrap split">
+      <div class="split-media" data-reveal>
+        <!-- Foto real (Unsplash): persona acomodando plantas, ambiente sereno -->
+        <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=900&q=80&auto=format&fit=crop" alt="Persona cuidando y acomodando plantas en un espacio luminoso" loading="lazy" />
+      </div>
+      <div data-reveal>
+        <p class="eyebrow">Nuestra filosofía</p>
+        <h2>No vendemos plantas. Acompañamos a que vivan.</h2>
+        <p style="color:var(--muted); font-size:18px; margin-top:16px;">Creemos que cuidar una planta es un pequeño ritual que nos devuelve calma. Por eso cada compra incluye seguimiento real.</p>
+        <ul class="feature-list">
+          <li><span class="tick">✓</span> <span><strong>Ficha de cuidado personalizada</strong> según la luz de tu casa.</span></li>
+          <li><span class="tick">✓</span> <span><strong>Diagnóstico gratuito</strong> por WhatsApp si tu planta no se ve bien.</span></li>
+          <li><span class="tick">✓</span> <span><strong>Garantía de 30 días</strong> en cada planta que sale del vivero.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS --------------------------------------- -->
+  <section class="block" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Favoritas del mes</p>
+        <h2>Las que más viajan a casas nuevas.</h2>
+      </div>
+      <div class="products" data-reveal-stagger>
+        <article class="product">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=600&q=80&auto=format&fit=crop" alt="Monstera Deliciosa en maceta" loading="lazy" /></div>
+          <div class="product-body">
+            <span class="cat-tag">Interior · Media luz</span>
+            <h3>Monstera Deliciosa</h3>
+            <p class="care">Riego cada 7 días · No apta para mascotas</p>
+            <div class="product-foot"><span class="price">$480</span><button class="add" aria-label="Agregar Monstera al carrito">+</button></div>
+          </div>
+        </article>
+        <article class="product">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1632207691143-643e2a9a9361?w=600&q=80&auto=format&fit=crop" alt="Planta Pilea Peperomioides en maceta" loading="lazy" /></div>
+          <div class="product-body">
+            <span class="cat-tag">Interior · Luz brillante</span>
+            <h3>Pilea · Planta china</h3>
+            <p class="care">Riego cada 8 días · Fácil de propagar</p>
+            <div class="product-foot"><span class="price">$320</span><button class="add" aria-label="Agregar Pilea al carrito">+</button></div>
+          </div>
+        </article>
+        <article class="product">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1509423350716-97f2360af2e4?w=600&q=80&auto=format&fit=crop" alt="Suculenta Echeveria en maceta de barro" loading="lazy" /></div>
+          <div class="product-body">
+            <span class="cat-tag">Suculenta · Sol directo</span>
+            <h3>Echeveria Elegans</h3>
+            <p class="care">Riego cada 15 días · Súper resistente</p>
+            <div class="product-foot"><span class="price">$180</span><button class="add" aria-label="Agregar Echeveria al carrito">+</button></div>
+          </div>
+        </article>
+        <article class="product">
+          <div class="ph"><img src="https://images.unsplash.com/photo-1593482892290-f54927ae2b7a?w=600&q=80&auto=format&fit=crop" alt="Sansevieria, lengua de suegra, en maceta" loading="lazy" /></div>
+          <div class="product-body">
+            <span class="cat-tag">Interior · Poca luz</span>
+            <h3>Sansevieria</h3>
+            <p class="care">Riego cada 20 días · Purifica el aire</p>
+            <div class="product-foot"><span class="price">$290</span><button class="add" aria-label="Agregar Sansevieria al carrito">+</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSHOP ------------------------------------------------ -->
+  <section class="block" id="taller" style="padding-top:0;">
+    <div class="wrap">
+      <div class="workshop" data-reveal>
+        <!-- Foto real (Unsplash): terrarios de vidrio con plantas -->
+        <img class="bg" src="https://images.unsplash.com/photo-1545241047-6083a3684587?w=1400&q=80&auto=format&fit=crop" alt="Terrarios de vidrio con plantas pequeñas en un taller" loading="lazy" />
+        <div class="workshop-inner">
+          <p class="eyebrow" style="color:#9dc5a2;">Experiencia Verde</p>
+          <h2>Arma tu propio terrario, con las manos en la tierra.</h2>
+          <p>Un taller de dos horas donde construyes un pequeño ecosistema de vidrio para llevarte a casa. Incluye plantas, sustrato, herramientas y, claro, café de olla.</p>
+          <div class="ws-meta">
+            <div><div class="k">Duración</div><div class="v">2 horas</div></div>
+            <div><div class="k">Cupo</div><div class="v">8 personas</div></div>
+            <div><div class="k">Desde</div><div class="v">$650 MXN</div></div>
+          </div>
+          <a class="btn btn--cream" href="#visita">Reservar mi lugar <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL --------------------------------------------- -->
+  <section class="block" style="padding-top:0;">
+    <div class="wrap quote" data-reveal>
+      <blockquote>“Llegué sin saber nada de plantas y salí con tres macetas y la sensación de que mi depa por fin respira. El seguimiento por WhatsApp es lo mejor.”</blockquote>
+      <div class="who">
+        <!-- Foto real (Unsplash): retrato -->
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80&auto=format&fit=crop" alt="Retrato de Mariana López, clienta de Verde" loading="lazy" />
+        <div style="text-align:left;">
+          <div class="nm">Mariana López</div>
+          <div class="rl">Diseñadora · Condesa, CDMX</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT --------------------------------------------------- -->
+  <section class="block" id="visita" style="padding-top:0;">
+    <div class="wrap">
+      <div class="visit" data-reveal>
+        <div class="visit-media">
+          <!-- Foto real (Unsplash): interior de tienda de plantas -->
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=900&q=80&auto=format&fit=crop" alt="Interior luminoso de la tienda de plantas Verde" loading="lazy" />
+        </div>
+        <div class="visit-body">
+          <p class="eyebrow">Visítanos</p>
+          <h2>Pásale por una taza y un poco de verde.</h2>
+          <div style="margin-top:28px;">
+            <div class="info-row"><span class="ic" aria-hidden="true">📍</span><div><div class="k">Dirección</div><div class="v">Av. Álvaro Obregón 185, Roma Norte, CDMX</div></div></div>
+            <div class="info-row"><span class="ic" aria-hidden="true">🕒</span><div><div class="k">Horario</div><div class="v">Lun a Sáb · 10:00 – 20:00 hrs</div></div></div>
+            <div class="info-row"><span class="ic" aria-hidden="true">💬</span><div><div class="k">WhatsApp</div><div class="v">+52 55 1234 5678</div></div></div>
+          </div>
+          <div style="display:flex; gap:12px; margin-top:30px; flex-wrap:wrap;">
+            <a class="btn btn--primary" href="#">Cómo llegar <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="#taller">Reservar taller</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER ---------------------------------------------------- -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span> Verde</a>
+        <p class="about">Vivero y estudio de plantas en la Roma Norte. Cultivamos calma, una maceta a la vez.</p>
+      </div>
+      <div>
+        <h4>Tienda</h4>
+        <ul>
+          <li><a href="#catalogo">Plantas de interior</a></li>
+          <li><a href="#catalogo">Suculentas</a></li>
+          <li><a href="#catalogo">Macetas</a></li>
+          <li><a href="#catalogo">Accesorios</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Verde</h4>
+        <ul>
+          <li><a href="#cuidado">Filosofía</a></li>
+          <li><a href="#taller">Talleres</a></li>
+          <li><a href="#visita">Visítanos</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cuida tu inbox también</h4>
+        <p style="font-size:14.5px; margin:0 0 4px;">Tips de cuidado y nuevas plantas, una vez al mes.</p>
+        <form class="newsletter" onsubmit="return false;">
+          <input type="email" placeholder="tu@correo.com" aria-label="Tu correo" />
+          <button class="btn btn--cream" type="submit" style="padding:12px 20px;">Unirme</button>
+        </form>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Verde · Hecho con tierra y luz en CDMX</span>
+      <span>Instagram · Facebook · Pinterest</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Header border on scroll — subtle, no layout thrash */
+  const hdr = document.getElementById('hdr');
+  const onScroll = () => hdr.setAttribute('data-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Scroll reveal — IntersectionObserver, once. Respects reduced motion. */
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const targets = document.querySelectorAll('[data-reveal], [data-reveal-stagger]');
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(t => t.classList.add('in'));
+  } else {
+    /* Stagger children with short delays (30–80ms per Emil) */
+    document.querySelectorAll('[data-reveal-stagger]').forEach(group => {
+      [...group.children].forEach((child, i) => {
+        child.style.transitionDelay = (i * 60) + 'ms';
+      });
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+    targets.forEach(t => io.observe(t));
+  }
+
+  /* Add-to-cart micro feedback (button already scales via :active) */
+  document.querySelectorAll('.add').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.textContent = '✓';
+      btn.style.background = 'var(--forest)';
+      btn.style.color = '#fff';
+      setTimeout(() => { btn.textContent = '+'; btn.style.background = ''; btn.style.color = ''; }, 1100);
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Origen · Café de especialidad en CDMX</title>
+<meta name="description" content="Origen es una cafetería artesanal de especialidad en una colonia bohemia de la Ciudad de México. Café de origen, tostado lento y un espacio para quedarse." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     Origen — Café de especialidad
+     Paleta orgánica cálida: café, ámbar, terracota, verde hoja.
+     Animaciones según la filosofía de Emil Kowalski:
+     ease-out personalizado, <300ms en UI, scale en :active,
+     reveals al hacer scroll, stagger sutil, reduced-motion.
+     ============================================================ */
+
+  :root {
+    /* Curvas de easing personalizadas (las nativas son demasiado débiles) */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+    /* Paleta cálida orgánica */
+    --espresso: #2a1c12;
+    --espresso-soft: #3d2b1d;
+    --cream: #f7f1e7;
+    --cream-deep: #efe5d5;
+    --paper: #fdfaf4;
+    --terracotta: #c1502e;
+    --terracotta-deep: #a23d1f;
+    --amber: #d99a36;
+    --leaf: #5b6b43;
+    --leaf-deep: #44512f;
+    --ink: #271a10;
+    --muted: #7a6a58;
+    --line: rgba(42, 28, 18, 0.12);
+
+    --shadow-sm: 0 1px 2px rgba(42, 28, 18, 0.08);
+    --shadow-md: 0 12px 30px -12px rgba(42, 28, 18, 0.35);
+    --shadow-lg: 0 30px 60px -25px rgba(42, 28, 18, 0.45);
+
+    --radius: 18px;
+    --radius-lg: 28px;
+    --maxw: 1180px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .serif {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+  }
+
+  img { display: block; max-width: 100%; }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  .eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+  }
+
+  /* ----------------------------------------------------------------
+     Botones — deben sentirse responsivos al presionar (scale 0.97)
+  ---------------------------------------------------------------- */
+  .btn {
+    --bg: var(--espresso);
+    --fg: var(--cream);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    background: var(--bg);
+    color: var(--fg);
+    border: none;
+    border-radius: 999px;
+    font: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 160ms var(--ease-out), background-color 200ms ease, box-shadow 200ms ease;
+    will-change: transform;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn--primary { --bg: var(--terracotta); --fg: #fff; box-shadow: var(--shadow-sm); }
+  .btn--ghost { --bg: transparent; --fg: var(--espresso); border: 1.5px solid var(--line); }
+  .btn .arrow { transition: transform 200ms var(--ease-out); }
+
+  @media (hover: hover) and (pointer: fine) {
+    .btn--primary:hover { background: var(--terracotta-deep); box-shadow: var(--shadow-md); }
+    .btn--ghost:hover { background: var(--cream); border-color: var(--espresso); }
+    .btn:hover .arrow { transform: translateX(3px); }
+  }
+
+  /* ----------------------------------------------------------------
+     Navegación
+  ---------------------------------------------------------------- */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    transition: background-color 250ms ease, box-shadow 250ms ease, backdrop-filter 250ms ease;
+  }
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+  }
+  .nav.scrolled {
+    background: rgba(253, 250, 244, 0.82);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    box-shadow: 0 1px 0 var(--line);
+  }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    font-family: "Fraunces", serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--espresso);
+  }
+  .brand .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--terracotta); align-self: center; }
+  .nav.is-light .brand { color: var(--cream); }
+  .nav__links { display: flex; align-items: center; gap: 34px; }
+  .nav__links a {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--espresso);
+    position: relative;
+    transition: color 180ms ease;
+  }
+  .nav.is-light .nav__links a { color: rgba(247, 241, 231, 0.88); }
+  .nav__links a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -5px;
+    width: 100%; height: 1.5px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 220ms var(--ease-out);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .nav__links a:hover::after { transform: scaleX(1); }
+  }
+  .nav__cta { display: inline-flex; }
+  .nav.is-light .btn--ghost { --fg: var(--cream); border-color: rgba(247,241,231,0.4); }
+  @media (max-width: 860px) {
+    .nav__links { display: none; }
+  }
+
+  /* ----------------------------------------------------------------
+     Hero — foto real de interior cálido de cafetería
+  ---------------------------------------------------------------- */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    color: var(--cream);
+    overflow: hidden;
+  }
+  .hero__media { position: absolute; inset: 0; z-index: -2; }
+  .hero__media img { width: 100%; height: 100%; object-fit: cover; }
+  .hero__media::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(to top, rgba(20,12,6,0.86) 0%, rgba(20,12,6,0.28) 45%, rgba(20,12,6,0.42) 100%);
+  }
+  .hero__content { padding-bottom: 8vh; padding-top: 120px; max-width: 760px; }
+  .hero h1 {
+    font-size: clamp(46px, 8.5vw, 104px);
+    font-weight: 500;
+    margin: 18px 0 22px;
+  }
+  .hero h1 em { font-style: italic; color: var(--amber); }
+  .hero p {
+    font-size: clamp(17px, 2.2vw, 21px);
+    max-width: 540px;
+    color: rgba(247, 241, 231, 0.9);
+    margin-bottom: 34px;
+  }
+  .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero__meta {
+    position: absolute;
+    right: 24px; bottom: 8vh;
+    text-align: right;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: rgba(247,241,231,0.75);
+    line-height: 1.5;
+  }
+  .hero__meta strong { font-family: "Fraunces", serif; font-size: 18px; color: var(--cream); display: block; font-weight: 500; }
+  @media (max-width: 720px) { .hero__meta { display: none; } }
+
+  /* Animación de entrada del hero — stagger sutil, una sola vez */
+  .hero .reveal-up { opacity: 0; transform: translateY(16px); }
+  .hero.ready .reveal-up {
+    animation: heroIn 720ms var(--ease-out) forwards;
+  }
+  .hero.ready .reveal-up:nth-child(1) { animation-delay: 80ms; }
+  .hero.ready .hero__content .eyebrow { animation-delay: 80ms; }
+  .hero.ready h1 { animation-delay: 160ms; }
+  .hero.ready .hero p, .hero.ready .hero__content > p { animation-delay: 260ms; }
+  .hero.ready .hero__actions { animation-delay: 360ms; }
+  @keyframes heroIn { to { opacity: 1; transform: translateY(0); } }
+
+  /* ----------------------------------------------------------------
+     Marquee de valores — movimiento constante = linear
+  ---------------------------------------------------------------- */
+  .ticker {
+    background: var(--espresso);
+    color: var(--cream);
+    padding: 18px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker__track {
+    display: inline-flex;
+    gap: 56px;
+    animation: marquee 28s linear infinite;
+  }
+  .ticker__track span {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 19px;
+    display: inline-flex;
+    align-items: center;
+    gap: 56px;
+    color: rgba(247,241,231,0.92);
+  }
+  .ticker__track span::after { content: "✶"; color: var(--amber); font-style: normal; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  /* ----------------------------------------------------------------
+     Reveal genérico al hacer scroll (IntersectionObserver)
+  ---------------------------------------------------------------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal[data-delay="1"] { transition-delay: 60ms; }
+  .reveal[data-delay="2"] { transition-delay: 120ms; }
+  .reveal[data-delay="3"] { transition-delay: 180ms; }
+
+  /* clip-path reveal para imágenes al entrar en viewport */
+  .img-reveal { overflow: hidden; }
+  .img-reveal img {
+    clip-path: inset(0 0 100% 0);
+    transform: scale(1.06);
+    transition: clip-path 900ms var(--ease-out), transform 1100ms var(--ease-out);
+  }
+  .img-reveal.in img { clip-path: inset(0 0 0 0); transform: scale(1); }
+
+  /* ----------------------------------------------------------------
+     Secciones genéricas
+  ---------------------------------------------------------------- */
+  section { position: relative; }
+  .section-pad { padding: clamp(80px, 11vw, 140px) 0; }
+  .section-head { max-width: 640px; margin-bottom: 56px; }
+  .section-head h2 { font-size: clamp(32px, 5vw, 54px); margin: 16px 0 18px; }
+  .section-head p { font-size: 18px; color: var(--muted); }
+
+  /* Historia / Origen */
+  .story { background: var(--cream); }
+  .story__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(32px, 6vw, 88px);
+    align-items: center;
+  }
+  .story__text h2 { font-size: clamp(30px, 4.4vw, 50px); margin: 18px 0 22px; }
+  .story__text p { color: var(--espresso-soft); font-size: 17.5px; margin-bottom: 18px; }
+  .story__text p:last-of-type { margin-bottom: 0; }
+  .story__media {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    aspect-ratio: 4 / 5;
+  }
+  .story__media img { width: 100%; height: 100%; object-fit: cover; }
+  .story__badge {
+    position: absolute;
+    left: -22px; bottom: 28px;
+    background: var(--paper);
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .story__badge .num { font-family: "Fraunces", serif; font-size: 38px; color: var(--terracotta); line-height: 1; }
+  .story__badge .lbl { font-size: 13px; color: var(--muted); line-height: 1.35; max-width: 120px; }
+  @media (max-width: 800px) {
+    .story__grid { grid-template-columns: 1fr; }
+    .story__media { aspect-ratio: 3 / 4; max-width: 520px; }
+    .story__badge { left: 16px; }
+  }
+
+  /* Proceso — pasos con fotos reales */
+  .process { background: var(--espresso); color: var(--cream); }
+  .process .section-head h2 { color: var(--cream); }
+  .process .section-head p { color: rgba(247,241,231,0.7); }
+  .process .eyebrow { color: var(--amber); }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .step {
+    background: rgba(247,241,231,0.04);
+    border: 1px solid rgba(247,241,231,0.12);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 280ms var(--ease-out), border-color 280ms ease, background-color 280ms ease;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .step:hover { transform: translateY(-6px); border-color: rgba(217,154,54,0.5); background: rgba(247,241,231,0.07); }
+  }
+  .step__img { aspect-ratio: 16 / 11; overflow: hidden; }
+  .step__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--ease-out); }
+  @media (hover: hover) and (pointer: fine) {
+    .step:hover .step__img img { transform: scale(1.05); }
+  }
+  .step__body { padding: 24px 24px 28px; }
+  .step__n { font-family: "Fraunces", serif; font-style: italic; color: var(--amber); font-size: 15px; }
+  .step__body h3 { font-size: 22px; margin: 6px 0 10px; color: var(--cream); }
+  .step__body p { font-size: 15px; color: rgba(247,241,231,0.72); }
+  @media (max-width: 820px) { .steps { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+
+  /* Menú destacado */
+  .menu { background: var(--paper); }
+  .menu__layout { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 6vw, 80px); align-items: start; }
+  .menu__list { display: flex; flex-direction: column; }
+  .menu__item {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 22px 4px;
+    border-bottom: 1px solid var(--line);
+    transition: padding-left 220ms var(--ease-out);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .menu__item:hover { padding-left: 12px; }
+  }
+  .menu__item .name { font-family: "Fraunces", serif; font-size: 21px; font-weight: 500; white-space: nowrap; }
+  .menu__item .lead { flex: 1; border-bottom: 1.5px dotted var(--line); transform: translateY(-4px); }
+  .menu__item .price { font-family: "Fraunces", serif; font-size: 19px; color: var(--terracotta); }
+  .menu__item .desc { display: block; font-family: "Inter", sans-serif; font-size: 13.5px; color: var(--muted); font-weight: 400; margin-top: 4px; }
+  .menu__media { position: sticky; top: 100px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 3 / 4; }
+  .menu__media img { width: 100%; height: 100%; object-fit: cover; }
+  @media (max-width: 880px) {
+    .menu__layout { grid-template-columns: 1fr; }
+    .menu__media { order: -1; position: static; aspect-ratio: 16 / 11; }
+  }
+
+  /* Galería del espacio */
+  .gallery { background: var(--cream); }
+  .gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    gap: 16px;
+  }
+  .gallery__cell { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
+  .gallery__cell img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--ease-out); }
+  @media (hover: hover) and (pointer: fine) {
+    .gallery__cell:hover img { transform: scale(1.06); }
+  }
+  .gallery__cell.tall { grid-row: span 2; }
+  .gallery__cell.wide { grid-column: span 2; }
+  @media (max-width: 760px) {
+    .gallery__grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
+    .gallery__cell.wide { grid-column: span 2; }
+    .gallery__cell.tall { grid-row: span 1; }
+  }
+
+  /* Visítanos / CTA con foto */
+  .visit { position: relative; color: var(--cream); overflow: hidden; }
+  .visit__media { position: absolute; inset: 0; z-index: -2; }
+  .visit__media img { width: 100%; height: 100%; object-fit: cover; }
+  .visit__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(20,12,6,0.9) 0%, rgba(20,12,6,0.55) 55%, rgba(20,12,6,0.4) 100%); }
+  .visit__inner { padding: clamp(90px, 13vw, 160px) 0; max-width: 600px; }
+  .visit .eyebrow { color: var(--amber); }
+  .visit h2 { font-size: clamp(34px, 5.5vw, 60px); margin: 16px 0 22px; }
+  .visit p { font-size: 18px; color: rgba(247,241,231,0.86); margin-bottom: 14px; }
+  .visit__hours { display: flex; gap: 40px; margin: 30px 0 36px; flex-wrap: wrap; }
+  .visit__hours div span { display: block; }
+  .visit__hours .k { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+  .visit__hours .v { font-family: "Fraunces", serif; font-size: 19px; }
+
+  /* Footer */
+  .footer { background: var(--espresso); color: rgba(247,241,231,0.7); padding: 70px 0 40px; }
+  .footer__top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(247,241,231,0.12); }
+  .footer .brand { color: var(--cream); margin-bottom: 14px; }
+  .footer__top p { font-size: 15px; max-width: 320px; }
+  .footer h4 { font-family: "Inter", sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; font-weight: 600; }
+  .footer__top a { display: block; font-size: 15px; margin-bottom: 10px; color: rgba(247,241,231,0.78); transition: color 180ms ease; }
+  @media (hover: hover) and (pointer: fine) { .footer__top a:hover { color: var(--cream); } }
+  .footer__bottom { padding-top: 28px; display: flex; justify-content: space-between; font-size: 13px; flex-wrap: wrap; gap: 12px; }
+  @media (max-width: 760px) { .footer__top { grid-template-columns: 1fr 1fr; } .footer__top .footer__about { grid-column: span 2; } }
+
+  /* ----------------------------------------------------------------
+     Accesibilidad — reduced motion: conservar opacidad, quitar movimiento
+  ---------------------------------------------------------------- */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal, .img-reveal img, .hero .reveal-up { transition: opacity 300ms ease; transform: none; }
+    .reveal { transform: none; }
+    .img-reveal img { clip-path: inset(0 0 0 0); transform: none; }
+    .hero.ready .reveal-up { animation: fadeOnly 400ms ease forwards; }
+    @keyframes fadeOnly { to { opacity: 1; } }
+    .ticker__track { animation: none; }
+    .btn:active { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================== NAV ============================== -->
+<header class="nav is-light" id="nav">
+  <div class="wrap nav__inner">
+    <a href="#top" class="brand"><span class="dot"></span>Origen</a>
+    <nav class="nav__links">
+      <a href="#historia">Historia</a>
+      <a href="#proceso">El proceso</a>
+      <a href="#menu">Menú</a>
+      <a href="#espacio">El espacio</a>
+      <a href="#visitanos">Visítanos</a>
+    </nav>
+    <a href="#visitanos" class="btn btn--ghost nav__cta">Reservar mesa</a>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="top">
+  <div class="hero__media">
+    <!-- Foto real: interior cálido de cafetería de especialidad (Unsplash) -->
+    <img
+      src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=2000&q=80"
+      alt="Interior cálido de la cafetería Origen, con luz de tarde sobre mesas de madera" />
+  </div>
+  <div class="wrap hero__content">
+    <span class="eyebrow reveal-up">Café de especialidad · Ciudad de México</span>
+    <h1 class="reveal-up">Donde cada taza<br>tiene un <em>origen</em>.</h1>
+    <p class="reveal-up">Tostamos en lotes pequeños, servimos sin prisa y abrimos las puertas de un rincón bohemio para que te quedes un rato más.</p>
+    <div class="hero__actions reveal-up">
+      <a href="#menu" class="btn btn--primary">Ver el menú <span class="arrow">→</span></a>
+      <a href="#historia" class="btn btn--ghost">Nuestra historia</a>
+    </div>
+  </div>
+  <div class="hero__meta">
+    <strong>Colonia Roma</strong>
+    Calle Orizaba 142 · CDMX<br>
+    Abierto hoy · 7:00 – 21:00
+  </div>
+</section>
+
+<!-- ============================== TICKER ============================== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Tostado en casa</span><span>Origen único</span><span>Lotes pequeños</span><span>Comercio directo</span><span>Hecho a mano</span>
+    <span>Tostado en casa</span><span>Origen único</span><span>Lotes pequeños</span><span>Comercio directo</span><span>Hecho a mano</span>
+  </div>
+</div>
+
+<!-- ============================== HISTORIA ============================== -->
+<section class="story section-pad" id="historia">
+  <div class="wrap story__grid">
+    <div class="story__text">
+      <span class="eyebrow reveal">Nuestra historia</span>
+      <h2 class="reveal" data-delay="1">Empezó con un saco<br>de café y una idea.</h2>
+      <p class="reveal" data-delay="2">Origen nació en una vieja casona de la colonia Roma, entre libreros, plantas y discos de vinilo. Queríamos un lugar donde el café no fuera solo un trámite de la mañana, sino una excusa para sentarse, conversar y dejar pasar el tiempo.</p>
+      <p class="reveal" data-delay="2">Trabajamos directamente con productores de Veracruz, Chiapas y Oaxaca. Conocemos sus nombres, sus fincas y la altura a la que crece cada grano. Eso es lo que significa "origen" para nosotros: saber de dónde viene lo que sirves.</p>
+    </div>
+    <div class="story__media img-reveal reveal">
+      <!-- Foto real: barista preparando café con calma (Unsplash) -->
+      <img
+        src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=1200&q=80"
+        alt="Barista de Origen preparando un café de método manual" />
+      <div class="story__badge">
+        <span class="num">11</span>
+        <span class="lbl">orígenes distintos rotando cada temporada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROCESO ============================== -->
+<section class="process section-pad" id="proceso">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Del grano a la taza</span>
+      <h2 class="reveal" data-delay="1">Cuidamos cada paso,<br>sin atajos.</h2>
+      <p class="reveal" data-delay="2">No hay magia, solo atención. Cada decisión —desde la finca hasta el vertido— cambia lo que llega a tu mesa.</p>
+    </div>
+    <div class="steps">
+      <article class="step reveal" data-delay="1">
+        <div class="step__img img-reveal">
+          <!-- Foto real: granos de café verde / cosecha (Unsplash) -->
+          <img src="https://images.unsplash.com/photo-1442550528053-c431ecb55509?auto=format&fit=crop&w=900&q=80"
+               alt="Granos de café de especialidad recién cosechados" />
+        </div>
+        <div class="step__body">
+          <span class="step__n">01 — Origen</span>
+          <h3>El grano correcto</h3>
+          <p>Compramos directo a fincas pequeñas que cultivan a la sombra y cosechan a mano, cereza por cereza.</p>
+        </div>
+      </article>
+      <article class="step reveal" data-delay="2">
+        <div class="step__img img-reveal">
+          <!-- Foto real: tostado de café (Unsplash) -->
+          <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=900&q=80"
+               alt="Granos de café durante el proceso de tostado" />
+        </div>
+        <div class="step__body">
+          <span class="step__n">02 — Tostado</span>
+          <h3>Lotes pequeños</h3>
+          <p>Tostamos cada semana en nuestra propia máquina, ajustando el perfil para resaltar lo dulce de cada origen.</p>
+        </div>
+      </article>
+      <article class="step reveal" data-delay="3">
+        <div class="step__img img-reveal">
+          <!-- Foto real: vertido / latte art (Unsplash) -->
+          <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=900&q=80"
+               alt="Barista vertiendo leche para crear arte latte" />
+        </div>
+        <div class="step__body">
+          <span class="step__n">03 — La taza</span>
+          <h3>Servido con calma</h3>
+          <p>Extraemos al momento y servimos sin prisa. Cada taza se calibra a diario, por sabor, no por reloj.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== MENÚ ============================== -->
+<section class="menu section-pad" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">La carta</span>
+      <h2 class="reveal" data-delay="1">Para llevar, o para quedarte.</h2>
+      <p class="reveal" data-delay="2">Una carta corta que cambia con la temporada. Si no sabes qué pedir, pregúntale al barista.</p>
+    </div>
+    <div class="menu__layout">
+      <div class="menu__list">
+        <div class="menu__item reveal" data-delay="1">
+          <span class="name">Espresso<span class="desc">Doble, de nuestro blend de casa</span></span>
+          <span class="lead"></span><span class="price">$48</span>
+        </div>
+        <div class="menu__item reveal" data-delay="1">
+          <span class="name">Flat White<span class="desc">Leche entera microespumada</span></span>
+          <span class="lead"></span><span class="price">$62</span>
+        </div>
+        <div class="menu__item reveal" data-delay="2">
+          <span class="name">Filtrado V60<span class="desc">Origen único, según temporada</span></span>
+          <span class="lead"></span><span class="price">$70</span>
+        </div>
+        <div class="menu__item reveal" data-delay="2">
+          <span class="name">Cold Brew<span class="desc">18 horas en frío, suave y dulce</span></span>
+          <span class="lead"></span><span class="price">$65</span>
+        </div>
+        <div class="menu__item reveal" data-delay="3">
+          <span class="name">Concha de la casa<span class="desc">Horneada cada mañana</span></span>
+          <span class="lead"></span><span class="price">$42</span>
+        </div>
+        <div class="menu__item reveal" data-delay="3">
+          <span class="name">Bolsa 250g<span class="desc">Grano del mes para tu casa</span></span>
+          <span class="lead"></span><span class="price">$240</span>
+        </div>
+      </div>
+      <div class="menu__media img-reveal reveal">
+        <!-- Foto real: taza de café de especialidad sobre mesa (Unsplash) -->
+        <img src="https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=1100&q=80"
+             alt="Taza de café de especialidad servida sobre una mesa de madera" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ESPACIO / GALERÍA ============================== -->
+<section class="gallery section-pad" id="espacio">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">El espacio</span>
+      <h2 class="reveal" data-delay="1">Un rincón para perder<br>la noción del tiempo.</h2>
+      <p class="reveal" data-delay="2">Luz natural, madera vieja y plantas por todos lados. Ven a leer, a trabajar o a no hacer nada.</p>
+    </div>
+    <div class="gallery__grid">
+      <div class="gallery__cell tall img-reveal reveal">
+        <!-- Foto real: interior acogedor de cafetería (Unsplash) -->
+        <img src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?auto=format&fit=crop&w=900&q=80"
+             alt="Rincón acogedor de Origen con mesas de madera y plantas" />
+      </div>
+      <div class="gallery__cell wide img-reveal reveal" data-delay="1">
+        <!-- Foto real: barra de cafetería (Unsplash) -->
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1100&q=80"
+             alt="Barra de la cafetería con máquina de espresso" />
+      </div>
+      <div class="gallery__cell img-reveal reveal" data-delay="2">
+        <!-- Foto real: detalle de taza (Unsplash) -->
+        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=700&q=80"
+             alt="Detalle de una taza de café recién servida" />
+      </div>
+      <div class="gallery__cell img-reveal reveal" data-delay="1">
+        <!-- Foto real: pan / repostería (Unsplash) -->
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80"
+             alt="Repostería artesanal recién horneada" />
+      </div>
+      <div class="gallery__cell wide img-reveal reveal" data-delay="2">
+        <!-- Foto real: gente en cafetería / ambiente (Unsplash) -->
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1100&q=80"
+             alt="Ambiente cálido de la cafetería con clientes conversando" />
+      </div>
+      <div class="gallery__cell img-reveal reveal" data-delay="3">
+        <!-- Foto real: latte art (Unsplash) -->
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80"
+             alt="Arte latte sobre un cappuccino" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VISÍTANOS ============================== -->
+<section class="visit" id="visitanos">
+  <div class="visit__media">
+    <!-- Foto real: fachada / mesa junto a ventana de cafetería (Unsplash) -->
+    <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=2000&q=80"
+         alt="Mesa junto a la ventana de Origen con luz de la tarde" />
+  </div>
+  <div class="wrap">
+    <div class="visit__inner">
+      <span class="eyebrow reveal">Visítanos</span>
+      <h2 class="reveal" data-delay="1">Te guardamos<br>una mesa.</h2>
+      <p class="reveal" data-delay="2">Calle Orizaba 142, Colonia Roma Norte, Cuauhtémoc, CDMX. A dos cuadras del metro Insurgentes.</p>
+      <div class="visit__hours reveal" data-delay="2">
+        <div>
+          <span class="k">Lun – Vie</span>
+          <span class="v">7:00 – 21:00</span>
+        </div>
+        <div>
+          <span class="k">Sáb – Dom</span>
+          <span class="v">8:00 – 22:00</span>
+        </div>
+      </div>
+      <div class="hero__actions reveal" data-delay="3">
+        <a href="https://maps.google.com/?q=Orizaba+142+Roma+Norte+CDMX" target="_blank" rel="noopener" class="btn btn--primary">Cómo llegar <span class="arrow">→</span></a>
+        <a href="#menu" class="btn btn--ghost" style="--fg:var(--cream); border-color:rgba(247,241,231,0.4);">Ver el menú</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__about">
+        <a href="#top" class="brand"><span class="dot"></span>Origen</a>
+        <p>Café de especialidad tostado en casa, en el corazón de la Roma. Hecho con calma, servido con cariño.</p>
+      </div>
+      <div>
+        <h4>Explora</h4>
+        <a href="#historia">Historia</a>
+        <a href="#proceso">El proceso</a>
+        <a href="#menu">Menú</a>
+        <a href="#espacio">El espacio</a>
+      </div>
+      <div>
+        <h4>Síguenos</h4>
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">Facebook</a>
+        <a href="mailto:hola@origen.cafe">hola@origen.cafe</a>
+        <a href="tel:+525555555555">+52 55 5555 5555</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Origen · Café de especialidad · CDMX</span>
+      <span>Hecho con granos buenos y café de más.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav: cambia de claro (sobre el hero) a sólido al hacer scroll.
+  (function () {
+    var nav = document.getElementById("nav");
+    var hero = document.querySelector(".hero");
+    function onScroll() {
+      var y = window.scrollY;
+      nav.classList.toggle("scrolled", y > 40);
+      // mantener texto claro solo mientras el hero cubre el nav
+      var heroBottom = hero ? hero.offsetHeight - 90 : 0;
+      nav.classList.toggle("is-light", y < heroBottom);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // Entrada del hero una vez cargado (stagger sutil)
+    requestAnimationFrame(function () { hero.classList.add("ready"); });
+  })();
+
+  // Reveal al hacer scroll — IntersectionObserver, una sola vez.
+  (function () {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var targets = document.querySelectorAll(".reveal, .img-reveal");
+    if (!("IntersectionObserver" in window)) {
+      targets.forEach(function (el) { el.classList.add("in"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -80px 0px" });
+    targets.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>

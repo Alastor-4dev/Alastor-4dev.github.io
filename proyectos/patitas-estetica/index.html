@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Patitas · Estética Canina & Spa para Perros en CDMX</title>
+<meta name="description" content="Baño, corte, grooming y spa para perros en la Ciudad de México. Tu perrhijo sale feliz, oloroso y consentido. Reserva en línea." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    /* --- Warm, organic palette (OKLCH), tinted toward terracotta brand hue --- */
+    --bg:        oklch(0.968 0.018 78);
+    --bg-deep:   oklch(0.945 0.024 74);
+    --surface:   oklch(0.992 0.010 86);
+    --surface-2: oklch(0.975 0.016 72);
+
+    --ink:       oklch(0.305 0.038 52);
+    --ink-soft:  oklch(0.470 0.030 55);
+    --ink-faint: oklch(0.600 0.022 58);
+
+    --coral:      oklch(0.700 0.158 38);
+    --coral-deep: oklch(0.560 0.150 34);
+    --coral-wash: oklch(0.930 0.045 48);
+
+    --leaf:      oklch(0.660 0.105 152);
+    --leaf-deep: oklch(0.520 0.095 150);
+    --leaf-wash: oklch(0.935 0.040 150);
+
+    --sun:       oklch(0.855 0.135 86);
+    --sun-deep:  oklch(0.780 0.140 80);
+
+    --line: oklch(0.880 0.020 70);
+
+    /* 4pt spacing scale */
+    --space-2xs: 4px;
+    --space-xs:  8px;
+    --space-sm:  12px;
+    --space-md:  16px;
+    --space-lg:  24px;
+    --space-xl:  32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    --space-4xl: 96px;
+
+    --radius-sm: 10px;
+    --radius-md: 18px;
+    --radius-lg: 30px;
+    --radius-xl: 46px;
+
+    --shadow-soft: 0 2px 6px oklch(0.45 0.05 50 / 0.05), 0 14px 40px oklch(0.45 0.06 50 / 0.10);
+    --shadow-lift: 0 4px 10px oklch(0.45 0.05 50 / 0.08), 0 26px 60px oklch(0.45 0.06 50 / 0.16);
+
+    --font-display: "Fredoka", "Trebuchet MS", sans-serif;
+    --font-body: "Hanken Grotesk", system-ui, sans-serif;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: clamp(1rem, 0.96rem + 0.2vw, 1.075rem);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    line-height: 1.04;
+    margin: 0;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { width: min(1180px, 92vw); margin-inline: auto; }
+
+  /* ---------------- Buttons ---------------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: var(--space-xs);
+    font-family: var(--font-display); font-weight: 500; font-size: 1.02rem;
+    padding: 0.85em 1.5em; border-radius: 999px; border: none; cursor: pointer;
+    transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), background 0.25s;
+    line-height: 1;
+  }
+  .btn-primary { background: var(--coral); color: oklch(0.99 0.01 80); box-shadow: 0 10px 24px oklch(0.56 0.15 34 / 0.30); }
+  .btn-primary:hover { background: var(--coral-deep); transform: translateY(-3px); box-shadow: 0 16px 34px oklch(0.56 0.15 34 / 0.38); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+  .btn-ghost:hover { background: var(--surface); border-color: var(--coral); color: var(--coral-deep); transform: translateY(-3px); }
+  .btn-leaf { background: var(--leaf); color: oklch(0.99 0.01 150); box-shadow: 0 10px 24px oklch(0.52 0.09 150 / 0.28); }
+  .btn-leaf:hover { background: var(--leaf-deep); transform: translateY(-3px); }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: var(--space-xs);
+    font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+    padding: 0.45em 0.95em; border-radius: 999px;
+    background: var(--coral-wash); color: var(--coral-deep);
+  }
+  .pill.leaf { background: var(--leaf-wash); color: var(--leaf-deep); }
+
+  /* ---------------- Nav ---------------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(10px);
+    background: oklch(0.968 0.018 78 / 0.82);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  header.nav.stuck { border-bottom-color: var(--line); box-shadow: 0 6px 24px oklch(0.45 0.05 50 / 0.06); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: var(--space-md) 0; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; display: inline-flex; align-items: center; gap: 0.4ch; color: var(--ink); }
+  .logo .dot { color: var(--coral); }
+  .nav-links { display: flex; gap: var(--space-xl); align-items: center; }
+  .nav-links a { font-weight: 500; color: var(--ink-soft); font-size: 0.98rem; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--coral-deep); }
+  .nav-cta { display: flex; align-items: center; gap: var(--space-md); }
+  .menu-btn { display: none; }
+
+  /* ---------------- Hero ---------------- */
+  .hero { position: relative; padding: clamp(var(--space-xl), 5vw, var(--space-4xl)) 0 var(--space-3xl); }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(var(--space-xl), 4vw, var(--space-3xl)); align-items: center; }
+  .hero h1 { font-size: clamp(2.6rem, 1.6rem + 4.6vw, 5rem); font-weight: 700; }
+  .hero h1 .swash { color: var(--coral); }
+  .hero p.lede { font-size: clamp(1.1rem, 1rem + 0.5vw, 1.3rem); color: var(--ink-soft); max-width: 46ch; margin: var(--space-lg) 0 var(--space-xl); }
+  .hero-actions { display: flex; gap: var(--space-md); flex-wrap: wrap; }
+  .hero-trust { display: flex; gap: var(--space-xl); margin-top: var(--space-2xl); flex-wrap: wrap; }
+  .hero-trust .stat { display: flex; flex-direction: column; }
+  .hero-trust .stat b { font-family: var(--font-display); font-size: 1.65rem; font-weight: 700; color: var(--ink); }
+  .hero-trust .stat span { font-size: 0.9rem; color: var(--ink-faint); }
+  .stars { color: var(--sun-deep); letter-spacing: 2px; }
+
+  .hero-media { position: relative; }
+  .hero-photo {
+    position: relative; z-index: 2; border-radius: var(--radius-xl);
+    aspect-ratio: 4/5; object-fit: cover; width: 100%;
+    box-shadow: var(--shadow-lift); border: 6px solid var(--surface);
+  }
+  .hero-blob {
+    position: absolute; inset: auto; z-index: 1;
+    width: 78%; aspect-ratio: 1; border-radius: 46% 54% 60% 40% / 52% 44% 56% 48%;
+    background: var(--sun); top: -7%; right: -8%; filter: blur(2px); opacity: 0.85;
+  }
+  .hero-badge {
+    position: absolute; z-index: 3; bottom: 7%; left: -6%;
+    background: var(--surface); border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md); box-shadow: var(--shadow-soft);
+    display: flex; align-items: center; gap: var(--space-sm); font-weight: 600;
+  }
+  .hero-badge .emoji { font-size: 1.7rem; }
+  .hero-badge small { display: block; font-weight: 500; color: var(--ink-faint); font-size: 0.78rem; }
+
+  /* paw scatter background */
+  .paw { position: absolute; font-size: 2rem; opacity: 0.12; user-select: none; pointer-events: none; }
+
+  /* ---------------- Section heads ---------------- */
+  .section { padding: clamp(var(--space-3xl), 7vw, var(--space-4xl)) 0; }
+  .section-head { max-width: 60ch; margin-bottom: var(--space-2xl); }
+  .section-head h2 { font-size: clamp(2rem, 1.4rem + 2.6vw, 3.2rem); font-weight: 700; margin-top: var(--space-sm); }
+  .section-head p { color: var(--ink-soft); font-size: 1.12rem; margin-top: var(--space-md); }
+
+  /* ---------------- Services ---------------- */
+  .services { background: var(--bg-deep); }
+  .svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
+  .svc {
+    position: relative; border-radius: var(--radius-lg); overflow: hidden;
+    background: var(--surface); box-shadow: var(--shadow-soft);
+    transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+    display: flex; flex-direction: column;
+  }
+  .svc:hover { transform: translateY(-6px); box-shadow: var(--shadow-lift); }
+  .svc:nth-child(1), .svc:nth-child(4) { grid-row: span 1; }
+  .svc-photo-wrap { overflow: hidden; aspect-ratio: 16/11; }
+  .svc-photo { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-out); }
+  .svc:hover .svc-photo { transform: scale(1.06); }
+  .svc-body { padding: var(--space-lg) var(--space-lg) var(--space-xl); display: flex; flex-direction: column; gap: var(--space-xs); flex: 1; }
+  .svc-body h3 { font-size: 1.5rem; font-weight: 600; }
+  .svc-body p { color: var(--ink-soft); font-size: 0.98rem; margin: 0; }
+  .svc-foot { display: flex; align-items: baseline; justify-content: space-between; margin-top: var(--space-md); padding-top: var(--space-md); border-top: 1px solid var(--line); }
+  .svc-price { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--coral-deep); }
+  .svc-price small { font-weight: 500; font-size: 0.8rem; color: var(--ink-faint); }
+  .svc-tag { font-size: 0.82rem; color: var(--ink-faint); }
+
+  /* ---------------- About / split ---------------- */
+  .about-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(var(--space-xl), 4vw, var(--space-3xl)); align-items: center; }
+  .about-media { position: relative; }
+  .about-media .main { border-radius: var(--radius-lg); aspect-ratio: 5/4; object-fit: cover; width: 100%; box-shadow: var(--shadow-lift); }
+  .about-media .inset {
+    position: absolute; bottom: -10%; right: -6%; width: 46%; aspect-ratio: 1;
+    object-fit: cover; border-radius: var(--radius-md); border: 6px solid var(--surface); box-shadow: var(--shadow-soft);
+  }
+  .feature-list { display: grid; gap: var(--space-lg); margin-top: var(--space-xl); }
+  .feature { display: flex; gap: var(--space-md); align-items: flex-start; }
+  .feature .ic { flex: none; width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 1.4rem; background: var(--coral-wash); }
+  .feature:nth-child(2) .ic { background: var(--leaf-wash); }
+  .feature:nth-child(3) .ic { background: oklch(0.93 0.06 86); }
+  .feature h4 { font-size: 1.15rem; font-weight: 600; }
+  .feature p { margin: 2px 0 0; color: var(--ink-soft); font-size: 0.97rem; }
+
+  /* ---------------- Steps ---------------- */
+  .steps { background: var(--coral); color: oklch(0.98 0.015 80); }
+  .steps .section-head h2 { color: oklch(0.99 0.01 80); }
+  .steps .section-head .pill { background: oklch(0.99 0.02 80 / 0.18); color: oklch(0.99 0.02 80); }
+  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+  .step { position: relative; }
+  .step .num { font-family: var(--font-display); font-weight: 700; font-size: 3.4rem; line-height: 1; color: oklch(0.99 0.02 80 / 0.45); }
+  .step h4 { color: oklch(0.99 0.01 80); font-size: 1.3rem; margin-top: var(--space-xs); }
+  .step p { color: oklch(0.96 0.02 80 / 0.85); margin-top: var(--space-xs); }
+
+  /* ---------------- Gallery ---------------- */
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: var(--space-md); }
+  .gallery-grid figure { margin: 0; overflow: hidden; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); }
+  .gallery-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease-out); }
+  .gallery-grid figure:hover img { transform: scale(1.08); }
+  .g-tall { grid-row: span 2; }
+  .g-wide { grid-column: span 2; }
+
+  /* ---------------- Testimonials ---------------- */
+  .testimonials { background: var(--leaf-wash); }
+  .tst-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
+  .tst { background: var(--surface); border-radius: var(--radius-lg); padding: var(--space-xl); box-shadow: var(--shadow-soft); display: flex; flex-direction: column; gap: var(--space-md); }
+  .tst .stars { font-size: 1rem; }
+  .tst p { margin: 0; color: var(--ink); font-size: 1.02rem; }
+  .tst .who { display: flex; align-items: center; gap: var(--space-sm); margin-top: auto; }
+  .tst .who img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+  .tst .who b { display: block; font-family: var(--font-display); font-weight: 600; }
+  .tst .who span { font-size: 0.85rem; color: var(--ink-faint); }
+
+  /* ---------------- Booking ---------------- */
+  .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lift); background: var(--surface); }
+  .booking-media { position: relative; min-height: 100%; }
+  .booking-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .booking-form { padding: clamp(var(--space-xl), 4vw, var(--space-3xl)); }
+  .booking-form h2 { font-size: clamp(1.8rem, 1.3rem + 2vw, 2.6rem); font-weight: 700; }
+  .booking-form > p { color: var(--ink-soft); margin: var(--space-sm) 0 var(--space-xl); }
+  .field { margin-bottom: var(--space-md); }
+  .field label { display: block; font-weight: 600; font-size: 0.88rem; margin-bottom: 6px; color: var(--ink-soft); }
+  .field input, .field select {
+    width: 100%; padding: 0.8em 1em; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 1rem;
+    border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .field input:focus, .field select:focus { outline: none; border-color: var(--coral); box-shadow: 0 0 0 4px var(--coral-wash); }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+  .booking-form .btn { width: 100%; justify-content: center; margin-top: var(--space-sm); }
+  .form-note { font-size: 0.82rem; color: var(--ink-faint); margin-top: var(--space-md); text-align: center; }
+
+  /* ---------------- Footer ---------------- */
+  footer { background: var(--ink); color: oklch(0.92 0.02 70); padding: var(--space-4xl) 0 var(--space-xl); }
+  .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: var(--space-xl); }
+  footer .logo { color: oklch(0.97 0.02 75); }
+  footer p { color: oklch(0.80 0.02 70); max-width: 34ch; }
+  .foot-col h5 { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; margin: 0 0 var(--space-md); color: oklch(0.97 0.02 75); }
+  .foot-col a, .foot-col li { color: oklch(0.82 0.02 70); display: block; padding: 4px 0; font-size: 0.95rem; }
+  .foot-col ul { list-style: none; padding: 0; margin: 0; }
+  .foot-col a:hover { color: var(--sun); }
+  .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-3xl); padding-top: var(--space-lg); border-top: 1px solid oklch(0.45 0.03 60); font-size: 0.85rem; color: oklch(0.72 0.02 70); }
+
+  /* ---------------- Reveal animation ---------------- */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out); }
+  .reveal.in { opacity: 1; transform: none; }
+  .hero .reveal { transition-delay: calc(var(--i, 0) * 0.09s); }
+
+  /* ---------------- Responsive ---------------- */
+  @media (max-width: 940px) {
+    .hero-grid, .about-grid, .booking-grid { grid-template-columns: 1fr; }
+    .hero-media { order: -1; max-width: 460px; margin-inline: auto; }
+    .svc-grid, .steps-grid, .tst-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; }
+    .booking-media { min-height: 280px; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .about-media { max-width: 480px; }
+  }
+  @media (max-width: 560px) {
+    .field-row { grid-template-columns: 1fr; }
+    .hero-trust { gap: var(--space-lg); }
+    .foot-grid { grid-template-columns: 1fr; }
+    .hero-badge { left: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =================== NAV =================== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">Patitas<span class="dot">🐾</span></a>
+    <nav class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#galeria">Galería</a>
+      <a href="#opiniones">Opiniones</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#reservar" class="btn btn-primary">Reservar cita</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- =================== HERO =================== -->
+  <section class="hero">
+    <span class="paw" style="top:18%; left:4%;">🐾</span>
+    <span class="paw" style="top:62%; left:12%; font-size:1.4rem;">🐾</span>
+    <span class="paw" style="bottom:10%; right:40%;">🐾</span>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="pill reveal" style="--i:0">🛁 Estética canina en CDMX</span>
+        <h1 class="reveal" style="--i:1">Tu <span class="swash">perrhijo</span> merece un día de spa.</h1>
+        <p class="lede reveal" style="--i:2">Baño, corte, deslanado y mimos profesionales en un espacio donde las colas no paran de moverse. Lo dejas pulgoso, te lo regresamos oloroso y feliz.</p>
+        <div class="hero-actions reveal" style="--i:3">
+          <a href="#reservar" class="btn btn-primary">Agendar baño & corte</a>
+          <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+        </div>
+        <div class="hero-trust reveal" style="--i:4">
+          <div class="stat">
+            <b>2,400+</b>
+            <span>colitas felices</span>
+          </div>
+          <div class="stat">
+            <b><span class="stars">★★★★★</span></b>
+            <span>4.9 en Google · 380 reseñas</span>
+          </div>
+          <div class="stat">
+            <b>Roma–Condesa</b>
+            <span>con estacionamiento</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media reveal" style="--i:2">
+        <div class="hero-blob"></div>
+        <img class="hero-photo"
+             src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=900&q=80&auto=format&fit=crop"
+             onerror="this.onerror=null;this.src='https://loremflickr.com/900/1100/dog,happy';"
+             alt="Perro feliz recién bañado y peinado en la estética Patitas" loading="eager" />
+        <div class="hero-badge">
+          <span class="emoji">🦴</span>
+          <div>
+            Premio incluido
+            <small>al final de cada visita</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== SERVICIOS =================== -->
+  <section class="section services" id="servicios">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="pill">Servicios</span>
+        <h2>Todo lo que tu perro necesita para verse y oler increíble.</h2>
+        <p>Cada servicio lo realiza un groomer certificado, con productos hipoalergénicos y paciencia infinita para los más nerviosos.</p>
+      </div>
+
+      <div class="svc-grid">
+        <article class="svc reveal">
+          <div class="svc-photo-wrap">
+            <img class="svc-photo"
+                 src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=800&q=80&auto=format&fit=crop"
+                 onerror="this.onerror=null;this.src='https://loremflickr.com/800/560/dog,bath';"
+                 alt="Perro disfrutando de su baño con espuma" loading="lazy" />
+          </div>
+          <div class="svc-body">
+            <h3>Baño & secado</h3>
+            <p>Baño tibio, shampoo a la medida de su pelaje, secado con aire templado y cepillado. Sale esponjadito.</p>
+            <div class="svc-foot">
+              <span class="svc-price">$280 <small>MXN</small></span>
+              <span class="svc-tag">45–60 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc reveal">
+          <div class="svc-photo-wrap">
+            <img class="svc-photo"
+                 src="https://images.unsplash.com/photo-1591768575198-88dac53fbd0a?w=800&q=80&auto=format&fit=crop"
+                 onerror="this.onerror=null;this.src='https://loremflickr.com/800/560/dog,grooming';"
+                 alt="Groomer dando corte de tijera a un perro" loading="lazy" />
+          </div>
+          <div class="svc-body">
+            <h3>Corte de raza & estilo</h3>
+            <p>Corte según estándar de raza o el estilo que prefieras. Tijera, máquina y mucho ojo para los detalles.</p>
+            <div class="svc-foot">
+              <span class="svc-price">$450 <small>MXN</small></span>
+              <span class="svc-tag">60–90 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc reveal">
+          <div class="svc-photo-wrap">
+            <img class="svc-photo"
+                 src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?w=800&q=80&auto=format&fit=crop"
+                 onerror="this.onerror=null;this.src='https://loremflickr.com/800/560/dog,spa';"
+                 alt="Perro relajado durante su sesión de spa" loading="lazy" />
+          </div>
+          <div class="svc-body">
+            <h3>Spa & aromaterapia</h3>
+            <p>Hidromasaje, mascarilla nutritiva, limpieza de oídos y un toque de colonia pet-friendly. Puro consentimiento.</p>
+            <div class="svc-foot">
+              <span class="svc-price">$620 <small>MXN</small></span>
+              <span class="svc-tag">90 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc reveal">
+          <div class="svc-photo-wrap">
+            <img class="svc-photo"
+                 src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?w=800&q=80&auto=format&fit=crop"
+                 onerror="this.onerror=null;this.src='https://loremflickr.com/800/560/dog,fluffy';"
+                 alt="Perro de pelo largo recién deslanado y cepillado" loading="lazy" />
+          </div>
+          <div class="svc-body">
+            <h3>Deslanado & uñas</h3>
+            <p>Removemos el subpelo muerto, cortamos y limamos uñas, y dejamos las almohaditas suaves. Adiós pelos por toda la casa.</p>
+            <div class="svc-foot">
+              <span class="svc-price">$340 <small>MXN</small></span>
+              <span class="svc-tag">50 min</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== NOSOTROS =================== -->
+  <section class="section" id="nosotros">
+    <div class="wrap about-grid">
+      <div class="about-media reveal">
+        <img class="main"
+             src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=900&q=80&auto=format&fit=crop"
+             onerror="this.onerror=null;this.src='https://loremflickr.com/900/720/dog,puppy';"
+             alt="Groomer de Patitas cargando a un perro contento" loading="lazy" />
+        <img class="inset"
+             src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600&q=80&auto=format&fit=crop"
+             onerror="this.onerror=null;this.src='https://loremflickr.com/600/600/puppy';"
+             alt="Cachorro mirando a la cámara" loading="lazy" />
+      </div>
+      <div class="reveal">
+        <span class="pill leaf">Por qué Patitas</span>
+        <h2 style="font-size:clamp(2rem,1.4rem + 2.4vw,3rem); margin-top:var(--space-sm);">Manos expertas y mucho, mucho cariño.</h2>
+        <p style="color:var(--ink-soft); margin-top:var(--space-md); max-width:50ch;">No somos una línea de producción. Atendemos un perro a la vez para que tu compañero llegue tranquilo y se vaya feliz, sin estrés ni prisas.</p>
+
+        <div class="feature-list">
+          <div class="feature">
+            <div class="ic">🎓</div>
+            <div>
+              <h4>Groomers certificados</h4>
+              <p>Equipo capacitado en manejo de raza, comportamiento y primeros auxilios caninos.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="ic">🌿</div>
+            <div>
+              <h4>Productos nobles</h4>
+              <p>Shampoos biodegradables, hipoalergénicos y libres de crueldad animal.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="ic">📸</div>
+            <div>
+              <h4>Te mandamos foto</h4>
+              <p>Recibe una foto del antes y el después por WhatsApp mientras esperas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== PASOS =================== -->
+  <section class="section steps">
+    <div class="wrap">
+      <div class="section-head reveal" style="max-width:none;">
+        <span class="pill">Así de fácil</span>
+        <h2>De pulgoso a precioso en tres pasos.</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step reveal">
+          <div class="num">01</div>
+          <h4>Reservas en línea</h4>
+          <p>Eliges servicio, día y hora en menos de un minuto. Te confirmamos al instante.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">02</div>
+          <h4>Lo consentimos</h4>
+          <p>Tu perro pasa por baño, corte o spa con un groomer dedicado solo a él.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">03</div>
+          <h4>Cola feliz a casa</h4>
+          <p>Te lo entregamos guapísimo, con su moñito o pañuelo y un premio bien merecido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== GALERÍA =================== -->
+  <section class="section" id="galeria">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="pill leaf">Galería</span>
+        <h2>Caritas que salieron felices de Patitas.</h2>
+        <p>Una probadita de los clientes de cuatro patas que pasaron por nuestras manos esta semana.</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <figure class="g-tall">
+          <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=700&q=80&auto=format&fit=crop"
+               onerror="this.onerror=null;this.src='https://loremflickr.com/700/900/dog';"
+               alt="Perro pequeño peinado" loading="lazy" />
+        </figure>
+        <figure class="g-wide">
+          <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=900&q=80&auto=format&fit=crop"
+               onerror="this.onerror=null;this.src='https://loremflickr.com/900/500/dogs';"
+               alt="Dos perros paseando contentos" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&q=80&auto=format&fit=crop"
+               onerror="this.onerror=null;this.src='https://loremflickr.com/600/500/dog,golden';"
+               alt="Golden retriever sonriente" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=600&q=80&auto=format&fit=crop"
+               onerror="this.onerror=null;this.src='https://loremflickr.com/600/500/dog,labrador';"
+               alt="Perro labrador feliz" loading="lazy" />
+        </figure>
+        <figure class="g-wide">
+          <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=900&q=80&auto=format&fit=crop"
+               onerror="this.onerror=null;this.src='https://loremflickr.com/900/500/dog,small';"
+               alt="Perrito chico bien peinado" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80&auto=format&fit=crop"
+               onerror="this.onerror=null;this.src='https://loremflickr.com/600/500/dog,grooming';"
+               alt="Perro durante su sesión de estética" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== OPINIONES =================== -->
+  <section class="section testimonials" id="opiniones">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="pill">Opiniones</span>
+        <h2>Sus humanos no paran de hablar de nosotros.</h2>
+      </div>
+      <div class="tst-grid">
+        <article class="tst reveal">
+          <span class="stars">★★★★★</span>
+          <p>"Mi schnauzer le tenía pánico a la peluquería y aquí salió moviendo la cola. El corte quedó idéntico al estándar de raza."</p>
+          <div class="who">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80&auto=format&fit=crop"
+                 onerror="this.onerror=null;this.src='https://loremflickr.com/120/120/woman,portrait';" alt="Mariana R." loading="lazy" />
+            <div><b>Mariana R.</b><span>Mamá de Coco · Roma Norte</span></div>
+          </div>
+        </article>
+        <article class="tst reveal">
+          <span class="stars">★★★★★</span>
+          <p>"El deslanado de mi husky cambió mi vida, literal ya no hay pelos en el sillón. Y me mandan foto del antes y después."</p>
+          <div class="who">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80&auto=format&fit=crop"
+                 onerror="this.onerror=null;this.src='https://loremflickr.com/120/120/man,portrait';" alt="Diego M." loading="lazy" />
+            <div><b>Diego M.</b><span>Papá de Thor · Condesa</span></div>
+          </div>
+        </article>
+        <article class="tst reveal">
+          <span class="stars">★★★★★</span>
+          <p>"Trato súper profesional y el lugar huele delicioso. Mi french bulldog quedó como modelo de revista. 100% recomendado."</p>
+          <div class="who">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80&auto=format&fit=crop"
+                 onerror="this.onerror=null;this.src='https://loremflickr.com/120/120/woman,face';" alt="Sofía L." loading="lazy" />
+            <div><b>Sofía L.</b><span>Mamá de Nube · Del Valle</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== RESERVAR =================== -->
+  <section class="section" id="reservar">
+    <div class="wrap">
+      <div class="booking-grid reveal">
+        <div class="booking-media">
+          <img src="https://images.unsplash.com/photo-1559190394-df5a28aab5c5?w=800&q=80&auto=format&fit=crop"
+               onerror="this.onerror=null;this.src='https://loremflickr.com/800/1000/dog,cute';"
+               alt="Perro esperando feliz su cita de spa" loading="lazy" />
+        </div>
+        <form class="booking-form" onsubmit="event.preventDefault(); this.querySelector('.btn').textContent='¡Cita enviada! 🐾'; this.querySelector('.btn').disabled=true;">
+          <span class="pill">Reserva</span>
+          <h2>Aparta el día de spa de tu peludo.</h2>
+          <p>Déjanos tus datos y te confirmamos por WhatsApp en minutos. Sin enganches, pagas en sucursal.</p>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="tutor">Tu nombre</label>
+              <input id="tutor" type="text" placeholder="María García" required />
+            </div>
+            <div class="field">
+              <label for="perro">Nombre del perro</label>
+              <input id="perro" type="text" placeholder="Firulais" required />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="raza">Raza / tamaño</label>
+              <input id="raza" type="text" placeholder="Poodle mediano" />
+            </div>
+            <div class="field">
+              <label for="servicio">Servicio</label>
+              <select id="servicio">
+                <option>Baño & secado</option>
+                <option>Corte de raza & estilo</option>
+                <option>Spa & aromaterapia</option>
+                <option>Deslanado & uñas</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="fecha">Fecha preferida</label>
+              <input id="fecha" type="date" required />
+            </div>
+            <div class="field">
+              <label for="tel">WhatsApp</label>
+              <input id="tel" type="tel" placeholder="55 1234 5678" required />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Solicitar cita</button>
+          <p class="form-note">Te contestamos de lunes a sábado, 9:00 – 19:00 hrs.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="logo">Patitas<span class="dot">🐾</span></a>
+        <p style="margin-top:var(--space-md);">Estética canina y spa para perros en la Ciudad de México. Porque un perro feliz hace una casa feliz.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="#servicios">Baño & secado</a></li>
+          <li><a href="#servicios">Corte de raza</a></li>
+          <li><a href="#servicios">Spa & aromaterapia</a></li>
+          <li><a href="#servicios">Deslanado & uñas</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Visítanos</h5>
+        <ul>
+          <li>Av. Tamaulipas 120</li>
+          <li>Condesa, CDMX</li>
+          <li>Lun–Sáb · 9:00–19:00</li>
+          <li><a href="#reservar">Cómo llegar</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="#">WhatsApp 55 1234 5678</a></li>
+          <li><a href="#">hola@patitas.mx</a></li>
+          <li><a href="#">@patitas.cdmx</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Patitas Estética Canina · Hecho con 🦴 en CDMX</span>
+      <span>Aviso de privacidad · Términos</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav shadow
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('stuck', window.scrollY > 12);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Hero reveals fire immediately on load
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.hero .reveal').forEach((el) => el.classList.add('in'));
+  });
+</script>
+</body>
+</html>
